@@ -19,14 +19,25 @@
     <p>
       Lorem ipsum dolor sit amet consectetur. Dictumst diam faucibus faucibus egestas. Praesent morbi et sit ipsum felis odio mus nunc ultricies.
     </p>
-    <a href="#" class="main-button">
+    <div class="main-button">
       Individual plan
-    </a>
+    </div>
   </section>
+  <Card />
 </template>
 
 <script>
+import Card from "@/components/Blocks/Card.vue"
 
+export default {
+  name: "HomeView",
+  components: {
+    Card
+  },
+  data(){
+
+  }
+}
 </script>
 
 <style>
