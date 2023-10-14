@@ -1,5 +1,5 @@
 <template>
-  <div class="card card-1">
+  <div class="card card-1" :class="{'green': this.green}">
     <h3>
       1 title
     </h3>
@@ -22,6 +22,7 @@ export default {
   components: {
 
   },
+  props: ['green'],
   data(){
 
   }
@@ -30,7 +31,14 @@ export default {
 
 <style>
   .card{
-    padding: 16px
+    padding: 16px;
+    border-radius: 16px;
+    background: #FFF;
+    box-shadow: 0px 4px 20px 0px rgba(0, 0, 0, 0.15);
+    margin-top: 15px;
+    margin-left: 16px;
+    margin-right: 16px;
+    margin-bottom: 32px;
   }
   .card>img, .card>div{
     margin-top: 16px;
@@ -43,5 +51,8 @@ export default {
     font-style: normal;
     font-weight: 400;
     line-height: 140%;
+  }
+  .green{
+    background: #D3FDE9;
   }
 </style>

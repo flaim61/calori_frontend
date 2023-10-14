@@ -1,16 +1,6 @@
 <template>
   <section class="main-block">
-    <header>
-      <div class="menu-item">
-        <img src="@/assets/img/icon/burger.svg" alt="">
-      </div>
-      <div class="app-title">
-        Calori
-      </div>
-      <div class="language-item">
-        En
-      </div>
-    </header>
+    <Header />
     <h1>
       <span class="green-gradient">Helpoin</span>,
       herkullisin ja luotettavin
@@ -23,16 +13,23 @@
       Individual plan
     </div>
   </section>
+  <h3 class="block-title">
+    How it works?
+  </h3>
+  <Card />
+  <Card green='true'/>
   <Card />
 </template>
 
 <script>
-import Card from "@/components/Blocks/Card.vue"
+import Card from "@/components/Blocks/Card.vue";
+import Header from "@/components/Header.vue";
 
 export default {
   name: "HomeView",
   components: {
-    Card
+    Card,
+    Header
   },
   data(){
 
@@ -41,5 +38,13 @@ export default {
 </script>
 
 <style>
-
+  .main-block{
+    margin-bottom: 32px;
+  }
+  .block-title{
+    text-align: center;
+    margin-bottom: 32px;
+    font-size: 24px;
+    font-weight: 400;
+  }
 </style>
