@@ -52,7 +52,7 @@ export default {
   .mobile-menu{
     width: 100vw;
     height: 100vh;
-    position: absolute;
+    position: fixed;
     background: #fff;
     left: 0;
     z-index: 500;

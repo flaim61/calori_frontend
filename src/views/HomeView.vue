@@ -9,7 +9,7 @@
     <p>
       Lorem ipsum dolor sit amet consectetur. Dictumst diam faucibus faucibus egestas. Praesent morbi et sit ipsum felis odio mus nunc ultricies.
     </p>
-    <div class="main-button">
+    <div class="main-button" @click='this.$router.push("/quiz")'>
       Individual plan
     </div>
   </section>
@@ -40,6 +40,7 @@ export default {
 <style>
   .main-block{
     margin-bottom: 32px;
+    cursor: pointer;
   }
   .block-title{
     text-align: center;
