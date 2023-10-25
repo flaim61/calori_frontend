@@ -1,0 +1,111 @@
+<template>
+  <div class="profile-header-wrapper">
+    <div class="profile-header d-flex justify-content-between">
+      <h3>
+        Personal profile
+      </h3>
+      <div class="">
+        <img src="@/assets/img/icon/settings.svg" alt="">
+      </div>
+    </div>
+    <div class="profile_tabs d-flex">
+      <div class="profile_tabs_item" :class="{'active' : this.tabs.plan}" @click='this.setActive("plan")'>
+        My plan
+      </div>
+      <!--<div class="profile_tabs_item" :class="{'active' : this.tabs.coach}" @click='this.setActive("coach")'>
+        Coach
+      </div>
+      <div class="profile_tabs_item" :class="{'active' : this.tabs.referral}" @click='this.setActive("referral")'>
+        Referral
+      </div>-->
+      <div class="profile_tabs_item" :class="{'active' : this.tabs.delivery}" @click='this.setActive("delivery")'>
+        Delivery
+      </div>
+      <div class="profile_tabs_item" :class="{'active' : this.tabs.subscription}" @click='this.setActive("subscription")'>
+        Subscription
+      </div>
+    </div>
+  </div>
+  <div class="profile">
+    <div class="profile_content">
+      <Plan v-if='this.tabs.plan'/>
+      <Delivery v-if='this.tabs.delivery'/>
+    </div>
+  </div>
+</template>
+
+<script>
+import Plan from '@/components/Profile/Plan.vue';
+import Delivery from '@/components/Profile/Delivery.vue';
+
+export default {
+  name: "ProfileView",
+  components: {
+    Plan,
+    Delivery,
+  },
+  data(){
+    return {
+      tabs: {
+        plan: true,
+        coach: false,
+        referral: false,
+        delivery: false,
+        subscription: false,
+        referral: false,
+      },
+    }
+  },
+  methods: {
+    setActive(name){
+      for (let property in this.tabs) {
+        this.tabs[property] = false;
+      }
+
+      this.tabs[name] = true;
+    },
+  }
+}
+</script>
+
+<style lang="css" scoped>
+
+  .profile_tabs::-webkit-scrollbar {
+    width: 0;
+  }
+  .profile{
+    background: var(--Bg, #F0F5F8);
+  }
+  .profile-header-wrapper{
+    padding: 10px;
+    padding-bottom: 0;
+    background-color: white;
+  }
+  .profile{
+    padding: 10px;
+    min-height: 100vh;
+  }
+  .profile_tabs_item{
+    padding: 16px;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    background: var(--Grey, #92979B);
+    color: var(--White, #FFF);
+    font-family: Inter;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 140%; /* 16.8px */
+    white-space: nowrap;
+    margin-right: 8px;
+  }
+  .profile_tabs_item.active{
+    border-radius: 10px;
+    background: var(--Accent, #00B467);
+  }
+  .profile_tabs{
+    overflow-x: auto;
+    margin-bottom: 10px;
+  }
+</style>

@@ -10,7 +10,7 @@
         </div>
       </div>
       <div class="menu-content">
-        <a href="#">Link 1</a>
+        <a href="#" @click='this.$router.push("login")'>Sign In</a>
         <a href="#">Link 2</a>
         <a href="#">Link 3</a>
         <a href="#">Link 4</a>
@@ -91,14 +91,5 @@ export default {
   .menu-content{
     display: flex;
     flex-direction: column;
-  }
-  .v-enter-active,
-  .v-leave-active {
-    transition: opacity 0.3s ease;
-  }
-
-  .v-enter-from,
-  .v-leave-to {
-    opacity: 0;
   }
 </style>

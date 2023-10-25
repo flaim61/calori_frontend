@@ -294,25 +294,6 @@ export default {
   .button + .button{
     margin-left: 10px
   }
-  .button{
-    border-radius: 16px;
-    background: #303030;
-    display: flex;
-    height: 60px;
-    padding: 0px 16px;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
-  }
-  .button>div{
-    color: #FFF;
-    text-align: center;
-    font-family: Poppins;
-    font-size: 12.203px;
-    font-style: normal;
-    font-weight: 500;
-    line-height: normal;
-  }
   .button_section{
     position: fixed;
     bottom: 21px;

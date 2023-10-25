@@ -9,30 +9,61 @@
     <p>
       Lorem ipsum dolor sit amet consectetur. Dictumst diam faucibus faucibus egestas. Praesent morbi et sit ipsum felis odio mus nunc ultricies.
     </p>
-    <div class="main-button" @click='this.$router.push("/quiz")'>
-      Individual plan
-    </div>
+    <Transition>
+      <div id='main-button' v-show='this.showButton' class="main-button" @click='this.$router.push("/quiz")'>
+        Individual plan
+      </div>
+    </Transition>
   </section>
   <h3 class="block-title">
     How it works?
   </h3>
   <Card />
   <Card green='true'/>
-  <Card />
+  <Card/>
+  <List />
+  <ListGrid />
+  <Review id='block'/>
+  <Review2 />
+  <Footer />
 </template>
 
 <script>
 import Card from "@/components/Blocks/Card.vue";
 import Header from "@/components/Header.vue";
+import List from "@/components/Blocks/List.vue";
+import ListGrid from "@/components/Blocks/ListGrid.vue";
+import Review from "@/components/Blocks/Review.vue";
+import Review2 from "@/components/Blocks/Review2.vue";
+import Footer from "@/components/Footer.vue";
 
 export default {
   name: "HomeView",
   components: {
     Card,
-    Header
+    Header,
+    List,
+    ListGrid,
+    Review,
+    Review2,
+    Footer,
   },
   data(){
-
+    return {
+      showButton: true,
+      targetBlockId: "block",
+    }
+  },
+  created: function() {
+      window.addEventListener('scroll', this.handleScroll);
+  },
+  methods: {
+      handleScroll: function() {
+          var targetBlock = document.getElementById(this.targetBlockId);
+          var targetBlockHeight = targetBlock.offsetHeight;
+          var scrollPosition = window.scrollY;
+          this.showButton = scrollPosition <= targetBlock.getBoundingClientRect().y;
+      }
   }
 }
 </script>
