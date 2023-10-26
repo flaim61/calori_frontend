@@ -72,7 +72,7 @@ body{
 
 .main-block{
   padding: 0px 16px;
-  background-image: url(./img/background/background_main.jpeg);
+  background-color: grey;
   height: 100vh;
   background-repeat: no-repeat;
   background-size: cover;
@@ -167,6 +167,7 @@ p{
   left: 3.5%;
   width: 93%;
   z-index: 500;
+  max-width: 500px;
 }
 
 .card{
@@ -178,6 +179,9 @@ p{
   margin-left: 16px;
   margin-right: 16px;
   margin-bottom: 32px;
+  max-width: 600px;
+  margin-left: auto !important;
+  margin-right: auto !important;
 }
 
 
@@ -207,4 +211,8 @@ p{
   margin-top: 0;
   box-shadow: none;
   margin-bottom: 16px;
+}
+
+.button, .quiz_header_img, .profile_tabs_item{
+  cursor: pointer;
 }

@@ -26,7 +26,7 @@
         <div class="content_input_section">
           <input type="number" v-model='this.application.weight' :class="{ 'error': this.errors.weight }" >
         </div>
-        <p>
+        <p class="mb-0">
           Your personal trainer will monitor you throughout the process and make changes as necessary. At your pace.
         </p>
       </div>
@@ -300,6 +300,7 @@ export default {
     display: flex;
     justify-content: space-between;
     width: calc(100vw - 20px);
+    max-width: 600px;
   }
   .content_section{
     height: calc(100vh - 180px);
@@ -394,5 +395,10 @@ export default {
     font-style: normal;
     font-weight: 500;
     line-height: normal;
+  }
+  .quiz{
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
   }
 </style>

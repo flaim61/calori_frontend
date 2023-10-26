@@ -16,7 +16,7 @@
         </h2>
       </template>
     </div>
-    <div class="login-section">
+    <div class="card login-section">
       <div class="input-section">
         <label for="email">Email</label>
         <input type="text" id='email' placeholder="Your e-mail" autocomplete="off">
@@ -57,7 +57,7 @@ export default {
 </script>
 
 <style>
-  
+
   .login-header{
     padding: 0 16px;
   }
@@ -78,16 +78,14 @@ export default {
     border-radius: 10px;
     background: var(--White, #FFF);
     padding: 16px;
-    padding-bottom: 5vh;
+    margin-bottom: 5vh;
+    margin-bottom: 20vh;
   }
   .login-view{
     background-color: #E4E9EF;
     height: 100vh;
     width: 100vw;
     padding: 20px 10px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
     box-sizing: border-box;
   }
   h2{
