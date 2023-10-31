@@ -86,7 +86,7 @@ export default {
     min-height: 100vh;
   }
   .profile_tabs_item{
-    padding: 16px;
+    padding: 12px;
     justify-content: center;
     align-items: center;
     border-radius: 10px;

@@ -8,6 +8,10 @@
         <img v-if='li.img == 4' src="@/assets/img/icon/4.svg" alt="">
         <img v-if='li.img == 5' src="@/assets/img/icon/5.svg" alt="">
         <img v-if='li.img == 6' src="@/assets/img/icon/6.svg" alt="">
+        <img v-if='li.img == 7' src="@/assets/img/icon/7.svg" alt="">
+        <img v-if='li.img == 8' src="@/assets/img/icon/8.svg" alt="">
+        <img v-if='li.img == 9' src="@/assets/img/icon/9.svg" alt="">
+        <img v-if='li.img == 10' src="@/assets/img/icon/10.svg" alt="">
       </div>
       <div class="list-text">
         {{ li.text }}

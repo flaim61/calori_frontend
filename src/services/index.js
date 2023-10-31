@@ -21,3 +21,7 @@ export const createApplication = async (data) => {
 export const updateApplication = async (data) => {
     return await $api.put('/api/application', data);
 }
+
+export const login = async (data) => {
+    return await $api.post('/api/auth/login', data);
+}

@@ -2,6 +2,33 @@ body{
   margin: 0 auto;
 }
 
+.quiz-button{
+  border-radius: 14px;
+  background: #50D997;
+  color: #fff;
+  font-family: Poppins;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  text-decoration: none;
+  display: inline-block;
+  text-align: center;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  bottom: 18px;
+  z-index: 500;
+  max-width: 500px;
+  width: 100%;
+  margin-top: 47px;
+}
+
+html::-webkit-scrollbar
+  width: 0 !important
+  height: 0
+  display: none !important
+  background: transparent
+
 .input-section>label{
   margin-bottom: 8px;
   color: var(--Black, #2C2D31);
@@ -215,4 +242,47 @@ p{
 
 .button, .quiz_header_img, .profile_tabs_item{
   cursor: pointer;
+}
+
+.slick-dots li.slick-active button:before {
+    opacity: .75;
+    color: #00B467;
+}
+
+.slick-dots li button:before {
+    font-family: 'slick';
+    font-size: 11px;
+    line-height: 20px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 20px;
+    height: 20px;
+    content: '•';
+    text-align: center;
+    opacity: .25;
+    color: black;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.slick-dots {
+    position: absolute;
+    bottom: -35px;
+    display: block;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    text-align: center;
+}
+
+@media screen and (min-width: 700px) {
+  h1{
+    font-size: 90px !important;
+  }
+  .main-block>p{
+    margin-top: 30px !important;
+    font-size: 40px !important;
+  }
 }

@@ -16,4 +16,8 @@ export default {
   target_weight_min_error: "Target weight should not be less than the minimum recommended!",
   recommended_weight: "BMI recommend your ideal weight is",
   edit_information: "Edit information",
+  reviews_block_title: "Our beloved customers",
+  reviews_block_text: "Our first group grew to +70 happy customers. Here’s what some of them say:",
+  why_calori_block_title: "Why Calori?",
+  why_calori_block_text: "Say goodbye to the old ways that never worked for you.",
 }

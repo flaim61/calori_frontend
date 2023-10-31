@@ -19,11 +19,11 @@
     <div class="card login-section">
       <div class="input-section">
         <label for="email">Email</label>
-        <input type="text" id='email' placeholder="Your e-mail" autocomplete="off">
+        <input type="text" v-model='this.email' id='email' placeholder="Your e-mail" autocomplete="off">
       </div>
       <div class="input-section" v-if='!this.forgotPass' :class='{ "error": this.loginError }'>
         <label for="password">{{ this.$locales('password') }}</label>
-        <input type="password" id='password' placeholder="Your password" autocomplete="off">
+        <input type="password" id='password' v-model='this.password' placeholder="Your password" autocomplete="off">
         <span>{{ this.$locales('error_not_correct_login_or_password') }}</span>
       </div>
       <a class="forgot" href="#" v-if='!this.forgotPass' @click='this.forgotPass = true'>{{ this.$locales('forgot_password') }}</a>
@@ -40,17 +40,30 @@
 </template>
 
 <script>
+import { login } from "@/services/index.js"
+
 export default {
   name: "LoginView",
   data(){
     return {
       forgotPass: false,
-      loginError: true,
+      loginError: false,
     }
   },
   methods: {
-    login(){
-      this.$router.push('profile');
+    async login(){
+      try {
+        const response = await login({
+          email: this.email,
+          password: this.password
+        });
+
+        console.log(response);
+        //this.$router.push('profile');
+      } catch (e) {
+        console.log(e)
+        this.loginError = true;
+      }
     }
   }
 }

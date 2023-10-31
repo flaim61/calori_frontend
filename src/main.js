@@ -8,6 +8,7 @@ import store from './store/store.js';
 import VueAxios from 'vue-axios'
 import VueCookies from 'vue3-cookies'
 import VueSweetalert2 from 'vue-sweetalert2';
+import 'sweetalert2/dist/sweetalert2.min.css';
 import locales from '@/locales/locales.js';
 
 const app = createApp(App)
