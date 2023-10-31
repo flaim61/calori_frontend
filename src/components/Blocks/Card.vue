@@ -1,17 +1,13 @@
 <template>
   <div class="card card-1" :class="{'green': this.green}">
     <h3>
-      1 title
+      {{this.title}}
     </h3>
-    <img src="@/assets/img/examples/1.jpeg" alt="">
+    <img v-if='this.image == 1' src="@/assets/img/background/1.jpg" alt="">
+    <img v-if='this.image == 2' src="@/assets/img/background/2.jpg" alt="">
+    <img v-if='this.image == 3' src="@/assets/img/background/3.jpg" alt="">
     <p>
-      Lorem ipsum dolor sit amet consectetur. Dictumst diam faucibus faucibus egestas.
-    </p>
-    <div>
-      Date
-    </div>
-    <p>
-      Lorem ipsum dolor sit amet consectetur.
+      {{this.text}}
     </p>
   </div>
 </template>
@@ -22,11 +18,13 @@ export default {
   components: {
 
   },
-  props: ['green'],
+  props: ['green', 'title', 'image', 'text'],
   data(){
     return {
 
     }
+  },
+  methods: {
   }
 }
 </script>

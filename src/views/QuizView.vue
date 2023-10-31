@@ -7,11 +7,11 @@
         Select your gender
       </div>
       <div class="button_section">
-        <div class="button" @click='this.application.gender = "male"; this.step++ '>
+        <div class="button" @click='this.application.gender = 0; this.step++ '>
           <div>Male</div>
           <img src="@/assets/img/icon/button_arrow.svg">
         </div>
-        <div class="button" @click='this.application.gender = "female"; this.step++ '>
+        <div class="button" @click='this.application.gender = 1; this.step++ '>
           <div>Female</div>
           <img src="@/assets/img/icon/button_arrow.svg">
         </div>
@@ -23,11 +23,11 @@
         <div class="title">
           Write your weight
         </div>
-        <div class="content_input_section">
-          <input type="number" v-model='this.application.weight' :class="{ 'error': this.errors.weight }" >
+        <div class="content_input_section" :class="{ 'error': this.errors.weight }">
+          <input type="number" v-model='this.application.weight'  >
         </div>
         <p class="mb-0">
-          Your personal trainer will monitor you throughout the process and make changes as necessary. At your pace.
+          Your personal trainer will monitor you throughout the process and make the necessary changes. At your pace.
         </p>
       </div>
       <div class="button_section button_section_one_button">
@@ -43,9 +43,12 @@
         <div class="title">
           Write your height
         </div>
-        <div class="content_input_section">
-          <input type="number" v-model='this.application.height' :class="{ 'error': this.errors.height }" >
+        <div class="content_input_section" :class="{ 'error': this.errors.height }" >
+          <input type="number" v-model='this.application.height' >
         </div>
+        <p class="mb-0">
+          Your personal trainer will monitor you throughout the process and make the necessary changes. At your pace.
+        </p>
       </div>
       <div class="button_section button_section_one_button">
         <div class="button" @click='nextStep'>
@@ -60,8 +63,8 @@
         <div class="title">
           How old are you?
         </div>
-        <div class="content_input_section">
-          <input type="number" v-model='this.application.age' :class="{ 'error': this.errors.age }" >
+        <div class="content_input_section" :class="{ 'error': this.errors.age }">
+          <input type="number" v-model='this.application.age'  >
         </div>
       </div>
       <div class="button_section button_section_one_button">
@@ -100,13 +103,13 @@
         <div class="title">
           What is your goal weight?
         </div>
-        <div class="content_input_section">
-          <div class="content_input_section">
-            <input type="number" v-model='this.application.goal' :class="{ 'error': this.errors.goal }" >
-          </div>
+        <div class="content_input_section" :class="{ 'error' : this.errors.goal }">
+          <label for="">Goal Weight:</label>
+          <input type="email" v-model='this.application.goal' >
+          <span> {{ this.$locales('target_weight_min_error') }}</span>
         </div>
         <div class="title">
-           BMI recommend your ideal weight is 60-70 kg.
+           {{ this.$locales('recommended_weight') }} {{this.calculated_weight.minWeight}}-{{this.calculated_weight.maxWeight}} kg.
         </div>
       </div>
       <div class="button_section button_section_one_button">
@@ -189,18 +192,23 @@
             <label for="">Allergy</label>
             <input type="text" v-model='this.application.another_allergy'>
           </div>
-          <div class="content_input_section">
+          <div class="content_input_section" :class="{ 'error' : this.errors.email }">
             <label for="">Email</label>
-            <input type="email" v-model='this.application.email' :class="{ 'error': this.errors.email }" >
+            <input type="email" v-model='this.application.email' >
+            <span>This user is already in the system! Check your email</span>
           </div>
         </div>
       </div>
       <div class="button_section">
-        <div class="button" @click='sendApplication'>
+        <div class="button" @click='this.createApplication()'>
           <div>Get a meal plan</div>
           <img src="@/assets/img/icon/button_arrow.svg">
         </div>
       </div>
+    </div>
+
+    <div class="step" v-if='this.step == 9'>
+      <CheckBlock :plan='this.plan' :returnQuizBegin='returnQuizBegin' :createdApplication='this.createdApplication'/>
     </div>
 
   </div>
@@ -208,17 +216,25 @@
 
 <script>
 import QuizHeader from "@/components/Quiz/QuizHeader.vue"
+import CheckBlock from "@/components/Quiz/CheckBlock.vue"
+import {
+  getApplicationWeight,
+  createApplication,
+  updateApplication
+}
+from "@/services/index.js"
 
 export default {
   name: "Quiz",
   components: {
-    QuizHeader
+    QuizHeader,
+    CheckBlock,
   },
   data(){
     return {
       step: 1,
       application: {
-        gender: 'male',
+        gender: 0,
         weight: 50,
         height: 170,
         age: 20,
@@ -228,16 +244,75 @@ export default {
         allergies: [],
         another_allergy: null,
       },
+      createdApplication: null,
+      calculated_weight: {
+        minWeight: 0,
+        minWeight: 0,
+      },
       errors: {
         weight: false,
         height: false,
         age: false,
         goal: false,
-        email: false,
-      }
+        email: true,
+      },
+      plan: {
+        date_end: "30.4.2024",
+      },
     }
   },
   methods:{
+    returnQuizBegin(){
+      console.log('test')
+      this.step = 1;
+    },
+    async getApplicationWeight(){
+      const response = await getApplicationWeight({
+        gender: this.application.gender,
+        weight: this.application.weight,
+        height: this.application.height,
+        age: this.application.age,
+        activity: this.application.activity
+      });
+
+      this.calculated_weight = response.data;
+    },
+    async createApplication(){
+      if (this.step == 8 && this.application.email == "") {
+        this.errors.email = true;
+        return
+      }
+
+      try {
+        const response = await createApplication({
+          gender: this.application.gender,
+          weight: this.application.weight,
+          height: this.application.height,
+          age: this.application.age,
+          activity: this.application.activity,
+          goal: this.application.goal,
+          email: this.application.email,
+          allergies: this.application.allergies,
+          anotherAllergy: this.application.another_allergy
+        });
+
+        this.$swal({
+          position: 'top',
+          icon: 'success',
+          toast: true,
+          title: 'Your login and password have been sent to your email',
+          showConfirmButton: false,
+          timer: 1500
+        })
+
+        this.createdApplication = response.data.application;
+        this.$cookies.set("auth_token", response.data.token);
+
+        this.step = 9;
+      } catch (e) {
+        this.errors.email = true;
+      }
+    },
     goBack(){
       if (this.step === 1) {
         this.$router.go(-1);
@@ -245,15 +320,7 @@ export default {
         this.step = Math.ceil(this.step-1);
       }
     },
-    sendApplication(){
-      if (this.application.email == "") {
-        this.errors.email = true;
-        return;
-      }
-
-      console.log(this.application);
-    },
-    nextStep(){
+    async nextStep(){
       if (this.step == 2 && this.application.weight <= 0) {
         this.errors.weight = true;
         return
@@ -274,20 +341,100 @@ export default {
         return
       }
 
+      if (this.step == 6 && this.application.goal < this.calculated_weight.minWeight) {
+        this.errors.goal = true;
+        return
+      }
+
       for (let key in this.errors) {
         this.errors[key] = false;
       }
 
       this.step++;
+    },
+    sendApplication(){
+      if (this.step == 8 && this.application.email == "") {
+        this.errors.email = true;
+        return
+      }
+
+      this.step = 9;
+    },
+    async updateApplication(){
+      try {
+        const response = await updateApplication({
+          gender: this.application.gender,
+          weight: this.application.weight,
+          height: this.application.height,
+          age: this.application.age,
+          activity: this.application.activity,
+          goal: this.application.goal,
+          email: this.application.email,
+          allergies: this.application.allergies,
+          anotherAllergy: this.application.another_allergy
+        });
+
+        this.$swal({
+          position: 'top',
+          icon: 'success',
+          toast: true,
+          title: 'Your login and password have been sent to your email',
+          showConfirmButton: false,
+          timer: 1500
+        })
+        this.createdApplication = response.data.application;
+
+        console.log(this.createdApplication);
+        this.step = 9;
+      } catch (e){
+        console.log(e)
+      }
     }
   },
   watch: {
+    async step(){
+      if (this.step == 8 && this.$cookies.get('auth_token') != null && this.$cookies.get('auth_token') != "") {
+        await this.updateApplication()
+      }
+    },
+    application: {
+      async handler(newValue, oldValue) {
+        this.errors.email = false;
+        this.errors.goal = false;
 
+        if (newValue.height < 0) {
+          this.application.height = 0
+        }
+
+        if (newValue.weight < 0) {
+          this.application.weight = 0
+        }
+
+        if (newValue.goal < 0) {
+          this.application.goal = 0;
+        }
+
+        if (newValue.age < 0) {
+          this.application.age = 0
+        }
+
+        if (newValue.height &&
+            newValue.weight &&
+            newValue.goal &&
+            newValue.age) {
+          await this.getApplicationWeight()
+        }
+      },
+      deep: true
+    }
   }
 }
 </script>
 
 <style scoped>
+  .error>label{
+    color: #C9324B;
+  }
   .content_input_section>input[type='email']{
     width: auto;
   }
@@ -300,7 +447,7 @@ export default {
     display: flex;
     justify-content: space-between;
     width: calc(100vw - 20px);
-    max-width: 600px;
+    max-width: 580px;
   }
   .content_section{
     height: calc(100vh - 180px);
@@ -318,12 +465,10 @@ export default {
   }
   .content_input_section{
     margin-top: 24px;
-    margin-bottom: 24px;
+    margin-bottom: 8px;
     display: flex;
     flex-direction: column;
     text-align: center;
-    padding-left: 10%;
-    padding-right: 10%;
   }
   .content_input_section + .content_input_section{
     margin-top: 0px;
@@ -331,11 +476,13 @@ export default {
   .content_input_section>label {
     text-align: left;
   }
+  .content_input_section>span{
+    display: none;
+  }
   .content_input_section>input{
     height: 40px;
     padding: 0px 16px;
-    border-radius: 8px;
-    border: 1px solid var(--Title, #0A1221);
+    border: none;
     color: var(--Black, #232323);
     text-align: center;
     font-family: Poppins;
@@ -343,17 +490,33 @@ export default {
     font-style: normal;
     font-weight: 500;
     line-height: normal;
+    border-radius: 8px;
+    background: var(--Bg-block, #E4E9EF);
   }
   .content_section>p{
-    color: #A5A5A5;
-    font-family: Poppins;
+    color: var(--Grey, #92979B);
+    /* Text h3 */
+    font-family: Inter;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 140%;
+    text-align: left;
+  }
+  .error>span{
+    display: block;
+    text-align: left;
+    color: var(--Error, #C9324B);
+    /* Text h4 */
+    font-family: Inter;
     font-size: 10px;
     font-style: normal;
     font-weight: 400;
-    line-height: normal;
+    line-height: 140%;
+    margin-top: 8px;
   }
-  .error{
-    border: 1px solid red !important;
+  .error>input{
+    border: 1px solid #C9324B;
   }
   .button_in_content{
     border-radius: 16px;
@@ -400,5 +563,6 @@ export default {
     max-width: 600px;
     margin-left: auto;
     margin-right: auto;
+    min-height: 100vh;
   }
 </style>

@@ -3,15 +3,15 @@
     <div class="login-header">
       <template v-if='!this.forgotPass'>
         <h2>
-          Welcome to Calori
+          {{ this.$locales('login_hellow_title') }}
         </h2>
-        <p>hehe</p>
+        <p>{{ this.$locales('login_hellow_text') }}</p>
       </template>
       <template v-else>
         <h2 class='d-flex justify-content-between'>
-          <span>Reset password</span>
+          <span> {{ this.$locales('reset_password') }} </span>
           <div class="back-button" @click='this.forgotPass = false'>
-            Log in Back
+            {{ this.$locales('login_back') }}
           </div>
         </h2>
       </template>
@@ -22,17 +22,17 @@
         <input type="text" id='email' placeholder="Your e-mail" autocomplete="off">
       </div>
       <div class="input-section" v-if='!this.forgotPass' :class='{ "error": this.loginError }'>
-        <label for="password">Password</label>
+        <label for="password">{{ this.$locales('password') }}</label>
         <input type="password" id='password' placeholder="Your password" autocomplete="off">
-        <span>Description</span>
+        <span>{{ this.$locales('error_not_correct_login_or_password') }}</span>
       </div>
-      <a class="forgot" href="#" v-if='!this.forgotPass' @click='this.forgotPass = true'>Forgot password?</a>
+      <a class="forgot" href="#" v-if='!this.forgotPass' @click='this.forgotPass = true'>{{ this.$locales('forgot_password') }}</a>
       <div class="button" @click='login' v-if='!this.forgotPass'>
         <div>Login</div>
         <img src="@/assets/img/icon/button_arrow.svg">
       </div>
       <div class="button" @click='resetPass' v-else>
-        <div>Send new password on Email</div>
+        <div>{{ this.$locales('send_new_password') }}</div>
         <img src="@/assets/img/icon/button_arrow.svg">
       </div>
     </div>

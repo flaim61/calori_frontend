@@ -10,11 +10,7 @@
         </div>
       </div>
       <div class="menu-content">
-        <a href="#" @click='this.$router.push("login")'>Sign In</a>
-        <a href="#">Link 2</a>
-        <a href="#">Link 3</a>
-        <a href="#">Link 4</a>
-        <a href="#">Link 5</a>
+        <a href="#" @click='this.$router.push("login")'> {{ this.$locales('sign_in') }} </a>
       </div>
     </div>
   </Transition>
@@ -26,7 +22,15 @@
       Calori
     </div>
     <div class="language-item">
-      En
+      <div class="d-flex">
+        <div class="mr-3">
+          <a href="#" class="text-dark" @click="setLocales('en')">En</a>
+        </div>
+        <span>|</span>
+        <div class="ml-3">
+          <a href="#" class="text-dark" @click="setLocales('fi')">Fi</a>
+        </div>
+      </div>
     </div>
   </header>
 </template>
@@ -41,11 +45,26 @@ export default {
     return {
       mobile_menu_showed: false,
     };
+  },
+  methods: {
+    setLocales(language){
+      localStorage.setItem('locale', language);
+      location.reload()
+    }
   }
 }
 </script>
 
 <style>
+  .language-item-block{
+    position: absolute;
+    margin-top: 88px;
+    margin-left: -105px;
+    background: white;
+    padding: 20px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
   .menu-item{
     cursor: pointer;
   }
