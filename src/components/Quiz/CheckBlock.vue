@@ -221,6 +221,6 @@ export default {
     display: flex;
     justify-content: space-between;
     width: calc(100vw - 20px);
-    max-width: 600px;
+    max-width: 580px;
   }
 </style>

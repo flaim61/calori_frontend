@@ -10,7 +10,7 @@
         </div>
       </div>
       <div class="menu-content">
-        <a href="#" @click='this.$router.push("login")'> {{ this.$locales('sign_in') }} </a>
+        <a href="/login" > {{ this.$locales('sign_in') }} </a>
       </div>
     </div>
   </Transition>

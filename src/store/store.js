@@ -6,10 +6,12 @@ import Cookies from 'js-cookie'
 const store = createStore({
   state () {
     return {
-      user: null,
-      urlsWithoutAuth: [
-        'Login',
-        'Register',
+      auth: false,
+      onlyAuthorize: [
+        'profile',
+      ],
+      onlyNotAuthorize: [
+        'login'
       ],
     }
   },
@@ -17,6 +19,9 @@ const store = createStore({
     setUser(state, user){
       state.user = user;
     },
+    setAuth(state, auth){
+      state.auth = auth;
+    }
   }
 })
 

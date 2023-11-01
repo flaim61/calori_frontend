@@ -57,9 +57,8 @@ export default {
           email: this.email,
           password: this.password
         });
-
-        console.log(response);
-        //this.$router.push('profile');
+        this.$cookies.set("auth_token", response.data.token);
+        this.$router.push('/profile');
       } catch (e) {
         console.log(e)
         this.loginError = true;
