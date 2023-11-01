@@ -2,25 +2,25 @@
   <div class="TabsSlider mb-5">
     <div class="tab_nav  pb-5 pt-5">
       <div class="tab_nav_item" :class='{"active":this.active == "mon"}' @click='this.setActive("mon")'>
-        Mon
+        {{ this.$locales('mon') }}
       </div>
       <div class="tab_nav_item" :class='{"active":this.active == "tue"}' @click='this.setActive("tue")'>
-        Tue
+        {{ this.$locales('tue') }}
       </div>
       <div class="tab_nav_item" :class='{"active":this.active == "wed"}' @click='this.setActive("wed")'>
-        Wed
+        {{ this.$locales('wed') }}
       </div>
       <div class="tab_nav_item" :class='{"active":this.active == "thu"}' @click='this.setActive("thu")'>
-        Thu
+        {{ this.$locales('thu') }}
       </div>
       <div class="tab_nav_item" :class='{"active":this.active == "fri"}' @click='this.setActive("fri")'>
-        Fri
+        {{ this.$locales('fri') }}
       </div>
       <div class="tab_nav_item" :class='{"active":this.active == "sat"}' @click='this.setActive("sat")'>
-        Sat
+        {{ this.$locales('sat') }}
       </div>
       <div class="tab_nav_item" :class='{"active":this.active == "sun"}' @click='this.setActive("sun")'>
-        Sun
+        {{ this.$locales('sun') }}
       </div>
     </div>
 

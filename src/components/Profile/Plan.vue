@@ -1,17 +1,42 @@
 <template lang="html">
   <div class="card-profile card"  v-if='this.personalPlan && this.application'>
     <div class="card-top d-flex">
-      <h2>Information</h2>
+      <h2> {{ this.$locales('information') }}</h2>
     </div>
     <div class="d-flex justify-content-between">
       <div class="">
         <ul>
-          <li>Gender: <span>{{ this.application == 0 ? "male" : "female" }}</span></li>
-          <li>Age: <span>{{ this.application.age }}</span></li>
-          <li>Weight: <span>{{ this.application.weight }}</span></li>
-          <li>Height: <span>{{ this.application.height }}</span></li>
-          <li>Activity: <span>{{ this.application.activityLevelId }}</span></li>
-          <li v-if='this.application.applicationAllergies.length'>Allergy:
+          <li>
+            {{ this.$locales('gender') }}:
+            <span>
+              {{ this.application == 0 ? "male" : "female" }}
+            </span>
+          </li>
+          <li>
+            {{ this.$locales('age') }}:
+            <span>
+              {{ this.application.age }}
+            </span>
+          </li>
+          <li>
+            {{ this.$locales('weight') }}:
+            <span>
+              {{ this.application.weight }}
+            </span>
+          </li>
+          <li>
+            {{ this.$locales('height') }}:
+            <span>
+              {{ this.application.height }}
+            </span>
+          </li>
+          <li>
+            {{ this.$locales('activity') }}:
+            <span>
+              {{ this.application.activityLevelId }}
+            </span>
+          </li>
+          <li v-if='this.application.applicationAllergies.length'>{{this.$locales('allergy')}}:
             <span v-for='allergy in this.application.applicationAllergies'>
               {{allergy}}
             </span>
@@ -19,15 +44,21 @@
         </ul>
       </div>
       <div class="d-flex flex-column text-center justify-content-center pr-3">
-        <span>Goal weight</span>
-        <span class="goal">{{ this.application.goal }}</span>
+        <span>
+          {{ this.$locales('goal_weight') }}
+        </span>
+        <span class="goal">
+          {{ this.application.goal }}
+        </span>
       </div>
     </div>
   </div>
 
   <div class="card-profile card"  v-if='this.personalPlan && this.application'>
     <div class="card-top d-flex justify-content-between">
-      <h2>Score</h2>
+      <h2>
+        {{ this.$locales('score') }}
+      </h2>
       <div class="score-id d-flex">
         Plan ID: {{ this.personalPlan.personalPlanId }}
       </div>
@@ -38,9 +69,27 @@
       </div>
       <div class="d-flex flex-column text-center justify-content-center pr-3">
         <ul>
-          <li><span>{{this.personalPlan.weightLost}} kg</span> I have lost</li>
-          <li><span>{{this.personalPlan.hoursSaved}} Hours</span> I have saved</li>
-          <li><span>{{this.personalPlan.daysToChangePlan}} Days</span> to change of plan</li>
+          <li>
+            <span>
+              {{this.personalPlan.weightLost}}
+              {{ this.$locales('kg') }}
+            </span>
+            I have lost
+          </li>
+          <li>
+            <span>
+              {{this.personalPlan.hoursSaved}}
+              {{ this.$locales('hours') }}
+            </span>
+            I have saved
+          </li>
+          <li>
+            <span>
+              {{this.personalPlan.daysToChangePlan}}
+              {{ this.$locales('days') }}
+            </span>
+            to change of plan
+          </li>
         </ul>
       </div>
     </div>
@@ -48,7 +97,9 @@
 
   <div class="card-profile card"  v-if='this.personalPlan && this.application'>
     <div class="card-top d-flex justify-content-between">
-      <h2>Currently plan</h2>
+      <h2>
+        {{ this.$locales('currently_plan') }}
+      </h2>
       <div class="data-plan d-flex">
         <span class="d-none">
           {{ startDate = new Date(this.personalPlan.startDate) }}
@@ -68,8 +119,7 @@
   </div>
 
   <p class="default-text">
-    The plan will change automatically,
-      based on weight loss
+    {{ this.$locales('plan_auto') }}
   </p>
 </template>
 

@@ -1,19 +1,19 @@
 <template lang="html">
   <p class="mb-4">
-    The plan will change automatically,
-    <br>based on weight loss
+    {{ this.$locales('plan_auto') }}
   </p>
   <h3>
-    Scheduled meetings:
+    {{ this.$locales('scheduled_meetings') }}
+
   </h3>
   <div class="card-profile card" v-for='(meet, index) in meetings' :key='meet.id'>
     <span class="coach-item">
       <span class="coach-item-header d-flex justify-content-between">
-        <span>Coach: {{meet.coach}}</span>
+        <span>{{this.$locales('coach')}}: {{meet.coach}}</span>
         <span class="date">{{meet.date}}</span>
       </span>
       <div class="btn w-100 border-5" @click='cancelMeet(meet.id)'>
-        <img src="@/assets/img/icon/11.svg" alt="">Cancel meeting
+        <img src="@/assets/img/icon/11.svg" alt="">{{ this.$locales('cancel_meeting') }}
       </div>
     </span>
   </div>

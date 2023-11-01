@@ -1,25 +1,29 @@
 <template lang="html">
   <div class="card card-profile">
     <h3 class="mb-4">
-      Language
+      {{ this.$locales('language') }}
     </h3>
     <div class="button text-white justify-content-center" @click="this.setLocales('en')">
-      English
+      {{ this.$locales('english') }}
     </div>
     <div class="grey button text-white justify-content-center mt-3" @click="this.setLocales('fi')">
-      Finland
+      {{ this.$locales('finland') }}
     </div>
   </div>
   <div class="card card-profile mt-4">
     <div class="input-section" :class="{'error' : this.errors.old_password}">
-      <label for="password">Old password</label>
-      <input type="password" v-model='this.old_password' placeholder="Your old password" autocomplete="off">
-      <span>Write your old password</span>
+      <label for="password">
+        {{ this.$locales('old_password') }}
+      </label>
+      <input type="password" v-model='this.old_password' :placeholder="this.$locales('your_old_password')" autocomplete="off">
+      <span>{{this.$locales('write_your_old_password')}}</span>
     </div>
     <div class="input-section" :class="{'error' : this.errors.new_password || this.errors.new_password_valid}">
-      <label for="password">New Password</label>
-      <input type="password" v-model='this.new_password' placeholder="Your new password" autocomplete="off">
-      <span v-if='this.errors.new_password'>Write your new password</span>
+      <label for="password">
+        {{ this.$locales('new_password') }}
+      </label>
+      <input type="password" v-model='this.new_password' :placeholder="this.$locales('your_new_password')" autocomplete="off">
+      <span v-if='this.errors.new_password'>{{this.$locales('write_your_new_password')}}</span>
       <span v-if='this.errors.new_password_valid'>
         * minimum 8 characters <br>
         * English small and capital letters<br>
@@ -28,7 +32,9 @@
       </span>
     </div>
     <div class="button" @click='this.changePassword()'>
-      <div>Change Password</div>
+      <div>
+        {{ this.$locales('change_password') }}
+      </div>
       <img src="@/assets/img/icon/button_arrow.svg">
     </div>
   </div>

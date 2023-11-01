@@ -8,61 +8,61 @@
 
   <div class="card-profile card" v-if='!this.changing'>
     <div class="card-top d-flex">
-      <h2>Information delivery</h2>
+      <h2> {{ this.$locales('information_delivery') }} </h2>
     </div>
     <div class="d-flex justify-content-between">
       <div class="">
         <ul>
-          <li>First name: <span>{{this.name}}</span></li>
-          <li>Second name: <span>{{this.lastname}}</span></li>
-          <li>Phone: <span>{{this.phone}}</span></li>
-          <li>E-mail: <span>{{this.email}}</span></li>
-          <li>City: <span>{{this.city}}</span></li>
-          <li>Address: <span>{{this.address}}</span></li>
-          <li>Post code: <span>{{this.post_code}}</span></li>
-          <li>Additional information: <span>{{this.info}}</span></li>
+          <li> {{this.$locales('first_name')}}: <span>{{this.name}}</span></li>
+          <li> {{this.$locales('second_name')}}: <span>{{this.lastname}}</span></li>
+          <li> {{this.$locales('phone')}}: <span>{{this.phone}}</span></li>
+          <li> {{this.$locales('email')}}: <span>{{this.email}}</span></li>
+          <li> {{this.$locales('city')}}: <span>{{this.city}}</span></li>
+          <li> {{this.$locales('address')}}: <span>{{this.address}}</span></li>
+          <li> {{this.$locales('post_code')}}: <span>{{this.post_code}}</span></li>
+          <li> {{this.$locales('additional_information')}}: <span>{{this.info}}</span></li>
         </ul>
       </div>
     </div>
     <div class="button grey-button d-flex justify-content-center text-white" @click='this.changing = true'>
-      <img src="@/assets/img/icon/edit-contained.svg" alt="" class="mr-3"> Edit information
+      <img src="@/assets/img/icon/edit-contained.svg" alt="" class="mr-3"> {{this.$locales('edit_information')}}
     </div>
   </div>
   <div class="card-profile card" v-else>
     <div class="input-section mb-3">
-      <label for="email">First name</label>
+      <label>{{this.$locales('first_name')}}</label>
       <input type="text" v-model='this.name'>
     </div>
     <div class="input-section mb-3">
-      <label for="email">Second name</label>
+      <label>{{this.$locales('second_name')}}></label>
       <input type="text" v-model='this.lastname'>
     </div>
     <div class="input-section mb-3">
-      <label for="email">Phone</label>
+      <label>{{this.$locales('phone')}}</label>
       <input type="text" v-model='this.phone'>
     </div>
     <div class="input-section mb-3">
-      <label for="email">E-mail</label>
+      <label>{{this.$locales('email')}}</label>
       <input type="text" v-model='this.email'>
     </div>
     <div class="input-section mb-3">
-      <label for="email">City</label>
+      <label>{{this.$locales('city')}}</label>
       <input type="text" v-model='this.city'>
     </div>
     <div class="input-section mb-3">
-      <label for="email">Address</label>
+      <label>{{this.$locales('address')}}</label>
       <input type="text" v-model='this.address'>
     </div>
     <div class="input-section mb-3">
-      <label for="email">Post code</label>
+      <label>{{this.$locales('post_code')}}</label>
       <input type="text"  v-model='this.post_code'>
     </div>
     <div class="input-section mb-3">
-      <label for="email">Additional information</label>
+      <label>{{this.$locales('additional_information')}}</label>
       <input type="text" v-model='this.info'>
     </div>
     <div class="button text-white text-center" @click='saveDeliveryInfo'>
-      Save delivery information
+      {{ this.$locales('saveDeliveryInfo') }}
     </div>
   </div>
 </template>

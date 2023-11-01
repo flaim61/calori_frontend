@@ -10,7 +10,7 @@
       <input type="text" v-model='this.message' id='message' placeholder="Your Message" autocomplete="off">
     </div>
     <div class="button" @click='sendMessage'>
-      <div>Contact us</div>
+      <div>{{ this.$locales('contact_us')}} </div>
       <img src="@/assets/img/icon/button_arrow.svg">
     </div>
   </div>
