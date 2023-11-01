@@ -9,7 +9,9 @@ import { checkAuth } from '@/services/index.js';
 export default {
   name: "App",
   data(){
-
+    return {
+      
+    }
   },
   async created(){
     await this.checkAuth();

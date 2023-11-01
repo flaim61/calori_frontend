@@ -31,7 +31,7 @@
         <div>Login</div>
         <img src="@/assets/img/icon/button_arrow.svg">
       </div>
-      <div class="button" @click='resetPass' v-else>
+      <div class="button" @click='resetPassword' v-else>
         <div>{{ this.$locales('send_new_password') }}</div>
         <img src="@/assets/img/icon/button_arrow.svg">
       </div>
@@ -40,7 +40,7 @@
 </template>
 
 <script>
-import { login } from "@/services/index.js"
+import { login, resetPassword } from "@/services/index.js"
 
 export default {
   name: "LoginView",
@@ -59,6 +59,27 @@ export default {
         });
         this.$cookies.set("auth_token", response.data.token);
         this.$router.push('/profile');
+      } catch (e) {
+        console.log(e)
+        this.loginError = true;
+      }
+    },
+    async resetPassword(){
+      try {
+        const response = await resetPassword({
+          email: this.email,
+        });
+
+        this.$swal({
+          position: 'top',
+          icon: 'success',
+          toast: true,
+          title: 'Your new login and password was send on your email!',
+          showConfirmButton: false,
+          timer: 1500
+        })
+
+        this.forgotPass = false;
       } catch (e) {
         console.log(e)
         this.loginError = true;

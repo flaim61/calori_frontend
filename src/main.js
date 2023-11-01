@@ -14,7 +14,6 @@ import locales from '@/locales/locales.js';
 const app = createApp(App)
 
 app.use(router)
-app.use(router)
 app.use(store)
 app.use(VueAxios, axios)
 app.use(VueCookies);

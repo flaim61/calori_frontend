@@ -1,5 +1,5 @@
 import axios from "axios"
-export const apiBase = "http://188.225.31.105";
+export const apiBase = "http://testcaloriapi.ru";
 import Cookies from 'js-cookie'
 
 const $api = axios.create({
@@ -12,6 +12,14 @@ const $api = axios.create({
 
 export const getApplicationWeight = async (data) => {
     return await $api.post('/api/application/weight', data);
+}
+
+export const getApplication = async () => {
+    return await $api.get('/api/application');
+}
+
+export const getPesonalPlan = async () => {
+    return await $api.get('/api/PersonalPlan');
 }
 
 export const createApplication = async (data) => {
@@ -28,4 +36,12 @@ export const login = async (data) => {
 
 export const checkAuth = async () => {
   return await $api.post('/api/auth/check', {});
+}
+
+export const resetPassword = async (data) => {
+  return await $api.post('/api/auth/password/reset', data);
+}
+
+export const changePassword = async (data) => {
+  return await $api.post('/api/auth/password/change', data)
 }

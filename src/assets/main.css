@@ -23,6 +23,10 @@ body{
   margin-top: 47px;
 }
 
+.grey{
+  background: var(--Grey, #92979B) !important;
+}
+
 html::-webkit-scrollbar
   width: 0 !important
   height: 0

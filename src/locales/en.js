@@ -20,4 +20,5 @@ export default {
   reviews_block_text: "Our first group grew to +70 happy customers. Here’s what some of them say:",
   why_calori_block_title: "Why Calori?",
   why_calori_block_text: "Say goodbye to the old ways that never worked for you.",
+  back_profile: "Back to personal profile",
 }

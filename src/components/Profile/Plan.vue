@@ -1,60 +1,67 @@
 <template lang="html">
-  <div class="card-profile card">
+  <div class="card-profile card"  v-if='this.personalPlan && this.application'>
     <div class="card-top d-flex">
       <h2>Information</h2>
     </div>
     <div class="d-flex justify-content-between">
       <div class="">
         <ul>
-          <li>Gender: <span>{{ this.user.gender }}</span></li>
-          <li>Age: <span>{{ this.user.age }}</span></li>
-          <li>Weight: <span>{{ this.user.weight }}</span></li>
-          <li>Height: <span>{{ this.user.height }}</span></li>
-          <li>Activity: <span>{{ this.user.activity }}</span></li>
-          <li>Allergy: <span>{{ this.user.allergy }}</span></li>
+          <li>Gender: <span>{{ this.application == 0 ? "male" : "female" }}</span></li>
+          <li>Age: <span>{{ this.application.age }}</span></li>
+          <li>Weight: <span>{{ this.application.weight }}</span></li>
+          <li>Height: <span>{{ this.application.height }}</span></li>
+          <li>Activity: <span>{{ this.application.activityLevelId }}</span></li>
+          <li v-if='this.application.applicationAllergies.length'>Allergy:
+            <span v-for='allergy in this.application.applicationAllergies'>
+              {{allergy}}
+            </span>
+          </li>
         </ul>
       </div>
       <div class="d-flex flex-column text-center justify-content-center pr-3">
         <span>Goal weight</span>
-        <span class="goal">{{ this.user.goal }}</span>
+        <span class="goal">{{ this.application.goal }}</span>
       </div>
     </div>
   </div>
 
-  <div class="card-profile card">
+  <div class="card-profile card"  v-if='this.personalPlan && this.application'>
     <div class="card-top d-flex justify-content-between">
       <h2>Score</h2>
       <div class="score-id d-flex">
-        Plan ID: 2437
+        Plan ID: {{ this.personalPlan.personalPlanId }}
       </div>
     </div>
     <div class="d-flex justify-content-between">
       <div class="">
-        <RingDiagram :medinspection="14"/>
+        <RingDiagram :medinspection="this.progressPercentage"/>
       </div>
       <div class="d-flex flex-column text-center justify-content-center pr-3">
         <ul>
-          <li><span>15 / 25 kg</span> I have lost</li>
-          <li><span>20 Hours</span> I have saved</li>
-          <li><span>14 Days</span> to change of plan</li>
+          <li><span>{{this.personalPlan.weightLost}} kg</span> I have lost</li>
+          <li><span>{{this.personalPlan.hoursSaved}} Hours</span> I have saved</li>
+          <li><span>{{this.personalPlan.daysToChangePlan}} Days</span> to change of plan</li>
         </ul>
       </div>
     </div>
   </div>
 
-  <div class="card-profile card">
+  <div class="card-profile card"  v-if='this.personalPlan && this.application'>
     <div class="card-top d-flex justify-content-between">
       <h2>Currently plan</h2>
       <div class="data-plan d-flex">
-        01.01.2023 - 05.02.2023
+        <span class="d-none">
+          {{ startDate = new Date(this.personalPlan.startDate) }}
+          {{ finishDate = new Date(this.personalPlan.finishDate) }}
+        </span>
+        {{startDate.getDate()}}.{{startDate.getMonth()+1}}.{{startDate.getFullYear()}} -
+        {{finishDate.getDate()}}.{{finishDate.getMonth()+1}}.{{finishDate.getFullYear()}}
       </div>
     </div>
     <div class="d-flex justify-content-between">
       <div class="d-flex flex-column justify-content-center pr-3">
         <ul>
-          <li><span>2500 kсal</span></li>
-          <li>5 meals per day</li>
-          <li>Protein 139, Fats 94, Carbohydrates 247</li>
+          <li><span>{{this.personalPlan.currentCaloriPlan}} kсal</span></li>
         </ul>
       </div>
     </div>
@@ -68,39 +75,47 @@
 
 <script>
 import RingDiagram from '@/components/Diagrams/RingDiagram.vue'
+import { getApplication, getPesonalPlan } from '@/services/index.js';
 
 export default {
   name: "Plan",
   components: {
     RingDiagram,
   },
-  created(){
-    this.planInfo = this.getPlanInfo();
-    this.user = this.getUser();
+  async created(){
+    this.personalPlan = await this.getPesonalPlan();
+    this.application = await this.getApplication();
+    /*this.personalPlan.startDate,
+    this.personalPlan.finishDate,*/
+    this.progressPercentage = this.calculatePercentage(
+      new Date('2022-04-03'),
+      new Date('2024-04-03')
+    );
   },
   data(){
     return {
-      planInfo: {},
-      user: {},
+      personalPlan: null,
+      application: null,
+      progressPercentage: 0,
     }
   },
   methods: {
-    getPlanInfo(){
-      return {
-
-      }
+    calculatePercentage(startDate, endDate) {
+      var currentDate = new Date();
+      var totalMilliseconds = endDate - startDate;
+      var elapsedMilliseconds = currentDate - startDate;
+      var percentage = (elapsedMilliseconds / totalMilliseconds) * 100;
+      return percentage.toFixed(2);
     },
-    getUser(){
-      return {
-        name: "name",
-        lastname: "lastname",
-        age: "age",
-        gender: "male",
-        height: 100,
-        activity: 1,
-        allergy: "hz",
-        goal: 58
-      }
+    async getPesonalPlan(){
+      const response = await getPesonalPlan();
+      console.log(response.data)
+      return response.data
+    },
+    async getApplication(){
+      const response = await getApplication();
+      console.log(response.data)
+      return response.data
     }
   }
 }

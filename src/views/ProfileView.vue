@@ -4,18 +4,25 @@
       <h3>
         Personal profile
       </h3>
-      <div class="">
+      <div class="" v-if='!this.settings' @click='this.settings = !this.settings'>
         <img src="@/assets/img/icon/settings.svg" alt="">
       </div>
+      <h2 class='d-flex justify-content-between' v-else @click='this.settings = !this.settings'>
+        <div class="back-button">
+          {{ this.$locales('back_profile') }}
+        </div>
+      </h2>
     </div>
-    <div class="profile_tabs d-flex">
+    <div class="profile_tabs d-flex" v-if='!this.settings'>
       <div class="profile_tabs_item" :class="{'active' : this.tabs.plan}" @click='this.setActive("plan")'>
         My plan
       </div>
-      <!--<div class="profile_tabs_item" :class="{'active' : this.tabs.coach}" @click='this.setActive("coach")'>
-        Coach
-      </div>
-      <div class="profile_tabs_item" :class="{'active' : this.tabs.referral}" @click='this.setActive("referral")'>
+      <a target="_blank" href="https://info.spacent.com/meetings/spacent/book-a-demo?_ga=2.31120575.1439210232.1697105517-791289949.1697105517">
+        <div class="profile_tabs_item">
+          Coach
+        </div>
+      </a>
+      <!--<div class="profile_tabs_item" :class="{'active' : this.tabs.referral}" @click='this.setActive("referral")'>
         Referral
       </div>-->
       <div class="profile_tabs_item" :class="{'active' : this.tabs.delivery}" @click='this.setActive("delivery")'>
@@ -27,25 +34,32 @@
     </div>
   </div>
   <div class="profile">
-    <div class="profile_content">
+    <div class="profile_content" v-if='!this.settings'>
       <Plan v-if='this.tabs.plan'/>
       <Delivery v-if='this.tabs.delivery'/>
+      <Coach v-if='this.tabs.coach'/>
     </div>
+    <ProfileSettings v-if='this.settings'/>
   </div>
 </template>
 
 <script>
 import Plan from '@/components/Profile/Plan.vue';
 import Delivery from '@/components/Profile/Delivery.vue';
+import Coach from '@/components/Profile/Coach.vue';
+import ProfileSettings from '@/components/Profile/ProfileSettings.vue'
 
 export default {
   name: "ProfileView",
   components: {
     Plan,
     Delivery,
+    Coach,
+    ProfileSettings,
   },
   data(){
     return {
+      settings: false,
       tabs: {
         plan: true,
         coach: false,
@@ -69,7 +83,11 @@ export default {
 </script>
 
 <style lang="css" scoped>
-
+  .profile-header>h3{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
   .profile_tabs::-webkit-scrollbar {
     width: 0;
   }

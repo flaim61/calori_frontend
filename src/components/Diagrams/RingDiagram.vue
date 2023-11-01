@@ -67,7 +67,7 @@ export default {
 <style lang="css" scoped>
   .procent_counter{
     text-align: center;
-    margin-top: -57%;
+    margin-top: -59%;
     margin-bottom: 42%;
     font-size: 29px;
   }
