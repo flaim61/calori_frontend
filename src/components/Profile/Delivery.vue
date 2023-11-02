@@ -28,37 +28,45 @@
     </div>
   </div>
   <div class="card-profile card" v-else>
-    <div class="input-section mb-3">
+    <div class="input-section mb-3" :class="{'error':this.errors.name}">
       <label>Full Name</label>
       <input type="text" v-model='this.delivery.name'>
+      <span>Entry your name</span>
     </div>
-    <div class="input-section mb-3">
+    <div class="input-section mb-3" :class="{'error':this.errors.phone}">
       <label>{{this.$locales('phone')}}</label>
       <input type="text" v-model='this.delivery.phone'>
+      <span>Enter your phone</span>
     </div>
-    <div class="input-section mb-3">
+    <div class="input-section mb-3" :class="{'error':this.errors.email}">
       <label>{{this.$locales('email')}}</label>
       <input type="text" v-model='this.delivery.email'>
+      <span>Enter your email</span>
     </div>
-    <div class="input-section mb-3">
+    <div class="input-section mb-3" :class="{'error':this.errors.city}">
       <label>{{this.$locales('city')}}</label>
       <input type="text" v-model='this.delivery.city'>
+      <span>Enter yout city</span>
     </div>
-    <div class="input-section mb-3">
+    <div class="input-section mb-3" :class="{'error':this.errors.line1}">
       <label>Adress Line 1</label>
       <input type="text" v-model='this.delivery.line1'>
+      <span>Enter your adress line 1</span>
     </div>
-    <div class="input-section mb-3">
+    <div class="input-section mb-3" :class="{'error':this.errors.line2}">
       <label>Adress Line 2</label>
       <input type="text" v-model='this.delivery.line2'>
+      <span>Enter your adress line 2</span>
     </div>
-    <div class="input-section mb-3">
+    <div class="input-section mb-3" :class="{'error':this.errors.state}">
       <label>State</label>
       <input type="text" v-model='this.delivery.state'>
+      <span>Enter your adress state</span>
     </div>
-    <div class="input-section mb-3">
+    <div class="input-section mb-3" :class="{'error':this.errors.post_code}">
       <label>{{this.$locales('post_code')}}</label>
       <input type="text"  v-model='this.delivery.post_code'>
+      <span>Enter your adress post code</span>
     </div>
     <div class="button text-white text-center" @click='saveDeliveryInfo'>
       {{ this.$locales('saveDeliveryInfo') }}
@@ -86,6 +94,16 @@ export default {
         state: "",
         post_code: "",
       },
+      errors:{
+        name: false,
+        phone: false,
+        email: false,
+        city: false,
+        line1: false,
+        line2: false,
+        state: false,
+        post_code: false,
+      },
       changing: false,
     }
   },
@@ -98,6 +116,18 @@ export default {
       return response.data;
     },
     async saveDeliveryInfo(){
+      let haveError = false;
+      for (var p in this.errors) {
+        if (this.delivery[p] == "") {
+          this.errors[p] = true;
+          haveError = true;
+        }
+      }
+
+      if (haveError) {
+        return;
+      }
+
       //const response = await saveDeliveryInfo(this.delivery);
       this.changing = false;
     },
