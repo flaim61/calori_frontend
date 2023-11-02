@@ -135,11 +135,9 @@ export default {
   async created(){
     this.personalPlan = await this.getPesonalPlan();
     this.application = await this.getApplication();
-    /*this.personalPlan.startDate,
-    this.personalPlan.finishDate,*/
     this.progressPercentage = this.calculatePercentage(
-      new Date('2022-04-03'),
-      new Date('2024-04-03')
+      new Date(this.personalPlan.startDate),
+      new Date(this.personalPlan.finishDate)
     );
   },
   data(){

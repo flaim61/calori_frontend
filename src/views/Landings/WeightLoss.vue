@@ -41,6 +41,12 @@
       text='Shoot us quick 5-min updates once a week. We’ll cheer you up on on every step of the way!'
     />
 
+    <Card
+      title="Eat, enjoy, and slim down"
+      image="3"
+      text='Just relax, enjoy the grub, and watch the magic happen. Weight loss? You got this! No need to even hit the gym. Simple as that, right?'
+    />
+
     <div class="titlep_block mt-5" id='block'>
       <h3 class="block-title">
         {{ this.$locales('reviews_block_title') }}
@@ -65,36 +71,47 @@
       "
         [
           {
-            img: 1,
+            img: 12,
             text: 'Healthy weight loss: 2 kg per month'
           },
           {
-            img: 2,
+            img: 1,
             text: 'Premium restaurant-level cuisine everywhere you go'
           },
           {
-            img: 3,
+            img: 5,
             text: 'Personalized nutritional balance for improving your health and metabolism'
           },
           {
-            img: 4,
+            img: 13,
             text: 'Support and weekly progress check from professional coaches'
           },
           {
-            img: 5,
+            img: 14,
             text: 'Working out? Optional - it’s up to you'
           },
           {
-            img: 6,
+            img: 15,
             text: 'Pause the meal subscription at any time'
           },
           {
-            img: 7,
+            img: 2,
             text: 'Guaranteed results and excellent experience'
           },
         ]
       "
     />
+
+    <div class="titlep_block">
+      <h3 class="block-title">
+        Our beloved customers
+      </h3>
+      <p>
+        Our first group reached 70+ happy customers. Here’s what some of them say.
+      </p>
+    </div>
+
+    <ReviewSlider />
 
     <BlueTextBlock
       title='Wanna join along?'

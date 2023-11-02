@@ -44,7 +44,7 @@ const router = createRouter({
       path: '/meal-prep-for-productivity',
       name: "meal-prep-for-productivity",
       component: MealPrepForProductivity,
-    }
+    },
   ]
 })
 

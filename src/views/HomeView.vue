@@ -31,7 +31,7 @@
     <Card
       title="2. Subscribe to delicious, healthy meals delivered to your home"
       image="2"
-      text='Tired of cooking or re-ordering? Let us take care of everything: from balanced nutrition to chef-crafted meals and home deliveries.'
+      text='Get all meals you need in a day delivered to your home. Our chefs turned complex plans into delicious meals - hitting the perfect balance between home-made and sporty feels. You can enjoy restaurant-level breakfast, lunch, dinner, and snacks everywhere you go.'
     />
     <Card
       title="3. Reach your goals while getting support from our coaches"
@@ -56,11 +56,11 @@
             text: 'Premium restaurant-level cuisine everywhere you go'
           },
           {
-            img: 2,
+            img: 6,
             text: 'Made by professional nutritionists, coaches, and chefs'
           },
           {
-            img: 3,
+            img: 5,
             text: 'Perfect nutritional balance for improving your health and metabolism'
           },
           {
@@ -68,11 +68,11 @@
             text: 'Optimal calorie deficit for burning fat without losing productivity'
           },
           {
-            img: 5,
+            img: 3,
             text: 'Less waste, eco-friendly packaging, and green logistics'
           },
           {
-            img: 6,
+            img: 2,
             text: 'Guaranteed result and excellent experience'
           },
         ]

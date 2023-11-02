@@ -57,6 +57,9 @@ export default {
     Coach,
     ProfileSettings,
   },
+  created(){
+    this.checkAfterPayment();
+  },
   data(){
     return {
       settings: false,
@@ -78,6 +81,26 @@ export default {
 
       this.tabs[name] = true;
     },
+    checkAfterPayment(){
+      let params = (new URL(document.location)).searchParams;
+      let payment_result = params.get("payment_result");
+      
+      if (payment_result == "success") {
+        this.$swal({
+          position: 'center',
+          icon: 'success',
+          title: 'Payment Received',
+        })
+      }
+      if (payment_result == "fail"){
+
+        this.$swal({
+          position: 'center',
+          icon: 'error',
+          title: 'Payment Canceled',
+        })
+      }
+    }
   }
 }
 </script>

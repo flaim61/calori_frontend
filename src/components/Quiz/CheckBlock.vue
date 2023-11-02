@@ -51,6 +51,7 @@
     </p>
 
     <ul class="mt-4" v-if='this.createdApplication'>
+
       <li>{{ this.createdApplication.dailyCalories }}<span class="ml-1">calories</span></li>
       <li>XXXX<span class="ml-1">of protein</span></li>
       <li>XXXX<span class="ml-1">of fats</span></li>
@@ -71,9 +72,9 @@
         <li class="mt-2"><span>{{ this.$locales('weight') }}</span> {{ this.createdApplication.personalSlimmingPlan.currentWeight }}</li>
         <li class="mt-2"><span>{{ this.$locales('activity') }}</span> {{ this.createdApplication.activityLevelId }}</li>
       </ul>
-      <div class="text-center p-2 edit-btn" @click='this.returnQuizBegin()'>
+      <!--<div class="text-center p-2 edit-btn" @click='this.returnQuizBegin()'>
         {{ this.$locales('edit_information') }}
-      </div>
+      </div>-->
     </div>
   </div>
 </template>
@@ -106,11 +107,11 @@ export default {
   ],
   methods: {
     async createCheckoutSession(){
-      console.log(this.priceId)
       const response = await createCheckoutSession({
         "priceId": this.priceId
       });
-      console.log(response)
+
+      window.open(response.data.sessionUrl);
     }
   }
 }
@@ -123,8 +124,6 @@ export default {
     height: 40px;
     margin-top: 30px;
     padding-left: 10px;
-    border-radius: 10px;
-    padding-right: 10px;
   }
   .edit-btn{
     border-radius: 10px;

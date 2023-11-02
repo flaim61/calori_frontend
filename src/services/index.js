@@ -47,9 +47,14 @@ export const changePassword = async (data) => {
 }
 
 export const createCheckoutSession = async (data) => {
-  return await $api.post('/create-checkout-session', data, {
-    headers: {
-      'Content-Type': 'multipart/form-data',
-    },
+  const formData = new FormData();
+  Object.keys(data).forEach(key => {
+    formData.append(key, data[key]);
+  });
+
+  return await $api.post('/create-checkout-session', formData, {
+      headers: {
+        'Content-Type': 'multipart/form-data' // Устанавливаем заголовок для мультипарт запроса
+      }
   })
 }

@@ -2,10 +2,10 @@
   <section class="main-block">
     <Header />
     <h1>
-      {{ this.$locales('main_page_title') }}
+      Healthy eating. Personalized. Automated.
     </h1>
     <p>
-      {{ this.$locales('main_page_text') }}
+      We plan, cook, and deliver all meals you need in a day. So you can stay on top of your health and reach 100% productivity.
     </p>
     <Transition>
       <div id='main-button' v-show='this.showButton' class="main-button" @click='this.$router.push("/quiz")'>
@@ -17,10 +17,10 @@
   <div class="main-page-content">
     <div class="titlep_block">
       <h3 class="block-title">
-        {{ this.$locales('how_works') }}
+        How Calori Works?
       </h3>
       <p>
-        {{ this.$locales('how_works_text') }}
+        Healthy eating and weight management has never been this easy and delicious.
       </p>
     </div>
     <Card
@@ -90,29 +90,6 @@
 
     <ReviewSlider />
 
-    <BlueTextBlock
-      title='Wanna join along?'
-      text='Our next journey starts in January 2024. The seats are limited.'
-      text-2='Just in time for your new-year resolutions! 🎆'
-    />
-
-    <div class="titlep_block mt-5">
-      <h3 class="block-title">
-        Get your meal plan
-      </h3>
-      <p>
-        Here’s an average week with Calori. Quick recap: healthy and delicious!
-      </p>
-    </div>
-
-    <TabsSlider />
-
-    <p class="text-Description">
-      With Calori, you’ll get balanced meals cooked and delivered according to your personalized plan. That’s 140+ unique meals in 1 month.
-    </p>
-
-    <div class="quiz-button" style="" @click='this.$router.push("/quiz")'>Get your plan</div>
-
     <div class="titlep_block mt-5">
       <h3 class="block-title">
         1 Month with Calori
@@ -145,30 +122,30 @@
       '
     />
 
+
+
+    <BlueTextBlock
+      title='Don’t miss out!'
+      text='Our next journey starts in January 2024. The seats are limited.'
+      text-2='Just in time for your new-year resolutions! 🎆'
+    />
+
     <div class="titlep_block mt-5">
       <h3 class="block-title">
-        Our Story
+        Get your meal plan
       </h3>
       <p>
-        We started as a family business before growing into an international startup with reputable investors and experienced advisors.
+        Here’s an average week with Calori. Quick recap: healthy and delicious!
       </p>
     </div>
 
-    <p>
-      Here’s a couple of words from the team behind Calori:
+    <TabsSlider />
+
+    <p class="text-Description">
+      With Calori, you’ll get balanced meals cooked and delivered according to your personalized plan. That’s 140+ unique meals in 1 month.
     </p>
 
-    <StorySlider />
-
-    <div class="titlep_block mt-5" style='margin-top: 100px !important;'>
-      <h3 class="block-title mt-5">
-        Sustainability Approach
-      </h3>
-      <p>
-        Good for you, good for the planet.
-      </p>
-    </div>
-
+    <div class="quiz-button mb-5" style="" @click='this.$router.push("/quiz")'>Get your plan</div>
 
     <List :data=
       "
@@ -192,6 +169,30 @@
         ]
       "
     />
+
+    <div class="titlep_block mt-5">
+      <h3 class="block-title">
+        Our Story
+      </h3>
+      <p>
+        We started as a family business before growing into an international startup with reputable investors and experienced advisors.
+      </p>
+    </div>
+
+    <p>
+      Here’s a couple of words from the team behind Calori:
+    </p>
+
+    <StorySlider />
+
+    <div class="titlep_block mt-5" style='margin-top: 100px !important;'>
+      <h3 class="block-title mt-5">
+        Sustainability Approach
+      </h3>
+      <p>
+        Good for you, good for the planet.
+      </p>
+    </div>
 
     <p>Did you know that meal boxes reduce waste by 38% compared to home-cooked dinners?</p>
 

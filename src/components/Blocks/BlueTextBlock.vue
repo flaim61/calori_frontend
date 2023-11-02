@@ -29,6 +29,8 @@ export default {
 
 <style lang="css" scoped>
   .blue_block{
+    margin-left: -15px;
+    width: calc(100% + 30px);
     background: var(--Bg, #F0F5F8);
     padding: 32px 10px;
   }

@@ -118,5 +118,6 @@ export default {
   l1_how_works: "How it works?",
   l2_main_page_title: "Healthy eating made simple ✨",
   l2_main_page_text: "Calori makes your personal plan for healthy and balanced eating, and delivers all meals you need in a day",
-  l2_how_works: "What is Calori?"
+  l2_how_works: "What is Calori?",
+  update_plan: "Update an individual meal plan",
 }

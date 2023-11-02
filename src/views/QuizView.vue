@@ -7,13 +7,13 @@
         {{ this.$locales('select_your_gender') }}
       </div>
       <div class="button_section">
-        <div class="button" @click='this.application.gender = 0; this.step++ '>
+        <div class="button" @click='this.application.gender = 0; nextStep()'>
           <div>
             {{ this.$locales('male') }}
           </div>
           <img src="@/assets/img/icon/button_arrow.svg">
         </div>
-        <div class="button" @click='this.application.gender = 1; this.step++ '>
+        <div class="button" @click='this.application.gender = 1; nextStep()'>
           <div>
             {{ this.$locales('female') }}
           </div>
@@ -24,11 +24,12 @@
 
     <div class="step" v-if='this.step == 2'>
       <div class="content_section">
-        <div class="title">
+        <div class="title text-left">
           {{this.$locales('write_your_weight')}}
         </div>
-        <div class="content_input_section" :class="{ 'error': this.errors.weight }">
+        <div class="mt-1 content_input_section" :class="{ 'error': this.errors.weight || this.errors.min_weight}">
           <input type="number" v-model='this.application.weight'  >
+          <span v-if='this.errors.min_weight'>Your weight is less than or equal to the recommended weight</span>
         </div>
         <p class="mb-0">
           {{ this.$locales('quiz1fraze') }}
@@ -44,10 +45,10 @@
 
     <div class="step" v-if='this.step == 3'>
       <div class="content_section">
-        <div class="title">
+        <div class="title text-left">
           {{ this.$locales('write_your_height') }}
         </div>
-        <div class="content_input_section" :class="{ 'error': this.errors.height }" >
+        <div class="mt-1 content_input_section" :class="{ 'error': this.errors.height }" >
           <input type="number" v-model='this.application.height' >
         </div>
         <p class="mb-0">
@@ -64,10 +65,10 @@
 
     <div class="step" v-if='this.step == 4'>
       <div class="content_section">
-        <div class="title">
+        <div class="title text-left">
           {{ this.$locales('how_old') }}
         </div>
-        <div class="content_input_section" :class="{ 'error': this.errors.age }">
+        <div class="mt-0 content_input_section" :class="{ 'error': this.errors.age }">
           <input type="number" v-model='this.application.age'  >
         </div>
       </div>
@@ -85,15 +86,15 @@
           {{ this.$locales('choose_activity') }}
         </div>
         <div class="content_input_section">
-          <div class="button_in_content" @click='this.application.activity = 0; this.step++'>
+          <div class="button_in_content" @click='this.application.activity = 0; nextStep()'>
             <div> {{ this.$locales('activity_0') }} </div>
             <p>Little or no exercise</p>
           </div>
-          <div class="button_in_content" @click='this.application.activity = 1; this.step++'>
+          <div class="button_in_content" @click='this.application.activity = 1; nextStep()'>
             <div> {{ this.$locales('activity_1') }} </div>
             <p>Sports 1–3 days a week</p>
           </div>
-          <div class="button_in_content" @click='this.application.activity = 2; this.step++'>
+          <div class="button_in_content" @click='this.application.activity = 2; nextStep()'>
             <div> {{ this.$locales('activity_2') }} </div>
             <p>Sports 3-5 times a week</p>
           </div>
@@ -136,7 +137,7 @@
           <div>{{ this.$locales('yes') }}</div>
           <img src="@/assets/img/icon/button_arrow.svg">
         </div>
-        <div class="button" @click='this.step++'>
+        <div class="button" @click='nextStep()'>
           <div>{{ this.$locales('no') }}</div>
           <img src="@/assets/img/icon/button_arrow.svg">
         </div>
@@ -147,23 +148,23 @@
       <div class="content_section">
         <div class="list">
           <div class="list_item">
-            <input type="checkbox" v-model='this.application.allergies' value='0'>
+            <input type="checkbox" v-model='this.application.allergies' value='1'>
             <label for="">Lactose <br>containing products</label>
           </div>
           <div class="list_item">
-            <input type="checkbox" v-model='this.application.allergies' value='1'>
+            <input type="checkbox" v-model='this.application.allergies' value='2'>
             <label for="">Gluten <br>containing products</label>
           </div>
           <div class="list_item">
-            <input type="checkbox" v-model='this.application.allergies' value='2'>
+            <input type="checkbox" v-model='this.application.allergies' value='3'>
             <label for="">Nuts <br>Products containing</label>
           </div>
           <div class="list_item">
-            <input type="checkbox" v-model='this.application.allergies' value='3'>
+            <input type="checkbox" v-model='this.application.allergies' value='4'>
             <label for="">Fish <br>Seafood</label>
           </div>
           <div class="list_item">
-            <input type="checkbox" v-model='this.application.allergies' value='4'>
+            <input type="checkbox" v-model='this.application.allergies' value='5'>
             <label for="">Citrus<br>products containing</label>
           </div>
           <div class="list_item">
@@ -203,9 +204,15 @@
           </div>
         </div>
       </div>
-      <div class="button_section">
+      <div class="button_section" v-if='!this.$cookies.get("auth_token")'>
         <div class="button" @click='this.createApplication()'>
           <div> {{ this.$locales('create_plan') }} </div>
+          <img src="@/assets/img/icon/button_arrow.svg">
+        </div>
+      </div>
+      <div class="button_section" v-else>
+        <div class="button" @click='this.updateApplication()'>
+          <div> {{ this.$locales('update_plan') }} </div>
           <img src="@/assets/img/icon/button_arrow.svg">
         </div>
       </div>
@@ -235,60 +242,53 @@ export default {
     QuizHeader,
     CheckBlock,
   },
-  async created(){
-    if (this.$store.state.auth) {
-      this.createdApplication = await this.getApplication();
-    }
-  },
   data(){
     return {
       step: 1,
       application: {
         gender: 0,
-        weight: 70,
-        height: 170,
-        age: 20,
+        weight: 0,
+        height: 0,
+        age: 0,
         activity: 0,
-        goal: 50,
+        goal: 0,
         email: "",
         allergies: [],
-        another_allergy: null,
+        another_allergy: "",
       },
       createdApplication: null,
       calculated_weight: {
         minWeight: 0,
-        minWeight: 0,
+        maxWeight: 0,
       },
       errors: {
         weight: false,
         height: false,
         age: false,
         goal: false,
-        email: true,
+        email: false,
+        min_weight: false,
       },
       plan: {
         date_end: "30.4.2024",
       },
     }
   },
+  async created(){
+    if (this.$cookies.get("auth_token")) {
+      this.createdApplication = await this.getApplication();
+      this.step = 9;
+    }
+  },
   methods:{
-    async getApplication(){
-      const response = await getApplication();
-      return response.data;
-    },
     returnQuizBegin(){
       this.step = 1;
     },
-    async getApplicationWeight(){
-      const response = await getApplicationWeight({
-        gender: this.application.gender,
-        weight: this.application.weight,
-        height: this.application.height,
-        age: this.application.age,
-        activity: this.application.activity
-      });
-
-      this.calculated_weight = response.data;
+    async getApplication(){
+      if (this.$cookies.get("auth_token")) {
+        const response = await getApplication();
+        return response.data;
+      }
     },
     async createApplication(){
       if (this.step == 8 && this.application.email == "") {
@@ -296,10 +296,9 @@ export default {
         return
       }
 
-      console.log('create')
-      console.log(this.application)
-
       try {
+        this.application.allergies = this.application.allergies.filter(a => a != 5);
+
         const response = await createApplication({
           gender: this.application.gender,
           weight: this.application.weight,
@@ -312,21 +311,36 @@ export default {
           anotherAllergy: this.application.another_allergy
         });
 
+        if (response.data.application == null) {
+              this.$swal({
+                position: 'top',
+                icon: 'success',
+                toast: true,
+                title: 'Unfortunately, we do not have a suitable diet for you! We have sent an email to you!',
+                showConfirmButton: false,
+                timer: 3500
+              })
+
+              this.$router.push('/');
+              return;
+        }
+
+        this.createdApplication = response.data.application;
+        this.$cookies.set("auth_token", response.data.token);
+        localStorage.setItem('auth_token', response.data.token)
+
+
         this.$swal({
           position: 'top',
           icon: 'success',
           toast: true,
           title: 'Your login and password have been sent to your email',
           showConfirmButton: false,
-          timer: 1500
+          timer: 3500
         })
-
-        this.createdApplication = response.data.application;
-        this.$cookies.set("auth_token", response.data.token);
-
+        location.reload()
         this.step = 9;
       } catch (e) {
-        console.log(e)
         this.errors.email = true;
       }
     },
@@ -337,50 +351,53 @@ export default {
         this.step = Math.ceil(this.step-1);
       }
     },
+    calculate_recomended_weight(){
+      let heightM = this.application.height / 100;
+      this.calculated_weight.maxWeight = Math.ceil(24.9 * heightM * heightM);
+      this.calculated_weight.minWeight = Math.ceil(18.5 * heightM * heightM);
+
+      if (this.calculated_weight.minWeight >= this.application.weight) {
+        this.step = 2;
+        this.errors.min_weight = true;
+      }else{
+        this.step++;
+      }
+    },
     async nextStep(){
-      if (this.step == 2 && this.application.weight <= 0) {
+      if (this.step == 2 && this.application.weight == 0) {
         this.errors.weight = true;
-        return
+        return;
       }
 
-      if (this.step == 3 && this.application.height <= 0) {
+      if (this.step == 3 && this.application.height == 0) {
         this.errors.height = true;
-        return
+        return;
       }
 
-      if (this.step == 4 && this.application.age <= 0) {
+      if (this.step == 4 && this.application.age == 0) {
         this.errors.age = true;
-        return
+        return;
       }
 
-      if (this.step == 6 && this.application.goal <= 0) {
-        this.errors.goal = true;
-        return
+      if (this.step == 5) {
+        return this.calculate_recomended_weight();
       }
 
       if (this.step == 6 && this.application.goal < this.calculated_weight.minWeight) {
         this.errors.goal = true;
-        return
-      }
-
-      for (let key in this.errors) {
-        this.errors[key] = false;
+        return;
       }
 
       this.step++;
     },
-    sendApplication(){
+    async updateApplication(){
       if (this.step == 8 && this.application.email == "") {
         this.errors.email = true;
         return
       }
-
-      this.step = 9;
-    },
-    async updateApplication(){
       try {
-        console.log('update')
-        console.log(this.application)
+        this.application.allergies = this.application.allergies.filter(a => a != 5);
+
         const response = await updateApplication({
           gender: this.application.gender,
           weight: this.application.weight,
@@ -393,34 +410,48 @@ export default {
           anotherAllergy: this.application.another_allergy
         });
 
+        if (response.data.application == null) {
+              this.$swal({
+                position: 'top',
+                icon: 'success',
+                toast: true,
+                title: 'Unfortunately, we do not have a suitable diet for you! We have sent an email to you!',
+                showConfirmButton: false,
+                timer: 3500
+              })
+
+              this.$router.push('/');
+              return;
+        }
+
+        console.log(response)
+        this.createdApplication = response.data.application;
+        this.$cookies.set("auth_token", response.data.token);
+
         this.$swal({
           position: 'top',
           icon: 'success',
           toast: true,
           title: 'Your login and password have been sent to your email',
           showConfirmButton: false,
-          timer: 1500
+          timer: 3500
         })
-        this.createdApplication = response.data.application;
-
-        console.log(this.createdApplication);
+        location.reload()
         this.step = 9;
-      } catch (e){
+      } catch (e) {
         console.log(e)
+        this.errors.email = true;
       }
     }
   },
   watch: {
     async step(){
-      if (this.step == 8 && this.$store.state.auth) {
-        await this.updateApplication()
-      }
     },
     application: {
       async handler(newValue, oldValue) {
-        this.errors.email = false;
-        this.errors.goal = false;
-        this.errors.weight = false;
+        for (var key in this.errors) {
+          this.errors[key] = false;
+        }
 
         if (newValue.height < 0) {
           this.application.height = 0
@@ -436,13 +467,6 @@ export default {
 
         if (newValue.age < 0) {
           this.application.age = 0
-        }
-
-        if (newValue.height &&
-            newValue.weight &&
-            newValue.goal &&
-            newValue.age) {
-          await this.getApplicationWeight()
         }
       },
       deep: true

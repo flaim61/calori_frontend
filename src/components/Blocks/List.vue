@@ -12,6 +12,11 @@
         <img v-if='li.img == 8' src="@/assets/img/icon/8.svg" alt="">
         <img v-if='li.img == 9' src="@/assets/img/icon/9.svg" alt="">
         <img v-if='li.img == 10' src="@/assets/img/icon/10.svg" alt="">
+        <img v-if='li.img == 11' src="@/assets/img/icon/11.svg" alt="">
+        <img v-if='li.img == 12' src="@/assets/img/icon/12.svg" alt="">
+        <img v-if='li.img == 13' src="@/assets/img/icon/13.svg" alt="">
+        <img v-if='li.img == 14' src="@/assets/img/icon/14.svg" alt="">
+        <img v-if='li.img == 15' src="@/assets/img/icon/15.svg" alt="">
       </div>
       <div class="list-text">
         {{ li.text }}
