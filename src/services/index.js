@@ -46,6 +46,18 @@ export const changePassword = async (data) => {
   return await $api.post('/api/auth/password/change', data)
 }
 
+export const saveDeliveryInfo = async (data) => {
+  return await $api.post('/api/delivery', data)
+}
+
+export const sendContactForm = async (data) => {
+  return await $api.post('/api/form', data)
+}
+
+export const getDeliveryInfo = async (data) => {
+  return await $api.get('/api/delivery', data)
+}
+
 export const createCheckoutSession = async (data) => {
   const formData = new FormData();
   Object.keys(data).forEach(key => {

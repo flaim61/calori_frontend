@@ -31,35 +31,35 @@
   <div class="card-profile card" v-else>
     <div class="input-section mb-3">
       <label>{{this.$locales('first_name')}}</label>
-      <input type="text" v-model='this.name'>
+      <input type="text" v-model='this.delivery.name'>
     </div>
     <div class="input-section mb-3">
       <label>{{this.$locales('second_name')}}></label>
-      <input type="text" v-model='this.lastname'>
+      <input type="text" v-model='this.delivery.lastname'>
     </div>
     <div class="input-section mb-3">
       <label>{{this.$locales('phone')}}</label>
-      <input type="text" v-model='this.phone'>
+      <input type="text" v-model='this.delivery.phone'>
     </div>
     <div class="input-section mb-3">
       <label>{{this.$locales('email')}}</label>
-      <input type="text" v-model='this.email'>
+      <input type="text" v-model='this.delivery.email'>
     </div>
     <div class="input-section mb-3">
       <label>{{this.$locales('city')}}</label>
-      <input type="text" v-model='this.city'>
+      <input type="text" v-model='this.delivery.city'>
     </div>
     <div class="input-section mb-3">
       <label>{{this.$locales('address')}}</label>
-      <input type="text" v-model='this.address'>
+      <input type="text" v-model='this.delivery.address'>
     </div>
     <div class="input-section mb-3">
       <label>{{this.$locales('post_code')}}</label>
-      <input type="text"  v-model='this.post_code'>
+      <input type="text"  v-model='this.delivery.post_code'>
     </div>
     <div class="input-section mb-3">
       <label>{{this.$locales('additional_information')}}</label>
-      <input type="text" v-model='this.info'>
+      <input type="text" v-model='this.delivery.info'>
     </div>
     <div class="button text-white text-center" @click='saveDeliveryInfo'>
       {{ this.$locales('saveDeliveryInfo') }}
@@ -69,7 +69,7 @@
 
 <script>
 import RingDiagram from '@/components/Diagrams/RingDiagram.vue'
-
+import { saveDeliveryInfo, getDeliveryInfo} from '@/services/index.js'
 export default {
   name: "Plan",
   components: {
@@ -77,21 +77,31 @@ export default {
   },
   data(){
     return {
-      name: "",
-      lastname: "",
-      phone: "",
-      email: "",
-      city: "",
-      address: "",
-      post_code: "",
-      info: "",
+      delivery: {
+        name: "",
+        lastname: "",
+        phone: "",
+        email: "",
+        city: "",
+        address: "",
+        post_code: "",
+        info: "",
+      },
       changing: false,
     }
   },
+  async created(){
+    this.delivery = await this.getDeliveryInfo();
+  },
   methods: {
-    saveDeliveryInfo(){
+    async getDeliveryInfo(){
+      const response = await getDeliveryInfo(this.delivery);
+      return response.data;
+    },
+    async saveDeliveryInfo(){
+      const response = await saveDeliveryInfo(this.delivery);
       this.changing = false;
-    }
+    },
   }
 }
 </script>
