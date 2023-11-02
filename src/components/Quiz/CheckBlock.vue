@@ -1,12 +1,12 @@
 <template lang="html">
   <div class="banner_block">
     <div class="banner_block_top">
-      <p class="banner_block_header">According to our plan,</p>
+      <p class="banner_block_header">{{ this.$locales('according_to_our_plan') }},</p>
       <span class="d-none">
         {{ finish_date = new Date(this.createdApplication.personalSlimmingPlan.finishDate) }}
       </span>
       <p class="banner_block_header_text">
-        you will lose
+        {{ this.$locales('you_will_lose') }}
         {{ this.createdApplication.personalSlimmingPlan.totalBurned }} kg from {{finish_date.getDate()}}.{{finish_date.getMonth()+1}}.{{ finish_date.getFullYear() }}</p>
     </div>
     <span class="d-none">
@@ -14,33 +14,34 @@
     </span>
     <h5> {{date.getDate()}}.{{date.getMonth()+1}}.{{ date.getFullYear() }} </h5>
     <div class="see_all" @click='this.plan_block_visibled = true'>
-      <a href="#">See the plan</a>
+      <a href="#">
+        {{ this.$locales('see_the_plan') }}
+      </a>
     </div>
   </div>
   <div class="CheckBlock_content">
-    <h3>You’ll get everything you need for guaranteed results:</h3>
+    <h3>{{ this.$locales('check1frase') }}:</h3>
     <ul class="CheckBlock_content_list">
-      <li><img src="@/assets/img/icon/green-check.svg" alt="">5 healthy restaurant-level meals / day</li>
-      <li><img src="@/assets/img/icon/green-check.svg" alt="">Balanced and diverse nutrition to improve your health</li>
-      <li><img src="@/assets/img/icon/green-check.svg" alt="">Home deliveries 2 times / week</li>
-      <li><img src="@/assets/img/icon/green-check.svg" alt="">Guaranteed results with professional support</li>
-      <li><img src="@/assets/img/icon/green-check.svg" alt="">Cancel at any time or pause during holidays</li>
+      <li><img src="@/assets/img/icon/green-check.svg" alt=""> {{ this.$locales('check2frase') }}</li>
+      <li><img src="@/assets/img/icon/green-check.svg" alt="">{{ this.$locales('check3frase') }}</li>
+      <li><img src="@/assets/img/icon/green-check.svg" alt="">{{ this.$locales('check4frase') }}</li>
+      <li><img src="@/assets/img/icon/green-check.svg" alt="">{{ this.$locales('check5frase') }}</li>
+      <li><img src="@/assets/img/icon/green-check.svg" alt="">{{ this.$locales('check6frase') }}</li>
     </ul>
-    <div class="price">
-      399 eur / 2 weeks
-    </div>
-    <div class="desc">28.5 eur per day</div>
-    <div class="button_section">
-      <div class="button" @click=''>
-        <div>Subscribe now</div>
-        <img src="@/assets/img/icon/button_arrow.svg">
-      </div>
+    <select class="select_checkout" v-model='this.priceId'>
+      <option v-for='(item, index) in this.priceIds' :key='index' :value="item.priceId">
+        {{item.name}}
+      </option>
+    </select>
+    <div class="button mt-5" @click='this.createCheckoutSession()'>
+      <div> {{ this.$locales('subscribe_now') }} </div>
+      <img src="@/assets/img/icon/button_arrow.svg">
     </div>
   </div>
 
   <div class="plan_block p-3" v-show='this.plan_block_visibled'>
     <div class="plan_block_header d-flex justify-content-between">
-      <h3>See the plan</h3>
+      <h3>{{ this.$locales('see_the_plan') }}</h3>
       <a href="#" @click='this.plan_block_visibled = false'>
         <img src="@/assets/img/icon/close.svg" alt="">
       </a>
@@ -57,19 +58,18 @@
     </ul>
 
     <p class="mt-4">
-      Our coaches will adjust your plan according to your progress.
+      {{ this.$locales('check7frase') }}
     </p>
     <div class="plan_info_block p-2 mt-5">
       <p>
-        This information is based on what you shared with us.
-        Here’s the summary:
+        {{ this.$locales('check8frase') }}
       </p>
       <ul class="plan_info_block_ul">
-        <li class="mt-3"><span>Gender</span> {{ this.createdApplication.genderId }}</li>
-        <li class="mt-2"><span>Age</span>  {{ this.createdApplication.age }}</li>
-        <li class="mt-2"><span>Height</span> {{ this.createdApplication.height }}</li>
-        <li class="mt-2"><span>Current weight</span> {{ this.createdApplication.personalSlimmingPlan.currentWeight }}</li>
-        <li class="mt-2"><span>Activity level</span> {{ this.createdApplication.activityLevelId }}</li>
+        <li class="mt-3"><span>{{ this.$locales('gender') }}</span> {{ this.createdApplication.genderId }}</li>
+        <li class="mt-2"><span>{{ this.$locales('age') }}</span>  {{ this.createdApplication.age }}</li>
+        <li class="mt-2"><span>{{ this.$locales('height') }}</span> {{ this.createdApplication.height }}</li>
+        <li class="mt-2"><span>{{ this.$locales('weight') }}</span> {{ this.createdApplication.personalSlimmingPlan.currentWeight }}</li>
+        <li class="mt-2"><span>{{ this.$locales('activity') }}</span> {{ this.createdApplication.activityLevelId }}</li>
       </ul>
       <div class="text-center p-2 edit-btn" @click='this.returnQuizBegin()'>
         {{ this.$locales('edit_information') }}
@@ -79,11 +79,24 @@
 </template>
 
 <script>
+import {createCheckoutSession} from "@/services/index.js"
+
 export default {
   name: "CheckBlock",
   data(){
     return {
-      plan_block_visibled: false
+      plan_block_visibled: false,
+      priceId: "price_1O7hQCHNRk8vDVhuTqLeBqO6",
+      priceIds: [
+        {
+          priceId: "price_1O7hQCHNRk8vDVhuTqLeBqO6",
+          name: "test1",
+        },
+        {
+          priceId: "price_1O7hQCHNRk8vDVhu0d4qmdoG",
+          name: "test2",
+        },
+      ]
     }
   },
   props: [
@@ -91,10 +104,28 @@ export default {
     'createdApplication',
     'returnQuizBegin',
   ],
+  methods: {
+    async createCheckoutSession(){
+      console.log(this.priceId)
+      const response = await createCheckoutSession({
+        "priceId": this.priceId
+      });
+      console.log(response)
+    }
+  }
 }
 </script>
 
 <style lang="css" scoped>
+  .select_checkout{
+    width: 100%;
+    border: none;
+    height: 40px;
+    margin-top: 30px;
+    padding-left: 10px;
+    border-radius: 10px;
+    padding-right: 10px;
+  }
   .edit-btn{
     border-radius: 10px;
     border: 1px solid var(--Grey, #92979B);

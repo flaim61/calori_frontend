@@ -11,7 +11,8 @@ const store = createStore({
         'profile',
       ],
       onlyNotAuthorize: [
-        'login'
+        'login',
+        'quiz',
       ],
     }
   },

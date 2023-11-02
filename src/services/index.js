@@ -1,5 +1,5 @@
 import axios from "axios"
-export const apiBase = "http://testcaloriapi.ru";
+export const apiBase = "http://testcaloriapi.ru:8080";
 import Cookies from 'js-cookie'
 
 const $api = axios.create({
@@ -44,4 +44,12 @@ export const resetPassword = async (data) => {
 
 export const changePassword = async (data) => {
   return await $api.post('/api/auth/password/change', data)
+}
+
+export const createCheckoutSession = async (data) => {
+  return await $api.post('/create-checkout-session', data, {
+    headers: {
+      'Content-Type': 'multipart/form-data',
+    },
+  })
 }

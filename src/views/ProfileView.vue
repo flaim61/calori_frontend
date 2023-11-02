@@ -2,7 +2,7 @@
   <div class="profile-header-wrapper">
     <div class="profile-header d-flex justify-content-between">
       <h3>
-        Personal profile
+        {{ this.$locales('personal_profile') }}
       </h3>
       <div class="" v-if='!this.settings' @click='this.settings = !this.settings'>
         <img src="@/assets/img/icon/settings.svg" alt="">
@@ -15,21 +15,21 @@
     </div>
     <div class="profile_tabs d-flex" v-if='!this.settings'>
       <div class="profile_tabs_item" :class="{'active' : this.tabs.plan}" @click='this.setActive("plan")'>
-        My plan
+        {{ this.$locales('my_plan') }}
       </div>
       <a target="_blank" href="https://info.spacent.com/meetings/spacent/book-a-demo?_ga=2.31120575.1439210232.1697105517-791289949.1697105517">
         <div class="profile_tabs_item">
-          Coach
+          {{ this.$locales('coach') }}
         </div>
       </a>
       <!--<div class="profile_tabs_item" :class="{'active' : this.tabs.referral}" @click='this.setActive("referral")'>
         Referral
       </div>-->
       <div class="profile_tabs_item" :class="{'active' : this.tabs.delivery}" @click='this.setActive("delivery")'>
-        Delivery
+        {{ this.$locales('delivery') }}
       </div>
       <div class="profile_tabs_item" :class="{'active' : this.tabs.subscription}" @click='this.setActive("subscription")'>
-        Subscription
+        {{ this.$locales('subscription') }}
       </div>
     </div>
   </div>

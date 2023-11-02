@@ -9,6 +9,9 @@
     <p class="mt-4">
       {{ this.text2 }}
     </p>
+    <p class="mt-4">
+      {{ this.text3 }}
+    </p>
   </div>
 </template>
 
@@ -20,7 +23,7 @@ export default {
 
     }
   },
-  props: ['text', 'text2', 'title']
+  props: ['text', 'text2', 'text3', 'title']
 }
 </script>
 

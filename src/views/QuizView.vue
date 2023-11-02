@@ -4,15 +4,19 @@
 
     <div class="step" v-if='this.step == 1'>
       <div class="content_section">
-        Select your gender
+        {{ this.$locales('select_your_gender') }}
       </div>
       <div class="button_section">
         <div class="button" @click='this.application.gender = 0; this.step++ '>
-          <div>Male</div>
+          <div>
+            {{ this.$locales('male') }}
+          </div>
           <img src="@/assets/img/icon/button_arrow.svg">
         </div>
         <div class="button" @click='this.application.gender = 1; this.step++ '>
-          <div>Female</div>
+          <div>
+            {{ this.$locales('female') }}
+          </div>
           <img src="@/assets/img/icon/button_arrow.svg">
         </div>
       </div>
@@ -21,18 +25,18 @@
     <div class="step" v-if='this.step == 2'>
       <div class="content_section">
         <div class="title">
-          Write your weight
+          {{this.$locales('write_your_weight')}}
         </div>
         <div class="content_input_section" :class="{ 'error': this.errors.weight }">
           <input type="number" v-model='this.application.weight'  >
         </div>
         <p class="mb-0">
-          Your personal trainer will monitor you throughout the process and make the necessary changes. At your pace.
+          {{ this.$locales('quiz1fraze') }}
         </p>
       </div>
       <div class="button_section button_section_one_button">
         <div class="button" @click='nextStep'>
-          <div>Next</div>
+          <div> {{ this.$locales('next') }} </div>
           <img src="@/assets/img/icon/button_arrow.svg">
         </div>
       </div>
@@ -41,18 +45,18 @@
     <div class="step" v-if='this.step == 3'>
       <div class="content_section">
         <div class="title">
-          Write your height
+          {{ this.$locales('write_your_height') }}
         </div>
         <div class="content_input_section" :class="{ 'error': this.errors.height }" >
           <input type="number" v-model='this.application.height' >
         </div>
         <p class="mb-0">
-          Your personal trainer will monitor you throughout the process and make the necessary changes. At your pace.
+          {{ this.$locales('quiz1fraze') }}
         </p>
       </div>
       <div class="button_section button_section_one_button">
         <div class="button" @click='nextStep'>
-          <div>Next</div>
+          <div>{{ this.$locales('next') }}</div>
           <img src="@/assets/img/icon/button_arrow.svg">
         </div>
       </div>
@@ -61,7 +65,7 @@
     <div class="step" v-if='this.step == 4'>
       <div class="content_section">
         <div class="title">
-          How old are you?
+          {{ this.$locales('how_old') }}
         </div>
         <div class="content_input_section" :class="{ 'error': this.errors.age }">
           <input type="number" v-model='this.application.age'  >
@@ -69,7 +73,7 @@
       </div>
       <div class="button_section button_section_one_button">
         <div class="button" @click='nextStep'>
-          <div>Next</div>
+          <div>{{ this.$locales('next') }}</div>
           <img src="@/assets/img/icon/button_arrow.svg">
         </div>
       </div>
@@ -78,19 +82,19 @@
     <div class="step" v-if='this.step == 5'>
       <div class="content_section">
         <div class="title">
-          Choose level of your activity
+          {{ this.$locales('choose_activity') }}
         </div>
         <div class="content_input_section">
           <div class="button_in_content" @click='this.application.activity = 0; this.step++'>
-            <div>Inactive lifestyle</div>
+            <div> {{ this.$locales('activity_0') }} </div>
             <p>Little or no exercise</p>
           </div>
           <div class="button_in_content" @click='this.application.activity = 1; this.step++'>
-            <div>Light activity</div>
+            <div> {{ this.$locales('activity_1') }} </div>
             <p>Sports 1–3 days a week</p>
           </div>
           <div class="button_in_content" @click='this.application.activity = 2; this.step++'>
-            <div>Moderate activity</div>
+            <div> {{ this.$locales('activity_2') }} </div>
             <p>Sports 3-5 times a week</p>
           </div>
         </div>
@@ -101,10 +105,10 @@
     <div class="step" v-if='this.step == 6'>
       <div class="content_section">
         <div class="title">
-          What is your goal weight?
+          {{ this.$locales('write_yout_goal') }}
         </div>
         <div class="content_input_section" :class="{ 'error' : this.errors.goal }">
-          <label for="">Goal Weight:</label>
+          <label for="">{{ this.$locales('goal_weight') }}:</label>
           <input type="email" v-model='this.application.goal' >
           <span> {{ this.$locales('target_weight_min_error') }}</span>
         </div>
@@ -114,7 +118,7 @@
       </div>
       <div class="button_section button_section_one_button">
         <div class="button" @click='nextStep'>
-          <div>Next</div>
+          <div>{{ this.$locales('next') }}</div>
           <img src="@/assets/img/icon/button_arrow.svg">
         </div>
       </div>
@@ -124,16 +128,16 @@
     <div class="step" v-if='this.step == 7'>
       <div class="content_section">
         <div class="title">
-          Do you have allergies to any foods?
+          {{ this.$locales('allergies_any_foods') }}
         </div>
       </div>
       <div class="button_section">
         <div class="button" @click='this.step = 7.1'>
-          <div>Yes</div>
+          <div>{{ this.$locales('yes') }}</div>
           <img src="@/assets/img/icon/button_arrow.svg">
         </div>
         <div class="button" @click='this.step++'>
-          <div>No</div>
+          <div>{{ this.$locales('no') }}</div>
           <img src="@/assets/img/icon/button_arrow.svg">
         </div>
       </div>
@@ -170,7 +174,7 @@
       </div>
       <div class="button_section button_section_one_button">
         <div class="button" @click='this.step = 8;'>
-          <div>Next</div>
+          <div>{{ this.$locales('next') }}</div>
           <img src="@/assets/img/icon/button_arrow.svg">
         </div>
       </div>
@@ -179,29 +183,29 @@
     <div class="step" v-if='this.step == 8'>
       <div class="content_section">
         <div class="title" v-if='!this.application.allergies.length'>
-          Leave your email so we can send you a meal plan
+          {{ this.$locales('quiz2fraze') }}
         </div>
         <div class="title" v-if='this.application.allergies.indexOf("5") >= 0'>
-          Write that you are allergic and provide your Email
+          {{ this.$locales('quiz3fraze') }}
         </div>
         <div class="title" v-if='!this.application.allergies.indexOf("5") >= 0 && this.application.allergies.length'>
-          Leave your email and we will contact you
+          {{ this.$locales('quiz4fraze') }}
         </div>
         <div class="content_input_section">
           <div class="content_input_section" v-if='this.application.allergies.indexOf("5") >= 0'>
-            <label for="">Allergy</label>
+            <label for="">{{this.$locales('allergy')}}</label>
             <input type="text" v-model='this.application.another_allergy'>
           </div>
           <div class="content_input_section" :class="{ 'error' : this.errors.email }">
-            <label for="">Email</label>
+            <label for="">{{this.$locales('email')}}</label>
             <input type="email" v-model='this.application.email' >
-            <span>This user is already in the system! Check your email</span>
+            <span> {{ this.$locales('user_alredy_exist') }} </span>
           </div>
         </div>
       </div>
       <div class="button_section">
         <div class="button" @click='this.createApplication()'>
-          <div>Get a meal plan</div>
+          <div> {{ this.$locales('create_plan') }} </div>
           <img src="@/assets/img/icon/button_arrow.svg">
         </div>
       </div>
@@ -220,7 +224,8 @@ import CheckBlock from "@/components/Quiz/CheckBlock.vue"
 import {
   getApplicationWeight,
   createApplication,
-  updateApplication
+  updateApplication,
+  getApplication
 }
 from "@/services/index.js"
 
@@ -230,12 +235,17 @@ export default {
     QuizHeader,
     CheckBlock,
   },
+  async created(){
+    if (this.$store.state.auth) {
+      this.createdApplication = await this.getApplication();
+    }
+  },
   data(){
     return {
       step: 1,
       application: {
         gender: 0,
-        weight: 50,
+        weight: 70,
         height: 170,
         age: 20,
         activity: 0,
@@ -262,8 +272,11 @@ export default {
     }
   },
   methods:{
+    async getApplication(){
+      const response = await getApplication();
+      return response.data;
+    },
     returnQuizBegin(){
-      console.log('test')
       this.step = 1;
     },
     async getApplicationWeight(){
@@ -282,6 +295,9 @@ export default {
         this.errors.email = true;
         return
       }
+
+      console.log('create')
+      console.log(this.application)
 
       try {
         const response = await createApplication({
@@ -310,6 +326,7 @@ export default {
 
         this.step = 9;
       } catch (e) {
+        console.log(e)
         this.errors.email = true;
       }
     },
@@ -362,6 +379,8 @@ export default {
     },
     async updateApplication(){
       try {
+        console.log('update')
+        console.log(this.application)
         const response = await updateApplication({
           gender: this.application.gender,
           weight: this.application.weight,
@@ -393,7 +412,7 @@ export default {
   },
   watch: {
     async step(){
-      if (this.step == 8 && this.$cookies.get('auth_token') != null && this.$cookies.get('auth_token') != "") {
+      if (this.step == 8 && this.$store.state.auth) {
         await this.updateApplication()
       }
     },
@@ -401,6 +420,7 @@ export default {
       async handler(newValue, oldValue) {
         this.errors.email = false;
         this.errors.goal = false;
+        this.errors.weight = false;
 
         if (newValue.height < 0) {
           this.application.height = 0

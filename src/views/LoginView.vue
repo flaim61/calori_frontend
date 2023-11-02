@@ -18,7 +18,7 @@
     </div>
     <div class="card login-section">
       <div class="input-section">
-        <label for="email">Email</label>
+        <label for="email">{{ this.$locales('email') }}</label>
         <input type="text" v-model='this.email' id='email' placeholder="Your e-mail" autocomplete="off">
       </div>
       <div class="input-section" v-if='!this.forgotPass' :class='{ "error": this.loginError }'>
@@ -28,7 +28,7 @@
       </div>
       <a class="forgot" href="#" v-if='!this.forgotPass' @click='this.forgotPass = true'>{{ this.$locales('forgot_password') }}</a>
       <div class="button" @click='login' v-if='!this.forgotPass'>
-        <div>Login</div>
+        <div>{{ this.$locales('login') }}</div>
         <img src="@/assets/img/icon/button_arrow.svg">
       </div>
       <div class="button" @click='resetPassword' v-else>
@@ -58,7 +58,7 @@ export default {
           password: this.password
         });
         this.$cookies.set("auth_token", response.data.token);
-        this.$router.push('/profile');
+        window.location.href = '/profile';
       } catch (e) {
         console.log(e)
         this.loginError = true;

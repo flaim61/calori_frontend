@@ -1,6 +1,6 @@
 <template>
   <div class="">
-    <div class="list-item" v-for='(li, index) in this.data' :key="index">
+    <div :class="'list-item ' + this.color" v-for='(li, index) in this.data' :key="index">
       <div class="list-image">
         <img v-if='li.img == 1' src="@/assets/img/icon/1.svg" alt="">
         <img v-if='li.img == 2' src="@/assets/img/icon/2.svg" alt="">
@@ -23,7 +23,7 @@
 <script>
 export default {
   name: "List",
-  props: [ 'data' ],
+  props: [ 'data', "color" ],
   data(){
     return {
 
@@ -51,5 +51,11 @@ export default {
     display: flex;
     flex-direction: column;
     justify-content: center;
+  }
+  .list-item.red{
+    background: #F7E8EB !important;
+  }
+  .list-item.green{
+    background: #E8F7F0 !important;
   }
 </style>
