@@ -13,14 +13,13 @@
     <div class="d-flex justify-content-between">
       <div class="">
         <ul>
-          <li> {{this.$locales('first_name')}}: <span>{{this.name}}</span></li>
-          <li> {{this.$locales('second_name')}}: <span>{{this.lastname}}</span></li>
-          <li> {{this.$locales('phone')}}: <span>{{this.phone}}</span></li>
-          <li> {{this.$locales('email')}}: <span>{{this.email}}</span></li>
-          <li> {{this.$locales('city')}}: <span>{{this.city}}</span></li>
-          <li> {{this.$locales('address')}}: <span>{{this.address}}</span></li>
-          <li> {{this.$locales('post_code')}}: <span>{{this.post_code}}</span></li>
-          <li> {{this.$locales('additional_information')}}: <span>{{this.info}}</span></li>
+          <li> Full Name: <span>{{this.delivery.name}}</span></li>
+          <li> {{this.$locales('phone')}}: <span>{{this.delivery.phone}}</span></li>
+          <li> {{this.$locales('email')}}: <span>{{this.delivery.email}}</span></li>
+          <li> {{this.$locales('city')}}: <span>{{this.delivery.city}}</span></li>
+          <li> {{this.$locales('address')}} Line 1: <span>{{this.delivery.line1}}</span></li>
+          <li> {{this.$locales('address')}} Line 2: <span>{{this.delivery.line2}}</span></li>
+          <li> {{this.$locales('post_code')}}: <span>{{this.delivery.post_code}}</span></li>
         </ul>
       </div>
     </div>
@@ -30,12 +29,8 @@
   </div>
   <div class="card-profile card" v-else>
     <div class="input-section mb-3">
-      <label>{{this.$locales('first_name')}}</label>
+      <label>Full Name</label>
       <input type="text" v-model='this.delivery.name'>
-    </div>
-    <div class="input-section mb-3">
-      <label>{{this.$locales('second_name')}}></label>
-      <input type="text" v-model='this.delivery.lastname'>
     </div>
     <div class="input-section mb-3">
       <label>{{this.$locales('phone')}}</label>
@@ -50,16 +45,20 @@
       <input type="text" v-model='this.delivery.city'>
     </div>
     <div class="input-section mb-3">
-      <label>{{this.$locales('address')}}</label>
-      <input type="text" v-model='this.delivery.address'>
+      <label>Adress Line 1</label>
+      <input type="text" v-model='this.delivery.line1'>
+    </div>
+    <div class="input-section mb-3">
+      <label>Adress Line 2</label>
+      <input type="text" v-model='this.delivery.line2'>
+    </div>
+    <div class="input-section mb-3">
+      <label>State</label>
+      <input type="text" v-model='this.delivery.state'>
     </div>
     <div class="input-section mb-3">
       <label>{{this.$locales('post_code')}}</label>
       <input type="text"  v-model='this.delivery.post_code'>
-    </div>
-    <div class="input-section mb-3">
-      <label>{{this.$locales('additional_information')}}</label>
-      <input type="text" v-model='this.delivery.info'>
     </div>
     <div class="button text-white text-center" @click='saveDeliveryInfo'>
       {{ this.$locales('saveDeliveryInfo') }}
@@ -79,13 +78,13 @@ export default {
     return {
       delivery: {
         name: "",
-        lastname: "",
         phone: "",
         email: "",
         city: "",
-        address: "",
+        line1: "",
+        line2: "",
+        state: "",
         post_code: "",
-        info: "",
       },
       changing: false,
     }
@@ -99,7 +98,7 @@ export default {
       return response.data;
     },
     async saveDeliveryInfo(){
-      const response = await saveDeliveryInfo(this.delivery);
+      //const response = await saveDeliveryInfo(this.delivery);
       this.changing = false;
     },
   }
