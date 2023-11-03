@@ -37,15 +37,11 @@ export default {
     justify-content: space-between;
   }
   .quiz_header_step_counter>.item>span{
-    display: block;
-    font-size: 14px;
-    margin-top: 0px;
-    margin-left: 2.5px;
     display: none;
-    color: #01b467;
   }
-  .quiz_header_step_counter>.item.active>span{
+  .quiz_header_step_counter>.item.active{
     display: block;
+    background: #01b467;
   }
   .quiz_header_step_counter>.item{
     width: 85%;
@@ -56,7 +52,7 @@ export default {
     height: 24px;
   }
   .quiz{
-    padding: 22px 10px;
+    padding: 10px 16px;
     background: var(--Bg, #F0F5F8);
   }
   .quiz_header_navigation{

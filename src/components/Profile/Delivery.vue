@@ -112,7 +112,7 @@ export default {
   },
   methods: {
     async getDeliveryInfo(){
-      const response = await getDeliveryInfo(this.delivery);
+      const response = await getDeliveryInfo();
       return response.data;
     },
     async saveDeliveryInfo(){
@@ -128,7 +128,7 @@ export default {
         return;
       }
 
-      //const response = await saveDeliveryInfo(this.delivery);
+      const response = await saveDeliveryInfo(this.delivery);
       this.changing = false;
     },
   }

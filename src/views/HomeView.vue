@@ -14,7 +14,7 @@
     </Transition>
   </section>
 
-  <div class="main-page-content">
+  <div class="main-page-content" id='how_it_work'>
     <div class="titlep_block">
       <h3 class="block-title">
         {{ this.$locales('how_works') }}
@@ -39,7 +39,7 @@
       text='All you have to do is enjoy! If you need actionable advice and motivation boosts, our coaches will support you on your journey.'
     />
 
-    <div class="titlep_block">
+    <div class="titlep_block" id='why_calori'>
       <h3 class="block-title">
         {{ this.$locales('why_calori_block_title') }}
       </h3>
@@ -79,7 +79,7 @@
       "
     />
 
-    <div class="titlep_block mt-5" id='block'>
+    <div class="titlep_block" id='block'>
       <h3 class="block-title">
         {{ this.$locales('reviews_block_title') }}
       </h3>
@@ -96,7 +96,7 @@
       text-2='Just in time for your new-year resolutions! 🎆'
     />
 
-    <div class="titlep_block mt-5">
+    <div class="titlep_block" id='menu'>
       <h3 class="block-title">
         Get your meal plan
       </h3>
@@ -113,7 +113,7 @@
 
     <div class="quiz-button" style="" @click='this.$router.push("/quiz")'>Get your plan</div>
 
-    <div class="titlep_block mt-5">
+    <div class="titlep_block">
       <h3 class="block-title">
         1 Month with Calori
       </h3>
@@ -145,7 +145,7 @@
       '
     />
 
-    <div class="titlep_block mt-5">
+    <div class="titlep_block">
       <h3 class="block-title">
         Our Story
       </h3>
@@ -160,8 +160,8 @@
 
     <StorySlider />
 
-    <div class="titlep_block mt-5" style='margin-top: 100px !important;'>
-      <h3 class="block-title mt-5">
+    <div class="titlep_block" id='sustainability_approach'>
+      <h3 class="block-title">
         Sustainability Approach
       </h3>
       <p>
@@ -195,8 +195,8 @@
 
     <p>Did you know that meal boxes reduce waste by 38% compared to home-cooked dinners?</p>
 
-    <div class="titlep_block mt-5" style='margin-top: 100px !important;'>
-      <h3 class="block-title mt-5">
+    <div class="titlep_block">
+      <h3 class="block-title">
         Still got questions?
       </h3>
       <p>
@@ -204,7 +204,7 @@
       </p>
     </div>
 
-    <ContactForm />
+    <ContactForm id='contact'/>
 
   </div>
   <Footer />
@@ -245,17 +245,8 @@ export default {
     }
   },
   created: function() {
-      window.addEventListener('scroll', this.handleScroll);
   },
   methods: {
-      handleScroll: function() {
-          var targetBlock = document.getElementById(this.targetBlockId);
-          if (targetBlock) {
-            var targetBlockHeight = targetBlock.offsetHeight;
-            var scrollPosition = window.scrollY;
-            this.showButton = scrollPosition <= targetBlock.getBoundingClientRect().y;
-          }
-      },
   }
 }
 </script>
@@ -264,11 +255,8 @@ export default {
   .text-Description{
     margin-top: 90px;
   }
-  .titlep_block:first-child{
-    margin-top: 0;
-  }
   .titlep_block{
-    margin-top: 90px;
+    margin-top: 64px;
     margin-bottom: 32px;
   }
   .titlep_block>h3{

@@ -22,8 +22,13 @@ export const getPesonalPlan = async () => {
     return await $api.get('/api/PersonalPlan');
 }
 
+
 export const createApplication = async (data) => {
-    return await $api.post('/api/application', data);
+    return await $api.post('/api/application', data, {
+        headers: {
+          'referral': localStorage.getItem('referral')
+        }
+    });
 }
 
 export const updateApplication = async (data) => {
@@ -55,7 +60,7 @@ export const sendContactForm = async (data) => {
 }
 
 export const getDeliveryInfo = async (data) => {
-  return await $api.get('/api/delivery', data)
+  return await $api.get('/api/delivery-info', data)
 }
 
 export const createCheckoutSession = async (data) => {

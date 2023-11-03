@@ -3,7 +3,7 @@
     <QuizHeader :goBack='goBack' :step='step'/>
 
     <div class="step" v-if='this.step == 1'>
-      <div class="content_section">
+      <div class="content_section big">
         {{ this.$locales('select_your_gender') }}
       </div>
       <div class="button_section">
@@ -86,18 +86,24 @@
           {{ this.$locales('choose_activity') }}
         </div>
         <div class="content_input_section">
-          <div class="button_in_content" @click='this.application.activity = 0; nextStep()'>
-            <div> {{ this.$locales('activity_0') }} </div>
-            <p>Little or no exercise</p>
+          <div class="input-group">
+          <select class="custom-select" id="inputGroupSelect04" style='height: 40px'>
+            <option value="0">{{ this.$locales('activity_0') }}</option>
+            <option value="1">{{ this.$locales('activity_1') }}</option>
+            <option value="2">{{ this.$locales('activity_2') }}</option>
+          </select>
+          <div class="input-group-append">
+            <button class="btn btn-dark" type="button" style='height: 40px'>
+              <img src="@/assets/img/icon/66.svg">
+            </button>
           </div>
-          <div class="button_in_content" @click='this.application.activity = 1; nextStep()'>
-            <div> {{ this.$locales('activity_1') }} </div>
-            <p>Sports 1–3 days a week</p>
-          </div>
-          <div class="button_in_content" @click='this.application.activity = 2; nextStep()'>
-            <div> {{ this.$locales('activity_2') }} </div>
-            <p>Sports 3-5 times a week</p>
-          </div>
+        </div>
+        </div>
+      </div>
+      <div class="button_section button_section_one_button">
+        <div class="button" @click='nextStep'>
+          <div>{{ this.$locales('next') }}</div>
+          <img src="@/assets/img/icon/button_arrow.svg">
         </div>
       </div>
     </div>
@@ -105,16 +111,16 @@
 
     <div class="step" v-if='this.step == 6'>
       <div class="content_section">
-        <div class="title">
-          {{ this.$locales('write_yout_goal') }}
-        </div>
         <div class="content_input_section" :class="{ 'error' : this.errors.goal }">
-          <label for="">{{ this.$locales('goal_weight') }}:</label>
+          <label for="" class="text-left">{{ this.$locales('write_yout_goal') }}:</label>
           <input type="email" v-model='this.application.goal' >
           <span> {{ this.$locales('target_weight_min_error') }}</span>
         </div>
-        <div class="title">
-           {{ this.$locales('recommended_weight') }} {{this.calculated_weight.minWeight}}-{{this.calculated_weight.maxWeight}} kg.
+        <div class="title mt-5 text-left">
+           {{ this.$locales('recommended_weight')}}:
+        </div>
+        <div class="text-left big-green">
+          {{this.calculated_weight.minWeight}}-{{this.calculated_weight.maxWeight}} kg.
         </div>
       </div>
       <div class="button_section button_section_one_button">
@@ -128,7 +134,7 @@
 
     <div class="step" v-if='this.step == 7'>
       <div class="content_section">
-        <div class="title">
+        <div class="title big">
           {{ this.$locales('allergies_any_foods') }}
         </div>
       </div>
@@ -149,27 +155,27 @@
         <div class="list">
           <div class="list_item">
             <input type="checkbox" v-model='this.application.allergies' value='1'>
-            <label for="">Lactose <br>containing products</label>
+            <label for="" class='mb-0'>Lactose <br><span>containing products</span></label>
           </div>
           <div class="list_item">
             <input type="checkbox" v-model='this.application.allergies' value='2'>
-            <label for="">Gluten <br>containing products</label>
+            <label for="" class='mb-0'>Gluten <br><span>containing products</span></label>
           </div>
           <div class="list_item">
             <input type="checkbox" v-model='this.application.allergies' value='3'>
-            <label for="">Nuts <br>Products containing</label>
+            <label for="" class='mb-0'>Nuts <br><span>containing products</span></label>
           </div>
           <div class="list_item">
             <input type="checkbox" v-model='this.application.allergies' value='4'>
-            <label for="">Fish <br>Seafood</label>
+            <label for="" class='mb-0'>Fish <br><span>Seafood</span></label>
           </div>
           <div class="list_item">
             <input type="checkbox" v-model='this.application.allergies' value='5'>
-            <label for="">Citrus<br>products containing</label>
+            <label for="" class='mb-0'>Citrus<br><span>containing products</span></label>
           </div>
           <div class="list_item">
-            <input type="checkbox" v-model='this.application.allergies' value='5'>
-            <label for="">Other allergies</label>
+            <input type="checkbox" v-model='this.application.allergies' value=''>
+            <label for="" class='mb-0'>Other allergies</label>
           </div>
         </div>
       </div>
@@ -181,15 +187,15 @@
       </div>
     </div>
 
-    <div class="step" v-if='this.step == 8'>
-      <div class="content_section">
-        <div class="title" v-if='!this.application.allergies.length'>
+    <div class="shadow-none  email-card card step" v-if='this.step == 8'>
+      <div class="">
+        <div class="title mt-0" v-if='!this.application.allergies.length'>
           {{ this.$locales('quiz2fraze') }}
         </div>
-        <div class="title" v-if='this.application.allergies.indexOf("5") >= 0'>
+        <div class="title mt-0" v-if='this.application.allergies.indexOf("5") >= 0'>
           {{ this.$locales('quiz3fraze') }}
         </div>
-        <div class="title" v-if='!this.application.allergies.indexOf("5") >= 0 && this.application.allergies.length'>
+        <div class="title mt-0" v-if='!this.application.allergies.indexOf("5") >= 0 && this.application.allergies.length'>
           {{ this.$locales('quiz4fraze') }}
         </div>
         <div class="content_input_section">
@@ -199,21 +205,13 @@
           </div>
           <div class="content_input_section" :class="{ 'error' : this.errors.email }">
             <label for="">{{this.$locales('email')}}</label>
-            <input type="email" v-model='this.application.email' >
+            <input type="email" placeholder="Write your e-mail" v-model='this.application.email' >
             <span> {{ this.$locales('user_alredy_exist') }} </span>
           </div>
         </div>
-      </div>
-      <div class="button_section" v-if='!this.$cookies.get("auth_token")'>
-        <div class="button" @click='this.createApplication()'>
-          <div> {{ this.$locales('create_plan') }} </div>
-          <img src="@/assets/img/icon/button_arrow.svg">
-        </div>
-      </div>
-      <div class="button_section" v-else>
-        <div class="button" @click='this.updateApplication()'>
-          <div> {{ this.$locales('update_plan') }} </div>
-          <img src="@/assets/img/icon/button_arrow.svg">
+        <div class="button d-flex justify-content-center" @click='this.createApplication()'>
+          <div> Send </div>
+          <img class="ml-2" src="@/assets/img/icon/mail.svg">
         </div>
       </div>
     </div>
@@ -390,7 +388,7 @@ export default {
 
       this.step++;
     },
-    async updateApplication(){
+    /*async updateApplication(){
       if (this.step == 8 && this.application.email == "") {
         this.errors.email = true;
         return
@@ -442,7 +440,7 @@ export default {
         console.log(e)
         this.errors.email = true;
       }
-    }
+    }*/
   },
   watch: {
     async step(){
@@ -476,6 +474,53 @@ export default {
 </script>
 
 <style scoped>
+  .email-card{
+    position: absolute;
+    bottom: 0px;
+    margin-right: 16px !important;
+    box-shadow: none !important;
+  }
+  label>span{
+    color: var(--Grey, #92979B);
+    font-family: Inter;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 140%; /* 16.8px */
+  }
+  .list{
+    background: var(--White, #FFF);
+    padding-top: 4px;
+    padding-bottom: 12px;
+    border-radius: 15px;
+  }
+  .big-green{
+    color: var(--Accent, #00B467);
+    font-family: Inter;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 140%;
+  }
+  .custom-select{
+    border-radius: 8px;
+    background: var(--Bg-block, #E4E9EF);
+    color: var(--Black, #2C2D31);
+    font-family: Inter;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 140%;
+  }
+  .big{
+    color: var(--Black, #2C2D31);
+    text-align: center;
+    font-family: Inter;
+    font-size: 16px !important;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 140%;
+  }
   .error>label{
     color: #C9324B;
   }
@@ -587,7 +632,7 @@ export default {
   .list_item {
     display: flex;
     text-align: left;
-    margin-bottom: 20px;
+    padding: 18px 8px;
   }
   input[type='checkbox']{
     transform: scale(2.3);
@@ -602,6 +647,7 @@ export default {
     font-style: normal;
     font-weight: 500;
     line-height: normal;
+    line-height: 100%;
   }
   .quiz{
     max-width: 600px;

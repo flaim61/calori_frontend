@@ -10,15 +10,22 @@ export default {
   name: "App",
   data(){
     return {
-      
+
     }
   },
   async created(){
     await this.checkAuth();
+    this.checkReferral();
     console.log(this.$store.state.auth)
     console.log(this.$cookies.get('auth_token'));
   },
   methods: {
+    checkReferral(){
+      const url = new URL(location.href);
+      if (url.searchParams.get('referral')) {
+        localStorage.setItem('referral', url.searchParams.get('referral'));
+      }
+    },
     async checkAuth(){
       try {
         const response = await checkAuth();

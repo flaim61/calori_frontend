@@ -116,6 +116,8 @@ export default {
           timer: 3500
         });
       } catch (e) {
+        console.log(e);
+
         this.$swal({
           position: 'top',
           icon: 'error',

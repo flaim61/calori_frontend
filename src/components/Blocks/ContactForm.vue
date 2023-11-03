@@ -53,6 +53,7 @@ export default {
       try {
         const response = await sendContactForm(this.form);
       } catch (e) {
+        
         this.$swal({
           position: 'top-right',
           icon: 'error',
@@ -61,6 +62,8 @@ export default {
           showConfirmButton: false,
           timer: 4500
         })
+
+        return;
       }
 
       this.$swal({
@@ -74,6 +77,7 @@ export default {
 
       for (var p in this.errors) {
         this.errors[p] = false;
+        this.form = "";
       }
     }
   }

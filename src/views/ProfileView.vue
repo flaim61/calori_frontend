@@ -22,9 +22,9 @@
           {{ this.$locales('coach') }}
         </div>
       </a>
-      <!--<div class="profile_tabs_item" :class="{'active' : this.tabs.referral}" @click='this.setActive("referral")'>
+      <div class="profile_tabs_item" :class="{'active' : this.tabs.referral}" @click='this.setActive("referral")'>
         Referral
-      </div>-->
+      </div>
       <div class="profile_tabs_item" :class="{'active' : this.tabs.delivery}" @click='this.setActive("delivery")'>
         {{ this.$locales('delivery') }}
       </div>
@@ -38,6 +38,7 @@
       <Plan v-if='this.tabs.plan'/>
       <Delivery v-if='this.tabs.delivery'/>
       <Coach v-if='this.tabs.coach'/>
+      <Referral v-if='this.tabs.referral'/>
     </div>
     <ProfileSettings v-if='this.settings'/>
   </div>
@@ -48,6 +49,7 @@ import Plan from '@/components/Profile/Plan.vue';
 import Delivery from '@/components/Profile/Delivery.vue';
 import Coach from '@/components/Profile/Coach.vue';
 import ProfileSettings from '@/components/Profile/ProfileSettings.vue'
+import Referral from '@/components/Profile/Referral.vue'
 
 export default {
   name: "ProfileView",
@@ -56,6 +58,7 @@ export default {
     Delivery,
     Coach,
     ProfileSettings,
+    Referral,
   },
   created(){
     this.checkAfterPayment();
@@ -84,7 +87,7 @@ export default {
     checkAfterPayment(){
       let params = (new URL(document.location)).searchParams;
       let payment_result = params.get("payment_result");
-      
+
       if (payment_result == "success") {
         this.$swal({
           position: 'center',

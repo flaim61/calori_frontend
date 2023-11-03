@@ -256,8 +256,8 @@ export default {
     padding-right: 20px;
   }
   .tab_nav::-webkit-scrollbar{
-    width: 0 !important;
-    height: 0;
+    width: 0px !important;
+    height: 0px;
     display: none !important;
     background: transparent;
   }
