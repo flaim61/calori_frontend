@@ -112,38 +112,41 @@
     </p>
 
     <div class="quiz-button" style="" @click='this.$router.push("/quiz")'>Get your plan</div>
+    <p>All meals with deliveries start from 168 eur / week.</p>
 
-    <div class="titlep_block">
-      <h3 class="block-title">
-        1 Month with Calori
-      </h3>
-      <p>
-        Here’s the difference you can make to your life with Calori.
-      </p>
+    <div class="blue-block pt-5 mt-5 pb-3">
+      <div class="titlep_block  mt-0">
+        <h3 class="block-title">
+          1 Month with Calori
+        </h3>
+        <p>
+          Here’s the difference you can make to your life with Calori.
+        </p>
+      </div>
+
+      <PlusesBlock
+        :pluses='
+          [
+            {
+              title: "+50 hours",
+              text: "saved on planning, shopping, cooking, and cleaning."
+            },
+            {
+              title: "+150 meals",
+              text: "for you to enjoy on your journey."
+            },
+            {
+              title: "Up to 2 kg",
+              text: "of weight lost without sacrificing on your lifestyle."
+            },
+            {
+              title: "Infinity",
+              text: "boost to energy and wellbeing."
+            },
+          ]
+        '
+      />
     </div>
-
-    <PlusesBlock
-      :pluses='
-        [
-          {
-            title: "+50 hours",
-            text: "saved on planning, shopping, cooking, and cleaning."
-          },
-          {
-            title: "+150 meals",
-            text: "for you to enjoy on your journey."
-          },
-          {
-            title: "Up to 2 kg",
-            text: "of weight lost without sacrificing on your lifestyle."
-          },
-          {
-            title: "Infinity",
-            text: "boost to energy and wellbeing."
-          },
-        ]
-      '
-    />
 
     <div class="titlep_block">
       <h3 class="block-title">
@@ -300,5 +303,12 @@ export default {
     margin-bottom: 32px;
     font-size: 24px;
     font-weight: 400;
+  }
+  .blue-block{
+    padding-left: 15px;
+    background: var(--Bg, #F0F5F8);
+    margin-left: -15px;
+    padding-right: 15px;
+    width: calc(100% + 30px);
   }
 </style>

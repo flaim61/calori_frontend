@@ -25,7 +25,7 @@ export default {
   contact_us: "Contact us",
   mon: "Mon",
   tue: "Tue",
-  wed: "Mon",
+  wed: "Wed",
   thu: "Thu",
   fri: "Fri",
   sat: "Sat",
@@ -112,6 +112,57 @@ export default {
   quiz3fraze: "Write that you are allergic and provide your Email",
   quiz4fraze: "Leave your email and we will contact you",
   user_alredy_exist: "This user is already in the system! Check your email",
+  /* MENU */
+  menu_pn_1: "Yogurt with dried cherries and granola",
+  menu_pn_2: "Italian salad",
+  menu_pn_3: "Meatballs in tomato sauce",
+  menu_pn_4: "Coconut chicken with sweet potato",
+  menu_pn_5: "Stuffed croissant",
+
+  menu_vt_1: "Barley flake porridge with blueberry jam",
+  menu_vt_2: "Sweet frittata with apple and pear",
+  menu_vt_3: "Meatballs with roasted potatoes",
+  menu_vt_4: "Chicken with penne pasta",
+  menu_vt_5: "Chicken Caesar salad",
+
+  menu_sr_1: "Blueberry porridge",
+  menu_sr_2: "Chili pork and pita bread",
+  menu_sr_3: "Turkey pasta",
+  menu_sr_4: "Plum-quark pie",
+  menu_sr_5: "Quinoa salad with roasted chickpeas",
+
+  menu_cht_1: "Rice porridge with milk and dried apricots",
+  menu_cht_2: "Chili beef and vegetable hash",
+  menu_cht_3: "“Pulled Hen” burger",
+  menu_cht_4: "Raspberry muffin",
+  menu_cht_5: "Beef salad",
+
+  menu_pt_1: "Pancakes with raspberries",
+  menu_pt_2: "Fruit quark (or Fruit curd dessert)",
+  menu_pt_3: "Beef wok",
+  menu_pt_4: "Sliced roasted beef with 'Demi-Glace' cherry sauce",
+  menu_pt_5: "Quark croquettes",
+
+  menu_sb_1: "Yogurt and muesli",
+  menu_sb_2: "Apple pie",
+  menu_sb_3: "Stroganoff with rice",
+  menu_sb_4: "Quark pancake",
+  menu_sb_5: "Chicken wrap",
+
+  menu_vs_1: "Kala tartaletissa",
+  menu_vs_2: "Vuohenjuustorulla",
+  menu_vs_3: "Siian paistos linguine-pastan kanssa",
+  menu_vs_4: "Brownie",
+  menu_vs_5: "Nizzan salaatti",
+  meal: "meal",
+  /* MENU */
+  /* REVIEWS */
+  review_daniela: "I got to taste the meals in advance and can truly recommend them warmly 😋",
+  review_nina: "A tasty relief for a busy everyday life! The service gave me several more hours of extra time for other daily chores, took the rush out of mornings, and made it easier to maintain regular eating. A big recommendation!",
+  review_eemil: "Such a convenient concept. Currently, I end up spending quite a bit on restaurant food because I don’t have the time/energy to cook. (not to mention the dishes)",
+  review_salli: "Once again, the 3 days’ worth of food was delivered right to my doorstep, and I don’t need to cook at all 🥰",
+  review_albert: "I can do nothing but say that I definitely recommend it!",
+  /* REVIEWS */
   /* ВТОРАЯ ПАРТИЯ ЛОКАЛЕЙ */
   l1_main_page_title: "Weight loss without cooking counting calories and workouts",
   l1_main_page_text: "Just subscribe and start reaching your goals. We will take care of the rest.",

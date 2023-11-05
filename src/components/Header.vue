@@ -139,7 +139,6 @@ export default {
   }
   .menu-content{
     margin-top: 30px;
-    text-align: center;
   }
   .menu-content>a {
       color: #151515;

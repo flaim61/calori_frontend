@@ -1,11 +1,12 @@
 <template>
   <div class="profile-header-wrapper">
-    <div class="profile-header d-flex justify-content-between">
+    <div class="profile-header d-flex justify-content-between mb-2">
       <h3>
         {{ this.$locales('personal_profile') }}
       </h3>
-      <div class="" v-if='!this.settings' @click='this.settings = !this.settings'>
-        <img src="@/assets/img/icon/settings.svg" alt="">
+      <div class="" v-if='!this.settings'>
+        <img src="@/assets/img/icon/settings.svg" alt="" @click='this.settings = !this.settings'>
+        <img class='ml-3' src="@/assets/img/icon/logout.svg" alt="" @click='logout'>
       </div>
       <h2 class='d-flex justify-content-between' v-else @click='this.settings = !this.settings'>
         <div class="back-button">
@@ -39,6 +40,7 @@
       <Delivery v-if='this.tabs.delivery'/>
       <Coach v-if='this.tabs.coach'/>
       <Referral v-if='this.tabs.referral'/>
+      <Subscription v-if='this.tabs.subscription'/>
     </div>
     <ProfileSettings v-if='this.settings'/>
   </div>
@@ -50,6 +52,7 @@ import Delivery from '@/components/Profile/Delivery.vue';
 import Coach from '@/components/Profile/Coach.vue';
 import ProfileSettings from '@/components/Profile/ProfileSettings.vue'
 import Referral from '@/components/Profile/Referral.vue'
+import Subscription from '@/components/Profile/Subscription.vue'
 
 export default {
   name: "ProfileView",
@@ -59,6 +62,7 @@ export default {
     Coach,
     ProfileSettings,
     Referral,
+    Subscription,
   },
   created(){
     this.checkAfterPayment();
@@ -77,6 +81,19 @@ export default {
     }
   },
   methods: {
+    logout(){
+      var cookies = document.cookie.split(";");
+    	for (var i = 0; i < cookies.length; i++) {
+    		var cookie = cookies[i];
+    		var eqPos = cookie.indexOf("=");
+    		var name = eqPos > -1 ? cookie.substr(0, eqPos) : cookie;
+    		document.cookie = name + "=;expires=Thu, 01 Jan 1970 00:00:00 GMT;";
+    		document.cookie = name + '=; path=/; expires=Thu, 01 Jan 1970 00:00:01 GMT;';
+    	}
+
+      localStorage.clear();
+      location.reload();
+    },
     setActive(name){
       for (let property in this.tabs) {
         this.tabs[property] = false;
@@ -134,8 +151,7 @@ export default {
     justify-content: center;
     align-items: center;
     border-radius: 10px;
-    background: var(--Grey, #92979B);
-    color: var(--White, #FFF);
+    color: var(--White, #92979B);
     font-family: Inter;
     font-size: 12px;
     font-style: normal;
@@ -143,13 +159,16 @@ export default {
     line-height: 140%; /* 16.8px */
     white-space: nowrap;
     margin-right: 8px;
+    border-radius: 10px;
+    border: 2px solid var(--Grey, #92979B);
   }
   .profile_tabs_item.active{
     border-radius: 10px;
+    color: white;
+    border: 2px solid var(--Grey, #00B467);
     background: var(--Accent, #00B467);
   }
   .profile_tabs{
     overflow-x: auto;
-    margin-bottom: 10px;
   }
 </style>

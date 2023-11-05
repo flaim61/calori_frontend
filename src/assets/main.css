@@ -6,6 +6,22 @@ html{
   scroll-behavior:smooth;
 }
 
+#main-button{
+  opacity: 1;
+  transition: opacity 0.5s ease; /* Плавная анимация исчезновения в течение 0.5 секунды */
+}
+
+.quiz-button + p{
+  color: var(--Grey, #92979B);
+  font-family: Inter;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 140%;
+  text-align: center;
+  margin-top: 8px;
+}
+
 input::placeholder{
   color: var(--Grey, #92979B) !important;
   font-family: Inter !important;
@@ -14,6 +30,7 @@ input::placeholder{
   font-weight: 400 !important;
   line-height: 140% !important; /* 16.8px */
   text-align: left;
+  margin-bottom: 10px;
 }
 
 .quiz-button{
@@ -35,6 +52,14 @@ input::placeholder{
   max-width: 500px;
   width: 100%;
   margin-top: 47px;
+  border-radius: 10px;
+  background: var(--Accent, #00B467);
+}
+
+#main-button{
+  border-radius: 10px;
+  background: var(--Accent, #00B467);
+  color: #fff;
 }
 
 .grey{
@@ -213,7 +238,7 @@ p{
   padding: 16px;
   border-radius: 16px;
   background: #FFF;
-  box-shadow: 0px 4px 20px 0px rgba(0, 0, 0, 0.15);
+  /*box-shadow: 0px 4px 20px 0px rgba(0, 0, 0, 0.15);*/
   margin-top: 15px;
   margin-left: 16px;
   margin-right: 16px;
@@ -287,6 +312,90 @@ p{
     margin: 0;
     list-style: none;
     text-align: center;
+}
+
+.content_input_section>.input-group>input{
+  border-radius: 8px;
+  background: var(--Bg-block, #E4E9EF);
+  color: var(--Black, #2C2D31);
+  font-family: Inter;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 140%;
+  border-right: 0;
+}
+
+.input-group-text{
+  border-left: 0;
+  background-color: #E4E9EF;
+  color: var(--Black, #2C2D31);
+  font-family: Inter;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 140%; /* 16.8px */
+}
+
+.v-select{
+  border-radius: 8px !important;
+  background: var(--Bg-block, #E4E9EF) !important;
+  height: 40px !important;
+}
+
+.vs__dropdown-toggle{
+  height: 100% !important;
+  border-radius: 8px !important;
+  border: none !important;
+}
+ul[role='listbox']{
+  padding: 0;
+}
+ul[role='listbox']>li{
+  color: var(--Black, #2C2D31);
+  font-family: Inter;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 140%;
+  display: flex;
+  justify-content: space-between;
+  height: 40px;
+  background: var(--Bg-block, #E4E9EF) !important;
+  border-bottom: 1px solid white;
+}
+
+ul[role='listbox']>li>div{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+ul[role='listbox']>li>div:last-child{
+  color: var(--Black, #2C2D31);
+  font-family: Inter;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 140%;
+}
+
+ul[role='listbox']>li:last-child{
+  border-bottom: none;
+}
+
+input.p-inputtext.p-component.p-password-input {
+    width: 100%;
+    padding: 12px 8px;
+    border-radius: 8px;
+    background: var(--Bg-block, #E4E9EF);
+    border: none;
+    color: black;
+    font-family: Inter;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 140%;
 }
 
 @media screen and (min-width: 700px) {

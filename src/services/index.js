@@ -1,5 +1,5 @@
 import axios from "axios"
-export const apiBase = "http://testcaloriapi.ru:8080";
+export const apiBase = "https://testcaloriapi.ru";
 import Cookies from 'js-cookie'
 
 const $api = axios.create({

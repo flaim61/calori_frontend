@@ -17,21 +17,21 @@
       </template>
     </div>
     <div class="card login-section">
-      <div class="input-section">
+      <div class="input-section mb-3 mt-0">
         <label for="email">{{ this.$locales('email') }}</label>
         <input type="text" v-model='this.email' id='email' placeholder="Your e-mail" autocomplete="off">
       </div>
-      <div class="input-section" v-if='!this.forgotPass' :class='{ "error": this.loginError }'>
+      <div class="input-section mt-0" v-if='!this.forgotPass' :class='{ "error": this.loginError }'>
         <label for="password">{{ this.$locales('password') }}</label>
-        <input type="password" id='password' v-model='this.password' placeholder="Your password" autocomplete="off">
+        <Password v-model="this.password" placeholder='Your password' toggleMask :feedback="false" />
         <span>{{ this.$locales('error_not_correct_login_or_password') }}</span>
       </div>
       <a class="forgot" href="#" v-if='!this.forgotPass' @click='this.forgotPass = true'>{{ this.$locales('forgot_password') }}</a>
-      <div class="button" @click='login' v-if='!this.forgotPass'>
+      <div class="button mt-0 mb-0" @click='login' v-if='!this.forgotPass'>
         <div>{{ this.$locales('login') }}</div>
         <img src="@/assets/img/icon/button_arrow.svg">
       </div>
-      <div class="button" @click='resetPassword' v-else>
+      <div class="button mt-0 mb-0" @click='resetPassword' v-else>
         <div>{{ this.$locales('send_new_password') }}</div>
         <img src="@/assets/img/icon/button_arrow.svg">
       </div>
@@ -41,6 +41,7 @@
 
 <script>
 import { login, resetPassword } from "@/services/index.js"
+import Password from 'primevue/password';
 
 export default {
   name: "LoginView",
@@ -49,6 +50,9 @@ export default {
       forgotPass: false,
       loginError: false,
     }
+  },
+  components: {
+    Password
   },
   methods: {
     async login(){
@@ -113,6 +117,10 @@ export default {
     padding: 16px;
     margin-bottom: 5vh;
     margin-bottom: 20vh;
+    position: absolute;
+    bottom: 16px;
+    margin-bottom: 0;
+    width: calc(100% - 20px);
   }
   .login-view{
     background-color: #E4E9EF;

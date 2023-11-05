@@ -71,6 +71,7 @@ We help you get the perfect balance of nutrients, save time, and keep you energi
       text='Staying on track and finding motivation is never easy without a support system.
             That’s why we have experienced coaches who can track your progress, give actionable advice, and answer all your questions! '
     />
+    
 
     <div class="titlep_block" id='why_calori'>
       <h3 class="block-title">
@@ -180,6 +181,7 @@ We help you get the perfect balance of nutrients, save time, and keep you energi
     </p>
 
     <div class="quiz-button" style="" @click='this.$router.push("/quiz")'>Get your plan</div>
+    <p>All meals with deliveries start from 168 eur / week.</p>
 
     <div class="titlep_block">
       <h3 class="block-title">

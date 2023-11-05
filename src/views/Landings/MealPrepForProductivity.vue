@@ -146,6 +146,7 @@
     </p>
 
     <div class="quiz-button mb-5" style="" @click='this.$router.push("/quiz")'>Get your plan</div>
+    <p>All meals with deliveries start from 168 eur / week.</p>
 
     <List :data=
       "

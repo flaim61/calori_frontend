@@ -30,7 +30,7 @@ export default {
 </script>
 
 <style>
-  .card>img, .card>div{
+  .card>img{
     margin-top: 16px;
     margin-bottom: 16px;
   }

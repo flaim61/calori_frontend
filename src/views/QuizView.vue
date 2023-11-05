@@ -28,7 +28,12 @@
           {{this.$locales('write_your_weight')}}
         </div>
         <div class="mt-1 content_input_section" :class="{ 'error': this.errors.weight || this.errors.min_weight}">
-          <input type="number" v-model='this.application.weight'  >
+          <div class="input-group">
+            <input type="number" class="form-control" v-model='this.application.weight'>
+            <div class="input-group-append">
+              <span class="input-group-text">Kg.</span>
+            </div>
+          </div>
           <span v-if='this.errors.min_weight'>Your weight is less than or equal to the recommended weight</span>
         </div>
         <p class="mb-0">
@@ -49,7 +54,12 @@
           {{ this.$locales('write_your_height') }}
         </div>
         <div class="mt-1 content_input_section" :class="{ 'error': this.errors.height }" >
-          <input type="number" v-model='this.application.height' >
+          <div class="input-group">
+            <input type="number" class="form-control" v-model='this.application.height'>
+            <div class="input-group-append">
+              <span class="input-group-text">Cm.</span>
+            </div>
+          </div>
         </div>
         <p class="mb-0">
           {{ this.$locales('quiz1fraze') }}
@@ -69,7 +79,12 @@
           {{ this.$locales('how_old') }}
         </div>
         <div class="mt-0 content_input_section" :class="{ 'error': this.errors.age }">
-          <input type="number" v-model='this.application.age'  >
+          <div class="input-group">
+            <input type="number" class="form-control" v-model='this.application.age'>
+            <div class="input-group-append">
+              <span class="input-group-text">Years.</span>
+            </div>
+          </div>
         </div>
       </div>
       <div class="button_section button_section_one_button">
@@ -87,17 +102,17 @@
         </div>
         <div class="content_input_section">
           <div class="input-group">
-          <select class="custom-select" id="inputGroupSelect04" style='height: 40px'>
-            <option value="0">{{ this.$locales('activity_0') }}</option>
-            <option value="1">{{ this.$locales('activity_1') }}</option>
-            <option value="2">{{ this.$locales('activity_2') }}</option>
-          </select>
-          <div class="input-group-append">
-            <button class="btn btn-dark" type="button" style='height: 40px'>
-              <img src="@/assets/img/icon/66.svg">
-            </button>
+            <select class="custom-select" id="inputGroupSelect04" style='height: 40px'>
+              <option value="0">{{ this.$locales('activity_0') }}</option>
+              <option value="1">{{ this.$locales('activity_1') }}</option>
+              <option value="2">{{ this.$locales('activity_2') }}</option>
+            </select>
+            <div class="input-group-append">
+              <button class="btn btn-dark" type="button" style='height: 40px'>
+                <img src="@/assets/img/icon/66.svg">
+              </button>
+            </div>
           </div>
-        </div>
         </div>
       </div>
       <div class="button_section button_section_one_button">
@@ -113,7 +128,12 @@
       <div class="content_section">
         <div class="content_input_section" :class="{ 'error' : this.errors.goal }">
           <label for="" class="text-left">{{ this.$locales('write_yout_goal') }}:</label>
-          <input type="email" v-model='this.application.goal' >
+          <div class="input-group">
+            <input type="number" class="form-control" v-model='this.application.goal'>
+            <div class="input-group-append">
+              <span class="input-group-text">Kg.</span>
+            </div>
+          </div>
           <span> {{ this.$locales('target_weight_min_error') }}</span>
         </div>
         <div class="title mt-5 text-left">
@@ -154,28 +174,58 @@
       <div class="content_section">
         <div class="list">
           <div class="list_item">
-            <input type="checkbox" v-model='this.application.allergies' value='1'>
-            <label for="" class='mb-0'>Lactose <br><span>containing products</span></label>
+            <label for="check_1" class='mb-0 label_item'>
+              <input id='check_1' type="checkbox" v-model='this.application.allergies' value='1'>
+              <span class="checkmark"></span>
+              <div class="">
+                Lactose <br><span>containing products</span>
+              </div>
+            </label>
           </div>
           <div class="list_item">
-            <input type="checkbox" v-model='this.application.allergies' value='2'>
-            <label for="" class='mb-0'>Gluten <br><span>containing products</span></label>
+            <label for="check_2" class='mb-0 label_item'>
+              <input id='check_2' type="checkbox" v-model='this.application.allergies' value='2'>
+              <span class="checkmark"></span>
+              <div class="">
+                Gluten <br><span>containing products</span>
+              </div>
+            </label>
           </div>
           <div class="list_item">
-            <input type="checkbox" v-model='this.application.allergies' value='3'>
-            <label for="" class='mb-0'>Nuts <br><span>containing products</span></label>
+            <label for="check_3" class='mb-0 label_item'>
+              <input id='check_3' type="checkbox" v-model='this.application.allergies' value='3'>
+              <span class="checkmark"></span>
+              <div class="">
+                Nuts <br><span>containing products</span>
+              </div>
+            </label>
           </div>
           <div class="list_item">
-            <input type="checkbox" v-model='this.application.allergies' value='4'>
-            <label for="" class='mb-0'>Fish <br><span>Seafood</span></label>
+            <label for="check_4" class='mb-0 label_item'>
+              <input type="checkbox" id='check_4' v-model='this.application.allergies' value='4'>
+              <span class="checkmark"></span>
+              <div class="">
+                Fish <br><span>Seafood</span>
+              </div>
+            </label>
           </div>
           <div class="list_item">
-            <input type="checkbox" v-model='this.application.allergies' value='5'>
-            <label for="" class='mb-0'>Citrus<br><span>containing products</span></label>
+            <label for="check_5" class='mb-0 label_item'>
+              <input id='check_5' type="checkbox" v-model='this.application.allergies' value='5'>
+              <span class="checkmark"></span>
+              <div class="">
+                Citrus<br><span>containing products</span>
+              </div>
+            </label>
           </div>
           <div class="list_item">
-            <input type="checkbox" v-model='this.application.allergies' value=''>
-            <label for="" class='mb-0'>Other allergies</label>
+            <label for="check_" class='mb-0 label_item'>
+              <input id='check_' type="checkbox" v-model='this.application.allergies' value=''>
+              <span class="checkmark"></span>
+              <div class="">
+                Other allergies <br><span>You can write later what you are allergic to</span>
+              </div>
+            </label>
           </div>
         </div>
       </div>
@@ -188,7 +238,7 @@
     </div>
 
     <div class="shadow-none  email-card card step" v-if='this.step == 8'>
-      <div class="">
+      <div class="mt-0 mb-0">
         <div class="title mt-0" v-if='!this.application.allergies.length'>
           {{ this.$locales('quiz2fraze') }}
         </div>
@@ -308,7 +358,6 @@ export default {
           allergies: this.application.allergies,
           anotherAllergy: this.application.another_allergy
         });
-
         if (response.data.application == null) {
               this.$swal({
                 position: 'top',
@@ -339,6 +388,7 @@ export default {
         location.reload()
         this.step = 9;
       } catch (e) {
+        console.log(e);
         this.errors.email = true;
       }
     },
@@ -447,6 +497,7 @@ export default {
     },
     application: {
       async handler(newValue, oldValue) {
+        console.log(newValue)
         for (var key in this.errors) {
           this.errors[key] = false;
         }
@@ -474,6 +525,86 @@ export default {
 </script>
 
 <style scoped>
+  .label_item>div{
+    margin-left: 10px;
+  }
+
+  .label_item>div>span{
+    color: var(--Grey, #92979B);
+    font-family: Inter;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 140%;
+  }
+
+  .label_item {
+    display: block;
+    position: relative;
+    padding-left: 35px;
+    margin-bottom: 12px;
+    cursor: pointer;
+    font-size: 22px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
+
+  /* Hide the browser's default checkbox */
+  .label_item input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+  }
+
+  /* Create a custom checkbox */
+  .checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 30px;
+    width: 30px;
+    border: 2px solid #7a7a7a;
+    border-radius: 100%;
+  }
+
+  /* On mouse-over, add a grey background color */
+  .label_item:hover input ~ .checkmark {
+    background-color: #ccc;
+  }
+
+  /* When the checkbox is checked, add a blue background */
+  .label_item input:checked ~ .checkmark {
+    border: 2px solid #00a860;
+  }
+
+  /* Create the checkmark/indicator (hidden when not checked) */
+  .checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+  }
+
+  /* Show the checkmark when checked */
+  .label_item input:checked ~ .checkmark:after {
+    display: block;
+  }
+
+  /* Style the checkmark/indicator */
+  .label_item .checkmark:after {
+    left: 10px;
+    top: 6px;
+    width: 7px;
+    height: 12px;
+    border: solid #00a860;
+    border-width: 0 3px 3px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+  }
   .email-card{
     position: absolute;
     bottom: 0px;
@@ -535,8 +666,8 @@ export default {
     bottom: 21px;
     display: flex;
     justify-content: space-between;
-    width: calc(100vw - 20px);
-    max-width: 580px;
+    width: calc(100vw - 30px);
+    max-width: 570px;
   }
   .content_section{
     height: calc(100vh - 180px);
@@ -573,9 +704,9 @@ export default {
     padding: 0px 16px;
     border: none;
     color: var(--Black, #232323);
-    text-align: center;
+    text-align: left;
     font-family: Poppins;
-    font-size: 20px;
+    font-size: 16px;
     font-style: normal;
     font-weight: 500;
     line-height: normal;
@@ -640,7 +771,7 @@ export default {
     accent-color: black;
   }
   .list_item>label{
-    margin-left: 22px;
+    margin-left: 10px;
     color: #000;
     font-family: Poppins;
     font-size: 15px;

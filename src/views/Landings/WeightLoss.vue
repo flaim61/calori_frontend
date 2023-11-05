@@ -136,6 +136,7 @@
     </p>
 
     <div class="quiz-button" style="" @click='this.$router.push("/quiz")'>Get your plan</div>
+    <p>All meals with deliveries start from 168 eur / week.</p>
 
     <div class="titlep_block">
       <h3 class="block-title">

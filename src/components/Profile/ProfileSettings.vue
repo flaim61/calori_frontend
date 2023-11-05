@@ -15,14 +15,15 @@
       <label for="password">
         {{ this.$locales('old_password') }}
       </label>
-      <input type="password" v-model='this.old_password' :placeholder="this.$locales('your_old_password')" autocomplete="off">
+      <Password :placeholder="this.$locales('write_your_old_password')" v-model='this.old_password' toggleMask :feedback="false" />
       <span>{{this.$locales('write_your_old_password')}}</span>
     </div>
     <div class="input-section" :class="{'error' : this.errors.new_password || this.errors.new_password_valid}">
       <label for="password">
         {{ this.$locales('new_password') }}
       </label>
-      <input type="password" v-model='this.new_password' :placeholder="this.$locales('your_new_password')" autocomplete="off">
+      <Password :placeholder="this.$locales('write_your_new_password')" v-model='this.new_password' toggleMask :feedback="false">
+      </Password>
       <span v-if='this.errors.new_password'>{{this.$locales('write_your_new_password')}}</span>
       <span v-if='this.errors.new_password_valid'>
         * minimum 8 characters <br>
@@ -42,7 +43,8 @@
 
 <script>
 import { changePassword } from "@/services/index.js";
-
+import Password from 'primevue/password';
+import Divider from 'primevue/divider';
 export default {
   name: "ProfileSettings",
   data(){
@@ -55,6 +57,10 @@ export default {
       new_password: "",
       old_password: "",
     }
+  },
+  components:{
+    Password,
+    Divider
   },
   methods:{
     validatePassword(password) {

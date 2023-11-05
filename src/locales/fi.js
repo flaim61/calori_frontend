@@ -109,4 +109,55 @@ export default {
   quiz4fraze: "Jätä sähköpostiosoitteesi, niin otamme sinuun yhteyttä",
   user_alredy_exist: "Tämä käyttäjä on jo järjestelmässä! Tarkista sähköpostisi",
   /* ВТОРАЯ ПАРТИЯ ЛОКАЛЕЙ */
+  /* MENU */
+  menu_pn_1: "Jogurtti kuivatuilla kirsikoilla ja granolalla",
+  menu_pn_2: "Italian salaatti",
+  menu_pn_3: "Lihapullat tomaattikastikkeessa",
+  menu_pn_4: "Kookoskanaa ja bataattia",
+  menu_pn_5: "Täytetty croissant",
+
+  menu_vt_1: "Ohrahiutalepuuro mustikkahillolla",
+  menu_vt_2: "Makea frittata omenalla ja päärynällä",
+  menu_vt_3: "Lihapullat ja paahdettua perunaa",
+  menu_vt_4: "Kanaa ja pennepastaa",
+  menu_vt_5: "Broileri-caesarsalaatti",
+
+  menu_sr_1: "Mustikkapuuro",
+  menu_sr_2: "Chiliporsasta ja pitaleipää",
+  menu_sr_3: "Kalkkunapasta",
+  menu_sr_4: "Luumu-rahkapiirakka",
+  menu_sr_5: "Kvinoasalaatti ja paahdetut kikherneet",
+
+  menu_cht_1: "Riisipuuro maidolla ja kuivatuilla aprikooseilla",
+  menu_cht_2: "Vadelmamuffini",
+  menu_cht_3: "“Pulled Hen” -hampurilainen",
+  menu_cht_4: "Chilihärkää ja kasvispyttipannua",
+  menu_cht_5: "Naudanlihasalaatti",
+
+  menu_pt_1: "Pannukakkua ja vadelmaa",
+  menu_pt_2: "Hedelmärahka",
+  menu_pt_3: "Härkäwokki",
+  menu_pt_4: "Paistetun naudanlihan viipaleet 'Demiglace'- kirsikkakastikkeella.",
+  menu_pt_5: "Rahkakroketit",
+
+  menu_sb_1: "Jogurttia ja mysliä",
+  menu_sb_2: "Omenapiirakka",
+  menu_sb_3: "Stroganoff ja riisiä",
+  menu_sb_4: "Rahkapannukakku",
+  menu_sb_5: "Kanawrap",
+
+  menu_vs_1: "Kala tartaletissa",
+  menu_vs_2: "Vuohenjuustorulla",
+  menu_vs_3: "Siian paistos linguine-pastan kanssa",
+  menu_vs_4: "Brownie",
+  menu_vs_5: "Nizzan salaatti",
+  meal: "ateria",
+  /* MENU */
+  /* REVIEWS */
+  review_daniela: "Pääsin maistelemaan aterioita etukäteen ja voi todellakin suositella näitä lämmöllä 😋",
+  review_nina: "Maukas helpotus kiireiseen arkeen! Palvelu antoi minulle monta tuntia lisäaikaa muihin arjen askareisiin, vei kiireen pois aamuista ja helpotti säännöllisen syömisen ylläpitoa. Iso suositus!",
+  review_eemil: "Palvelu on helppoa ja ystävällistä, ruoka myös erittäin maukasta!",
+  review_salli: "Tuotiin taas 3 päivän ruoat suoraan kotiovelle eikä tarvi ollenkaan kokkailla 🥰",
+  review_albert: "En voi muutakuin sanoa, että ehdottomasti suosittelen!",
+  /* REVIEWS */
 }

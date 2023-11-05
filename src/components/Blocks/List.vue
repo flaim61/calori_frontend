@@ -2,21 +2,21 @@
   <div class="">
     <div :class="'list-item ' + this.color" v-for='(li, index) in this.data' :key="index">
       <div class="list-image">
-        <img v-if='li.img == 1' src="@/assets/img/icon/1.svg" alt="">
-        <img v-if='li.img == 2' src="@/assets/img/icon/2.svg" alt="">
-        <img v-if='li.img == 3' src="@/assets/img/icon/3.svg" alt="">
-        <img v-if='li.img == 4' src="@/assets/img/icon/4.svg" alt="">
-        <img v-if='li.img == 5' src="@/assets/img/icon/5.svg" alt="">
-        <img v-if='li.img == 6' src="@/assets/img/icon/6.svg" alt="">
-        <img v-if='li.img == 7' src="@/assets/img/icon/7.svg" alt="">
-        <img v-if='li.img == 8' src="@/assets/img/icon/8.svg" alt="">
-        <img v-if='li.img == 9' src="@/assets/img/icon/9.svg" alt="">
-        <img v-if='li.img == 10' src="@/assets/img/icon/10.svg" alt="">
-        <img v-if='li.img == 11' src="@/assets/img/icon/11.svg" alt="">
-        <img v-if='li.img == 12' src="@/assets/img/icon/12.svg" alt="">
-        <img v-if='li.img == 13' src="@/assets/img/icon/13.svg" alt="">
-        <img v-if='li.img == 14' src="@/assets/img/icon/14.svg" alt="">
-        <img v-if='li.img == 15' src="@/assets/img/icon/15.svg" alt="">
+        <span v-if='li.img == 1' style="font-size: 32px;">🥘</span>
+        <span v-if='li.img == 2' style="font-size: 32px;">💯</span>
+        <span v-if='li.img == 3' style="font-size: 32px;">🌱</span>
+        <span v-if='li.img == 4' style="font-size: 32px;">⚡</span>
+        <span v-if='li.img == 5' style="font-size: 32px;">🧬</span>
+        <span v-if='li.img == 6' style="font-size: 32px;">👨‍🍳</span>
+        <span v-if='li.img == 7' style="font-size: 32px;">🌿</span>
+        <span v-if='li.img == 8' style="font-size: 32px;">♻️</span>
+        <span v-if='li.img == 9' style="font-size: 32px;">🚚</span>
+        <span v-if='li.img == 10' style="font-size: 32px;">🗑️</span>
+        <span v-if='li.img == 11' style="font-size: 32px;">❌</span>
+        <span v-if='li.img == 12' style="font-size: 32px;">✅</span>
+        <span v-if='li.img == 13' style="font-size: 32px;">📱</span>
+        <span v-if='li.img == 14' style="font-size: 32px;">🙌</span>
+        <span v-if='li.img == 15' style="font-size: 32px;">⏯</span>
       </div>
       <div class="list-text">
         {{ li.text }}
@@ -47,6 +47,9 @@ export default {
   }
   .list-image{
     margin-right: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
   }
   .list-image>img{
     height: 100%;

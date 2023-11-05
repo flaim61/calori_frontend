@@ -1,6 +1,6 @@
 <template lang="html">
   <div class="TabsSlider mb-5">
-    <div class="tab_nav  pb-5 pt-5">
+    <div class="tab_nav pb-4">
       <div class="tab_nav_item" :class='{"active":this.active == "mon"}' @click='this.setActive("mon")'>
         {{ this.$locales('mon') }}
       </div>
@@ -27,168 +27,308 @@
     <!-- MON -->
     <div class="racion-slider" v-if='this.active == "mon"'>
       <div class="slide">
-        <img class="mb-4" src="@/assets/img/examples/foof2.jpeg" alt="">
-        <h3>Title1</h3>
-        <p>Description</p>
+        <div class="slide-img-block">
+          <img class="mb-4" src="@/assets/img/menu/pn/1.jpeg" alt="">
+        </div>
+        <h3>1 {{ this.$locales('meal') }}</h3>
+        <p>{{ this.$locales('menu_pn_1') }}</p>
+
       </div>
       <div class="slide">
-        <img class="mb-4" src="@/assets/img/examples/food.jpeg" alt="">
-        <h3>Title1</h3>
-        <p>Description</p>
+        <div class="slide-img-block">
+          <img class="mb-4" src="@/assets/img/menu/pn/2.jpeg" alt="">
+        </div>
+        <h3>2 {{ this.$locales('meal') }}</h3>
+        <p>{{ this.$locales('menu_pn_2') }}</p>
       </div>
       <div class="slide">
-        <img class="mb-4" src="@/assets/img/examples/foof2.jpeg" alt="">
-        <h3>Title1</h3>
-        <p>Description</p>
+        <div class="slide-img-block">
+          <img class="mb-4" src="@/assets/img/menu/pn/3.png" alt="">
+        </div>
+        <h3>3 {{ this.$locales('meal') }}</h3>
+        <p>{{ this.$locales('menu_pn_3') }}</p>
+
       </div>
       <div class="slide">
-        <img class="mb-4" src="@/assets/img/examples/food.jpeg" alt="">
-        <h3>Title1</h3>
-        <p>Description</p>
+        <div class="slide-img-block">
+          <img class="mb-4" src="@/assets/img/menu/pn/4.jpeg" alt="">
+        </div>
+        <h3>4 {{ this.$locales('meal') }}</h3>
+        <p>{{ this.$locales('menu_pn_4') }}</p>
+
+      </div>
+      <div class="slide">
+        <div class="slide-img-block">
+          <img class="mb-4" src="@/assets/img/menu/pn/5.jpeg" alt="">
+        </div>
+        <h3>5 {{ this.$locales('meal') }}</h3>
+        <p>{{ this.$locales('menu_pn_5') }}</p>
+
       </div>
     </div>
 
     <!-- TUE -->
     <div class="racion-slider" v-if='this.active == "tue"'>
       <div class="slide">
-        <img class="mb-4" src="@/assets/img/examples/foof2.jpeg" alt="">
-        <h3>Title2</h3>
-        <p>Description</p>
+        <div class="slide-img-block">
+          <img class="mb-4" src="@/assets/img/menu/vt/1.jpeg" alt="">
+        </div>
+        <h3>1 {{ this.$locales('meal') }}</h3>
+        <p>{{ this.$locales('menu_vt_1') }}</p>
+
       </div>
       <div class="slide">
-        <img class="mb-4" src="@/assets/img/examples/food.jpeg" alt="">
-        <h3>Title2</h3>
-        <p>Description</p>
+        <div class="slide-img-block">
+          <img class="mb-4" src="@/assets/img/menu/vt/2.jpeg" alt="">
+        </div>
+        <h3>2 {{ this.$locales('meal') }}</h3>
+        <p>{{ this.$locales('menu_vt_2') }}</p>
+
       </div>
       <div class="slide">
-        <img class="mb-4" src="@/assets/img/examples/foof2.jpeg" alt="">
-        <h3>Title2</h3>
-        <p>Description</p>
+        <div class="slide-img-block">
+          <img class="mb-4" src="@/assets/img/menu/vt/3.jpeg" alt="">
+        </div>
+        <h3>3 {{ this.$locales('meal') }}</h3>
+        <p>{{ this.$locales('menu_vt_3') }}</p>
+
       </div>
       <div class="slide">
-        <img class="mb-4" src="@/assets/img/examples/food.jpeg" alt="">
-        <h3>Title2</h3>
-        <p>Description</p>
+        <div class="slide-img-block">
+          <img class="mb-4" src="@/assets/img/menu/vt/4.jpeg" alt="">
+        </div>
+        <h3>4 {{ this.$locales('meal') }}</h3>
+        <p>{{ this.$locales('menu_vt_4') }}</p>
+
+      </div>
+      <div class="slide">
+        <div class="slide-img-block">
+          <img class="mb-4" src="@/assets/img/menu/vt/5.jpeg" alt="">
+        </div>
+        <h3>5 {{ this.$locales('meal') }}</h3>
+        <p>{{ this.$locales('menu_vt_5') }}</p>
+
       </div>
     </div>
 
     <!-- WED -->
     <div class="racion-slider" v-if='this.active == "wed"'>
       <div class="slide">
-        <img class="mb-4" src="@/assets/img/examples/foof2.jpeg" alt="">
-        <h3>Title3</h3>
-        <p>Description</p>
+        <div class="slide-img-block">
+          <img class="mb-4" src="@/assets/img/menu/sr/1.jpeg" alt="">
+        </div>
+        <h3>1 {{ this.$locales('meal') }}</h3>
+        <p>{{ this.$locales('menu_sr_1') }}</p>
+
       </div>
       <div class="slide">
-        <img class="mb-4" src="@/assets/img/examples/food.jpeg" alt="">
-        <h3>Title3</h3>
-        <p>Description</p>
+        <div class="slide-img-block">
+          <img class="mb-4" src="@/assets/img/menu/sr/2.jpeg" alt="">
+        </div>
+        <h3>2 {{ this.$locales('meal') }}</h3>
+        <p>{{ this.$locales('menu_sr_2') }}</p>
+
       </div>
       <div class="slide">
-        <img class="mb-4" src="@/assets/img/examples/foof2.jpeg" alt="">
-        <h3>Title3</h3>
-        <p>Description</p>
+        <div class="slide-img-block">
+          <img class="mb-4" src="@/assets/img/menu/sr/3.jpeg" alt="">
+        </div>
+        <h3>3 {{ this.$locales('meal') }}</h3>
+        <p>{{ this.$locales('menu_sr_3') }}</p>
+
       </div>
       <div class="slide">
-        <img class="mb-4" src="@/assets/img/examples/food.jpeg" alt="">
-        <h3>Title3</h3>
-        <p>Description</p>
+        <div class="slide-img-block">
+          <img class="mb-4" src="@/assets/img/menu/sr/4.png" alt="">
+        </div>
+        <h3>4 {{ this.$locales('meal') }}</h3>
+        <p>{{ this.$locales('menu_sr_4') }}</p>
+
+      </div>
+      <div class="slide">
+        <div class="slide-img-block">
+          <img class="mb-4" src="@/assets/img/menu/sr/5.jpeg" alt="">
+        </div>
+        <h3>5 {{ this.$locales('meal') }}</h3>
+        <p>{{ this.$locales('menu_sr_5') }}</p>
+
       </div>
     </div>
 
     <!-- THU -->
     <div class="racion-slider" v-if='this.active == "thu"'>
       <div class="slide">
-        <img class="mb-4" src="@/assets/img/examples/foof2.jpeg" alt="">
-        <h3>Title4</h3>
-        <p>Description</p>
+        <div class="slide-img-block">
+          <img class="mb-4" src="@/assets/img/menu/cht/1.png" alt="">
+        </div>
+        <h3>1 {{ this.$locales('meal') }}</h3>
+        <p>{{ this.$locales('menu_cht_1') }}</p>
+
       </div>
       <div class="slide">
-        <img class="mb-4" src="@/assets/img/examples/food.jpeg" alt="">
-        <h3>Title4</h3>
-        <p>Description</p>
+        <div class="slide-img-block">
+          <img class="mb-4" src="@/assets/img/menu/cht/2.jpeg" alt="">
+        </div>
+        <h3>2 {{ this.$locales('meal') }}</h3>
+        <p>{{ this.$locales('menu_cht_2') }}</p>
+
       </div>
       <div class="slide">
-        <img class="mb-4" src="@/assets/img/examples/foof2.jpeg" alt="">
-        <h3>Title4</h3>
-        <p>Description</p>
+        <div class="slide-img-block">
+          <img class="mb-4" src="@/assets/img/menu/cht/3.png" alt="">
+        </div>
+        <h3>3 {{ this.$locales('meal') }}</h3>
+        <p>{{ this.$locales('menu_cht_3') }}</p>
+
       </div>
       <div class="slide">
-        <img class="mb-4" src="@/assets/img/examples/food.jpeg" alt="">
-        <h3>Title4</h3>
-        <p>Description</p>
+        <div class="slide-img-block">
+          <img class="mb-4" src="@/assets/img/menu/cht/4.jpeg" alt="">
+        </div>
+        <h3>4 {{ this.$locales('meal') }}</h3>
+        <p>{{ this.$locales('menu_cht_4') }}</p>
+
+      </div>
+      <div class="slide">
+        <div class="slide-img-block">
+          <img class="mb-4" src="@/assets/img/menu/cht/5.jpeg" alt="">
+        </div>
+        <h3>5 {{ this.$locales('meal') }}</h3>
+        <p>{{ this.$locales('menu_cht_5') }}</p>
+
       </div>
     </div>
 
     <!-- FRI -->
     <div class="racion-slider" v-if='this.active == "fri"'>
       <div class="slide">
-        <img class="mb-4" src="@/assets/img/examples/foof2.jpeg" alt="">
-        <h3>Title5</h3>
-        <p>Description</p>
+        <div class="slide-img-block">
+          <img class="mb-4" src="@/assets/img/menu/pt/1.jpeg" alt="">
+        </div>
+        <h3>1 {{ this.$locales('meal') }}</h3>
+        <p>{{ this.$locales('menu_pt_1') }}</p>
+
       </div>
       <div class="slide">
-        <img class="mb-4" src="@/assets/img/examples/food.jpeg" alt="">
-        <h3>Title5</h3>
-        <p>Description</p>
+        <div class="slide-img-block">
+          <img class="mb-4" src="@/assets/img/menu/pt/2.jpeg" alt="">
+        </div>
+        <h3>2 {{ this.$locales('meal') }}</h3>
+        <p>{{ this.$locales('menu_pt_2') }}</p>
+
       </div>
       <div class="slide">
-        <img class="mb-4" src="@/assets/img/examples/foof2.jpeg" alt="">
-        <h3>Title5</h3>
-        <p>Description</p>
+        <div class="slide-img-block">
+          <img class="mb-4" src="@/assets/img/menu/pt/3.jpeg" alt="">
+        </div>
+        <h3>3 {{ this.$locales('meal') }}</h3>
+        <p>{{ this.$locales('menu_pt_3') }}</p>
+
       </div>
       <div class="slide">
-        <img class="mb-4" src="@/assets/img/examples/food.jpeg" alt="">
-        <h3>Title5</h3>
-        <p>Description</p>
+        <div class="slide-img-block">
+          <img class="mb-4" src="@/assets/img/menu/pt/4.png" alt="">
+        </div>
+        <h3>4 {{ this.$locales('meal') }}</h3>
+        <p>{{ this.$locales('menu_pt_4') }}</p>
+
+
+      </div>
+      <div class="slide">
+        <div class="slide-img-block">
+          <img class="mb-4" src="@/assets/img/menu/pt/5.png" alt="">
+        </div>
+        <h3>5 {{ this.$locales('meal') }}</h3>
+        <p>{{ this.$locales('menu_pt_5') }}</p>
+
       </div>
     </div>
 
     <!-- SAT -->
     <div class="racion-slider" v-if='this.active == "sat"'>
       <div class="slide">
-        <img class="mb-4" src="@/assets/img/examples/foof2.jpeg" alt="">
-        <h3>Title6</h3>
-        <p>Description</p>
+        <div class="slide-img-block">
+          <img class="mb-4" src="@/assets/img/menu/sb/1.jpeg" alt="">
+        </div>
+        <h3>1 {{ this.$locales('meal') }}</h3>
+        <p>{{ this.$locales('menu_sb_1') }}</p>
+
       </div>
       <div class="slide">
-        <img class="mb-4" src="@/assets/img/examples/food.jpeg" alt="">
-        <h3>Title6</h3>
-        <p>Description</p>
+        <div class="slide-img-block">
+          <img class="mb-4" src="@/assets/img/menu/sb/2.jpeg" alt="">
+        </div>
+        <h3>2 {{ this.$locales('meal') }}</h3>
+        <p>{{ this.$locales('menu_sb_1') }}</p>
+
       </div>
       <div class="slide">
-        <img class="mb-4" src="@/assets/img/examples/foof2.jpeg" alt="">
-        <h3>Title6</h3>
-        <p>Description</p>
+        <div class="slide-img-block">
+          <img class="mb-4" src="@/assets/img/menu/sb/3.jpeg" alt="">
+        </div>
+        <h3>3 {{ this.$locales('meal') }}</h3>
+        <p>{{ this.$locales('menu_sb_3') }}</p>
+
       </div>
       <div class="slide">
-        <img class="mb-4" src="@/assets/img/examples/food.jpeg" alt="">
-        <h3>Title6</h3>
-        <p>Description</p>
+        <div class="slide-img-block">
+          <img class="mb-4" src="@/assets/img/menu/sb/4.png" alt="">
+        </div>
+        <h3>4 {{ this.$locales('meal') }}</h3>
+        <p>{{ this.$locales('menu_sb_4') }}</p>
+
+      </div>
+      <div class="slide">
+        <div class="slide-img-block">
+          <img class="mb-4" src="@/assets/img/menu/sb/5.jpeg" alt="">
+        </div>
+        <h3>5 {{ this.$locales('meal') }}</h3>
+        <p>{{ this.$locales('menu_sb_5') }}</p>
+
       </div>
     </div>
 
     <!-- SUN -->
     <div class="racion-slider" v-if='this.active == "sun"'>
       <div class="slide">
-        <img class="mb-4" src="@/assets/img/examples/foof2.jpeg" alt="">
-        <h3>Title7</h3>
-        <p>Description</p>
+        <div class="slide-img-block">
+          <img class="mb-4" src="@/assets/img/menu/vs/1.jpeg" alt="">
+        </div>
+        <h3>1 {{ this.$locales('meal') }}</h3>
+        <p>{{ this.$locales('menu_vs_1') }}</p>
+
       </div>
       <div class="slide">
-        <img class="mb-4" src="@/assets/img/examples/food.jpeg" alt="">
-        <h3>Title7</h3>
-        <p>Description</p>
+        <div class="slide-img-block">
+          <img class="mb-4" src="@/assets/img/menu/vs/2.jpeg" alt="">
+        </div>
+        <h3>2 {{ this.$locales('meal') }}</h3>
+        <p>{{ this.$locales('menu_vs_2') }}</p>
+
       </div>
       <div class="slide">
-        <img class="mb-4" src="@/assets/img/examples/foof2.jpeg" alt="">
-        <h3>Title7</h3>
-        <p>Description</p>
+        <div class="slide-img-block">
+          <img class="mb-4" src="@/assets/img/menu/vs/3.jpeg" alt="">
+        </div>
+        <h3>3 {{ this.$locales('meal') }}</h3>
+        <p>{{ this.$locales('menu_vs_3') }}</p>
+
       </div>
       <div class="slide">
-        <img class="mb-4" src="@/assets/img/examples/food.jpeg" alt="">
-        <h3>Title7</h3>
-        <p>Description</p>
+        <div class="slide-img-block">
+          <img class="mb-4" src="@/assets/img/menu/vs/4.jpeg" alt="">
+        </div>
+        <h3>4 {{ this.$locales('meal') }}</h3>
+        <p>{{ this.$locales('menu_vs_4') }}</p>
+
+      </div>
+      <div class="slide">
+        <div class="slide-img-block">
+          <img class="mb-4" src="@/assets/img/menu/vs/5.jpeg" alt="">
+        </div>
+        <h3>5 {{ this.$locales('meal') }}</h3>
+        <p>{{ this.$locales('menu_vs_5') }}</p>
+
       </div>
     </div>
 
@@ -204,14 +344,30 @@ export default {
     }
   },
   created(){
+    window.addEventListener('scroll', this.scrollButtonHandler)
     setTimeout(function(){
       $('.racion-slider').slick({
         dots: true,
         arrows: false,
+        autoplay: true,
+        autoplaySpeed: 3000,
       });
     }, 1);
   },
   methods: {
+    scrollButtonHandler(){
+      let block1 = document.getElementById('main-button');
+      let block2 = document.querySelector('.quiz-button');
+
+      let block2Rect = block2.getBoundingClientRect();
+      let isVisible = block2Rect.top < window.innerHeight && block2Rect.bottom >= 0;
+
+      if (isVisible) {
+          block1.style.opacity = 0;
+      } else {
+          block1.style.opacity = 1;
+      }
+    },
     setActive(day){
       this.active = day;
 
@@ -219,6 +375,8 @@ export default {
         $('.racion-slider').slick({
           dots: true,
           arrows: false,
+          autoplay: true,
+          autoplaySpeed: 3000,
         });
       }, 1);
     }
@@ -227,14 +385,24 @@ export default {
 </script>
 
 <style lang="css" scoped>
-  .slide>img{
+  .slide>h3 + p{
+    color: var(--Black, #2C2D31);
+    font-family: Inter;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 140%;
+  }
+  .slide>.slide-img-block>img{
     width: 100%;
     object-fit: contain;
     height: 187px;
   }
   .tab_nav_item.active{
     border-radius: 10px;
+    color: white;
     background: var(--Accent, #00B467);
+    border: 2px solid var(--Grey, #00B467);
   }
   .tab_nav{
     overflow-x: auto;
@@ -244,10 +412,10 @@ export default {
     cursor: pointer;
     margin-right: 8px;
     border-radius: 10px;
-    background: #92979B;
+    color: #92979B;
+    border: 2px solid var(--Grey, #92979B);
     padding: 16px;
     padding-left: 20px;
-    color: var(--White, #FFF);
     font-family: Inter;
     font-size: 12px;
     font-style: normal;
