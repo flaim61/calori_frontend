@@ -12,6 +12,12 @@ const store = createStore({
       onlyNotAuthorize: [
         'login',
       ],
+      landigsRoute: [
+        'home',
+        'weight-loss',
+        'healthy-eating',
+        'meal-prep-for-productivity',
+      ],
     }
   },
   mutations: {

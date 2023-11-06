@@ -6,6 +6,52 @@ html{
   scroll-behavior:smooth;
 }
 
+*::-webkit-media-controls-panel {
+  display: none!important;
+  -webkit-appearance: none;
+}
+
+/* Old shadow dom for play button */
+
+*::-webkit-media-controls-play-button {
+  display: none!important;
+  -webkit-appearance: none;
+}
+
+/* New shadow dom for play button */
+
+/* This one works! */
+
+*::-webkit-media-controls-start-playback-button {
+  display: none!important;
+  -webkit-appearance: none;
+}
+
+/* Скрыть элементы управления видеоплеером */
+#home-video::-webkit-media-controls,
+#home-video::-webkit-media-controls-enclosure {
+    display: none !important;
+}
+
+#home-video::-webkit-outer-spin-button,
+#home-video::-webkit-inner-spin-button {
+    display: none !important;
+}
+
+#home-video::-webkit-overflow-scrolling {
+    overflow: hidden !important;
+}
+
+#home-video {
+    /* Убрать контур вокруг видео в некоторых браузерах */
+    outline: none;
+}
+
+
+#activity_select{
+  width: 100%;
+}
+
 #main-button{
   opacity: 1;
   transition: opacity 0.5s ease; /* Плавная анимация исчезновения в течение 0.5 секунды */
@@ -136,13 +182,27 @@ input::placeholder{
   font-weight: 500;
   line-height: normal;
 }
-
+.card-1>img{
+  border-radius: 8px;
+}
 .main-block{
   padding: 0px 16px;
-  background-image: url("@/assets/img/background/back-main.jpg");
   height: 100vh;
   background-repeat: no-repeat;
   background-size: cover;
+}
+
+.home-video{
+  position: absolute;
+  object-fit: cover;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: -1;
+  filter: brightness(71%);
+  -webkit-filter: brightness(71%);
+  -moz-filter: brightness(71%);
 }
 
 header{
@@ -402,10 +462,14 @@ input.p-inputtext.p-component.p-password-input {
 
 @media screen and (min-width: 700px) {
   h1{
-    font-size: 90px !important;
+    font-size: 75px !important;
+    line-height: 100% !important;
+    text-align: center !important;
   }
   .main-block>p{
     margin-top: 30px !important;
     font-size: 40px !important;
+    line-height: 100% !important;
+    text-align: center !important;
   }
 }

@@ -102,16 +102,29 @@
         </div>
         <div class="content_input_section">
           <div class="input-group">
-            <select class="custom-select" id="inputGroupSelect04" style='height: 40px'>
+            <v-select
+              id='activity_select'
+              v-model="this.application.activity"
+              :options="this.activities"
+              :reduce="activity => activity.id"
+              :searchable="false"
+              :clearable="false"
+              label="name"
+              >
+              <template v-slot:option="option">
+                <div class="">
+                  <span class="pto">{{ option.name }}</span>
+                  <span>
+                    {{ option.text }}
+                  </span>
+                </div>
+              </template>
+            </v-select>
+            <!--<select class="custom-select" id="inputGroupSelect04" style='height: 40px'>
               <option value="0">{{ this.$locales('activity_0') }}</option>
               <option value="1">{{ this.$locales('activity_1') }}</option>
               <option value="2">{{ this.$locales('activity_2') }}</option>
-            </select>
-            <div class="input-group-append">
-              <button class="btn btn-dark" type="button" style='height: 40px'>
-                <img src="@/assets/img/icon/66.svg">
-              </button>
-            </div>
+            </select>-->
           </div>
         </div>
       </div>
@@ -297,6 +310,23 @@ export default {
   data(){
     return {
       step: 1,
+      activities: [
+        {
+          id: 0,
+          name: this.$locales(`activity_0`),
+          text: this.$locales(`activity_0_text`),
+        },
+        {
+          id: 1,
+          name: this.$locales(`activity_1`),
+          text: this.$locales(`activity_1_text`),
+        },
+        {
+          id: 2,
+          name: this.$locales(`activity_2`),
+          text: this.$locales(`activity_2_text`),
+        },
+      ],
       application: {
         gender: 0,
         weight: 0,
@@ -325,13 +355,12 @@ export default {
   },
   async created(){
     if (this.$cookies.get("auth_token")) {
+      this.step = 9;
       const application = await this.getApplication();
-      console.log(application)
       application.allergies = application.applicationAllergies;
       application.another_allergy = application.anotherAllergy
       this.application = application;
       this.createdApplication = application;
-      this.step = 9;
     }
   },
   methods:{
@@ -474,8 +503,7 @@ export default {
           allergies: this.application.allergies,
           anotherAllergy: this.application.another_allergy
         });
-        console.log(response)
-        return;
+        
         if (response.data.application == null) {
               this.$swal({
                 position: 'top',
@@ -538,6 +566,14 @@ export default {
 </script>
 
 <style scoped>
+  .pto{
+    color: var(--Black, #2C2D31);
+    font-family: Inter;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 140%;
+  }
   .label_item>div{
     margin-left: 10px;
   }
@@ -660,7 +696,7 @@ export default {
     color: var(--Black, #2C2D31);
     text-align: center;
     font-family: Inter;
-    font-size: 16px !important;
+    font-size: 19px !important;
     font-style: normal;
     font-weight: 600;
     line-height: 140%;
@@ -730,7 +766,7 @@ export default {
     color: var(--Grey, #92979B);
     /* Text h3 */
     font-family: Inter;
-    font-size: 12px;
+    font-size: 13px;
     font-style: normal;
     font-weight: 400;
     line-height: 140%;

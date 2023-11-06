@@ -9,13 +9,22 @@
           <img src="@/assets/img/icon/close.svg" alt="">
         </div>
       </div>
-      <div class="menu-content">
+      <div class="menu-content" v-if='this.$store.state.landigsRoute.indexOf(this.$route.name) !== -1'>
         <a href="/login" > {{ this.$locales('sign_in') }} </a>
         <a @click='this.mobile_menu_showed = false' href="#how_it_work" > How It Work </a>
         <a @click='this.mobile_menu_showed = false' href="#why_calori" > Why Calory? </a>
         <a @click='this.mobile_menu_showed = false' href="#menu" > Our Menu </a>
         <a @click='this.mobile_menu_showed = false' href="#sustainability_approach" > Sustainability Approach </a>
         <a @click='this.mobile_menu_showed = false' href="#contact" > Contact </a>
+        <a @click='this.$router.push("faq")' > FAQ </a>
+      </div>
+      <div class="menu-content" v-else>
+        <a href="/login" > {{ this.$locales('sign_in') }} </a>
+        <a @click='this.$router.push("/")'> Home </a>
+        <a @click='this.$router.push("weight-loss")'> Weight Loss </a>
+        <a @click='this.$router.push("healthy-eating")'> Healthy Eating </a>
+        <a @click='this.$router.push("meal-prep-for-productivity")'> Meal Prep For Productivity </a>
+        <a @click='this.$router.push("faq")' > FAQ </a>
       </div>
     </div>
   </Transition>
@@ -32,10 +41,10 @@
     <div class="language-item">
       <div class="d-flex">
         <div class="mr-2" v-if='this.getLocales() == "fi"'>
-          <a href="#" class="text-dark" @click="setLocales('en')">En</a>
+          <a href="#" class="text-dark" @click="setLocales('en')">EN</a>
         </div>
         <div class="mr-2" v-else>
-          <a href="#" class="text-dark" @click="setLocales('fi')">Fi</a>
+          <a href="#" class="text-dark" @click="setLocales('fi')">FI</a>
         </div>
       </div>
     </div>

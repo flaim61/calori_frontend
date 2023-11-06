@@ -1,11 +1,14 @@
 <template>
   <section class="main-block">
     <Header />
+    <video  autoplay muted loop preload playsinline controls="false"  id="home-videl" class="home-video">
+      <source src="@/assets/videos/Meal-prep.mp4" type="video/mp4">
+    </video>
     <h1>
-      Healthy eating. Personalized. Automated.
+      {{this.$locales('MealPrepForProductivity_title')}}
     </h1>
     <p>
-      We plan, cook, and deliver all meals you need in a day. So you can stay on top of your health and reach 100% productivity.
+      {{this.$locales('MealPrepForProductivity_text')}}
     </p>
     <Transition>
       <div id='main-button' v-show='this.showButton' class="main-button" @click='this.$router.push("/quiz")'>
@@ -17,26 +20,26 @@
   <div class="main-page-content">
     <div class="titlep_block">
       <h3 class="block-title">
-        How Calori Works?
+        {{ this.$locales('MealPrepForProductivity_how_title') }}
       </h3>
       <p>
-        Healthy eating and weight management has never been this easy and delicious.
+        {{ this.$locales('MealPrepForProductivity_how_text') }}
       </p>
     </div>
     <Card
-      title="1. Get your personalized meal plan for balanced eating"
-      image="1"
-      text='Take a short quiz and find out exactly what you need to stay healthy and productive according to our team of professional nutritionists and coaches.'
+      :title="this.$locales('MealPrepForProductivity_how_works_1_title')"
+      image="6"
+      :text="this.$locales('MealPrepForProductivity_how_works_1_text')"
     />
     <Card
-      title="2. Subscribe to delicious, healthy meals delivered to your home"
-      image="2"
-      text='Tired of cooking or re-ordering? Let us take care of everything: from balanced nutrition to chef-crafted meals and home deliveries.'
+      :title="this.$locales('MealPrepForProductivity_how_works_2_title')"
+      image="9"
+      :text="this.$locales('MealPrepForProductivity_how_works_2_text')"
     />
     <Card
-      title="3. Reach your goals while getting support from our coaches"
-      image="3"
-      text='All you have to do is enjoy! If you need actionable advice and motivation boosts, our coaches will support you on your journey.'
+      :title="this.$locales('MealPrepForProductivity_how_works_3_title')"
+      image="7"
+      :text="this.$locales('MealPrepForProductivity_how_works_3_text')"
     />
 
     <div class="titlep_block">
@@ -53,27 +56,27 @@
         [
           {
             img: 1,
-            text: 'Premium restaurant-level cuisine everywhere you go'
+            text: this.$locales('MealPrepForProductivity_list_item_1')
           },
           {
             img: 2,
-            text: 'Made by professional nutritionists, coaches, and chefs'
+            text: this.$locales('MealPrepForProductivity_list_item_2')
           },
           {
             img: 3,
-            text: 'Perfect nutritional balance for improving your health and metabolism'
+            text: this.$locales('MealPrepForProductivity_list_item_3')
           },
           {
             img: 4,
-            text: 'Optimal calorie deficit for burning fat without losing productivity'
+            text: this.$locales('MealPrepForProductivity_list_item_4')
           },
           {
             img: 5,
-            text: 'Less waste, eco-friendly packaging, and green logistics'
+            text: this.$locales('MealPrepForProductivity_list_item_5')
           },
           {
             img: 6,
-            text: 'Guaranteed result and excellent experience'
+            text: this.$locales('MealPrepForProductivity_list_item_6')
           },
         ]
       "
@@ -92,10 +95,10 @@
 
     <div class="titlep_block">
       <h3 class="block-title">
-        1 Month with Calori
+        {{ this.$locales('MealPrepForProductivity_month_with_calori_title') }}
       </h3>
       <p>
-        Here’s the difference you can make to your life with Calori.
+        {{ this.$locales('MealPrepForProductivity_month_with_calori_text') }}
       </p>
     </div>
 
@@ -103,20 +106,20 @@
       :pluses='
         [
           {
-            title: "+50 hours",
-            text: "saved on planning, shopping, cooking, and cleaning."
+            title: this.$locales("MealPrepForProductivity_pluses_title_1"),
+            text: this.$locales("MealPrepForProductivity_pluses_text_1"),
           },
           {
-            title: "+150 meals",
-            text: "for you to enjoy on your journey."
+            title: this.$locales("MealPrepForProductivity_pluses_title_2"),
+            text: this.$locales("MealPrepForProductivity_pluses_text_2"),
           },
           {
-            title: "Up to 2 kg",
-            text: "of weight lost without sacrificing on your lifestyle."
+            title: this.$locales("MealPrepForProductivity_pluses_title_3"),
+            text: this.$locales("MealPrepForProductivity_pluses_text_3"),
           },
           {
-            title: "Infinity",
-            text: "boost to energy and wellbeing."
+            title: this.$locales("MealPrepForProductivity_pluses_title_4"),
+            text: this.$locales("MealPrepForProductivity_pluses_text_4"),
           },
         ]
       '
@@ -132,40 +135,50 @@
 
     <div class="titlep_block">
       <h3 class="block-title">
-        Get your meal plan
+        {{ this.$locales('menu_title_home') }}
       </h3>
       <p>
-        Here’s an average week with Calori. Quick recap: healthy and delicious!
+        {{ this.$locales('menu_text_home') }}
       </p>
     </div>
 
     <TabsSlider />
 
     <p class="text-Description">
-      With Calori, you’ll get balanced meals cooked and delivered according to your personalized plan. That’s 140+ unique meals in 1 month.
+      {{ this.$locales('menu_text_before_home') }}
     </p>
 
     <div class="quiz-button mb-5" style="" @click='this.$router.push("/quiz")'>Get your plan</div>
-    <p>All meals with deliveries start from 168 eur / week.</p>
+    <p> {{ this.$locales('before_button_text') }} </p>
+
+    <div class="titlep_block" id='sustainability_approach'>
+      <h3 class="block-title">
+        {{this.$locales('sustainability_approach_title')}}
+      </h3>
+      <p>
+        {{ this.$locales('sustainability_approach_text') }}
+      </p>
+    </div>
+
 
     <List :data=
       "
         [
           {
             img: 7,
-            text: 'Restaurant-level food made from local organic produce'
+            text: this.$locales('sustainability_approach_item_1')
           },
           {
             img: 8,
-            text: 'Sustainable packaging'
+            text: this.$locales('sustainability_approach_item_2')
           },
           {
             img: 9,
-            text: 'Green logistics powered by electricity and biofuel'
+            text: this.$locales('sustainability_approach_item_3')
           },
           {
             img: 10,
-            text: 'Minimal food waste'
+            text: this.$locales('sustainability_approach_item_4')
           },
         ]
       "
@@ -186,23 +199,14 @@
 
     <StorySlider />
 
-    <div class="titlep_block">
-      <h3 class="block-title">
-        Sustainability Approach
-      </h3>
-      <p>
-        Good for you, good for the planet.
-      </p>
-    </div>
-
     <p>Did you know that meal boxes reduce waste by 38% compared to home-cooked dinners?</p>
 
     <div class="titlep_block">
       <h3 class="block-title">
-        Still got questions?
+        {{ this.$locales('contact_form_title') }}
       </h3>
       <p>
-        We can’t wait to hear from you!
+        {{ this.$locales('contact_form_text') }}
       </p>
     </div>
 

@@ -184,7 +184,7 @@ export default {
   li{
     color: var(--Black, #2C2D31);
     font-family: Inter;
-    font-size: 10px;
+    font-size: 12.5px;
     font-style: normal;
     font-weight: 400;
     line-height: normal;
@@ -231,18 +231,14 @@ export default {
     font-style: normal;
     font-weight: 400;
     line-height: normal;
-    padding-left: 16px;
-    padding-right: 16px;
   }
   .CheckBlock_content>h3{
     color: var(--Black, #2C2D31);
     font-family: Inter;
-    font-size: 10px;
+    font-size: 13px;
     font-style: normal;
     font-weight: 700;
     line-height: 140%;
-    padding-left: 16px;
-    padding-right: 16px;
   }
   .see_all>a{
     color: var(--Accent, #00B467);
@@ -278,7 +274,7 @@ export default {
     color: var(--Grey, #92979B);
     /* Text h4 bold */
     font-family: Inter;
-    font-size: 10px;
+    font-size: 12px;
     font-style: normal;
     font-weight: 700;
     line-height: 140%;
@@ -287,7 +283,7 @@ export default {
     color: var(--White, #FFF);
     /* Text h3 med */
     font-family: Inter;
-    font-size: 12px;
+    font-size: 13px;
     font-style: normal;
     font-weight: 500;
     line-height: 140%;

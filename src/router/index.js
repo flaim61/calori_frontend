@@ -6,6 +6,7 @@ import ProfileView from '../views/ProfileView.vue'
 import WeightLoss from '../views/Landings/WeightLoss.vue'
 import HealthyEating from '../views/Landings/HealthyEating.vue'
 import MealPrepForProductivity from '../views/Landings/MealPrepForProductivity.vue'
+import FAQView from '../views/FAQView.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -44,6 +45,11 @@ const router = createRouter({
       path: '/meal-prep-for-productivity',
       name: "meal-prep-for-productivity",
       component: MealPrepForProductivity,
+    },
+    {
+      path: '/faq',
+      name: "faq",
+      component: FAQView,
     },
   ]
 })

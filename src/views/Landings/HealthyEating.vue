@@ -1,11 +1,14 @@
 <template>
   <section class="main-block">
     <Header />
+    <video  autoplay muted loop preload playsinline controls="false"  id="home-videl" class="home-video">
+      <source src="@/assets/videos/Healthy-eating.mp4" type="video/mp4">
+    </video>
     <h1>
-      {{ this.$locales('l2_main_page_title') }}
+      {{ this.$locales('HealthyEating_title') }}
     </h1>
     <p>
-      {{ this.$locales('l2_main_page_text') }}
+      {{ this.$locales('HealthyEating_text') }}
     </p>
     <Transition>
       <div id='main-button' v-show='this.showButton' class="main-button" @click='this.$router.push("/quiz")'>
@@ -17,68 +20,59 @@
   <div class="main-page-content" id='how_it_work'>
     <div class="titlep_block">
       <h3 class="block-title">
-        {{ this.$locales('l2_how_works') }}
+        {{ this.$locales('HealthyEating_what_is_title') }}
       </h3>
       <p>
-        Calori is a meal-prep and delivery service with a twist ✨
+        {{ this.$locales('HealthyEating_what_is_text') }}
       </p>
     </div>
     <Card
       title=""
+      image="4"
+      :text='this.$locales("HealthyEating_what_is_1")'
+    />
+
+    <div class="titlep_block mt-0">
+      <p>
+        {{ this.$locales('HealthyEating_But') }}
+      </p>
+    </div>
+
+    <Card
+      image="5"
+      :text='this.$locales("HealthyEating_what_is_2")'
+    />
+
+    <div class="titlep_block">
+      <h3 class="block-title">
+        {{ this.$locales('how_works') }}
+      </h3>
+    </div>
+
+    <Card
+      :title="this.$locales('HealthyEating_what_is_3_title')"
       image="1"
-      text='Staying on track and reaching your goals might be difficult.
-
-            Planning, shopping, cooking, and cleaning takes tons of your time and energy.
-
-            And after all, you’re still not sure if you’re eating right…'
+      :text="this.$locales('HealthyEating_what_is_3')"
     />
-
-    <div class="titlep_block">
-      <h3 class="block-title">
-        But we got you covered 🙌
-      </h3>
-    </div>
-
     <Card
+      :title="this.$locales('HealthyEating_what_is_4_title')"
       image="2"
-      text='Eating healthy can be easy, fun, and delicious.
-
-We help you get the perfect balance of nutrients, save time, and keep you energized.'
-    />
-
-    <div class="titlep_block">
-      <h3 class="block-title">
-        But we got you covered 🙌
-      </h3>
-    </div>
-
-    <Card
-      title="1. Get your personal meal plan 🥗"
-      image="3"
-      text="Take a short quiz and find out exactly what your body needs. 
-        Our team of professional nutritionists spent years crafting meal plans that combine healthy with tasty. And now, we made it accessible to you through Calori."
-    />
-    <Card
-      title="2. Subscribe to meal deliveries 🧑‍🍳"
-      image="3"
-      text='Get all meals you need in a day delivered to your home.
-          Our chefs turned complex plans into delicious meals - hitting the perfect balance between home-made and sporty feels. You can enjoy restaurant-level breakfast, lunch, dinner, and snacks everywhere you go.'
+      :text="this.$locales('HealthyEating_what_is_4')"
     />
 
     <Card
-      title="3. Reach your goals with support 🧘‍🍳"
+      :title="this.$locales('HealthyEating_what_is_5_title')"
       image="3"
-      text='Staying on track and finding motivation is never easy without a support system.
-            That’s why we have experienced coaches who can track your progress, give actionable advice, and answer all your questions! '
+      :text="this.$locales('HealthyEating_what_is_5')"
     />
-    
+
 
     <div class="titlep_block" id='why_calori'>
       <h3 class="block-title">
-        Before Calori
+        {{ this.$locales('HealthyEating_before_calori_title') }}
       </h3>
       <p>
-        It’s time to goodbye to the old ways that never worked for you.
+        {{ this.$locales('HealthyEating_before_calori_text') }}
       </p>
     </div>
 
@@ -87,23 +81,23 @@ We help you get the perfect balance of nutrients, save time, and keep you energi
         [
           {
             img: 1,
-            text: 'Overwhelmed with meal planning'
+            text: this.$locales('HealthyEating_list_item_1'),
           },
           {
             img: 2,
-            text: 'Processed foods and waste'
+            text: this.$locales('HealthyEating_list_item_2'),
           },
           {
             img: 3,
-            text: 'Constant cravings and zero energy'
+            text: this.$locales('HealthyEating_list_item_3'),
           },
           {
             img: 4,
-            text: 'Counting calories and nutrients'
+            text: this.$locales('HealthyEating_list_item_4'),
           },
           {
             img: 5,
-            text: 'Stressing if you get the right nutrients'
+            text: this.$locales('HealthyEating_list_item_5'),
           },
         ]
       "
@@ -111,10 +105,10 @@ We help you get the perfect balance of nutrients, save time, and keep you energi
 
     <div class="titlep_block">
       <h3 class="block-title">
-        After Calori
+        {{ this.$locales('HealthyEating_after_calori_title') }}
       </h3>
       <p>
-        You can be confident in your health choices.
+        {{ this.$locales('HealthyEating_after_calori_text') }}
       </p>
     </div>
 
@@ -123,23 +117,23 @@ We help you get the perfect balance of nutrients, save time, and keep you energi
         [
           {
             img: 1,
-            text: 'Delicious & healthy food planned for you'
+            text: this.$locales('HealthyEating_list_item_6'),
           },
           {
             img: 2,
-            text: 'Local produce and sustainable packaging'
+            text: this.$locales('HealthyEating_list_item_7'),
           },
           {
             img: 3,
-            text: 'Tons of energy and top productivity'
+            text: this.$locales('HealthyEating_list_item_8'),
           },
           {
             img: 4,
-            text: 'Saving time on what matters to you'
+            text: this.$locales('HealthyEating_list_item_9'),
           },
           {
             img: 5,
-            text: 'Confidence in your health and choices'
+            text: this.$locales('HealthyEating_list_item_10'),
           },
         ]
       "
@@ -159,60 +153,59 @@ We help you get the perfect balance of nutrients, save time, and keep you energi
     <ReviewSlider />
 
     <BlueTextBlock
-      title='Wanna join along?'
-      text='Our next journey starts in January 2024. '
-      text2='The seats are limited - don’t miss on yours. '
-      text3='Just in time for your new-year resolutions! '
+      :title='this.$locales("blue_text_block_home_title")'
+      :text='this.$locales("blue_text_block_home_text")'
+      :text2='this.$locales("blue_text_block_home_text_2")'
     />
 
     <div class="titlep_block" id='menu'>
       <h3 class="block-title">
-        Get your meal plan
+        {{ this.$locales('menu_title_home') }}
       </h3>
       <p>
-        Here’s an average week with Calori. Quick recap: healthy and delicious!
+        {{ this.$locales('menu_text_home') }}
       </p>
     </div>
 
     <TabsSlider />
 
     <p class="text-Description">
-      With Calori, you’ll get balanced meals cooked and delivered according to your personalized plan. That’s 140+ unique meals in 1 month.
+      {{ this.$locales('menu_text_before_home') }}
     </p>
 
-    <div class="quiz-button" style="" @click='this.$router.push("/quiz")'>Get your plan</div>
-    <p>All meals with deliveries start from 168 eur / week.</p>
+    <div class="quiz-button" style="" @click='this.$router.push("/quiz")'>{{this.$locales('get_plan_button')}}</div>
+    <p> {{ this.$locales('before_button_text') }}</p>
 
     <div class="titlep_block">
       <h3 class="block-title">
-        5 months with Calori
+        {{ this.$locales('five_months') }}
       </h3>
       <p>
-        Here’s the difference you can make to your life with Calori.
+        {{ this.$locales('month_with_calori_text') }}
       </p>
     </div>
 
     <PlusesBlock
-      :pluses='
+      :pluses="
         [
           {
-            title: "Up to 10 kg",
-            text: "of weight lost without sacrificing on your lifestyle."
+            title: this.$locales('HealthyEating_plus_1_title'),
+            text: this.$locales('HealthyEating_plus_1_text'),
           },
           {
-            title: "+31 working day saved",
-            text: "on planning, shopping, cooking, and cleaning."
+            title: this.$locales('HealthyEating_plus_2_title'),
+            text: this.$locales('HealthyEating_plus_2_text'),
           },
           {
-            title: "Total transformation",
-            text: "to your energy, health, and wellbeing."
+            title: this.$locales('HealthyEating_plus_3_title'),
+            text: this.$locales('HealthyEating_plus_3_text'),
           },
           {
-            title: "Open new doors",
-            text: "and start new chapter of your life!"
+            title: this.$locales('HealthyEating_plus_4_title'),
+            text: this.$locales('HealthyEating_plus_4_text'),
           },
         ]
-      '
+      "
     />
 
     <div class="titlep_block">
@@ -229,10 +222,10 @@ We help you get the perfect balance of nutrients, save time, and keep you energi
 
     <div class="titlep_block" id='sustainability_approach'>
       <h3 class="block-title">
-        Sustainability Approach
+        {{this.$locales('sustainability_approach_title')}}
       </h3>
       <p>
-        Good for you, good for the planet.
+        {{ this.$locales('sustainability_approach_text') }}
       </p>
     </div>
 
@@ -242,29 +235,29 @@ We help you get the perfect balance of nutrients, save time, and keep you energi
         [
           {
             img: 7,
-            text: 'Restaurant-level food made from local organic produce'
+            text: this.$locales('sustainability_approach_item_1')
           },
           {
             img: 8,
-            text: 'Sustainable packaging'
+            text: this.$locales('sustainability_approach_item_2')
           },
           {
             img: 9,
-            text: 'Green logistics powered by electricity and biofuel'
+            text: this.$locales('sustainability_approach_item_3')
           },
           {
             img: 10,
-            text: 'Minimal food waste'
+            text: this.$locales('sustainability_approach_item_4')
           },
         ]
       "
     />
 
-    <p>Did you know that meal boxes reduce waste by 38% compared to home-cooked dinners?</p>
+    <p> {{this.$locales('sustainability_approach_before_text') }} </p>
 
     <div class="titlep_block">
       <h3 class="block-title">
-        Still got questions?
+        {{ this.$locales('contact_form_title') }}
       </h3>
     </div>
     <div class="d-flex mb-5">

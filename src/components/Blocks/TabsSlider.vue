@@ -28,7 +28,7 @@
     <div class="racion-slider" v-if='this.active == "mon"'>
       <div class="slide">
         <div class="slide-img-block">
-          <img class="mb-4" src="@/assets/img/menu/pn/1.jpeg" alt="">
+          <img class="mb-4" src="@/assets/img/menu/pn/1.png" alt="">
         </div>
         <h3>1 {{ this.$locales('meal') }}</h3>
         <p>{{ this.$locales('menu_pn_1') }}</p>
@@ -36,7 +36,7 @@
       </div>
       <div class="slide">
         <div class="slide-img-block">
-          <img class="mb-4" src="@/assets/img/menu/pn/2.jpeg" alt="">
+          <img class="mb-4" src="@/assets/img/menu/pn/2.png" alt="">
         </div>
         <h3>2 {{ this.$locales('meal') }}</h3>
         <p>{{ this.$locales('menu_pn_2') }}</p>
@@ -51,7 +51,7 @@
       </div>
       <div class="slide">
         <div class="slide-img-block">
-          <img class="mb-4" src="@/assets/img/menu/pn/4.jpeg" alt="">
+          <img class="mb-4" src="@/assets/img/menu/pn/4.png" alt="">
         </div>
         <h3>4 {{ this.$locales('meal') }}</h3>
         <p>{{ this.$locales('menu_pn_4') }}</p>
@@ -59,7 +59,7 @@
       </div>
       <div class="slide">
         <div class="slide-img-block">
-          <img class="mb-4" src="@/assets/img/menu/pn/5.jpeg" alt="">
+          <img class="mb-4" src="@/assets/img/menu/pn/5.png" alt="">
         </div>
         <h3>5 {{ this.$locales('meal') }}</h3>
         <p>{{ this.$locales('menu_pn_5') }}</p>
@@ -71,7 +71,7 @@
     <div class="racion-slider" v-if='this.active == "tue"'>
       <div class="slide">
         <div class="slide-img-block">
-          <img class="mb-4" src="@/assets/img/menu/vt/1.jpeg" alt="">
+          <img class="mb-4" src="@/assets/img/menu/vt/1.png" alt="">
         </div>
         <h3>1 {{ this.$locales('meal') }}</h3>
         <p>{{ this.$locales('menu_vt_1') }}</p>
@@ -79,7 +79,7 @@
       </div>
       <div class="slide">
         <div class="slide-img-block">
-          <img class="mb-4" src="@/assets/img/menu/vt/2.jpeg" alt="">
+          <img class="mb-4" src="@/assets/img/menu/vt/2.png" alt="">
         </div>
         <h3>2 {{ this.$locales('meal') }}</h3>
         <p>{{ this.$locales('menu_vt_2') }}</p>
@@ -87,7 +87,7 @@
       </div>
       <div class="slide">
         <div class="slide-img-block">
-          <img class="mb-4" src="@/assets/img/menu/vt/3.jpeg" alt="">
+          <img class="mb-4" src="@/assets/img/menu/vt/3.png" alt="">
         </div>
         <h3>3 {{ this.$locales('meal') }}</h3>
         <p>{{ this.$locales('menu_vt_3') }}</p>
@@ -95,7 +95,7 @@
       </div>
       <div class="slide">
         <div class="slide-img-block">
-          <img class="mb-4" src="@/assets/img/menu/vt/4.jpeg" alt="">
+          <img class="mb-4" src="@/assets/img/menu/vt/4.png" alt="">
         </div>
         <h3>4 {{ this.$locales('meal') }}</h3>
         <p>{{ this.$locales('menu_vt_4') }}</p>
@@ -103,7 +103,7 @@
       </div>
       <div class="slide">
         <div class="slide-img-block">
-          <img class="mb-4" src="@/assets/img/menu/vt/5.jpeg" alt="">
+          <img class="mb-4" src="@/assets/img/menu/vt/5.png" alt="">
         </div>
         <h3>5 {{ this.$locales('meal') }}</h3>
         <p>{{ this.$locales('menu_vt_5') }}</p>
@@ -115,7 +115,7 @@
     <div class="racion-slider" v-if='this.active == "wed"'>
       <div class="slide">
         <div class="slide-img-block">
-          <img class="mb-4" src="@/assets/img/menu/sr/1.jpeg" alt="">
+          <img class="mb-4" src="@/assets/img/menu/sr/1.png" alt="">
         </div>
         <h3>1 {{ this.$locales('meal') }}</h3>
         <p>{{ this.$locales('menu_sr_1') }}</p>
@@ -123,7 +123,7 @@
       </div>
       <div class="slide">
         <div class="slide-img-block">
-          <img class="mb-4" src="@/assets/img/menu/sr/2.jpeg" alt="">
+          <img class="mb-4" src="@/assets/img/menu/sr/2.png" alt="">
         </div>
         <h3>2 {{ this.$locales('meal') }}</h3>
         <p>{{ this.$locales('menu_sr_2') }}</p>
@@ -131,7 +131,7 @@
       </div>
       <div class="slide">
         <div class="slide-img-block">
-          <img class="mb-4" src="@/assets/img/menu/sr/3.jpeg" alt="">
+          <img class="mb-4" src="@/assets/img/menu/sr/3.png" alt="">
         </div>
         <h3>3 {{ this.$locales('meal') }}</h3>
         <p>{{ this.$locales('menu_sr_3') }}</p>
@@ -147,7 +147,7 @@
       </div>
       <div class="slide">
         <div class="slide-img-block">
-          <img class="mb-4" src="@/assets/img/menu/sr/5.jpeg" alt="">
+          <img class="mb-4" src="@/assets/img/menu/sr/5.png" alt="">
         </div>
         <h3>5 {{ this.$locales('meal') }}</h3>
         <p>{{ this.$locales('menu_sr_5') }}</p>
@@ -167,7 +167,7 @@
       </div>
       <div class="slide">
         <div class="slide-img-block">
-          <img class="mb-4" src="@/assets/img/menu/cht/2.jpeg" alt="">
+          <img class="mb-4" src="@/assets/img/menu/cht/2.png" alt="">
         </div>
         <h3>2 {{ this.$locales('meal') }}</h3>
         <p>{{ this.$locales('menu_cht_2') }}</p>
@@ -183,7 +183,7 @@
       </div>
       <div class="slide">
         <div class="slide-img-block">
-          <img class="mb-4" src="@/assets/img/menu/cht/4.jpeg" alt="">
+          <img class="mb-4" src="@/assets/img/menu/cht/4.png" alt="">
         </div>
         <h3>4 {{ this.$locales('meal') }}</h3>
         <p>{{ this.$locales('menu_cht_4') }}</p>
@@ -191,7 +191,7 @@
       </div>
       <div class="slide">
         <div class="slide-img-block">
-          <img class="mb-4" src="@/assets/img/menu/cht/5.jpeg" alt="">
+          <img class="mb-4" src="@/assets/img/menu/cht/5.png" alt="">
         </div>
         <h3>5 {{ this.$locales('meal') }}</h3>
         <p>{{ this.$locales('menu_cht_5') }}</p>
@@ -203,7 +203,7 @@
     <div class="racion-slider" v-if='this.active == "fri"'>
       <div class="slide">
         <div class="slide-img-block">
-          <img class="mb-4" src="@/assets/img/menu/pt/1.jpeg" alt="">
+          <img class="mb-4" src="@/assets/img/menu/pt/1.png" alt="">
         </div>
         <h3>1 {{ this.$locales('meal') }}</h3>
         <p>{{ this.$locales('menu_pt_1') }}</p>
@@ -211,7 +211,7 @@
       </div>
       <div class="slide">
         <div class="slide-img-block">
-          <img class="mb-4" src="@/assets/img/menu/pt/2.jpeg" alt="">
+          <img class="mb-4" src="@/assets/img/menu/pt/2.png" alt="">
         </div>
         <h3>2 {{ this.$locales('meal') }}</h3>
         <p>{{ this.$locales('menu_pt_2') }}</p>
@@ -219,7 +219,7 @@
       </div>
       <div class="slide">
         <div class="slide-img-block">
-          <img class="mb-4" src="@/assets/img/menu/pt/3.jpeg" alt="">
+          <img class="mb-4" src="@/assets/img/menu/pt/3.png" alt="">
         </div>
         <h3>3 {{ this.$locales('meal') }}</h3>
         <p>{{ this.$locales('menu_pt_3') }}</p>
@@ -248,7 +248,7 @@
     <div class="racion-slider" v-if='this.active == "sat"'>
       <div class="slide">
         <div class="slide-img-block">
-          <img class="mb-4" src="@/assets/img/menu/sb/1.jpeg" alt="">
+          <img class="mb-4" src="@/assets/img/menu/sb/1.png" alt="">
         </div>
         <h3>1 {{ this.$locales('meal') }}</h3>
         <p>{{ this.$locales('menu_sb_1') }}</p>
@@ -256,7 +256,7 @@
       </div>
       <div class="slide">
         <div class="slide-img-block">
-          <img class="mb-4" src="@/assets/img/menu/sb/2.jpeg" alt="">
+          <img class="mb-4" src="@/assets/img/menu/sb/2.png" alt="">
         </div>
         <h3>2 {{ this.$locales('meal') }}</h3>
         <p>{{ this.$locales('menu_sb_1') }}</p>
@@ -264,7 +264,7 @@
       </div>
       <div class="slide">
         <div class="slide-img-block">
-          <img class="mb-4" src="@/assets/img/menu/sb/3.jpeg" alt="">
+          <img class="mb-4" src="@/assets/img/menu/sb/3.png" alt="">
         </div>
         <h3>3 {{ this.$locales('meal') }}</h3>
         <p>{{ this.$locales('menu_sb_3') }}</p>
@@ -280,7 +280,7 @@
       </div>
       <div class="slide">
         <div class="slide-img-block">
-          <img class="mb-4" src="@/assets/img/menu/sb/5.jpeg" alt="">
+          <img class="mb-4" src="@/assets/img/menu/sb/5.png" alt="">
         </div>
         <h3>5 {{ this.$locales('meal') }}</h3>
         <p>{{ this.$locales('menu_sb_5') }}</p>
@@ -292,7 +292,7 @@
     <div class="racion-slider" v-if='this.active == "sun"'>
       <div class="slide">
         <div class="slide-img-block">
-          <img class="mb-4" src="@/assets/img/menu/vs/1.jpeg" alt="">
+          <img class="mb-4" src="@/assets/img/menu/vs/1.png" alt="">
         </div>
         <h3>1 {{ this.$locales('meal') }}</h3>
         <p>{{ this.$locales('menu_vs_1') }}</p>
@@ -300,7 +300,7 @@
       </div>
       <div class="slide">
         <div class="slide-img-block">
-          <img class="mb-4" src="@/assets/img/menu/vs/2.jpeg" alt="">
+          <img class="mb-4" src="@/assets/img/menu/vs/2.png" alt="">
         </div>
         <h3>2 {{ this.$locales('meal') }}</h3>
         <p>{{ this.$locales('menu_vs_2') }}</p>
@@ -308,7 +308,7 @@
       </div>
       <div class="slide">
         <div class="slide-img-block">
-          <img class="mb-4" src="@/assets/img/menu/vs/3.jpeg" alt="">
+          <img class="mb-4" src="@/assets/img/menu/vs/3.png" alt="">
         </div>
         <h3>3 {{ this.$locales('meal') }}</h3>
         <p>{{ this.$locales('menu_vs_3') }}</p>
@@ -316,7 +316,7 @@
       </div>
       <div class="slide">
         <div class="slide-img-block">
-          <img class="mb-4" src="@/assets/img/menu/vs/4.jpeg" alt="">
+          <img class="mb-4" src="@/assets/img/menu/vs/4.png" alt="">
         </div>
         <h3>4 {{ this.$locales('meal') }}</h3>
         <p>{{ this.$locales('menu_vs_4') }}</p>
@@ -324,7 +324,7 @@
       </div>
       <div class="slide">
         <div class="slide-img-block">
-          <img class="mb-4" src="@/assets/img/menu/vs/5.jpeg" alt="">
+          <img class="mb-4" src="@/assets/img/menu/vs/5.png" alt="">
         </div>
         <h3>5 {{ this.$locales('meal') }}</h3>
         <p>{{ this.$locales('menu_vs_5') }}</p>
@@ -357,12 +357,16 @@ export default {
   methods: {
     scrollButtonHandler(){
       let block1 = document.getElementById('main-button');
+      let contactForm = document.getElementById('contact');
       let block2 = document.querySelector('.quiz-button');
 
       let block2Rect = block2.getBoundingClientRect();
       let isVisible = block2Rect.top < window.innerHeight && block2Rect.bottom >= 0;
 
-      if (isVisible) {
+      let contactFormRect = contactForm.getBoundingClientRect();
+      let isContactFormRectVisible = contactFormRect.top < window.innerHeight && contactFormRect.bottom >= 0;
+
+      if (isVisible || isContactFormRectVisible) {
           block1.style.opacity = 0;
       } else {
           block1.style.opacity = 1;

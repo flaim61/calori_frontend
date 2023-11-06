@@ -1,6 +1,9 @@
 <template>
   <section class="main-block">
     <Header />
+    <video autoplay="true" muted="true" loop="true" preload="true" playsinline="true" controls="false" id="home-video" class="home-video">
+      <source src="@/assets/videos/Healthy-eating.mp4" type="video/mp4">
+    </video>
     <h1>
       {{ this.$locales('main_page_title') }}
     </h1>
@@ -255,6 +258,7 @@ export default {
 </script>
 
 <style>
+
   .text-Description{
     margin-top: 90px;
   }

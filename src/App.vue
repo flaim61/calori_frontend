@@ -10,16 +10,32 @@ export default {
   name: "App",
   data(){
     return {
-
     }
   },
   async created(){
     await this.checkAuth();
     this.checkReferral();
+    window.addEventListener('DOMContentLoaded', this.playVideo)
     console.log(this.$store.state.auth)
     console.log(this.$cookies.get('auth_token'));
   },
   methods: {
+    playVideo(){
+      var video = document.getElementById('home-video');
+      var playRequested = false;
+
+      document.body.addEventListener('click', function() {
+          if (!playRequested) {
+              video.play().then(function() {
+                  // Воспроизведение началось успешно
+              }).catch(function(error) {
+                  // Ошибка воспроизведения
+                  console.error('Ошибка воспроизведения видео: ', error);
+              });
+              playRequested = true;
+          }
+      });
+    },
     checkReferral(){
       const url = new URL(location.href);
       if (url.searchParams.get('referral')) {

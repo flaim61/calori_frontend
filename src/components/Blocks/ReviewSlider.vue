@@ -24,7 +24,7 @@
         <div class="slide-top-left ">
           <img src="@/assets/img/customers/nina.png" alt="">
         </div>
-        <div class="slide-top-right w-50">
+        <div class="slide-top-right">
           <h3 class="mt-4">Nina Moritz</h3>
           <p>@ninamoritzz</p>
 
@@ -40,7 +40,7 @@
         <div class="slide-top-left ">
           <img src="@/assets/img/customers/eemli.png" alt="">
         </div>
-        <div class="slide-top-right w-50">
+        <div class="slide-top-right">
           <h3 class="mt-4">Eemil Kurhela</h3>
           <p>@eemilkurhela</p>
 
@@ -56,7 +56,7 @@
         <div class="slide-top-left ">
           <img src="@/assets/img/customers/salli.jpeg" alt="">
         </div>
-        <div class="slide-top-right w-50">
+        <div class="slide-top-right">
           <h3 class="mt-4">Salli Leppäkoski</h3>
           <p>@sallieerika</p>
           <p class="review-text ml-3 mr-3 p-2">
@@ -71,7 +71,7 @@
         <div class="slide-top-left ">
           <img src="@/assets/img/customers/albert.jpeg" alt="">
         </div>
-        <div class="slide-top-right w-50">
+        <div class="slide-top-right">
           <h3 class="mt-4">Albert Minthant</h3>
           <p>@albertminthant</p>
           <p class="review-text ml-3 mr-3 p-2">
@@ -121,6 +121,9 @@ export default {
     margin-left: -80% !important;
     margin-top: 42% !important;
   }
+  .slide-top-right{
+    width: 45%;
+  }
   .slide-top-right>h3{
     color: var(--Black, #2C2D31);
     /* Text h2 med */
@@ -133,7 +136,7 @@ export default {
   .slide-top-right>p{
     color: var(--Accent, #00B467);
     font-family: Inter;
-    font-size: 10px;
+    font-size: 13px;
     font-style: normal;
     font-weight: 400;
     line-height: 140%;
@@ -148,9 +151,9 @@ export default {
     margin-top: 100px;
   }
   .slide-top-left>img{
-    height: 215px;
+    height: 252px;
     object-fit: cover;
     border-radius: 16px;
-    width: 150px;
+    width: 178px;
   }
 </style>

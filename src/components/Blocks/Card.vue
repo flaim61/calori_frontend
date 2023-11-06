@@ -3,9 +3,15 @@
     <h3>
       {{this.title}}
     </h3>
-    <img v-if='this.image == 1' src="@/assets/img/background/1.jpg" alt="">
-    <img v-if='this.image == 2' src="@/assets/img/background/2.jpg" alt="">
-    <img v-if='this.image == 3' src="@/assets/img/background/3.jpg" alt="">
+    <img v-if='this.image == 1' src="@/assets/img/howitwork/1.jpeg" alt="">
+    <img v-if='this.image == 2' src="@/assets/img/howitwork/2.jpeg" alt="">
+    <img v-if='this.image == 3' src="@/assets/img/howitwork/3.jpeg" alt="">
+    <img v-if='this.image == 4' src="@/assets/img/howitwork/4.jpeg" alt="">
+    <img v-if='this.image == 5' src="@/assets/img/howitwork/5.jpeg" alt="">
+    <img v-if='this.image == 6' src="@/assets/img/howitwork/6.jpeg" alt="">
+    <img v-if='this.image == 7' src="@/assets/img/howitwork/7.jpeg" alt="">
+    <img v-if='this.image == 8' src="@/assets/img/howitwork/8.jpeg" alt="">
+    <img v-if='this.image == 9' src="@/assets/img/howitwork/9.jpeg" alt="">
     <p>
       {{this.text}}
     </p>

@@ -12,9 +12,11 @@
       <input type="text" v-model='this.form.message' id='message' placeholder="Your Message" autocomplete="off">
       <span>Please write your message</span>
     </div>
-    <div class="button" @click='sendMessage'>
-      <div>{{ this.$locales('contact_us')}} </div>
-      <img src="@/assets/img/icon/button_arrow.svg">
+    <div class="button d-flex justify-content-center" @click='sendMessage'>
+      <div >{{ this.$locales('contact_us')}} </div>
+    </div>
+    <div class="button faq_button d-flex justify-content-center" @click='this.$router.push("faq")' v-if='this.$route.name != "faq"'>
+      <div > FAQ </div>
     </div>
   </div>
 </template>
@@ -53,7 +55,7 @@ export default {
       try {
         const response = await sendContactForm(this.form);
       } catch (e) {
-        
+
         this.$swal({
           position: 'top-right',
           icon: 'error',
@@ -85,4 +87,13 @@ export default {
 </script>
 
 <style lang="css" scoped>
+  .faq_button{
+    margin-top: 16px;
+    border-radius: 10px;
+    border: 2px solid var(--Grey, #92979B);
+    background: var(--White, #FFF);
+  }
+  .faq_button>div{
+    color: #92979B !important;
+  }
 </style>

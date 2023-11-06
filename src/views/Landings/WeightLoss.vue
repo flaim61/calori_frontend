@@ -1,11 +1,14 @@
 <template>
   <section class="main-block">
     <Header />
+    <video  autoplay muted loop preload playsinline controls="false" id="home-videl" class="home-video">
+      <source src="@/assets/videos/Meal-prep.mp4" type="video/mp4">
+    </video>
     <h1>
-      {{ this.$locales('l1_main_page_title') }}
+      {{ this.$locales('WeightLoss_title') }}
     </h1>
     <p>
-      {{ this.$locales('l1_main_page_text') }}
+      {{ this.$locales('WeightLoss_text') }}
     </p>
     <Transition>
       <div id='main-button' v-show='this.showButton' class="main-button" @click='this.$router.push("/quiz")'>
@@ -21,30 +24,30 @@
       </h3>
     </div>
     <Card
-      title="Find out when you’ll hit your goal"
+      :title="this.$locales('WeightLoss_card_1_title')"
       image="1"
-      text='Just answer a few short questions (it’ll take 3 mins max) and see when you’ll get to your target weight.'
+      :text="this.$locales('WeightLoss_card_1_text')"
     />
     <Card
-      title="Let us do all the heavy lifting"
+      :title="this.$locales('WeightLoss_card_2_title')"
       image="2"
-      text='Subscribe to our service and let us take care of all your stress related to eating, making progress, and reaching your goals.'
+      :text="this.$locales('WeightLoss_card_2_text')"
     />
     <Card
-      title="Yummy food to your door"
+      :title="this.$locales('WeightLoss_card_3_title')"
       image="3"
-      text='Get daily meals delivered to your doorstep twice a week. You’ll get 4-5 servings every day. No fuss! Just consistent, restaurant-level food.'
+      :text="this.$locales('WeightLoss_card_3_text')"
     />
     <Card
-      title="Keep us in the loop"
+      :title="this.$locales('WeightLoss_card_4_title')"
       image="3"
-      text='Shoot us quick 5-min updates once a week. We’ll cheer you up on on every step of the way!'
+      :text="this.$locales('WeightLoss_card_4_text')"
     />
 
     <Card
-      title="Eat, enjoy, and slim down"
+      :title="this.$locales('WeightLoss_card_5_title')"
       image="3"
-      text='Just relax, enjoy the grub, and watch the magic happen. Weight loss? You got this! No need to even hit the gym. Simple as that, right?'
+      :text="this.$locales('WeightLoss_card_5_text')"
     />
 
     <div class="titlep_block" id='block'>
@@ -72,31 +75,31 @@
         [
           {
             img: 12,
-            text: 'Healthy weight loss: 2 kg per month'
+            text: this.$locales('WeightLoss_list_item_1')
           },
           {
             img: 1,
-            text: 'Premium restaurant-level cuisine everywhere you go'
+            text: this.$locales('WeightLoss_list_item_2')
           },
           {
             img: 5,
-            text: 'Personalized nutritional balance for improving your health and metabolism'
+            text: this.$locales('WeightLoss_list_item_3')
           },
           {
             img: 13,
-            text: 'Support and weekly progress check from professional coaches'
+            text: this.$locales('WeightLoss_list_item_4')
           },
           {
             img: 14,
-            text: 'Working out? Optional - it’s up to you'
+            text: this.$locales('WeightLoss_list_item_5')
           },
           {
             img: 15,
-            text: 'Pause the meal subscription at any time'
+            text: this.$locales('WeightLoss_list_item_6')
           },
           {
             img: 2,
-            text: 'Guaranteed results and excellent experience'
+            text: this.$locales('WeightLoss_list_item_7')
           },
         ]
       "
@@ -104,70 +107,69 @@
 
     <div class="titlep_block">
       <h3 class="block-title">
-        Our beloved customers
+        {{ this.$locales('reviews_block_title') }}
       </h3>
       <p>
-        Our first group reached 70+ happy customers. Here’s what some of them say.
+        {{this.$locales('reviews_block_text')}}
       </p>
     </div>
 
     <ReviewSlider />
 
     <BlueTextBlock
-      title='Wanna join along?'
-      text='Our next journey starts in January 2024. '
-      text2='The seats are limited - don’t miss on yours. '
-      text3='Just in time for your new-year resolutions! '
+      :title='this.$locales("blue_text_block_home_title")'
+      :text='this.$locales("blue_text_block_home_text")'
+      :text-2='this.$locales("blue_text_block_home_text_2")'
     />
 
     <div class="titlep_block" id='menu'>
       <h3 class="block-title">
-        Get your meal plan
+        {{ this.$locales('menu_title_home')}}
       </h3>
       <p>
-        Here’s an average week with Calori. Quick recap: healthy and delicious!
+        {{ this.$locales('menu_text_home') }}
       </p>
     </div>
 
     <TabsSlider />
 
     <p class="text-Description">
-      With Calori, you’ll get balanced meals cooked and delivered according to your personalized plan. That’s 140+ unique meals in 1 month.
+      {{ this.$locales('menu_text_before_home') }}
     </p>
 
-    <div class="quiz-button" style="" @click='this.$router.push("/quiz")'>Get your plan</div>
-    <p>All meals with deliveries start from 168 eur / week.</p>
+    <div class="quiz-button" style="" @click='this.$router.push("/quiz")'>{{ this.$locales('get_plan_button') }} </div>
+    <p> {{this.$locales('before_button_text') }}</p>
 
     <div class="titlep_block">
       <h3 class="block-title">
-        5 months with Calori
+        {{ this.$locales('HealthyEating_five_months') }}
       </h3>
       <p>
-        Here’s the difference you can make to your life with Calori.
+        {{ this.$locales('month_with_calori_text') }}
       </p>
     </div>
 
     <PlusesBlock
-      :pluses='
+      :pluses="
         [
           {
-            title: "Up to 10 kg",
-            text: "of weight lost without sacrificing on your lifestyle."
+            title: this.$locales('HealthyEating_plus_1_title'),
+            text: this.$locales('HealthyEating_plus_1_text'),
           },
           {
-            title: "+31 working day saved",
-            text: "on planning, shopping, cooking, and cleaning."
+            title: this.$locales('HealthyEating_plus_2_title'),
+            text: this.$locales('HealthyEating_plus_2_text'),
           },
           {
-            title: "Total transformation",
-            text: "to your energy, health, and wellbeing."
+            title: this.$locales('HealthyEating_plus_3_title'),
+            text: this.$locales('HealthyEating_plus_3_text'),
           },
           {
-            title: "Open new doors",
-            text: "and start new chapter of your life!"
+            title: this.$locales('HealthyEating_plus_4_title'),
+            text: this.$locales('HealthyEating_plus_4_text'),
           },
         ]
-      '
+      "
     />
 
     <div class="titlep_block">
@@ -184,10 +186,10 @@
 
     <div class="titlep_block" id='sustainability_approach'>
       <h3 class="block-title">
-        Sustainability Approach
+        {{this.$locales('sustainability_approach_title')}}
       </h3>
       <p>
-        Good for you, good for the planet.
+        {{ this.$locales('sustainability_approach_text') }}
       </p>
     </div>
 
@@ -197,29 +199,29 @@
         [
           {
             img: 7,
-            text: 'Restaurant-level food made from local organic produce'
+            text: this.$locales('sustainability_approach_item_1')
           },
           {
             img: 8,
-            text: 'Sustainable packaging'
+            text: this.$locales('sustainability_approach_item_2')
           },
           {
             img: 9,
-            text: 'Green logistics powered by electricity and biofuel'
+            text: this.$locales('sustainability_approach_item_3')
           },
           {
             img: 10,
-            text: 'Minimal food waste'
+            text: this.$locales('sustainability_approach_item_4')
           },
         ]
       "
     />
 
-    <p>Did you know that meal boxes reduce waste by 38% compared to home-cooked dinners?</p>
+    <p>{{this.$locales('sustainability_approach_before_text') }}</p>
 
     <div class="titlep_block">
       <h3 class="block-title">
-        Still got questions?
+        {{ this.$locales('contact_form_title') }}
       </h3>
     </div>
     <div class="d-flex mb-5">
