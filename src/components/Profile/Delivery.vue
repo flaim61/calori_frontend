@@ -129,6 +129,7 @@ export default {
       }
 
       const response = await saveDeliveryInfo(this.delivery);
+      console.log(response)
       this.changing = false;
     },
   }

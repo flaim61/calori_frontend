@@ -10,7 +10,9 @@ html{
   opacity: 1;
   transition: opacity 0.5s ease; /* Плавная анимация исчезновения в течение 0.5 секунды */
 }
-
+a:hover{
+  text-decoration: none;
+}
 .quiz-button + p{
   color: var(--Grey, #92979B);
   font-family: Inter;

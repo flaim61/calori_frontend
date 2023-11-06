@@ -20,7 +20,7 @@
     </div>
   </Transition>
   <div class="green-label" id='green-label'>
-    Next wave in Helsinki, Espoo, Vantaa from 8.1.2024
+    {{this.$locales('green_label_text')}}
   </div>
   <header id='header'>
     <div class="menu-item ml-2" @click='switchMenu'>

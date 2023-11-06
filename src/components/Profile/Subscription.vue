@@ -1,8 +1,10 @@
 <template lang="html">
-  <div class="button bg-dark text-white justify-content-center">
-    Edit payment information
-  </div>
-  <h6 class="mt-3">
+  <a href="https://billing.stripe.com/p/login/test_14k2aJ5n01Ur6Gc5kk">
+    <div class="button bg-dark text-white justify-content-center">
+      Edit payment information
+    </div>
+  </a>
+  <!--<h6 class="mt-3">
     Period payment
   </h6>
   <div class="input-group">
@@ -10,82 +12,32 @@
       <option v-for='(plan, index) in this.plans' :value="plan.priceId">{{plan.name}}</option>
     </select>
     <div class="input-group-append">
-      <button class="btn btn-dark" type="button" style='height: 40px'>
-        <img src="@/assets/img/icon/66.svg">
-      </button>
+        <button class="btn btn-dark" type="button" style='height: 40px'>
+          <img src="@/assets/img/icon/66.svg">
+        </button>
     </div>
-  </div>
-  <div class="card card-profile mt-4">
-    <h3>
-      State subscription
-    </h3>
-    <table>
-      <tr>
-        <th>
-          Period
-        </th>
-        <th>
-          Status
-        </th>
-      </tr>
-      <tr>
-        <td>
-          01.01.23 - 01.01.23
-        </td>
-        <td>
-          Ative
-        </td>
-      </tr>
-      <tr>
-        <th>
-          Next payment
-        </th>
-        <th>
-          Price
-        </th>
-      </tr>
-      <tr>
-        <td>
-          01.01.23
-        </td>
-        <td>
-          830 euros
-        </td>
-      </tr>
-    </table>
-    <div class="button grey text-white justify-content-center mt-3">
-      Cancel subscription
-    </div>
-  </div>
+  </div>-->
   <div class="card card-profile mt-4">
     <h3>
       Order list
     </h3>
     <ul class="payments-list mb-0">
-      <li class="mb-1">
+      <li class="mb-1" v-for='(payment, index) in this.userPayments' :key='index'>
         <div class="">
           <span class="payments-list-title">
             Payment
           </span>
           <span>
-            700 euros
+            {{(payment.cost / 100).toFixed(2)}} euros
           </span>
         </div>
         <div class="">
-          01.01.23
-        </div>
-      </li>
-      <li class="mb-1">
-        <div class="">
-          <span class="payments-list-title">
-            Payment
+          <span class="d-none">
+            {{
+              date = new Date(payment.date)
+            }}
           </span>
-          <span>
-            700 euros
-          </span>
-        </div>
-        <div class="">
-          01.01.23
+          {{date.getDate()}}.{{date.getMonth() + 1}}.{{date.getFullYear()}}
         </div>
       </li>
     </ul>
@@ -93,10 +45,13 @@
 </template>
 
 <script>
+import { getUserPayments } from "@/services/index.js"
+
 export default {
   name: "subscription",
   data(){
     return {
+      userPayments: [],
       plans: [
         {
           priceId: "price_1O7hQCHNRk8vDVhu0d4qmdoG",
@@ -121,6 +76,15 @@ export default {
       ]
     }
   },
+  async created(){
+    this.userPayments = await this.getUserPayments();
+  },
+  methods: {
+    async getUserPayments(){
+      const response = await getUserPayments();
+      return response.data;
+    }
+  }
 
 }
 </script>

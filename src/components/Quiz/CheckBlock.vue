@@ -93,7 +93,7 @@
         <li class="mt-2" v-if='this.createdApplication.activityLevelId == 1'><span>{{ this.$locales('activity') }}</span> {{ this.$locales('activity_1') }}</li>
         <li class="mt-2" v-if='this.createdApplication.activityLevelId == 2'><span>{{ this.$locales('activity') }}</span> {{ this.$locales('activity_2') }}</li>
       </ul>
-      <div class="text-center p-2 edit-btn" @click='this.returnQuizBegin()'>
+      <div class="text-center p-2 edit-btn" @click='this.returnQuizBegin()' v-if='this.$route.name == "quiz"'>
         {{ this.$locales('edit_information') }}
       </div>
     </div>
@@ -101,57 +101,33 @@
 </template>
 
 <script>
-import {createCheckoutSession} from "@/services/index.js"
+import {createCheckoutSession, getPrices} from "@/services/index.js"
 
 export default {
   name: "CheckBlock",
   data(){
     return {
       plan_block_visibled: false,
-      plan: {
-        priceId: "price_1O7hQCHNRk8vDVhuTqLeBqO6",
-        name: "Every 2 weeks",
-        price: "100",
-      },
-      plans: [
-        {
-          priceId: "price_1O7hQCHNRk8vDVhu0d4qmdoG",
-          name: "Every 1 week",
-          price: "100",
-        },
-        {
-          priceId: "price_1O7hQCHNRk8vDVhuTqLeBqO6",
-          name: "Every 2 weeks",
-          price: "100",
-        },
-        {
-          priceId: "price_1O7hQCHNRk8vDVhu0d4qmdoG",
-          name: "Every 3 weeks",
-          price: "300",
-        },
-        {
-          priceId: "price_1O7hQCHNRk8vDVhu0d4qmdoG",
-          name: "Every 4 weeks",
-          price: "200",
-        },
-      ]
+      plan: null,
+      plans: []
     }
   },
   props: [
-    'plan',
     'createdApplication',
     'returnQuizBegin',
   ],
-  created(){
-    console.log(this.createdApplication)
+  async created(){
+    this.plans = await this.getPrices()
+    this.plan = this.plans[0];
   },
   methods: {
+    async getPrices(){
+      const response = await getPrices()
+      return response.data;
+    },
     async createCheckoutSession(){
-      const response = await createCheckoutSession({
-        "priceId": this.priceId
-      });
-
-      window.open(response.data.sessionUrl);
+      const response = await createCheckoutSession(this.plan);
+      window.open(response.data.sessionUrl, "_self");
     }
   }
 }

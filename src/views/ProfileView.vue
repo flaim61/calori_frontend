@@ -1,5 +1,5 @@
 <template>
-  <div class="profile-header-wrapper">
+  <div class="profile-header-wrapper" >
     <div class="profile-header d-flex justify-content-between mb-2">
       <h3>
         {{ this.$locales('personal_profile') }}
@@ -14,11 +14,11 @@
         </div>
       </h2>
     </div>
-    <div class="profile_tabs d-flex" v-if='!this.settings'>
+    <div class="profile_tabs d-flex" v-if='!this.settings' :class="{'pb-custom':!this.planPaid}">
       <div class="profile_tabs_item" :class="{'active' : this.tabs.plan}" @click='this.setActive("plan")'>
         {{ this.$locales('my_plan') }}
       </div>
-      <a target="_blank" href="https://info.spacent.com/meetings/spacent/book-a-demo?_ga=2.31120575.1439210232.1697105517-791289949.1697105517">
+      <a v-if='this.planPaid' target="_blank" href="https://info.spacent.com/meetings/spacent/book-a-demo?_ga=2.31120575.1439210232.1697105517-791289949.1697105517">
         <div class="profile_tabs_item">
           {{ this.$locales('coach') }}
         </div>
@@ -26,10 +26,10 @@
       <div class="profile_tabs_item" :class="{'active' : this.tabs.referral}" @click='this.setActive("referral")'>
         Referral
       </div>
-      <div class="profile_tabs_item" :class="{'active' : this.tabs.delivery}" @click='this.setActive("delivery")'>
+      <div class="profile_tabs_item" :class="{'active' : this.tabs.delivery}" @click='this.setActive("delivery")' v-if='this.planPaid'>
         {{ this.$locales('delivery') }}
       </div>
-      <div class="profile_tabs_item" :class="{'active' : this.tabs.subscription}" @click='this.setActive("subscription")'>
+      <div class="profile_tabs_item" :class="{'active' : this.tabs.subscription}" @click='this.setActive("subscription")' v-if='this.planPaid'>
         {{ this.$locales('subscription') }}
       </div>
     </div>
@@ -53,6 +53,7 @@ import Coach from '@/components/Profile/Coach.vue';
 import ProfileSettings from '@/components/Profile/ProfileSettings.vue'
 import Referral from '@/components/Profile/Referral.vue'
 import Subscription from '@/components/Profile/Subscription.vue'
+import { getApplication, getPesonalPlan } from '@/services/index.js';
 
 export default {
   name: "ProfileView",
@@ -64,12 +65,14 @@ export default {
     Referral,
     Subscription,
   },
-  created(){
+  async created(){
     this.checkAfterPayment();
+    await this.getPesonalPlan();
   },
   data(){
     return {
       settings: false,
+      planPaid: false,
       tabs: {
         plan: true,
         coach: false,
@@ -81,6 +84,10 @@ export default {
     }
   },
   methods: {
+    async getPesonalPlan(){
+      const response = await getPesonalPlan();
+      this.planPaid = response.data.isPaid;
+    },
     logout(){
       var cookies = document.cookie.split(";");
     	for (var i = 0; i < cookies.length; i++) {
@@ -126,6 +133,9 @@ export default {
 </script>
 
 <style lang="css" scoped>
+  .pb-custom{
+    padding-bottom: 10px;
+  }
   .profile-header>h3{
     display: flex;
     flex-direction: column;

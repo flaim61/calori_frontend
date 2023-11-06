@@ -239,7 +239,7 @@
 
     <div class="shadow-none  email-card card step" v-if='this.step == 8'>
       <div class="mt-0 mb-0">
-        <div class="title mt-0" v-if='!this.application.allergies.length'>
+        <div class="title mt-0" v-if='!this.application.allergies.length '>
           {{ this.$locales('quiz2fraze') }}
         </div>
         <div class="title mt-0" v-if='this.application.allergies.indexOf("5") >= 0'>
@@ -253,21 +253,25 @@
             <label for="">{{this.$locales('allergy')}}</label>
             <input type="text" v-model='this.application.another_allergy'>
           </div>
-          <div class="content_input_section" :class="{ 'error' : this.errors.email }">
+          <div class="content_input_section" :class="{ 'error' : this.errors.email }" v-if='!this.$store.state.auth'>
             <label for="">{{this.$locales('email')}}</label>
             <input type="email" placeholder="Write your e-mail" v-model='this.application.email' >
             <span> {{ this.$locales('user_alredy_exist') }} </span>
           </div>
         </div>
-        <div class="button d-flex justify-content-center" @click='this.createApplication()'>
+        <div class="button d-flex justify-content-center" @click='this.createApplication()' v-if='!this.$store.state.auth'>
           <div> Send </div>
+          <img class="ml-2" src="@/assets/img/icon/mail.svg">
+        </div>
+        <div class="button d-flex justify-content-center" @click='this.updateApplication()' v-else>
+          <div> Update </div>
           <img class="ml-2" src="@/assets/img/icon/mail.svg">
         </div>
       </div>
     </div>
 
     <div class="step" v-if='this.step == 9'>
-      <CheckBlock :plan='this.plan' :returnQuizBegin='returnQuizBegin' :createdApplication='this.createdApplication'/>
+      <CheckBlock :returnQuizBegin='returnQuizBegin' :createdApplication='this.createdApplication'/>
     </div>
 
   </div>
@@ -317,14 +321,16 @@ export default {
         email: false,
         min_weight: false,
       },
-      plan: {
-        date_end: "30.4.2024",
-      },
     }
   },
   async created(){
     if (this.$cookies.get("auth_token")) {
-      this.createdApplication = await this.getApplication();
+      const application = await this.getApplication();
+      console.log(application)
+      application.allergies = application.applicationAllergies;
+      application.another_allergy = application.anotherAllergy
+      this.application = application;
+      this.createdApplication = application;
       this.step = 9;
     }
   },
@@ -438,14 +444,25 @@ export default {
 
       this.step++;
     },
-    /*async updateApplication(){
+    async updateApplication(){
       if (this.step == 8 && this.application.email == "") {
         this.errors.email = true;
         return
       }
       try {
         this.application.allergies = this.application.allergies.filter(a => a != 5);
-
+        console.log({
+          gender: this.application.gender,
+          weight: this.application.weight,
+          height: this.application.height,
+          age: this.application.age,
+          activity: this.application.activity,
+          goal: this.application.goal,
+          email: this.application.email,
+          allergies: this.application.allergies,
+          anotherAllergy: this.application.another_allergy
+        });
+        //return;
         const response = await updateApplication({
           gender: this.application.gender,
           weight: this.application.weight,
@@ -457,7 +474,8 @@ export default {
           allergies: this.application.allergies,
           anotherAllergy: this.application.another_allergy
         });
-
+        console.log(response)
+        return;
         if (response.data.application == null) {
               this.$swal({
                 position: 'top',
@@ -471,10 +489,6 @@ export default {
               this.$router.push('/');
               return;
         }
-
-        console.log(response)
-        this.createdApplication = response.data.application;
-        this.$cookies.set("auth_token", response.data.token);
 
         this.$swal({
           position: 'top',
@@ -490,14 +504,13 @@ export default {
         console.log(e)
         this.errors.email = true;
       }
-    }*/
+    }
   },
   watch: {
     async step(){
     },
     application: {
       async handler(newValue, oldValue) {
-        console.log(newValue)
         for (var key in this.errors) {
           this.errors[key] = false;
         }

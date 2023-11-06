@@ -52,7 +52,7 @@ export const changePassword = async (data) => {
 }
 
 export const saveDeliveryInfo = async (data) => {
-  return await $api.post('/api/delivery', data)
+  return await $api.put('/api/delivery-info', data)
 }
 
 export const sendContactForm = async (data) => {
@@ -61,6 +61,14 @@ export const sendContactForm = async (data) => {
 
 export const getDeliveryInfo = async (data) => {
   return await $api.get('/api/delivery-info', data)
+}
+
+export const getUserPayments = async (data) => {
+  return await $api.get('/api/user-payments')
+}
+
+export const getPrices = async (data) => {
+  return await $api.get('/api/prices')
 }
 
 export const createCheckoutSession = async (data) => {

@@ -1,11 +1,11 @@
 <template lang="html">
-  <div class="card-profile card"  v-if='this.personalPlan && this.application'>
+  <div class="card-profile card"  v-if='this.personalPlan && this.application && this.personalPlan.isPaid'>
     <div class="card-top d-flex">
       <h2> {{ this.$locales('information') }}</h2>
     </div>
     <div class="d-flex justify-content-between">
       <div class="">
-        <ul>
+        <ul class="mb-0">
           <li>
             {{ this.$locales('gender') }}:
             <span>
@@ -32,14 +32,9 @@
           </li>
           <li>
             {{ this.$locales('activity') }}:
-            <span>
-              {{ this.application.activityLevelId }}
-            </span>
-          </li>
-          <li v-if='this.application.applicationAllergies.length'>{{this.$locales('allergy')}}:
-            <span v-for='allergy in this.application.applicationAllergies'>
-              {{allergy}}
-            </span>
+            <span class="mt-2" v-if='this.application.activityLevelId == 0'>{{ this.$locales('activity_0') }}</span>
+            <span class="mt-2" v-if='this.application.activityLevelId == 1'>{{ this.$locales('activity_1') }}</span>
+            <span class="mt-2" v-if='this.application.activityLevelId == 2'>{{ this.$locales('activity_2') }}</span>
           </li>
         </ul>
       </div>
@@ -54,7 +49,7 @@
     </div>
   </div>
 
-  <div class="card-profile card"  v-if='this.personalPlan && this.application'>
+  <div class="card-profile card"  v-if='this.personalPlan && this.application  && this.personalPlan.isPaid'>
     <div class="card-top d-flex justify-content-between">
       <h2>
         {{ this.$locales('score') }}
@@ -95,7 +90,7 @@
     </div>
   </div>
 
-  <div class="card-profile card"  v-if='this.personalPlan && this.application'>
+  <div class="card-profile card"  v-if='this.personalPlan && this.application  && this.personalPlan.isPaid'>
     <div class="card-top d-flex justify-content-between">
       <h2>
         {{ this.$locales('currently_plan') }}
@@ -111,26 +106,32 @@
     </div>
     <div class="d-flex justify-content-between">
       <div class="d-flex flex-column justify-content-center pr-3">
-        <ul>
-          <li><span>{{this.personalPlan.currentCaloriPlan}} kсal</span></li>
+        <ul class="mb-0">
+          <li><span>{{this.personalPlan.currentCaloriPlan.calories}} kсal</span></li>
+          <li>5 meals per day<br>
+              Protein {{this.personalPlan.currentCaloriPlan.protein}} , Fats {{this.personalPlan.currentCaloriPlan.fats}}, Carbohydrates {{this.personalPlan.currentCaloriPlan.carbohydrates}}</li>
         </ul>
       </div>
     </div>
   </div>
 
-  <p class="default-text">
+  <p class="default-text" v-if='this.personalPlan && this.personalPlan.isPaid'>
     {{ this.$locales('plan_auto') }}
   </p>
+  {{console.log(this.application)}}
+  <CheckBlock v-if='this.personalPlan && !this.personalPlan.isPaid && this.application' :createdApplication='this.application'/>
 </template>
 
 <script>
 import RingDiagram from '@/components/Diagrams/RingDiagram.vue'
+import CheckBlock from '@/components/Quiz/CheckBlock.vue'
 import { getApplication, getPesonalPlan } from '@/services/index.js';
 
 export default {
   name: "Plan",
   components: {
     RingDiagram,
+    CheckBlock,
   },
   async created(){
     this.personalPlan = await this.getPesonalPlan();
