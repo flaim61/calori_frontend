@@ -1,5 +1,5 @@
 <template lang="html">
-  <a href="https://billing.stripe.com/p/login/test_14k2aJ5n01Ur6Gc5kk">
+  <a href="https://billing.stripe.com/p/login/dR69Cfe5CdDZenScMM">
     <div class="button bg-dark text-white justify-content-center">
       Edit payment information
     </div>
