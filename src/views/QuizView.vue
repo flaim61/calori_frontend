@@ -456,7 +456,7 @@ export default {
     calculate_recomended_weight(){
       let heightM = this.application.height / 100;
       this.calculated_weight.maxWeight = Math.ceil(24.9 * heightM * heightM);
-      this.calculated_weight.minWeight = Math.ceil(18.5 * heightM * heightM);
+      this.calculated_weight.minWeight = Math.ceil((Math.ceil(18.5 * heightM * heightM) + Math.ceil(24.9 * heightM * heightM))/2);
       this.step++;
     },
     async nextStep(){

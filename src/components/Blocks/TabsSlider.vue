@@ -345,16 +345,30 @@ export default {
   },
   created(){
     window.addEventListener('scroll', this.scrollButtonHandler)
-    setTimeout(function(){
-      $('.racion-slider').slick({
-        dots: true,
-        arrows: false,
-        autoplay: true,
-        autoplaySpeed: 3000,
-      });
-    }, 1);
+    window.addEventListener('scroll', this.startSliderIfVisible)
   },
   methods: {
+    startSliderIfVisible(){
+      let menu = document.querySelector('.racion-slider');
+
+      if (!menu) {
+        return;
+      }
+
+      let menuRect = menu.getBoundingClientRect()
+      let isVisible = menuRect.top < window.innerHeight && menuRect.bottom >= 0;
+      let alsoNowSlider = document.querySelector('.racion-slider').classList.contains('slick-slider');
+      if (isVisible && !alsoNowSlider) {
+        setTimeout(function(){
+          $('.racion-slider').slick({
+            dots: true,
+            arrows: false,
+            autoplay: true,
+            autoplaySpeed: 3000,
+          });
+        }, 1)
+      }
+    },
     scrollButtonHandler(){
       let block1 = document.getElementById('main-button');
       let contactForm = document.getElementById('contact');

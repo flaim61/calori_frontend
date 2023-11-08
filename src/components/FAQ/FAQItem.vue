@@ -1,5 +1,5 @@
 <template lang="html">
-  <div class="faq_item">
+  <div class="faq_item" :class="{'closed':!this.active}">
     <div class="faq_item_header d-flex justify-content-between" @click='this.active = !this.active'>
       <span class="faq_item_title"> {{ this.title }} </span>
       <span class="d-flex flex-column justify-content-center">
@@ -37,8 +37,16 @@ export default {
 </script>
 
 <style lang="css" scoped>
+  .closed{
+    margin-bottom: 0 !important;
+    border-top: none !important;
+    padding-bottom: 0 !important;
+  }
+  .closed:last-child{
+    border-bottom: none !important;
+  }
   .faq_item{
-    margin-bottom: 32px;
+    padding-bottom: 16px;
     border-top: 1px solid var(--Bg-block, #E4E9EF);
     border-bottom: 1px solid var(--Bg-block, #E4E9EF);
   }

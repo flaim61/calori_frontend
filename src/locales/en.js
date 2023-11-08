@@ -211,7 +211,7 @@ export default {
   how_works_2_text_home: "Get all meals you need in a day delivered to your home. Our chefs turned complex plans into delicious meals - hitting the perfect balance between home-made and sporty. You can enjoy restaurant-level breakfast, lunch, dinner, and snacks everywhere you go.",
   how_works_3_title_home: "3. Reach your goals while getting support from our coaches",
   how_works_3_text_home: "All you have to do is enjoy! If you need actionable advice and motivation boosts, our coaches will support you on your journey.",
-  sign_in: "Sign In",
+  sign_in: "Your personal profile",
   login: "login",
   login_hellow_title: "Welcome to Calori",
   login_hellow_text: "",

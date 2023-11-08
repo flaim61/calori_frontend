@@ -19,9 +19,9 @@
         <a @click='this.$router.push("faq")' > FAQ </a>
       </div>
       <div class="menu-content" v-else>
-        <a href="/login" > {{ this.$locales('sign_in') }} </a>
         <a @click='this.$router.go(-1)'> {{ this.$locales('bring_me_back') }} </a>
-        <a @click='this.$router.push("faq")' > FAQ </a>
+        <a class="first-a" href="/login" > {{ this.$locales('sign_in') }} </a>
+        <a class="last-a" @click='this.$router.push("faq")' > FAQ </a>
       </div>
     </div>
   </Transition>
@@ -29,8 +29,9 @@
     {{this.$locales('green_label_text')}}
   </div>
   <header id='header'>
-    <div class="menu-item ml-2" @click='switchMenu'>
-      <img src="@/assets/img/icon/burger.svg" alt="">
+    <div class="menu-item ml-2" >
+      <img class="arrow-back" @click='this.$router.go(-1)' v-if='this.$route.name == "faq"' src="@/assets/img/icon/arrow-left.svg" alt="">
+      <img v-else src="@/assets/img/icon/burger.svg" @click='switchMenu'>
     </div>
     <div class="app-title d-flex flex-column justify-content-center" @click='this.$router.push("/")'>
       <img src="@/assets/img/calori.svg" alt="">
@@ -93,6 +94,10 @@ export default {
 </script>
 
 <style>
+  .arrow-back{
+    height: 32px;
+    margin-left: -5px;
+  }
   .green-label{
     width: calc(100% + 32px);
     margin-left: -16px;
@@ -125,7 +130,7 @@ export default {
     position: fixed;
     background: #fff;
     left: 0;
-    z-index: 500;
+    z-index: 501;
     padding: 16px;
   }
   .mobile-menu-header{
@@ -148,15 +153,20 @@ export default {
   .menu-content{
     margin-top: 30px;
   }
+  .menu-content>a:first-child{
+    border-top: 2px solid #F0F5F8;
+  }
   .menu-content>a {
-      color: #151515;
-      font-family: Poppins;
-      font-size: 21px;
-      font-style: normal;
-      font-weight: 400;
-      line-height: 140%;
-      text-decoration: none;
-      margin-bottom: 10px;
+    color: #151515;
+    font-family: Poppins;
+    font-size: 21px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 140%;
+    text-decoration: none;
+    border-bottom: 2px solid #F0F5F8;
+    padding-bottom: 16px;
+    padding-top: 16px;
   }
   .menu-content{
     display: flex;

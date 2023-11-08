@@ -88,19 +88,35 @@
 export default {
   name: "ReviewSlider",
   created(){
-    $(document).ready(function(){
-      $('.slider').slick({
-        dots: true,
-        arrows: false,
-        autoplay: true,
-        autoplaySpeed: 3000,
-      });
-    });
+    window.addEventListener('scroll', this.startSliderIfVisible)
   },
   data() {
     return {
       sliderInit: false
     }
+  },
+  methods: {
+    startSliderIfVisible(){
+      let menu = document.querySelector('.review-slider');
+
+      if (!menu) {
+        return;
+      }
+
+      let menuRect = menu.getBoundingClientRect()
+      let isVisible = menuRect.top < window.innerHeight && menuRect.bottom >= 0;
+      let alsoNowSlider = document.querySelector('.review-slider').classList.contains('slick-slider');
+      if (isVisible && !alsoNowSlider) {
+        setTimeout(function(){
+          $('.review-slider').slick({
+            dots: true,
+            arrows: false,
+            autoplay: true,
+            autoplaySpeed: 3000,
+          });
+        }, 1)
+      }
+    },
   }
 }
 </script>
@@ -119,7 +135,7 @@ export default {
     font-weight: 400 !important;
     line-height: 140% !important;
     margin-left: -108% !important;
-    margin-top: 66% !important;
+    margin-top: 51% !important;
   }
   .slide-top-right{
     width: 45%;
@@ -128,7 +144,7 @@ export default {
     color: var(--Black, #2C2D31);
     /* Text h2 med */
     font-family: Inter;
-    font-size: 16px;
+    font-size: 21px;
     font-style: normal;
     font-weight: 500;
     line-height: 140%;
