@@ -16,6 +16,9 @@ export default {
     await this.checkAuth();
     this.checkReferral();
     window.addEventListener('DOMContentLoaded', this.playVideo)
+    if(!localStorage.getItem('locale')){
+      localStorage.setItem('locale', 'fi');
+    }
     console.log(this.$store.state.auth)
     console.log(this.$cookies.get('auth_token'));
   },

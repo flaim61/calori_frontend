@@ -146,10 +146,10 @@
 
     <div class="titlep_block" >
       <h3 class="block-title">
-        {{ this.$locales('reviews_block_title') }}
+        {{ this.$locales('reviews_block_title_healthy') }}
       </h3>
       <p>
-        {{ this.$locales('reviews_block_text') }}
+        {{ this.$locales('reviews_block_text_healthy') }}
       </p>
     </div>
 
@@ -173,8 +173,7 @@
 
     <TabsSlider />
 
-    <p class="text-Description">
-      {{ this.$locales('menu_text_before_home') }}
+    <p class="text-Description" v-html='this.$locales("menu_text_before_healthy")'>
     </p>
 
     <div class="quiz-button" style="" @click='this.$router.push("/quiz")'>{{this.$locales('get_plan_button')}}</div>
@@ -256,6 +255,9 @@
       <h3 class="block-title">
         {{ this.$locales('contact_form_title') }}
       </h3>
+      <p>
+        {{ this.$locales('healthy_contact_form_title') }}
+      </p>
     </div>
     <ContactForm id='contact'/>
 

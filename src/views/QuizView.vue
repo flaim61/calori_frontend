@@ -139,8 +139,8 @@
 
     <div class="step" v-if='this.step == 6'>
       <div class="content_section">
-        <div class="content_input_section" >
-          <label for="" class="text-left">{{ this.$locales('write_yout_goal') }}:</label>
+        <div class="content_input_section" :class="{ 'error' : this.errors.goal }">
+          <label for="" class="text-left text-dark">{{ this.$locales('write_yout_goal') }}:</label>
           <div class="input-group" :class="{ 'error' : this.errors.goal }">
             <input type="number" class="form-control" v-model='this.application.goal'>
             <div class="input-group-append">
@@ -485,7 +485,8 @@ export default {
       }
 
       if (this.step == 6  && (this.application.goal <= this.calculated_weight.minWeight)) {
-        this.step++;
+        this.errors.goal = true;
+        return;
       }
 
       this.step++;

@@ -5,7 +5,7 @@
         <img src="@/assets/img/icon/return.svg" alt="">
       </div>
       <div class="quiz_header_text">
-        {{ this.$locales('create_plan') }}
+        {{ this.$locales('quiz2fraze') }}
       </div>
       <div @click='this.$router.go(-1)'>
         <img src="@/assets/img/icon/close.svg" alt="">

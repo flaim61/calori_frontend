@@ -77,6 +77,9 @@ export default {
   HealthyEating_before_calori_title: "Ennen Caloria",
   HealthyEating_before_calori_text: "On aika sanoa hyvästit vanhoille tavoille, jotka eivät koskaan toimineet sinulle.",
   HealthyEating_after_calori_title: "Calorin jälkeen",
+  menu_text_before_healthy: "Selvitä, millainen on täydellinen ruokavalio juuri sinulle! <br><br>Calorin avulla saat tasapainoiset ateriat valmistettuna ja toimitettuna henkilökohtaisen suunnitelmasi mukaisesti. Se tarkoittaa yli 140 ainutlaatuista ateriaa kuukaudessa.",
+  reviews_block_title_healthy: "Asiakkaiden tarinat",
+  reviews_block_text_healthy: "Ennen lanseerausta perustamamme ryhmä on kasvanut yli 70 asiakkaan yhteisöksi. Tässä heidän kertomuksiaan matkoistaan Calorin kanssa:",
   HealthyEating_after_calori_text: "Voit olla varma terveysvalinnoistasi.",
   HealthyEating_list_item_1: "Ylivoimainen aterioiden suunnittelussa",
   HealthyEating_list_item_2: "Prosessoituja ruokia ja jätettä",
@@ -98,6 +101,7 @@ export default {
   HealthyEating_plus_3_text: "energiaasi, terveyteesi ja hyvinvointiisi.",
   HealthyEating_plus_4_title: "Avoimet uudet ovet",
   HealthyEating_plus_4_text: "ja aloita uusi luku elämässäsi!",
+  healthy_contact_form_title: "Olemme innoissamme vastataksemme niihin!",
   /* HealthyEating */
 
   /* FAQ */
@@ -319,6 +323,10 @@ export default {
   according_to_our_plan: "Suunnitelmamme mukaan",
   you_will_lose: "menetät",
   see_the_plan: "Katso suunnitelma",
+  every_1_week: "Kerran viikossa",
+  every_2_week: "Joka toinen viikko",
+  every_3_week: "Joka kolmas viikko",
+  every_4_week: "Kerran kuukaudessa",
   check1frase: "Saat kaiken tarvitsemasi taatun tuloksen saavuttamiseksi",
   check2frase: "5 terveellistä ravintolatason ateriaa / päivä",
   check3frase: "Tasapainoinen ja monipuolinen ravitsemus terveytesi parantamiseksi",
@@ -349,8 +357,8 @@ export default {
   activity_0: "Passiivinen elämäntapa",
   activity_1: "Vähäinen aktiivisuus",
   activity_2: "Kohtalainen aktiivisuus",
-  yes: "kyllä",
-  no: "ei",
+  yes: "Kyllä",
+  no: "Ei",
   allergies_any_foods: "Onko sinulla allergioita ruoka-aineille?",
   quiz2fraze: "Jätä sähköpostiosoitteesi, jotta voimme lähettää sinulle ateriasuunnitelman",
   quiz3fraze: "Ilmoita allergiastasi ja anna sähköpostiosoitteesi",
@@ -411,7 +419,7 @@ export default {
   l1_how_works: "Kuinka se toimii?",
 
 
-  before_checkout_button_text: "Maksa nyt ensimmäisestä jaksosta  Aloita toimitukset 8.1.2024 alkaen",
+  before_checkout_button_text: "Maksa nyt ensimmäisestä jaksosta . Aloita toimitukset 8.1.2024 alkaen",
   eur_day: "eur päivässä",
   check9frase: "Saat kaiken tarvitsemasi",
   check10frase: "Valitse maksutiheys",

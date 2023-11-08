@@ -17,8 +17,7 @@
     <iframe v-if='this.video == 3'  src="https://player.vimeo.com/video/882344169?background=1" frameborder="0" allow="autoplay; fullscreen" allowfullscreen=""></iframe>
     <iframe v-if='this.video == 4'  src="https://player.vimeo.com/video/882344998?background=1" frameborder="0" allow="autoplay; fullscreen" allowfullscreen=""></iframe>
     <iframe v-if='this.video == 5'  src="https://player.vimeo.com/video/882345011?background=1" frameborder="0" allow="autoplay; fullscreen" allowfullscreen=""></iframe>
-    <p>
-      {{this.text}}
+    <p v-html='this.text'>
     </p>
   </div>
 </template>

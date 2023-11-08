@@ -152,7 +152,7 @@
       {{ this.$locales('menu_text_before_home') }}
     </p>
 
-    <div class="quiz-button mb-5" style="" @click='this.$router.push("/quiz")'>Get your plan</div>
+    <div class="quiz-button" style="" @click='this.$router.push("/quiz")'>Get your plan</div>
     <p> {{ this.$locales('before_button_text') }} </p>
 
     <div class="titlep_block" id='sustainability_approach'>

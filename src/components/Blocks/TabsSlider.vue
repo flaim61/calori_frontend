@@ -259,7 +259,7 @@
           <img class="mb-4" src="@/assets/img/menu/sb/2.png" alt="">
         </div>
         <h3>2 {{ this.$locales('meal') }}</h3>
-        <p>{{ this.$locales('menu_sb_1') }}</p>
+        <p>{{ this.$locales('menu_sb_2') }}</p>
 
       </div>
       <div class="slide">

@@ -16,7 +16,6 @@ export default {
   install: (app, options) => {
     app.config.globalProperties.$locales = (key) => {
       if (lanuage[key] == null) {
-        console.log('test');
         return en[key]
       }
       return lanuage[key];

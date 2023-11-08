@@ -27,7 +27,7 @@
     <div class="CheckBlock_content">
       <h3>{{this.$locales('check9frase')}}:</h3>
       <ul class="CheckBlock_content_list">
-        <li><img src="@/assets/img/icon/green-check.svg" alt=""> {{ this.$locales('check2frase') }}</li>
+        <li><img src="@/assets/img/icon/green-check.svg" alt="">{{ this.$locales('check2frase') }}</li>
         <li><img src="@/assets/img/icon/green-check.svg" alt="">{{ this.$locales('check3frase') }}</li>
         <li><img src="@/assets/img/icon/green-check.svg" alt="">{{ this.$locales('check4frase') }}</li>
         <li><img src="@/assets/img/icon/green-check.svg" alt="">{{ this.$locales('check5frase') }}</li>
@@ -126,6 +126,12 @@ export default {
   methods: {
     async getPrices(){
       const response = await getPrices()
+      let prices = response.data;
+
+      prices.forEach((item, i) => {
+        item.name = this.$locales(`every_${i+1}_week`)
+      });
+
       return response.data;
     },
     async createCheckoutSession(){

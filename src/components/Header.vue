@@ -9,8 +9,9 @@
           <img src="@/assets/img/icon/close.svg" alt="">
         </div>
       </div>
+
+
       <div class="menu-content" v-if='this.$store.state.landigsRoute.indexOf(this.$route.name) !== -1'>
-        <a href="/login" > {{ this.$locales('sign_in') }} </a>
         <a @click='this.mobile_menu_showed = false' href="#how_it_work" > {{ this.$locales('l1_how_works')  }} </a>
         <a @click='this.mobile_menu_showed = false' href="#why_calori" > {{ this.$locales('why_calori_block_title') }} </a>
         <a @click='this.mobile_menu_showed = false' href="#menu" > {{this.$locales('our_menu')}} </a>
@@ -18,11 +19,11 @@
         <a @click='this.mobile_menu_showed = false' href="#contact" > {{ this.$locales('contact_us') }} </a>
         <a @click='this.$router.push("faq")' > FAQ </a>
       </div>
-      <div class="menu-content" v-else>
-        <a @click='this.$router.go(-1)'> {{ this.$locales('bring_me_back') }} </a>
-        <a class="first-a" href="/login" > {{ this.$locales('sign_in') }} </a>
-        <a class="last-a" @click='this.$router.push("faq")' > FAQ </a>
-      </div>
+      <a class="first-a" href="/login" >
+        <div class="back-button personal">
+          {{ this.$locales('sign_in') }}
+        </div>
+      </a>
     </div>
   </Transition>
   <div class="green-label" id='green-label'>
@@ -38,10 +39,10 @@
     </div>
     <div class="language-item">
       <div class="d-flex">
-        <div class="mr-2" v-if='this.getLocales() == "fi"'>
+        <div class="mr-2" v-if='this.getLocales() == "fi" || !this.getLocales()'>
           <a href="#" class="text-dark" @click="setLocales('en')">EN</a>
         </div>
-        <div class="mr-2" v-else>
+        <div class="mr-2" v-if='this.getLocales() == "en"'>
           <a href="#" class="text-dark" @click="setLocales('fi')">FI</a>
         </div>
       </div>
@@ -94,6 +95,14 @@ export default {
 </script>
 
 <style>
+  .personal{
+    width: 100% !important;
+    text-align: center !important;
+    padding-top: 16px !important;
+    padding-bottom: 16px !important;
+    margin-top: 32px !important;
+    font-size: 14px !important;
+  }
   .arrow-back{
     height: 32px;
     margin-left: -5px;
