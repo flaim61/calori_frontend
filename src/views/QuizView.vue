@@ -1,5 +1,5 @@
 <template>
-  <div class="quiz">
+  <div class="quiz" :class="{'fixed': this.step != 9}">
     <QuizHeader :goBack='goBack' :step='step'/>
 
     <div class="step" v-if='this.step == 1'>
@@ -82,7 +82,7 @@
           <div class="input-group" :class="{ 'error': this.errors.age }">
             <input type="number" class="form-control" v-model='this.application.age'>
             <div class="input-group-append">
-              <span class="input-group-text">Years.</span>
+              <span class="input-group-text">{{this.$locales('years_old')}}.</span>
             </div>
           </div>
         </div>
@@ -191,7 +191,7 @@
               <input id='check_1' type="checkbox" v-model='this.application.allergies' value='1'>
               <span class="checkmark"></span>
               <div class="">
-                Lactose <br><span>containing products</span>
+                {{ this.$locales('allergy_1') }}
               </div>
             </label>
           </div>
@@ -200,7 +200,7 @@
               <input id='check_2' type="checkbox" v-model='this.application.allergies' value='2'>
               <span class="checkmark"></span>
               <div class="">
-                Gluten <br><span>containing products</span>
+                {{ this.$locales('allergy_2') }}
               </div>
             </label>
           </div>
@@ -209,7 +209,7 @@
               <input id='check_3' type="checkbox" v-model='this.application.allergies' value='3'>
               <span class="checkmark"></span>
               <div class="">
-                Nuts <br><span>containing products</span>
+                {{ this.$locales('allergy_3') }}
               </div>
             </label>
           </div>
@@ -218,7 +218,7 @@
               <input type="checkbox" id='check_4' v-model='this.application.allergies' value='4'>
               <span class="checkmark"></span>
               <div class="">
-                Fish <br><span>Seafood</span>
+                {{ this.$locales('allergy_4') }}
               </div>
             </label>
           </div>
@@ -227,16 +227,34 @@
               <input id='check_5' type="checkbox" v-model='this.application.allergies' value='5'>
               <span class="checkmark"></span>
               <div class="">
-                Citrus<br><span>containing products</span>
+                {{ this.$locales('allergy_5') }}
+              </div>
+            </label>
+          </div>
+          <div class="list_item">
+            <label for="check_7" class='mb-0 label_item'>
+              <input id='check_7' type="checkbox" v-model='this.application.allergies' value='7'>
+              <span class="checkmark"></span>
+              <div class="">
+                {{ this.$locales('allergy_6') }}
+              </div>
+            </label>
+          </div>
+          <div class="list_item">
+            <label for="check_8" class='mb-0 label_item'>
+              <input id='check_8' type="checkbox" v-model='this.application.allergies' value='8'>
+              <span class="checkmark"></span>
+              <div class="">
+                {{ this.$locales('allergy_7') }}
               </div>
             </label>
           </div>
           <div class="list_item">
             <label for="check_" class='mb-0 label_item'>
-              <input id='check_' type="checkbox" v-model='this.application.allergies' value=''>
+              <input id='check_' type="checkbox" v-model='this.application.allergies' value='6'>
               <span class="checkmark"></span>
               <div class="">
-                Other allergies <br><span>You can write later what you are allergic to</span>
+                {{ this.$locales('allergy_8') }}
               </div>
             </label>
           </div>
@@ -262,7 +280,7 @@
           {{ this.$locales('quiz4fraze') }}
         </div>
         <div class="content_input_section">
-          <div class="content_input_section" v-if='this.application.allergies.indexOf("5") >= 0'>
+          <div class="content_input_section" v-if='this.application.allergies.indexOf("6") >= 0'>
             <label for="">{{this.$locales('allergy')}}</label>
             <input type="text" v-model='this.application.another_allergy'>
           </div>
@@ -283,7 +301,7 @@
       </div>
     </div>
 
-    <div class="step" v-if='this.step == 9'>
+    <div class="" v-if='this.step == 9'>
       <CheckBlock :returnQuizBegin='returnQuizBegin' :createdApplication='this.createdApplication'/>
     </div>
 
@@ -554,6 +572,9 @@ export default {
 </script>
 
 <style scoped>
+  .fixed{
+    position: fixed;
+  }
   .pto{
     color: var(--Black, #2C2D31);
     font-family: Inter;
@@ -606,6 +627,7 @@ export default {
     width: 30px;
     border: 2px solid #7a7a7a;
     border-radius: 100%;
+    margin-top: -7px;
   }
 
   /* On mouse-over, add a grey background color */
@@ -645,6 +667,7 @@ export default {
   .email-card{
     position: fixed;
     bottom: 0px;
+    width: calc(100% - 32px);
     margin-right: 16px !important;
     box-shadow: none !important;
   }
@@ -707,7 +730,7 @@ export default {
     max-width: 570px;
   }
   .content_section{
-    height: calc(100vh - 180px);
+    height: 62vh;
     text-align: center;
     flex-direction: column;
     display: flex;
@@ -719,6 +742,8 @@ export default {
     font-style: normal;
     font-weight: 600;
     line-height: normal;
+    position: fixed;
+    width: calc(100% - 32px);
   }
   .content_input_section{
     margin-top: 24px;
@@ -822,8 +847,12 @@ export default {
     margin-left: auto;
     margin-right: auto;
     min-height: 100vh;
-    position: fixed;
-    top: 0;
+    /*position: fixed;
+    top: 0;*/
     width: 100vw;
+  }
+  .step{
+    position: fixed;
+    width: calc(100% - 32px);
   }
 </style>

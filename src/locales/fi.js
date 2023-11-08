@@ -242,7 +242,7 @@ export default {
   menu_title_home: "Hanki ateriasuunnitelma",
   menu_text_home: "Tässä on tyypillinen viikko Calorilla. ",
   menu_text_before_home: "Calorilla saat tasapainoisia aterioita henkilökohtaisen suunnitelmasi mukaan. Se tarkoittaa yli 140 uniikkia annosta kuukaudessa.",
-  get_plan_button: "Luo suunnitelma",
+  get_plan_button: "Luo henkilökohtainen suunnitelma",
   before_button_text: "Kuljetettujen aterioiden hinnat alkaen 188€/vk",
   pluses_title_1_home: "+50 tuntia",
   pluses_text_1_home: "säästettyä aikaa suunnitteluun, kokkaamiseen, ja siivoamiseen.",

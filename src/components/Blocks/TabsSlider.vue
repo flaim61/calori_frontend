@@ -25,7 +25,7 @@
     </div>
 
     <!-- MON -->
-    <div class="racion-slider" v-if='this.active == "mon"'>
+    <div class="racion-slider" v-if='this.active == "tue"'>
       <div class="slide">
         <div class="slide-img-block">
           <img class="mb-4" src="@/assets/img/menu/pn/1.png" alt="">
@@ -68,7 +68,7 @@
     </div>
 
     <!-- TUE -->
-    <div class="racion-slider" v-if='this.active == "tue"'>
+    <div class="racion-slider" v-if='this.active == "mon"'>
       <div class="slide">
         <div class="slide-img-block">
           <img class="mb-4" src="@/assets/img/menu/vt/1.png" alt="">
@@ -363,7 +363,7 @@ export default {
       if (!(block1 && contactForm && block2)) {
         return;
       }
-      
+
       let block2Rect = block2.getBoundingClientRect();
       let isVisible = block2Rect.top < window.innerHeight && block2Rect.bottom >= 0;
 

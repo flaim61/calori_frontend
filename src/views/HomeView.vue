@@ -1,7 +1,7 @@
 <template>
   <section class="main-block">
     <Header />
-    <iframe id="home-video" class="home-video" src="https://player.vimeo.com/video/882212749?background=1" frameborder="0" allow="autoplay; fullscreen" allowfullscreen=""></iframe>
+    <iframe id="home-video" class="home-video" src="https://player.vimeo.com/video/882212749?background=1" frameborder="0" allow="autoplay; fullscreen" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
     <!--<video autoplay="true" muted="true" loop="true" preload="true" playsinline="true" controls="false" id="home-video" class="home-video">
       <source src="@/assets/videos/Healthy-eating.mp4" type="video/mp4">
     </video>-->

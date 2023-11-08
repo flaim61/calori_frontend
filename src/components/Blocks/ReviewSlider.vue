@@ -118,8 +118,8 @@ export default {
     font-style: normal !important;
     font-weight: 400 !important;
     line-height: 140% !important;
-    margin-left: -80% !important;
-    margin-top: 42% !important;
+    margin-left: -108% !important;
+    margin-top: 66% !important;
   }
   .slide-top-right{
     width: 45%;
