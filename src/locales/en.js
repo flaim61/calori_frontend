@@ -1,4 +1,5 @@
 export default {
+  back_home: "Back to the Home",
   /* MealPrepForProductivity */
   MealPrepForProductivity_title: "Healthy eating. Personalized. Automated.",
   MealPrepForProductivity_text: "We plan, cook, and deliver all meals you need in a day. So you can stay on top of your health and reach 100% productivity.",
@@ -100,75 +101,107 @@ export default {
   /* FAQ */
   faq_1_title: "Meal plans",
   faq_1_item_1_title: "Would I get bored of eating only with Calori?",
-  faq_1_item_1_text: "No, not at all. We made Calori to improve your health just as much as to satisfy your cravings. Our menu has 140 delicious meals that won’t repeat in one month. Every meal with Calori is a unique and exciting experience - just like going to a fancy restaurant. We’ll be constantly improving old recipes and creating new ones based on feedback from you and other customers 🤲 ",
   faq_1_item_2_title: "Can I eat Calori meals in different orders throughout the day?",
-  faq_1_item_2_text: "We suggest that you eat the meals in the recommended order. Our team of nutritionists crafted every daily menu based on your needs for energy throughout the day. In the morning, you get more carbohydrates so you have the energy to kick start your day. With every next meal, you get fewer carbohydrates so your body is gradually prepared for a good night’s sleep. By following the recommended order, you’ll feel a positive difference over your entire meal plan as well as feel each and every day ⛰️",
   faq_1_item_3_title: "Eating 5 meals per day is too many, isn’t it?",
-  faq_1_item_3_text: "Eating up to 5 times a day is a strategy backed by scientific research. It helps you control your appetite, maintain stable blood sugar levels, and improve your metabolism. By eating smaller portions more frequently, your body can absorb nutrients a lot more efficiently. This supports both your physical and mental well-being, helping you stay alert and active ⚡",
   faq_1_item_4_title: "Can I drink coffee, tea, and other beverages during my meal plan?",
-  faq_1_item_4_text: "You can drink coffee and tea, and even add some sugar to your liking. You can also drink (sugar-free) soda. We recommend you drink up to 2-3 liters of water every day 🌊 Get in touch with one of our coaches and check how your beverages can affect your meal plan.",
   faq_1_item_5_title: " Is eating sweets and desserts good for my progress?",
-  faq_1_item_5_text: "We crafted all our meals (including desserts) with the help of experienced nutritionists so we can satisfy your sweet tooth without compromising on your health and progress. Just like all our meals, our desserts strike the right balance between healthy and delicious 😋",
   faq_1_item_6_title: "Can I eat extra meals and snacks during my meal plan?",
-  faq_1_item_6_text: "You can, but it might slow down or even stop your progress. Every extra meal or snack adds up to your total calorie intake, which can make a huge difference. We designed our meal plans to make sure you get everything you need. We have over 140 unique meals that don’t repeat in one month. And all of our meals hit the right balance between healthy and delicious. Healthy eating can be fun too with slices of pizza, burger bites, or sweets here and there 😉",
+
+  faq_1_item_1_text: "No, not at all. We made Calori to improve your health just as much as to satisfy your cravings. Our menu has 140 delicious meals that won’t repeat in one month.<br><br>Every meal with Calori is a unique and exciting experience - just like going to a fancy restaurant.<br><br>We’ll be constantly improving old recipes and creating new ones based on feedback from you and other customers 🤲",
+
+  faq_1_item_2_text: "We suggest that you eat the meals in the recommended order. Our team of nutritionists crafted every daily menu based on your needs for energy throughout the day.<br><br>In the morning, you get more carbohydrates so you have the energy to kick start your day.<br><br>With every next meal, you get fewer carbohydrates so your body is gradually prepared for a good night’s sleep.<br><br>By following the recommended order, you’ll feel a positive difference over your entire meal plan as well as feel each and every day ⛰️",
+
+  faq_1_item_3_text: "Eating up to 5 times a day is a strategy backed by scientific research. It helps you control your appetite, maintain stable blood sugar levels, and improve your metabolism.<br><br>By eating smaller portions more frequently, your body can absorb nutrients a lot more efficiently.<br><br>This supports both your physical and mental well-being, helping you stay alert and active ⚡",
+
+  faq_1_item_4_text: "You can drink coffee and tea, and even add some sugar to your liking.<br><br>You can also drink (sugar-free) soda.<br><br>We recommend you drink up to 2-3 liters of water every day 🌊<br><br>Get in touch with one of our coaches and check how your beverages can affect your meal plan.",
+
+  faq_1_item_5_text: "We crafted all our meals (including desserts) with the help of experienced nutritionists so we can satisfy your sweet tooth without compromising on your health and progress.<br><br>Just like all our meals, our desserts strike the right balance between healthy and delicious 😋",
+
+  faq_1_item_6_text: "You can, but it might slow down or even stop your progress. Every extra meal or snack adds up to your total calorie intake, which can make a huge difference.<br><br>We designed our meal plans to make sure you get everything you need.<br><br>We have over 140 unique meals that don’t repeat in one month.<br><br>And all of our meals hit the right balance between healthy and delicious.<br><br>Healthy eating can be fun too with slices of pizza, burger bites, or sweets here and there 😉",
 
   faq_2_title: "Service",
   faq_2_item_1_title: "How much time will I save with Calori?",
-  faq_2_item_1_text: "With Calori, you can save up to 50 hours every month, which is just over 2 full days. That’s pretty neat, isn’t it? Just remember how much time you spend on meal planning, shopping, cooking, and cleaning. And most of the time, you’re still not sure if you’re eating what’s right for you.  With Calori, all of that is in the past. You can be sure that you’re getting the right nutrients and making progress towards a healthier life while having more time and energy for things you enjoy 💃",
   faq_2_item_2_title: "Can I eat with Calori if I have dietary restrictions?",
-  faq_2_item_2_text: "But we’ve been working hard on offering different meal plans. If you have any of the following dietary restrictions, drop us a line and you’ll be the first one to know once we have something for you 🙌 Gluenen Nuts Vegetarian Vegan",
   faq_2_item_3_title: "Can I microwave the Calori meals?",
-  faq_2_item_3_text: "Yes, you can. Every meal has recommendations on whether it should be heated. Our sturdy containers were designed for microwave heating. Just remove the protective film and heat the meals for 2-3 minutes ⏱️",
   faq_2_item_4_title: "Can I take my Calori meals to work or university? ",
-  faq_2_item_4_text: "Yes, you absolutely should. Our containers are true wonders of compactness and taste. We sealed them tight so you can take them anywhere. But if your journey is longer than 2-3 hours, we recommend you pack the containers in a cooler bag 🧊",
   faq_2_item_5_title: "Can I eat out at restaurants during my personal plan? ",
-  faq_2_item_5_text: "Yes, you can eat out with your family, friends, or colleagues. But if you don’t want to undo your progress, we recommend that you don’t skip more than 1 meal with Calori per week. When you’re planning a lunch or dinner out, remember to let us know in advance. This way, we can adjust your upcoming delivery to have fewer meals and a lower price too 💸",
+
+  faq_2_item_1_text: "With Calori, you can save up to 50 hours every month, which is just over 2 full days. That’s pretty neat, isn’t it?<br><br>Just remember how much time you spend on meal planning, shopping, cooking, and cleaning. And most of the time, you’re still not sure if you’re eating what’s right for you.<br><br>With Calori, all of that is in the past. You can be sure that you’re getting the right nutrients and making progress towards a healthier life while having more time and energy for things you enjoy 💃",
+
+  faq_2_item_2_text: "But we’ve been working hard on offering different meal plans. If you have any of the following dietary restrictions, drop us a line and you’ll be the first one to know once we have something for you 🙌<br><br>Gluenen<br><br>Nuts<br><br>Vegetarian<br><br>Vegan",
+
+  faq_2_item_3_text: "Yes, you can. Every meal has recommendations on whether it should be heated. Our sturdy containers were designed for microwave heating. Just remove the protective film and heat the meals for 2-3 minutes ⏱️",
+
+  faq_2_item_4_text: "Yes, you absolutely should. Our containers are true wonders of compactness and taste. We sealed them tight so you can take them anywhere. But if your journey is longer than 2-3 hours, we recommend you pack the containers in a cooler bag 🧊",
+
+  faq_2_item_5_text: "Yes, you can eat out with your family, friends, or colleagues. But if you don’t want to undo your progress, we recommend that you don’t skip more than 1 meal with Calori per week.<br><br>When you’re planning a lunch or dinner out, remember to let us know in advance. This way, we can adjust your upcoming delivery to have fewer meals and a lower price too 💸",
+
 
   faq_3_title: "Delivery",
   faq_3_item_1_title: "To which cities do you deliver?",
-  faq_3_item_1_text: "Currently, we’re delivering only to Helsinki, Vantaa, Espoo, and Kauniainen. If you live in a different city, let us know. We’re coming to many other cities soon, and we’ll let when we’re delivering to your area 🏙️",
   faq_3_item_2_title: "What is the delivery cost?",
-  faq_3_item_2_text: "WAll deliveries are free of charge once you subscribe to Calori 🙌 You get to experience everything we have to offer without any hidden fees.",
   faq_3_item_3_title: "When will I get my first delivery?",
-  faq_3_item_3_text: "You’ll get your first delivery on 8.1.2024 🎉 We’re launching with the next group of customers just in time for you to make your New Year’s resolutions.",
   faq_3_item_4_title: "How will you deliver my meals?",
-  faq_3_item_4_text: "We deliver the meals twice a week on weekdays between 17:00 and 21:00. The delivery contains 4-5 ready-made meals for 3-4 days. That’s anywhere between 12 and 20 meals per delivery. Make sure to store them in a fridge at a temperature below 5 degrees Celsius. You can find the exact day of your deliveries in your personal profile under the “Delivery” section. One day before the delivery, you’ll get an SMS text with an approximate hour of your delivery. On the day of the delivery, you’ll get another SMS text with the tracking for the real-time location of the courier 🔎",
   faq_3_item_5_title: "What if I’m not at home during the delivery?",
-  faq_3_item_5_text: "No worries! We can still deliver meals even when you’re away. Our couriers can leave the meals at your doorstep (or another safe spot) where they can stay up to 2 hours. We recommend you get in touch with our customer support in advance and find a more suitable delivery time during the day 🗓️",
   faq_3_item_6_title: "What does “eco-friendly delivery” mean?",
-  faq_3_item_6_text: "We do all we can to make sure that our deliveries have as little footprint as possible. Our trusted logistics partners run vehicles on electricity and biofuel 🌱",
+  faq_3_item_1_text: "Currently, we’re delivering only to Helsinki, Vantaa, Espoo, and Kauniainen.<br><br>If you live in a different city, let us know. We’re coming to many other cities soon, and we’ll let when we’re delivering to your area 🏙️",
+
+  faq_3_item_2_text: "All deliveries are free of charge once you subscribe to Calori 🙌<br><br>You get to experience everything we have to offer without any hidden fees.",
+
+  faq_3_item_3_text: "You’ll get your first delivery on 8.1.2024 🎉<br><br>We’re launching with the next group of customers just in time for you to make your New Year’s resolutions.",
+
+  faq_3_item_4_text: "We deliver the meals twice a week on weekdays between 17:00 and 21:00.<br><br>The delivery contains 4-5 ready-made meals for 3-4 days. That’s anywhere between 12 and 20 meals per delivery.<br><br>Make sure to store them in a fridge at a temperature below 5 degrees Celsius.<br><br>You can find the exact day of your deliveries in your personal profile under the “Delivery” section.<br><br>One day before the delivery, you’ll get an SMS text with an approximate hour of your delivery.<br><br>On the day of the delivery, you’ll get another SMS text with the tracking for the real-time location of the courier 🔎",
+
+  faq_3_item_5_text: "No worries! We can still deliver meals even when you’re away.<br><br>Our couriers can leave the meals at your doorstep (or another safe spot) where they can stay up to 2 hours.<br><br>We recommend you get in touch with our customer support in advance and find a more suitable delivery time during the day 🗓️",
+
+  faq_3_item_6_text: "We do all we can to make sure that our deliveries have as little footprint as possible.<br><br>Our trusted logistics partners run vehicles on electricity and biofuel 🌱",
+
 
   faq_4_title: "Payment and Subscription",
   faq_4_item_1_title: "Can I pause my subscription?",
-  faq_4_item_1_text: "Yes, you can pause your subscription at any time for 1 - 4 weeks when you’re traveling for holidays 🛫 Just log in to your personal profile and press “Pause” under “Subscription”. Just a heads up: if your subscription is paused for over 4 weeks, it’ll be automatically stopped. We’ll be sorry to see you go, but you can resubscribe at any time.",
   faq_4_item_2_title: "How do I cancel my subscription?",
-  faq_4_item_2_text: "You can cancel your subscription in your personal profile by pressing “Cancel subscription” under “Subscription”. Or you can get in touch with us via your personal profile, our website, or social media. We recommend you cancel your subscription at least 2 days before your next delivery. This way, we won’t cook your next meals and avoid food waste ♻️ If you don’t cancel your subscription 2 days before the next delivery, the food will be ready by then and you’ll be charged for this delivery. For this reason, the cancellation will kick in from the following delivery.",
   faq_4_item_3_title: "How often will I be charged for the subscription?",
-  faq_4_item_3_text: "You’ll be charged according to your choice when making your subscription. The possible payment periods include: 1 week 2 weeks 3 weeks 4 weeks Feel free to change the payment frequency in your personal profile under “Subscription”.",
   faq_4_item_4_title: "How long is the total subscription?",
-  faq_4_item_4_text: "Our subscriptions are auto-renewing, meaning you don’t have to worry about reordering. We’ll adjust your plan based on your progress as you make weekly reports to our coaches. Once you reach your goals, your subscription will continue indefinitely 🔁",
+
+  faq_4_item_1_text: "Yes, you can pause your subscription at any time for 1 - 4 weeks when you’re traveling for holidays 🛫<br><br>Just log in to your personal profile and press “Pause” under “Subscription”.<br><br>Just a heads up: if your subscription is paused for over 4 weeks, it’ll be automatically stopped.<br><br>We’ll be sorry to see you go, but you can resubscribe at any time.",
+
+  faq_4_item_2_text: "You can cancel your subscription in your personal profile by pressing “Cancel subscription” under “Subscription”.<br><br>Or you can get in touch with us via your personal profile, our website, or social media.<br><br>We recommend you cancel your subscription at least 2 days before your next delivery.<br><br>This way, we won’t cook your next meals and avoid food waste ♻️<br><br>If you don’t cancel your subscription 2 days before the next delivery, the food will be ready by then and you’ll be charged for this delivery.<br><br>For this reason, the cancellation will kick in from the following delivery.",
+
+  faq_4_item_3_text: "You’ll be charged according to your choice when making your subscription.<br><br>The possible payment periods include:<br><br>1 week<br><br>2 weeks<br><br>3 weeks<br><br>4 weeks<br><br>Feel free to change the payment frequency in your personal profile under “Subscription”.",
+
+  faq_4_item_4_text: "Our subscriptions are auto-renewing, meaning you don’t have to worry about reordering.<br><br>We’ll adjust your plan based on your progress as you make weekly reports to our coaches.<br><br>Once you reach your goals, your subscription will continue indefinitely 🔁",
+
 
   faq_5_title: "Weight Management",
   faq_5_item_1_title: "How fast can I lose weight with Calori?",
-  faq_5_item_1_text: "The average rate for weight loss is 2 kg a month, which is 0.5 kg per week. This is the optimal rate for you to feel upbeat and for your body to adapt to the changes without stress. This way, you’ll remain energetic without losing focus and getting constant cravings. It’s not only about shedding the weight. It’s about boosting your health and helping you make a stress-free transition towards a healthier life.",
   faq_5_item_2_title: "Is it true that rapid weight loss is harmful?",
-  faq_5_item_2_text: "Yes, that’s correct! Here are some reasons why rapid weight loss is harmful - and we’re not making these up: Loss of energy and fatigue from a sudden and drastic change to your calorie intake. Excess stress on your body and mind that can lead to eating disorders. Additional health risks that range from metabolic disturbances to cardiovascular risk. The worst thing is most people regain all the weight that they’ve lost in a short amount of time. This is called the “yo-yo effect”. Under stress, our bodies tend to quickly restore the lost weight. Take care of yourself and be mindful when choosing solutions that promise significant weight loss in short amounts of time (e.g. 5-10 kg in 1 month).",
   faq_5_item_3_title: "What are the benefits of gradual weight loss?",
-  faq_5_item_3_text: "Here are just a few reasons why we believe that gradual weight loss is a far better choice for you - although we can go on about this for hours: Creating the right habits: Your mind and body have the time to adjust to new patterns and create habits. So even after your meal plan ends, you won’t slip back into the old ways. Improving your health: Unlike fast diets, gradual changes won’t put your body under stress and disturb its metabolic processes. Getting sustainable results: With the new habits and without disturbing your body, you’ll avoid the “yo-yo effect” and keep your hard-earned results. Enjoying the process: Feeling tired and getting cravings is no fun! But with gradual weight loss, your calorie deficit is just right for you to make progress without experiencing any downsides. Remember that it’s not just about losing weight. With Calori, you can transition towards a healthier life, make the right habits, enjoy delicious meals, and save time for things you love 💚",
   faq_5_item_4_title: "When can I see the first results with Calori?",
-  faq_5_item_4_text: "You can start seeing and feeling the difference already during the first 4-6 weeks. All of us are different and some might see the results sooner and others later. Improving your health and lifestyle is often a lengthy and difficult process. We did all we could to make it as simple and enjoyable for you as possible. We know you got this 💪 If you ever feel down, we’ll be there to cheer you up. You’re on the right track towards a healthier life!",
   faq_5_item_5_title: "What should I do if I feel hungry or tired during my personal plan?",
-  faq_5_item_5_text: "Just a slight hunger or loss of energy can be natural, especially at the beginning of such an important journey. And that’s okay! Your body needs time to adjust to the changes. But if you’re feeling overwhelmed with hunger or loss of energy, get in touch with one of our coaches. They’ll adjust your plan to make sure that you’re making progress in a way that’s healthy and sustainable to your well-being.",
   faq_5_item_6_title: "Why do I need weekly check-ins?",
-  faq_5_item_6_text: "We recommend you have weekly check-ins so we can make sure that you’re on the right track. If you’re feeling tired or your weight is changing too fast, we’ll adjust your plan accordingly.",
   faq_5_item_7_title: "How do these check-ins work?",
-  faq_5_item_7_text: "The check-ins only take less than 5 minutes of your time once every week. Here’s how they work in 4 short steps: Get a reminder one day before the check-in as an SMS text or an email. Weigh yourself on the morning of the check-in. Log into your account and input your latest weight. Answer a couple of questions related to how you’re feeling. And that’s it! Next, you can get on with your day knowing well that you’re on the right track.",
   faq_5_item_8_title: "Do I need to exercise to make progress?",
-  faq_5_item_8_text: "It’s up to you! Eating just the right amount of food with the optimal nutritional balance is exactly what makes most of the difference. Exercising is only a plus body to get toned and your mind to get an extra energy boost.",
+
+  faq_5_item_1_text: "The average rate for weight loss is 2 kg a month, which is 0.5 kg per week.<br><br>This is the optimal rate for you to feel upbeat and for your body to adapt to the changes without stress.<br><br>This way, you’ll remain energetic without losing focus and getting constant cravings.<br><br>It’s not only about shedding the weight.<br><br>It’s about boosting your health and helping you make a stress-free transition towards a healthier life.",
+
+  faq_5_item_2_text: "Yes, that’s correct!<br><br>Here are some reasons why rapid weight loss is harmful - and we’re not making these up:<br><br>Loss of energy and fatigue from a sudden and drastic change to your calorie intake.<br><br>Excess stress on your body and mind that can lead to eating disorders.<br><br>Additional health risks that range from metabolic disturbances to cardiovascular risk.<br><br>The worst thing is most people regain all the weight that they’ve lost in a short amount of time.<br><br>This is called the “yo-yo effect”.<br><br>Under stress, our bodies tend to quickly restore the lost weight.<br><br>Take care of yourself and be mindful when choosing solutions that promise significant weight loss in short amounts of time (e.g. 5-10 kg in 1 month).",
+
+  faq_5_item_3_text: "Here are just a few reasons why we believe that gradual weight loss is a far better choice for you - although we can go on about this for hours:<br><br>Creating the right habits: Your mind and body have the time to adjust to new patterns and create habits.<br><br>So even after your meal plan ends, you won’t slip back into the old ways.<br><br>Improving your health: Unlike fast diets, gradual changes won’t put your body under stress and disturb its metabolic processes.<br><br>Getting sustainable results: With the new habits and without disturbing your body, you’ll avoid the “yo-yo effect” and keep your hard-earned results.<br><br>Enjoying the process: Feeling tired and getting cravings is no fun!<br><br>But with gradual weight loss, your calorie deficit is just right for you to make progress without experiencing any downsides.<br><br>Remember that it’s not just about losing weight.<br><br>With Calori, you can transition towards a healthier life, make the right habits, enjoy delicious meals, and save time for things you love 💚",
+
+  faq_5_item_4_text: "You can start seeing and feeling the difference already during the first 4-6 weeks.<br><br>All of us are different and some might see the results sooner and others later.<br><br>Improving your health and lifestyle is often a lengthy and difficult process.<br><br>We did all we could to make it as simple and enjoyable for you as possible.<br><br>We know you got this 💪<br><br>If you ever feel down, we’ll be there to cheer you up.<br><br>You’re on the right track towards a healthier life!",
+
+  faq_5_item_5_text: "Just a slight hunger or loss of energy can be natural, especially at the beginning of such an important journey.<br><br>And that’s okay!<br><br>Your body needs time to adjust to the changes.<br><br>But if you’re feeling overwhelmed with hunger or loss of energy,<br><br>get in touch with one of our coaches.<br><br>They’ll adjust your plan to make sure that you’re making progress in a way that’s healthy and sustainable to your well-being.",
+
+  faq_5_item_6_text: "We recommend you have weekly check-ins so we can make sure that you’re on the right track.<br><br>If you’re feeling tired or your weight is changing too fast, we’ll adjust your plan accordingly.",
+
+  faq_5_item_7_text: "The check-ins only take less than 5 minutes of your time once every week.<br><br>Here’s how they work in 4 short steps:<br><br>1. Get a reminder one day before the check-in as an SMS text or an email.<br><br>2. Weigh yourself on the morning of the check-in.<br><br>3. Log into your account and input your latest weight.<br><br>4. Answer a couple of questions related to how you’re feeling.<br><br>And that’s it!<br><br>Next, you can get on with your day knowing well that you’re on the right track.",
+
+  faq_5_item_8_text: "It’s up to you!<br><br>Eating just the right amount of food with the optimal nutritional balance is exactly what makes most of the difference.<br><br>Exercising is only a plus body to get toned and your mind to get an extra energy boost.",
+
   /* FAQ */
 
   main_page_title: 'Healthy eating and weight managment made simple',
-  individual_plan : 'Individual plan',
+  individual_plan : 'Get a meal plan',
   main_page_text: 'We design personal meal plans just for your needs. And next, we cook and deliver all the meals you need in a day.',
   how_works: 'How Calori Works?',
   how_works_text: 'Healthy eating and weight management has never been this easy and delicious.',
@@ -189,7 +222,7 @@ export default {
   error_not_correct_login_or_password: "Incorrect login or password",
   send_new_password: "Send new password on Email",
   target_weight_min_error: "Target weight should not be less than the minimum recommended!",
-  recommended_weight: "BMI recommend your ideal weight is",
+  recommended_weight: "BMI recommend your ideal weight  is",
   edit_information: "Edit information",
   reviews_block_title: "Our beloved customers",
   reviews_block_text: "Our first group grew to +70 happy customers. Here’s what some of them say:",
@@ -203,7 +236,8 @@ export default {
   list_item_6_text_home: "Guaranteed result and excellent experience",
   blue_text_block_home_title: "Wanna join along?",
   blue_text_block_home_text: "Our next journey starts in January 2024. The seats are limited.",
-  blue_text_block_home_text_2: "Just in time for your new-year resolutions! 🎆",
+  blue_text_block_home_text_2: "The seats are limited - don’t miss out on yours.",
+  blue_text_block_home_text_3: "Just in time for your new-year resolutions! 🎆",
   menu_title_home: "Get your meal plan",
   menu_text_home: "Here’s an average week with Calori. Quick recap: healthy and delicious!",
   menu_text_before_home: "With Calori, you’ll get balanced meals cooked and delivered according to your personalized plan. That’s 140+ unique meals in 1 month.",
@@ -229,6 +263,7 @@ export default {
   contact_form_title: "Still got questions?",
   contact_form_text: "We can’t wait to hear from you!",
   our_story_title: "Our Story",
+  our_story_text_3: "We know what you need because we have a lot in common.",
   our_story_text: "We started as a family business before growing into an international startup with reputable investors and experienced advisors.",
   our_story_text_2: "Here’s a couple of words from the team behind Calori",
   green_label_text: "Next wave in Helsinki, Espoo, Vantaa from 8.1.2024",
@@ -380,10 +415,30 @@ export default {
   /* ВТОРАЯ ПАРТИЯ ЛОКАЛЕЙ */
   l1_main_page_title: "Laihtuminen ilman ruoanlaittoa, kalorien laskemista ja treenejä",
   l1_main_page_text: "Tilaa vain ja aloita tavoitteidesi saavuttaminen. Me hoidamme loput.",
-  l1_how_works: "Kuinka se toimii?",
+  l1_how_works: "How it works?",
   l2_main_page_title: "Terveellinen syöminen tehty helpoksi ✨",
   l2_main_page_text: "Calori laatii sinulle henkilökohtaisen suunnitelman terveelliseen ja tasapainoiseen ruokavalioon ja toimittaa kaikki päivittäiset ateriasi",
   l2_how_works: "Mikä on Calori?",
   update_plan: "Päivitä yksilöllinen ateriasuunnitelma",
+  /* ТРЕТЬЯ ПАРТИЯ ЛОКАЛЕЙ */
+  before_checkout_button_text: "Pay now for the first period  Start receiving deliveries from 8.1.2024",
+  eur_day: "eur per day",
+  check9frase: "Get everything you need",
+  check10frase: "Select payment frequency",
+  check11frase: "Here’s the optimal amount of macronutrients that your body needs to reach your goal sustainably:",
+  check12frase: "Our coaches will adjust your plan according to your progress.",
+  check13frase: "This information is based on what you shared with us. Here’s the summary:",
+  check14frase: "By following your personal plan,",
+  check15frase: "you can lose up to",
+  check16frase: "between",
+  /* ТРЕТЬЯ ПАРТИЯ ЛОКАЛЕЙ */
 
+  our_story_main_text: "Daniel, our CEO and co-founder is an ex-boxer. And he knows the struggle of constantly managing weight to achieve peak performance. Eventually, he got tired of plain rice and chicken breasts…",
+  our_story_secret_text: `<br>Daniel started Calori with his brother Ilja who has 10 years of experience in bodybuilding and nutritional coaching.
+  <br><br>
+  And that’s how we had our successful launch with +70 happy customers.
+  <br><br>
+  Next, we graduated from Kiuas, the best startup accelerator in Finland before attracting reputable advisors, recruiting an experienced team, and closing the funding round. 
+  <br><br>
+  We perfected Calori so you can make the most of healthy eating. Become a member in the next journey with Calori that starts on 8.1.2024.`
 }

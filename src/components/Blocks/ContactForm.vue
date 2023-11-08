@@ -15,9 +15,11 @@
     <div class="button d-flex justify-content-center" @click='sendMessage'>
       <div >{{ this.$locales('contact_us')}} </div>
     </div>
-    <div class="button faq_button d-flex justify-content-center" @click='this.$router.push("faq")' v-if='this.$route.name != "faq"'>
-      <div > FAQ </div>
-    </div>
+    <a href="/faq">
+      <div class="button faq_button d-flex justify-content-center" v-if='this.$route.name != "faq"'>
+        <div > FAQ </div>
+      </div>
+    </a>
   </div>
 </template>
 

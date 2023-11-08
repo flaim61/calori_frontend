@@ -8,7 +8,7 @@
         <div class="slide-top-left ">
           <img src="@/assets/img/customers/daniela.png" alt="">
         </div>
-        <div class="slide-top-right w-50">
+        <div class="slide-top-right">
           <h3 class="mt-4">Daniela Kenton</h3>
           <p>@danielakenton</p>
 

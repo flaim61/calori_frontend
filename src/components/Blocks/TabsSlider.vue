@@ -360,6 +360,10 @@ export default {
       let contactForm = document.getElementById('contact');
       let block2 = document.querySelector('.quiz-button');
 
+      if (!(block1 && contactForm && block2)) {
+        return;
+      }
+      
       let block2Rect = block2.getBoundingClientRect();
       let isVisible = block2Rect.top < window.innerHeight && block2Rect.bottom >= 0;
 

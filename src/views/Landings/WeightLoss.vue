@@ -1,9 +1,10 @@
 <template>
   <section class="main-block">
     <Header />
-    <video  autoplay muted loop preload playsinline controls="false" id="home-videl" class="home-video">
-      <source src="@/assets/videos/Meal-prep.mp4" type="video/mp4">
-    </video>
+    <iframe id="home-video" class="home-video" src="https://player.vimeo.com/video/882343793?background=1" frameborder="0" allow="autoplay; fullscreen" allowfullscreen=""></iframe>
+    <!--<video  autoplay muted loop preload playsinline controls="false" id="home-videl" class="home-video">
+      <source src="@/assets/videos/Weight-loss.mp4" type="video/mp4">
+    </video>-->
     <h1>
       {{ this.$locales('WeightLoss_title') }}
     </h1>
@@ -25,41 +26,30 @@
     </div>
     <Card
       :title="this.$locales('WeightLoss_card_1_title')"
-      image="1"
+      video="1"
       :text="this.$locales('WeightLoss_card_1_text')"
     />
     <Card
       :title="this.$locales('WeightLoss_card_2_title')"
-      image="2"
+      video="2"
       :text="this.$locales('WeightLoss_card_2_text')"
     />
     <Card
       :title="this.$locales('WeightLoss_card_3_title')"
-      image="3"
+      video="3"
       :text="this.$locales('WeightLoss_card_3_text')"
     />
     <Card
       :title="this.$locales('WeightLoss_card_4_title')"
-      image="3"
+      video="4"
       :text="this.$locales('WeightLoss_card_4_text')"
     />
 
     <Card
       :title="this.$locales('WeightLoss_card_5_title')"
-      image="3"
+      video="5"
       :text="this.$locales('WeightLoss_card_5_text')"
     />
-
-    <div class="titlep_block" id='block'>
-      <h3 class="block-title">
-        {{ this.$locales('reviews_block_title') }}
-      </h3>
-      <p>
-        {{ this.$locales('reviews_block_text') }}
-      </p>
-    </div>
-
-    <ReviewSlider />
 
     <div class="titlep_block" id='why_calori'>
       <h3 class="block-title">
@@ -120,6 +110,7 @@
       :title='this.$locales("blue_text_block_home_title")'
       :text='this.$locales("blue_text_block_home_text")'
       :text-2='this.$locales("blue_text_block_home_text_2")'
+      :text-3='this.$locales("blue_text_block_home_text_3")'
     />
 
     <div class="titlep_block" id='menu'>
@@ -140,17 +131,18 @@
     <div class="quiz-button" style="" @click='this.$router.push("/quiz")'>{{ this.$locales('get_plan_button') }} </div>
     <p> {{this.$locales('before_button_text') }}</p>
 
-    <div class="titlep_block">
-      <h3 class="block-title">
-        {{ this.$locales('HealthyEating_five_months') }}
-      </h3>
-      <p>
-        {{ this.$locales('month_with_calori_text') }}
-      </p>
-    </div>
+    <div class="blue-block pt-5 mt-5 pb-3">
+      <div class="titlep_block  mt-0">
+        <h3 class="block-title">
+          {{ this.$locales('HealthyEating_five_months') }}
+        </h3>
+        <p>
+          {{ this.$locales('month_with_calori_text') }}
+        </p>
+      </div>
 
-    <PlusesBlock
-      :pluses="
+      <PlusesBlock
+        :pluses="
         [
           {
             title: this.$locales('HealthyEating_plus_1_title'),
@@ -169,10 +161,12 @@
             text: this.$locales('HealthyEating_plus_4_text'),
           },
         ]
-      "
-    />
+        "
+      />
+    </div>
 
-    <div class="titlep_block">
+
+    <!--<div class="titlep_block">
       <h3 class="block-title">
         Expert's opinion
       </h3>
@@ -182,7 +176,7 @@
       Here’s a couple of words from the team behind Calori:
     </p>
 
-    <StorySlider />
+    <StorySlider />-->
 
     <div class="titlep_block" id='sustainability_approach'>
       <h3 class="block-title">
@@ -224,17 +218,7 @@
         {{ this.$locales('contact_form_title') }}
       </h3>
     </div>
-    <div class="d-flex mb-5">
-      <img class='mr-3 rounded' style='object-fit:cover;' src="@/assets/img/examples/review-example-2.jpeg" alt="">
-      <div class="">
-        <p>
-          Hi, my name is Vadim. I’m a Head Coach at Calori. I have 8 years of experience as a personal trainer.
-        </p>
-        <p>
-          Always in touch, I’ll answer all your questions about nutrition, delivery or other aspects of using Calori.
-        </p>
-      </div>
-    </div>
+
     <ContactForm id='contact'/>
 
   </div>
@@ -311,7 +295,7 @@ export default {
     font-style: normal;
     font-weight: 500;
     line-height: 140%; /* 33.6px */
-    padding-top: 215px;
+    padding-top: 40vh;
   }
   .main-block>p{
     color: var(--White, #FFF);

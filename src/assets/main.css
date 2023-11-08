@@ -6,6 +6,12 @@ html{
   scroll-behavior:smooth;
 }
 
+#green-label{
+  position: fixed;
+  z-index: 10;
+  top: 0;
+}
+
 *::-webkit-media-controls-panel {
   display: none!important;
   -webkit-appearance: none;
@@ -196,13 +202,14 @@ input::placeholder{
   position: absolute;
   object-fit: cover;
   left: 0;
+  right: 0;
   top: 0;
   width: 100vw;
   height: 100vh;
   z-index: -1;
-  filter: brightness(71%);
-  -webkit-filter: brightness(71%);
-  -moz-filter: brightness(71%);
+  filter: brightness(65%);
+  -webkit-filter: brightness(65%);
+  -moz-filter: brightness(65%);
 }
 
 header{
@@ -212,6 +219,7 @@ header{
   background: var(--White, #FFF);
   position: fixed;
   left: 0;
+  top: 23px;
   width: 100%;
   padding-left: 3.5%;
   padding-right: 3.5%;

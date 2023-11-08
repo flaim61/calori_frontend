@@ -2,10 +2,12 @@
   <section class='login-view'>
     <div class="login-header">
       <template v-if='!this.forgotPass'>
-        <h2>
-          {{ this.$locales('login_hellow_title') }}
+        <h2 class='d-flex justify-content-between'>
+          <span> {{ this.$locales('login_hellow_title') }} </span>
+          <div class="back-button" @click='this.$router.push("/")'>
+            {{ this.$locales('back_home') }}
+          </div>
         </h2>
-        <p>{{ this.$locales('login_hellow_text') }}</p>
       </template>
       <template v-else>
         <h2 class='d-flex justify-content-between'>
@@ -157,5 +159,7 @@ export default {
     background: var(--White, #FFF);
     padding: 8px;
     width: fit-content;
+    white-space: nowrap;
+    height: fit-content;
   }
 </style>

@@ -35,7 +35,7 @@
     <div class="menu-item ml-2" @click='switchMenu'>
       <img src="@/assets/img/icon/burger.svg" alt="">
     </div>
-    <div class="app-title d-flex flex-column justify-content-center">
+    <div class="app-title d-flex flex-column justify-content-center" @click='this.$router.push("/")'>
       <img src="@/assets/img/calori.svg" alt="">
     </div>
     <div class="language-item">
@@ -67,12 +67,12 @@ export default {
   },
   methods: {
     handleScroll(){
-      let greenLabelHeight = document.getElementById('green-label').offsetHeight;
+      /*let greenLabelHeight = document.getElementById('green-label').offsetHeight;
       if (greenLabelHeight - window.pageYOffset >= 0) {
         document.getElementById('header').style.top = (greenLabelHeight - window.pageYOffset) + "px";
       }else{
         document.getElementById('header').style.top = 0 + "px";
-      }
+      }*/
     },
     switchMenu(){
       this.mobile_menu_showed = !this.mobile_menu_showed
@@ -81,6 +81,7 @@ export default {
         document.getElementById('header').style.top = 0 + "px";
       }else{
         this.handleScroll()
+        document.getElementById('header').style.top = '23px';
       }
     },
     setLocales(language){
@@ -121,6 +122,7 @@ export default {
     cursor: pointer;
   }
   .mobile-menu{
+    top: 0;
     width: 100vw;
     height: 100vh;
     position: fixed;

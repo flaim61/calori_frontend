@@ -1,9 +1,10 @@
 <template>
   <section class="main-block">
     <Header />
-    <video  autoplay muted loop preload playsinline controls="false"  id="home-videl" class="home-video">
+    <iframe id="home-video" class="home-video" src="https://player.vimeo.com/video/882212749?background=1" frameborder="0" allow="autoplay; fullscreen" allowfullscreen=""></iframe>
+    <!--<video  autoplay muted loop preload playsinline controls="false"  id="home-videl" class="home-video">
       <source src="@/assets/videos/Healthy-eating.mp4" type="video/mp4">
-    </video>
+    </video>-->
     <h1>
       {{ this.$locales('HealthyEating_title') }}
     </h1>
@@ -80,23 +81,23 @@
       "
         [
           {
-            img: 1,
+            img: 16,
             text: this.$locales('HealthyEating_list_item_1'),
           },
           {
-            img: 2,
+            img: 17,
             text: this.$locales('HealthyEating_list_item_2'),
           },
           {
-            img: 3,
+            img: 1,
             text: this.$locales('HealthyEating_list_item_3'),
           },
           {
-            img: 4,
+            img: 19,
             text: this.$locales('HealthyEating_list_item_4'),
           },
           {
-            img: 5,
+            img: 20,
             text: this.$locales('HealthyEating_list_item_5'),
           },
         ]
@@ -120,19 +121,19 @@
             text: this.$locales('HealthyEating_list_item_6'),
           },
           {
-            img: 2,
+            img: 3,
             text: this.$locales('HealthyEating_list_item_7'),
           },
           {
-            img: 3,
+            img: 4,
             text: this.$locales('HealthyEating_list_item_8'),
           },
           {
-            img: 4,
+            img: 21,
             text: this.$locales('HealthyEating_list_item_9'),
           },
           {
-            img: 5,
+            img: 22,
             text: this.$locales('HealthyEating_list_item_10'),
           },
         ]
@@ -155,7 +156,8 @@
     <BlueTextBlock
       :title='this.$locales("blue_text_block_home_title")'
       :text='this.$locales("blue_text_block_home_text")'
-      :text2='this.$locales("blue_text_block_home_text_2")'
+      :text-2='this.$locales("blue_text_block_home_text_2")'
+      :text-3='this.$locales("blue_text_block_home_text_3")'
     />
 
     <div class="titlep_block" id='menu'>
@@ -176,16 +178,9 @@
     <div class="quiz-button" style="" @click='this.$router.push("/quiz")'>{{this.$locales('get_plan_button')}}</div>
     <p> {{ this.$locales('before_button_text') }}</p>
 
-    <div class="titlep_block">
-      <h3 class="block-title">
-        {{ this.$locales('five_months') }}
-      </h3>
-      <p>
-        {{ this.$locales('month_with_calori_text') }}
-      </p>
-    </div>
 
-    <PlusesBlock
+
+    <!--<PlusesBlock
       :pluses="
         [
           {
@@ -206,9 +201,9 @@
           },
         ]
       "
-    />
+    />-->
 
-    <div class="titlep_block">
+    <!--<div class="titlep_block">
       <h3 class="block-title">
         Expert's opinion
       </h3>
@@ -218,7 +213,7 @@
       Here’s a couple of words from the team behind Calori:
     </p>
 
-    <StorySlider />
+    <StorySlider />-->
 
     <div class="titlep_block" id='sustainability_approach'>
       <h3 class="block-title">
@@ -259,17 +254,6 @@
       <h3 class="block-title">
         {{ this.$locales('contact_form_title') }}
       </h3>
-    </div>
-    <div class="d-flex mb-5">
-      <img class='mr-3 rounded' style='object-fit:cover;' src="@/assets/img/examples/review-example-2.jpeg" alt="">
-      <div class="">
-        <p>
-          Hi, my name is Vadim. I’m a Head Coach at Calori. I have 8 years of experience as a personal trainer.
-        </p>
-        <p>
-          Always in touch, I’ll answer all your questions about nutrition, delivery or other aspects of using Calori.
-        </p>
-      </div>
     </div>
     <ContactForm id='contact'/>
 
@@ -347,7 +331,7 @@ export default {
     font-style: normal;
     font-weight: 500;
     line-height: 140%; /* 33.6px */
-    padding-top: 215px;
+    padding-top: 40vh;
   }
   .main-block>p{
     color: var(--White, #FFF);

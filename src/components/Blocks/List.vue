@@ -17,6 +17,14 @@
         <span v-if='li.img == 13' style="font-size: 32px;">📱</span>
         <span v-if='li.img == 14' style="font-size: 32px;">🙌</span>
         <span v-if='li.img == 15' style="font-size: 32px;">⏯</span>
+        <span v-if='li.img == 16' style="font-size: 32px;">🌪️</span>
+        <span v-if='li.img == 17' style="font-size: 32px;">🏭</span>
+        <span v-if='li.img == 18' style="font-size: 32px;">🏭</span>
+        <span v-if='li.img == 19' style="font-size: 32px;">🧮</span>
+        <span v-if='li.img == 20' style="font-size: 32px;">😓</span>
+        <span v-if='li.img == 21' style="font-size: 32px;">💃</span>
+        <span v-if='li.img == 22' style="font-size: 32px;">🤩</span>
+
       </div>
       <div class="list-text">
         {{ li.text }}

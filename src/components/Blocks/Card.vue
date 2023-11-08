@@ -12,6 +12,11 @@
     <img v-if='this.image == 7' src="@/assets/img/howitwork/7.jpeg" alt="">
     <img v-if='this.image == 8' src="@/assets/img/howitwork/8.jpeg" alt="">
     <img v-if='this.image == 9' src="@/assets/img/howitwork/9.jpeg" alt="">
+    <iframe v-if='this.video == 1' src="https://player.vimeo.com/video/882344250?background=1" frameborder="0" allow="autoplay; fullscreen" allowfullscreen=""></iframe>
+    <iframe v-if='this.video == 2' src="https://player.vimeo.com/video/882344258?background=1" frameborder="0" allow="autoplay; fullscreen" allowfullscreen=""></iframe>
+    <iframe v-if='this.video == 3'  src="https://player.vimeo.com/video/882344169?background=1" frameborder="0" allow="autoplay; fullscreen" allowfullscreen=""></iframe>
+    <iframe v-if='this.video == 4'  src="https://player.vimeo.com/video/882344998?background=1" frameborder="0" allow="autoplay; fullscreen" allowfullscreen=""></iframe>
+    <iframe v-if='this.video == 5'  src="https://player.vimeo.com/video/882345011?background=1" frameborder="0" allow="autoplay; fullscreen" allowfullscreen=""></iframe>
     <p>
       {{this.text}}
     </p>
@@ -24,7 +29,7 @@ export default {
   components: {
 
   },
-  props: ['green', 'title', 'image', 'text'],
+  props: ['green', 'title', 'image', 'text', 'video'],
   data(){
     return {
 
@@ -36,6 +41,12 @@ export default {
 </script>
 
 <style>
+  .card>iframe{
+    border-radius: 8px;
+    height: 180px;
+    object-fit: cover;
+    margin-bottom: 16px;
+  }
   .card>img{
     margin-top: 16px;
     margin-bottom: 16px;

@@ -1,11 +1,11 @@
 <template>
   <section class="main-block">
     <Header />
-    <video autoplay="true" muted="true" loop="true" preload="true" playsinline="true" controls="false" id="home-video" class="home-video">
+    <iframe id="home-video" class="home-video" src="https://player.vimeo.com/video/882212749?background=1" frameborder="0" allow="autoplay; fullscreen" allowfullscreen=""></iframe>
+    <!--<video autoplay="true" muted="true" loop="true" preload="true" playsinline="true" controls="false" id="home-video" class="home-video">
       <source src="@/assets/videos/Healthy-eating.mp4" type="video/mp4">
-    </video>
-    <h1>
-      {{ this.$locales('main_page_title') }}
+    </video>-->
+    <h1 v-html="this.$locales('main_page_title')">
     </h1>
     <p>
       {{ this.$locales('main_page_text') }}
@@ -97,6 +97,7 @@
       :title='this.$locales("blue_text_block_home_title")'
       :text='this.$locales("blue_text_block_home_text")'
       :text-2='this.$locales("blue_text_block_home_text_2")'
+      :text-3='this.$locales("blue_text_block_home_text_3")'
     />
 
     <div class="titlep_block" id='menu'>
@@ -151,7 +152,7 @@
       />
     </div>
 
-    <div class="titlep_block">
+    <!--<div class="titlep_block">
       <h3 class="block-title">
         {{ this.$locales('our_story_title') }}
       </h3>
@@ -164,7 +165,7 @@
       {{this.$locales('our_story_text_2')}}:
     </p>
 
-    <StorySlider />
+    <StorySlider />-->
 
     <div class="titlep_block" id='sustainability_approach'>
       <h3 class="block-title">
@@ -287,7 +288,7 @@ export default {
     font-style: normal;
     font-weight: 500;
     line-height: 140%; /* 33.6px */
-    padding-top: 215px;
+    padding-top: 40vh;
   }
   .main-block>p{
     color: var(--White, #FFF);

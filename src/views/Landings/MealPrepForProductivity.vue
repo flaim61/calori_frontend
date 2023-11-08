@@ -1,9 +1,10 @@
 <template>
   <section class="main-block">
     <Header />
-    <video  autoplay muted loop preload playsinline controls="false"  id="home-videl" class="home-video">
+    <iframe id="home-video" class="home-video" src="https://player.vimeo.com/video/882343345?background=1" frameborder="0" allow="autoplay; fullscreen" allowfullscreen=""></iframe>
+    <!--<video  autoplay muted loop preload playsinline controls="false"  id="home-videl" class="home-video">
       <source src="@/assets/videos/Meal-prep.mp4" type="video/mp4">
-    </video>
+    </video>-->
     <h1>
       {{this.$locales('MealPrepForProductivity_title')}}
     </h1>
@@ -128,9 +129,10 @@
 
 
     <BlueTextBlock
-      title='Don’t miss out!'
-      text='Our next journey starts in January 2024. The seats are limited.'
-      text-2='Just in time for your new-year resolutions! 🎆'
+      :title='this.$locales("blue_text_block_home_title")'
+      :text='this.$locales("blue_text_block_home_text")'
+      :text-2='this.$locales("blue_text_block_home_text_2")'
+      :text-3='this.$locales("blue_text_block_home_text_3")'
     />
 
     <div class="titlep_block">
@@ -184,7 +186,20 @@
       "
     />
 
+    <p>{{this.$locales('sustainability_approach_before_text') }}</p>
+
     <div class="titlep_block">
+      <h3 class="block-title">
+        {{this.$locales('our_story_title')}}
+      </h3>
+      <p>
+        {{ this.$locales('our_story_text_3') }}
+      </p>
+    </div>
+
+    <CardWithSecretText :image='10' :text="this.$locales('our_story_main_text')" :secret_text="this.$locales('our_story_secret_text')"/>
+
+    <!--<div class="titlep_block">
       <h3 class="block-title">
         Our Story
       </h3>
@@ -197,9 +212,7 @@
       Here’s a couple of words from the team behind Calori:
     </p>
 
-    <StorySlider />
-
-    <p>Did you know that meal boxes reduce waste by 38% compared to home-cooked dinners?</p>
+    <StorySlider />-->
 
     <div class="titlep_block">
       <h3 class="block-title">
@@ -210,7 +223,7 @@
       </p>
     </div>
 
-    <ContactForm />
+    <ContactForm  id='contact'/>
 
   </div>
   <Footer />
@@ -228,6 +241,7 @@ import TabsSlider from "@/components/Blocks/TabsSlider.vue";
 import PlusesBlock from "@/components/Blocks/PlusesBlock.vue";
 import StorySlider from "@/components/Blocks/StorySlider.vue";
 import ContactForm from "@/components/Blocks/ContactForm.vue";
+import CardWithSecretText from "@/components/Blocks/CardWithSecretText.vue";
 
 export default {
   name: "HomeView",
@@ -242,7 +256,8 @@ export default {
     TabsSlider,
     PlusesBlock,
     StorySlider,
-    ContactForm
+    ContactForm,
+    CardWithSecretText,
   },
   data(){
     return {
@@ -286,7 +301,7 @@ export default {
     font-style: normal;
     font-weight: 500;
     line-height: 140%; /* 33.6px */
-    padding-top: 215px;
+    padding-top: 40vh;
   }
   .main-block>p{
     color: var(--White, #FFF);

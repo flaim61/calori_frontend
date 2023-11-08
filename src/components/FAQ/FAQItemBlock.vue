@@ -7,8 +7,7 @@
       </span>
     </div>
 
-    <p v-show='this.active'>
-      {{ this.text }}
+    <p v-show='this.active' v-html='this.text'>
     </p>
   </div>
 </template>

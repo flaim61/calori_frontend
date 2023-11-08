@@ -1,6 +1,6 @@
 import en from './en.js'
 import fi from './fi.js'
-let lanuage = en;
+let lanuage = fi;
 
 if (localStorage.getItem('locale')) {
   if (localStorage.getItem('locale') == 'fi') {

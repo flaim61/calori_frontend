@@ -1,19 +1,22 @@
 <template lang="html">
   <div class="banner_block">
     <div class="banner_block_top">
-      <p class="banner_block_header">By following your personal plan,</p>
+      <p class="banner_block_header">{{ this.$locales('check14frase') }}</p>
+
       <span class="d-none">
-        {{ finish_date = new Date(this.createdApplication.personalSlimmingPlan.finishDate) }}
+        {{ date = new Date(this.createdApplication.personalSlimmingPlan.startDate) }}
       </span>
       <p class="banner_block_header_text">
-        you can lose up to {{ this.createdApplication.weight - this.createdApplication.goal }} kg <br>
-        between {{finish_date.getDate()}}.{{finish_date.getMonth()+1}}.{{ finish_date.getFullYear() }} and
+        {{this.$locales('check15frase')}} {{ this.createdApplication.weight - this.createdApplication.goal }} kg <br>
+        {{this.$locales('check16frase')}} {{date.getDate()}}.{{date.getMonth()+1}}.{{ date.getFullYear() }} and
       </p>
     </div>
+
+
     <span class="d-none">
-      {{ date = new Date(this.createdApplication.personalSlimmingPlan.startDate) }}
+      {{ finish_date = new Date(this.createdApplication.personalSlimmingPlan.finishDate) }}
     </span>
-    <h5> {{date.getDate()}}.{{date.getMonth()+1}}.{{ date.getFullYear() }} </h5>
+    <h5> {{finish_date.getDate()}}.{{finish_date.getMonth()+1}}.{{ finish_date.getFullYear() }} </h5>
     <div class="see_all" @click='this.plan_block_visibled = true'>
       <a href="#">
         {{ this.$locales('see_the_plan') }}
@@ -21,7 +24,7 @@
     </div>
   </div>
   <div class="CheckBlock_content">
-    <h3>Get everything you need:</h3>
+    <h3>{{this.$locales('check9frase')}}:</h3>
     <ul class="CheckBlock_content_list">
       <li><img src="@/assets/img/icon/green-check.svg" alt=""> {{ this.$locales('check2frase') }}</li>
       <li><img src="@/assets/img/icon/green-check.svg" alt="">{{ this.$locales('check3frase') }}</li>
@@ -29,7 +32,7 @@
       <li><img src="@/assets/img/icon/green-check.svg" alt="">{{ this.$locales('check5frase') }}</li>
       <li><img src="@/assets/img/icon/green-check.svg" alt="">{{ this.$locales('check6frase') }}</li>
     </ul>
-    <h3 class="mt-4">Select payment frequency</h3>
+    <h3 class="mt-4">{{ this.$locales('check10frase') }}</h3>
 
     <v-select
       v-model="this.plan"
@@ -47,13 +50,13 @@
         </div>
       </template>
     </v-select>
-    <p class="after_button_text">28.5 eur per day</p>
+    <p class="after_button_text">28.5 {{ this.$locales('eur_day') }}</p>
     <div class="button createCheckoutSessionButton" @click='this.createCheckoutSession()'>
       <div> {{ this.$locales('subscribe_now') }} </div>
       <img src="@/assets/img/icon/button_arrow.svg">
     </div>
     <p>
-      Pay now for the first period Start receiving deliveries from 8.1.2024
+      {{this.$locales('before_checkout_button_text')}}
     </p>
   </div>
 
@@ -65,11 +68,10 @@
       </a>
     </div>
     <p class="mt-3">
-      Here’s the optimal amount of macronutrients that your body needs to reach your goal sustainably:
+      {{this.$locales('check11frase')}}
     </p>
 
     <ul class="mt-4" v-if='this.createdApplication'>
-
       <li>{{ this.createdApplication.personalSlimmingPlan.caloriSlimmingPlan.calories }}<span class="ml-1">calories</span></li>
       <li>{{ this.createdApplication.personalSlimmingPlan.caloriSlimmingPlan.protein }} g.<span class="ml-1">of protein</span></li>
       <li>{{ this.createdApplication.personalSlimmingPlan.caloriSlimmingPlan.fats }} g.<span class="ml-1">of fats</span></li>
@@ -77,12 +79,11 @@
     </ul>
 
     <p class="mt-4">
-      Our coaches will adjust your plan according to your progress.
+      {{ this.$locales('check12frase') }}
     </p>
     <div class="plan_info_block p-2 mt-4">
       <p>
-        This information is based on what you shared with us.
-        Here’s the summary:
+        {{this.$locales('check13frase')}}
       </p>
       <ul class="plan_info_block_ul">
         <li class="mt-3"><span>{{ this.$locales('gender') }}</span> {{ this.createdApplication.genderId == 0 ? "Male" : "Female" }}</li>

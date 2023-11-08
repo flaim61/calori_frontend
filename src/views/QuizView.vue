@@ -27,8 +27,8 @@
         <div class="title text-left">
           {{this.$locales('write_your_weight')}}
         </div>
-        <div class="mt-1 content_input_section" :class="{ 'error': this.errors.weight || this.errors.min_weight}">
-          <div class="input-group">
+        <div class="mt-1 content_input_section" >
+          <div class="input-group" :class="{ 'error': this.errors.weight || this.errors.min_weight}">
             <input type="number" class="form-control" v-model='this.application.weight'>
             <div class="input-group-append">
               <span class="input-group-text">Kg.</span>
@@ -53,8 +53,8 @@
         <div class="title text-left">
           {{ this.$locales('write_your_height') }}
         </div>
-        <div class="mt-1 content_input_section" :class="{ 'error': this.errors.height }" >
-          <div class="input-group">
+        <div class="mt-1 content_input_section"  >
+          <div class="input-group" :class="{ 'error': this.errors.height }">
             <input type="number" class="form-control" v-model='this.application.height'>
             <div class="input-group-append">
               <span class="input-group-text">Cm.</span>
@@ -78,8 +78,8 @@
         <div class="title text-left">
           {{ this.$locales('how_old') }}
         </div>
-        <div class="mt-0 content_input_section" :class="{ 'error': this.errors.age }">
-          <div class="input-group">
+        <div class="mt-0 content_input_section" >
+          <div class="input-group" :class="{ 'error': this.errors.age }">
             <input type="number" class="form-control" v-model='this.application.age'>
             <div class="input-group-append">
               <span class="input-group-text">Years.</span>
@@ -139,9 +139,9 @@
 
     <div class="step" v-if='this.step == 6'>
       <div class="content_section">
-        <div class="content_input_section" :class="{ 'error' : this.errors.goal }">
+        <div class="content_input_section" >
           <label for="" class="text-left">{{ this.$locales('write_yout_goal') }}:</label>
-          <div class="input-group">
+          <div class="input-group" :class="{ 'error' : this.errors.goal }">
             <input type="number" class="form-control" v-model='this.application.goal'>
             <div class="input-group-append">
               <span class="input-group-text">Kg.</span>
@@ -328,12 +328,12 @@ export default {
         },
       ],
       application: {
-        gender: 0,
-        weight: 0,
-        height: 0,
-        age: 0,
+        gender: "",
+        weight: "",
+        height: "",
+        age: "",
         activity: 0,
-        goal: 0,
+        goal: "",
         email: "",
         allergies: [],
         another_allergy: "",
@@ -393,18 +393,19 @@ export default {
           allergies: this.application.allergies,
           anotherAllergy: this.application.another_allergy
         });
-        if (response.data.application == null) {
-              this.$swal({
-                position: 'top',
-                icon: 'success',
-                toast: true,
-                title: 'Unfortunately, we do not have a suitable diet for you! We have sent an email to you!',
-                showConfirmButton: false,
-                timer: 3500
-              })
 
-              this.$router.push('/');
-              return;
+        if (response.data.application == null || this.calculated_weight.minWeight >= this.application.weight) {
+            this.$swal({
+              position: 'top',
+              icon: 'success',
+              toast: true,
+              title: 'Unfortunately, we do not have a suitable diet for you! We have sent an email to you!',
+              showConfirmButton: false,
+              timer: 3500
+            })
+
+            this.$router.push('/');
+            return;
         }
 
         this.createdApplication = response.data.application;
@@ -438,26 +439,20 @@ export default {
       let heightM = this.application.height / 100;
       this.calculated_weight.maxWeight = Math.ceil(24.9 * heightM * heightM);
       this.calculated_weight.minWeight = Math.ceil(18.5 * heightM * heightM);
-
-      if (this.calculated_weight.minWeight >= this.application.weight) {
-        this.step = 2;
-        this.errors.min_weight = true;
-      }else{
-        this.step++;
-      }
+      this.step++;
     },
     async nextStep(){
-      if (this.step == 2 && this.application.weight == 0) {
+      if (this.step == 2 && (this.application.weight == 0 || this.application.weight == "")) {
         this.errors.weight = true;
         return;
       }
 
-      if (this.step == 3 && this.application.height == 0) {
+      if (this.step == 3 && (this.application.height == 0 || this.application.height == "")) {
         this.errors.height = true;
         return;
       }
 
-      if (this.step == 4 && this.application.age == 0) {
+      if (this.step == 4 && (this.application.age == 0 || this.application.age == "")) {
         this.errors.age = true;
         return;
       }
@@ -466,9 +461,13 @@ export default {
         return this.calculate_recomended_weight();
       }
 
-      if (this.step == 6 && this.application.goal < this.calculated_weight.minWeight) {
+      if (this.step == 6  && (this.application.goal == 0 || this.application.goal == "")) {
         this.errors.goal = true;
         return;
+      }
+
+      if (this.step == 6  && (this.application.goal <= this.calculated_weight.minWeight)) {
+        this.step++;
       }
 
       this.step++;
@@ -480,18 +479,7 @@ export default {
       }
       try {
         this.application.allergies = this.application.allergies.filter(a => a != 5);
-        console.log({
-          gender: this.application.gender,
-          weight: this.application.weight,
-          height: this.application.height,
-          age: this.application.age,
-          activity: this.application.activity,
-          goal: this.application.goal,
-          email: this.application.email,
-          allergies: this.application.allergies,
-          anotherAllergy: this.application.another_allergy
-        });
-        //return;
+
         const response = await updateApplication({
           gender: this.application.gender,
           weight: this.application.weight,
@@ -503,19 +491,19 @@ export default {
           allergies: this.application.allergies,
           anotherAllergy: this.application.another_allergy
         });
-        
-        if (response.data.application == null) {
-              this.$swal({
-                position: 'top',
-                icon: 'success',
-                toast: true,
-                title: 'Unfortunately, we do not have a suitable diet for you! We have sent an email to you!',
-                showConfirmButton: false,
-                timer: 3500
-              })
 
-              this.$router.push('/');
-              return;
+        if (response.data.application == null || this.calculated_weight.minWeight >= this.application.weight) {
+            this.$swal({
+              position: 'top',
+              icon: 'success',
+              toast: true,
+              title: 'Unfortunately, we do not have a suitable diet for you! We have sent an email to you!',
+              showConfirmButton: false,
+              timer: 3500
+            })
+
+            this.$router.push('/');
+            return;
         }
 
         this.$swal({
@@ -655,7 +643,7 @@ export default {
     transform: rotate(45deg);
   }
   .email-card{
-    position: absolute;
+    position: fixed;
     bottom: 0px;
     margin-right: 16px !important;
     box-shadow: none !important;
@@ -834,5 +822,8 @@ export default {
     margin-left: auto;
     margin-right: auto;
     min-height: 100vh;
+    position: fixed;
+    top: 0;
+    width: 100vw;
   }
 </style>

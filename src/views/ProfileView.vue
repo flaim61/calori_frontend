@@ -99,7 +99,7 @@ export default {
     	}
 
       localStorage.clear();
-      location.reload();
+      location.href = '/';
     },
     setActive(name){
       for (let property in this.tabs) {
