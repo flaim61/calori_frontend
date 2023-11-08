@@ -12,9 +12,11 @@
       {{ this.$locales('HealthyEating_text') }}
     </p>
     <Transition>
-      <div id='main-button' v-show='this.showButton' class="main-button" @click='this.$router.push("/quiz")'>
-        {{ this.$locales('individual_plan') }}
-      </div>
+      <a href="#menu">
+        <div id='main-button' v-show='this.showButton' class="main-button">
+          {{ this.$locales('individual_plan') }}
+        </div>
+      </a>
     </Transition>
   </section>
 

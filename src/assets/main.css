@@ -176,6 +176,10 @@ input::placeholder{
 .input-section.error>span{
   display: block;
 }
+.error>span>a{
+  color: var(--Error, #C9324B);
+  text-decoration: underline;
+}
 .green-text{
   color: var(--Accent, #00B467);
 }
@@ -479,6 +483,15 @@ input.p-inputtext.p-component.p-password-input {
     font-style: normal;
     font-weight: 400;
     line-height: 140%;
+}
+
+.player .vp-video-wrapper object, .player .vp-video-wrapper video{
+  width: 100vw;
+  height: auto;
+}
+
+.vp-video{
+  width: 100vw;
 }
 
 @media screen and (min-width: 700px) {

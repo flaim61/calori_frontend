@@ -427,5 +427,8 @@ export default {
   <br><br>
   Valmistuimme Kiuaksesta, Suomen parhaasta startup-kiihdyttämöstä. Seuraavaksi kasasimme kokeneen tiimin ja saimme rahoituskierroksen päätökseen.
   <br><br>
-  Hiomme jatkuvasti Caloria täydelliseksi, jotta voit nauttia terveellisestä syömisestä parhaalla mahdollisella tavalla. Liity mukaan seuraavalle Calorin matkalle, joka alkaa 8.1.2024.`
+  Hiomme jatkuvasti Caloria täydelliseksi, jotta voit nauttia terveellisestä syömisestä parhaalla mahdollisella tavalla. Liity mukaan seuraavalle Calorin matkalle, joka alkaa 8.1.2024.`,
+
+  our_menu: "Meidän menu",
+  bring_me_back: "Tuo minut takaisin",
 }

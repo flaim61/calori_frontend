@@ -11,19 +11,16 @@
       </div>
       <div class="menu-content" v-if='this.$store.state.landigsRoute.indexOf(this.$route.name) !== -1'>
         <a href="/login" > {{ this.$locales('sign_in') }} </a>
-        <a @click='this.mobile_menu_showed = false' href="#how_it_work" > How It Work </a>
-        <a @click='this.mobile_menu_showed = false' href="#why_calori" > Why Calory? </a>
-        <a @click='this.mobile_menu_showed = false' href="#menu" > Our Menu </a>
-        <a @click='this.mobile_menu_showed = false' href="#sustainability_approach" > Sustainability Approach </a>
-        <a @click='this.mobile_menu_showed = false' href="#contact" > Contact </a>
+        <a @click='this.mobile_menu_showed = false' href="#how_it_work" > {{ this.$locales('l1_how_works')  }} </a>
+        <a @click='this.mobile_menu_showed = false' href="#why_calori" > {{ this.$locales('why_calori_block_title') }} </a>
+        <a @click='this.mobile_menu_showed = false' href="#menu" > {{this.$locales('our_menu')}} </a>
+        <a @click='this.mobile_menu_showed = false' href="#sustainability_approach" > {{ this.$locales('sustainability_approach_title') }} </a>
+        <a @click='this.mobile_menu_showed = false' href="#contact" > {{ this.$locales('contact_us') }} </a>
         <a @click='this.$router.push("faq")' > FAQ </a>
       </div>
       <div class="menu-content" v-else>
         <a href="/login" > {{ this.$locales('sign_in') }} </a>
-        <a @click='this.$router.push("/")'> Home </a>
-        <a @click='this.$router.push("weight-loss")'> Weight Loss </a>
-        <a @click='this.$router.push("healthy-eating")'> Healthy Eating </a>
-        <a @click='this.$router.push("meal-prep-for-productivity")'> Meal Prep For Productivity </a>
+        <a @click='this.$router.go(-1)'> {{ this.$locales('bring_me_back') }} </a>
         <a @click='this.$router.push("faq")' > FAQ </a>
       </div>
     </div>

@@ -449,5 +449,8 @@ export default {
   <br><br>
   Next, we graduated from Kiuas, the best startup accelerator in Finland before attracting reputable advisors, recruiting an experienced team, and closing the funding round. 
   <br><br>
-  We perfected Calori so you can make the most of healthy eating. Become a member in the next journey with Calori that starts on 8.1.2024.`
+  We perfected Calori so you can make the most of healthy eating. Become a member in the next journey with Calori that starts on 8.1.2024.`,
+
+  our_menu: "Our Menu",
+  bring_me_back: "Bring me back",
 }

@@ -287,7 +287,7 @@
           <div class="content_input_section" :class="{ 'error' : this.errors.email }" v-if='!this.$store.state.auth'>
             <label for="">{{this.$locales('email')}}</label>
             <input type="email" placeholder="Write your e-mail" v-model='this.application.email' >
-            <span> {{ this.$locales('user_alredy_exist') }} </span>
+            <span> <a href='/login'>{{ this.$locales('user_alredy_exist') }} </a></span>
           </div>
         </div>
         <div class="button d-flex justify-content-center" @click='this.createApplication()' v-if='!this.$store.state.auth'>
