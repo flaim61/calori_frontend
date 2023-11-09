@@ -1,15 +1,15 @@
 <template lang="html">
   <div class="ContactForm">
     <div class="input-section" :class="{'error':this.errors.phone}">
-      <input type="text" v-model='this.form.phone' id='phone' placeholder="Your phone" autocomplete="off">
+      <input type="text" v-model='this.form.phone' id='phone' :placeholder="this.$locales('your_phone')" autocomplete="off">
       <span>Please write your phone</span>
     </div>
     <div class="input-section" :class="{'error':this.errors.email}">
-      <input type="text" v-model='this.form.email' id='email' placeholder="Your Email" autocomplete="off">
+      <input type="text" v-model='this.form.email' id='email' :placeholder="this.$locales('your_email')" autocomplete="off">
       <span>Please write your email</span>
     </div>
     <div class="input-section" :class="{'error':this.errors.message}">
-      <input type="text" v-model='this.form.message' id='message' placeholder="Your Message" autocomplete="off">
+      <input type="text" v-model='this.form.message' id='message' :placeholder="this.$locales('your_message')" autocomplete="off">
       <span>Please write your message</span>
     </div>
     <div class="button d-flex justify-content-center" @click='sendMessage'>

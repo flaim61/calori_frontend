@@ -24,7 +24,7 @@
         <span v-if='li.img == 20' style="font-size: 32px;">😓</span>
         <span v-if='li.img == 21' style="font-size: 32px;">💃</span>
         <span v-if='li.img == 22' style="font-size: 32px;">🤩</span>
-
+        <img v-if='li.img == 70' src="@/assets/img/icon/battery.png" alt="">
       </div>
       <div class="list-text">
         {{ li.text }}

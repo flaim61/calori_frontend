@@ -9,7 +9,7 @@
           <li>
             {{ this.$locales('gender') }}:
             <span>
-              {{ this.application == 0 ? "male" : "female" }}
+              {{ this.application == 0 ? "female" : "male" }}
             </span>
           </li>
           <li>
@@ -49,7 +49,7 @@
     </div>
   </div>
 
-  <div class="card-profile card"  v-if='this.personalPlan && this.application  && this.personalPlan.isPaid'>
+  <div class="card-profile card"  v-if='this.personalPlan && this.application && this.personalPlan.isPaid'>
     <div class="card-top d-flex justify-content-between">
       <h2>
         {{ this.$locales('score') }}
@@ -90,7 +90,7 @@
     </div>
   </div>
 
-  <div class="card-profile card"  v-if='this.personalPlan && this.application  && this.personalPlan.isPaid'>
+  <div class="card-profile card"  v-if='this.personalPlan && this.application  && this.personalPlan.isPaid && this.personalPlan.currentCaloriPlan'>
     <div class="card-top d-flex justify-content-between">
       <h2>
         {{ this.$locales('currently_plan') }}
@@ -154,6 +154,10 @@ export default {
       var totalMilliseconds = endDate - startDate;
       var elapsedMilliseconds = currentDate - startDate;
       var percentage = (elapsedMilliseconds / totalMilliseconds) * 100;
+      if (percentage < 0) {
+        return 0;
+      }
+
       return percentage.toFixed(2);
     },
     async getPesonalPlan(){

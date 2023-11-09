@@ -9,7 +9,7 @@
         </span>
         <p class="banner_block_header_text">
           {{this.$locales('check15frase')}} {{ this.createdApplication.weight - this.createdApplication.goal }} kg <br>
-          {{this.$locales('check16frase')}} {{date.getDate()}}.{{date.getMonth()+1}}.{{ date.getFullYear() }} and
+          {{this.$locales('check16frase')}} {{date.getDate()}}.{{date.getMonth()+1}}.{{ date.getFullYear() }} {{ this.$locales('and') }}
         </p>
       </div>
 
@@ -27,11 +27,12 @@
     <div class="CheckBlock_content">
       <h3>{{this.$locales('check9frase')}}:</h3>
       <ul class="CheckBlock_content_list">
-        <li><img src="@/assets/img/icon/green-check.svg" alt="">{{ this.$locales('check2frase') }}</li>
-        <li><img src="@/assets/img/icon/green-check.svg" alt="">{{ this.$locales('check3frase') }}</li>
-        <li><img src="@/assets/img/icon/green-check.svg" alt="">{{ this.$locales('check4frase') }}</li>
-        <li><img src="@/assets/img/icon/green-check.svg" alt="">{{ this.$locales('check5frase') }}</li>
-        <li><img src="@/assets/img/icon/green-check.svg" alt="">{{ this.$locales('check6frase') }}</li>
+        <li><span><img src="@/assets/img/icon/green-check.svg" alt=""></span><span>{{ this.$locales('check2frase') }}</span></li>
+        <li><span><img src="@/assets/img/icon/green-check.svg" alt=""></span><span>{{ this.$locales('check3frase') }}</span></li>
+        <li><span><img src="@/assets/img/icon/green-check.svg" alt=""></span><span>{{ this.$locales('check4frase') }}</span></li>
+        <li><span><img src="@/assets/img/icon/green-check.svg" alt=""></span><span>{{ this.$locales('check5frase') }}</span></li>
+        <li><span><img src="@/assets/img/icon/green-check.svg" alt=""></span><span>{{ this.$locales('check55frase') }}</span></li>
+        <li><span><img src="@/assets/img/icon/green-check.svg" alt=""></span><span>{{ this.$locales('check6frase') }}</span></li>
       </ul>
       <h3 class="mt-4">{{ this.$locales('check10frase') }}</h3>
 
@@ -51,13 +52,16 @@
           </div>
         </template>
       </v-select>
-      <p class="after_button_text" v-if='this.plan'>{{ this.plan.dailyPrice }} {{ this.$locales('eur_day') }}</p>
+      <p class="after_button_text" v-if='this.plan'>{{ this.plan.dailyPrice }}{{ this.$locales('eur_day') }}</p>
       <div class="button createCheckoutSessionButton" @click='this.createCheckoutSession()'>
         <div> {{ this.$locales('subscribe_now') }} </div>
         <img src="@/assets/img/icon/button_arrow.svg">
       </div>
       <p>
         {{this.$locales('before_checkout_button_text')}}
+      </p>
+      <p class="privacy">
+        {{ this.$locales('privacy') }}
       </p>
     </div>
 
@@ -73,10 +77,10 @@
       </p>
 
       <ul class="mt-4" v-if='this.createdApplication'>
-        <li>{{ this.createdApplication.personalSlimmingPlan.caloriSlimmingPlan.calories }}<span class="ml-1">calories</span></li>
-        <li>{{ this.createdApplication.personalSlimmingPlan.caloriSlimmingPlan.protein }} g.<span class="ml-1">of protein</span></li>
-        <li>{{ this.createdApplication.personalSlimmingPlan.caloriSlimmingPlan.fats }} g.<span class="ml-1">of fats</span></li>
-        <li>{{ this.createdApplication.personalSlimmingPlan.caloriSlimmingPlan.carbohydrates }} g.<span class="ml-1">of carbohydrates</span></li>
+        <li>{{ this.createdApplication.personalSlimmingPlan.caloriSlimmingPlan.calories }}<span class="ml-1">{{ this.$locales('calories') }}</span></li>
+        <li>{{ this.createdApplication.personalSlimmingPlan.caloriSlimmingPlan.protein }} g.<span class="ml-1">{{ this.$locales('of_protein') }}</span></li>
+        <li>{{ this.createdApplication.personalSlimmingPlan.caloriSlimmingPlan.fats }} g.<span class="ml-1">{{ this.$locales('of_fats') }}</span></li>
+        <li>{{ this.createdApplication.personalSlimmingPlan.caloriSlimmingPlan.carbohydrates }} g.<span class="ml-1">{{ this.$locales('of_carbohydrates') }}</span></li>
       </ul>
 
       <p class="mt-4">
@@ -87,7 +91,7 @@
           {{this.$locales('check13frase')}}
         </p>
         <ul class="plan_info_block_ul">
-          <li class="mt-3"><span>{{ this.$locales('gender') }}</span> {{ this.createdApplication.genderId == 0 ? "Male" : "Female" }}</li>
+          <li class="mt-3"><span>{{ this.$locales('gender') }}</span> {{ this.createdApplication.genderId == 0 ? this.$locales('male') : this.$locales('female') }}</li>
           <li class="mt-2"><span>{{ this.$locales('age') }}</span>  {{ this.createdApplication.age }} years</li>
           <li class="mt-2"><span>{{ this.$locales('height') }}</span> {{ this.createdApplication.height }} cm</li>
           <li class="mt-2"><span>{{ this.$locales('weight') }}</span> {{ this.createdApplication.personalSlimmingPlan.currentWeight }} kg</li>
@@ -121,7 +125,12 @@ export default {
   ],
   async created(){
     this.plans = await this.getPrices()
-    this.plan = this.plans[0];
+
+    if (localStorage.getItem('selected_plan')){
+      this.plan = this.plans[localStorage.getItem('selected_plan')];
+    }else{
+      this.plan = this.plans[0];
+    }
   },
   methods: {
     async getPrices(){
@@ -138,11 +147,30 @@ export default {
       const response = await createCheckoutSession(this.plan);
       window.open(response.data.sessionUrl, "_self");
     }
+  },
+  watch: {
+    plan(){
+      this.plans.forEach((item, i) => {
+        if (item.priceId == this.plan.priceId) {
+          localStorage.setItem('selected_plan', i);
+        }
+      });
+    }
   }
 }
 </script>
 
 <style lang="css" scoped>
+  .privacy{
+    margin-top: 20px;
+    color: var(--Grey, #92979B);
+    text-align: center;
+    font-family: Inter;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 140%;
+  }
   .quiz{
     position: static !important;
     overflow-y: auto;
@@ -308,5 +336,8 @@ export default {
     justify-content: space-between;
     width: calc(100vw - 30px);
     max-width: 570px;
+  }
+  .CheckBlock_content_list>li{
+    display: flex;
   }
 </style>

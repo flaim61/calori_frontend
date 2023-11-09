@@ -3,10 +3,10 @@
     <h3 class="mb-4">
       {{ this.$locales('language') }}
     </h3>
-    <div class="button text-white justify-content-center" @click="this.setLocales('en')">
+    <div class="button text-white justify-content-center" :class="{'grey':this.locale == 'en'}" @click="this.setLocales('en')">
       {{ this.$locales('english') }}
     </div>
-    <div class="grey button text-white justify-content-center mt-3" @click="this.setLocales('fi')">
+    <div class="button text-white justify-content-center mt-3" :class="{'grey':this.locale == 'fi'}" @click="this.setLocales('fi')">
       {{ this.$locales('finland') }}
     </div>
   </div>
@@ -54,6 +54,7 @@ export default {
         old_password: false,
         new_password_valid: false,
       },
+      locale: "fi",
       new_password: "",
       old_password: "",
     }
@@ -61,6 +62,9 @@ export default {
   components:{
     Password,
     Divider
+  },
+  created(){
+    this.locale = localStorage.getItem('locale') ? localStorage.getItem('locale') : 'fi';
   },
   methods:{
     validatePassword(password) {

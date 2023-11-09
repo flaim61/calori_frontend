@@ -11,7 +11,7 @@
       {{ this.$locales('main_page_text') }}
     </p>
     <Transition>
-      <a href="#menu">
+      <a href="#menu" v-if='!this.isPaid'>
         <div id='main-button' v-show='this.showButton' class="main-button">
           {{ this.$locales('individual_plan') }}
         </div>
@@ -24,9 +24,6 @@
       <h3 class="block-title">
         {{ this.$locales('how_works') }}
       </h3>
-      <p>
-        {{ this.$locales('how_works_text') }}
-      </p>
     </div>
     <Card
       :title="this.$locales('how_works_1_title_home')"
@@ -117,7 +114,7 @@
       {{this.$locales('menu_text_before_home')}}
     </p>
 
-    <div class="quiz-button" style="" @click='this.$router.push("/quiz")'>{{this.$locales('get_plan_button')}}</div>
+    <div class="quiz-button" style="" @click='this.$router.push("/quiz")' v-if='!this.isPaid'>{{this.$locales('get_plan_button')}}</div>
     <p>{{this.$locales('before_button_text')}}</p>
 
     <div class="blue-block pt-5 mt-5 pb-3">
@@ -251,9 +248,11 @@ export default {
     return {
       showButton: true,
       targetBlockId: "block",
+      isPaid: false,
     }
   },
   created: function() {
+    this.isPaid = localStorage.getItem('isPaid') == 'true';
   },
   methods: {
   }

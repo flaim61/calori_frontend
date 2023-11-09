@@ -1,5 +1,5 @@
 <template lang="html">
-  <div class="cursor-pointer">
+  <div class="cursor-pointer" >
 
   </div>
   <div class="slider review-slider">
@@ -88,7 +88,16 @@
 export default {
   name: "ReviewSlider",
   created(){
+    setTimeout(function(){
+      $('.review-slider').slick({
+        dots: true,
+        arrows: false,
+        autoplay: true,
+        autoplaySpeed: 3000,
+      });
+    }, 1)
     window.addEventListener('scroll', this.startSliderIfVisible)
+    window.scrollBy(0, 10);
   },
   data() {
     return {
@@ -142,17 +151,16 @@ export default {
   }
   .slide-top-right>h3{
     color: var(--Black, #2C2D31);
-    /* Text h2 med */
     font-family: Inter;
-    font-size: 21px;
+    font-size: 16px;
     font-style: normal;
     font-weight: 500;
-    line-height: 140%;
+    line-height: 140%; /* 22.4px */
   }
   .slide-top-right>p{
     color: var(--Accent, #00B467);
     font-family: Inter;
-    font-size: 13px;
+    font-size: 10px;
     font-style: normal;
     font-weight: 400;
     line-height: 140%;
@@ -170,6 +178,7 @@ export default {
     height: 252px;
     object-fit: cover;
     border-radius: 16px;
-    width: 178px;
+    width: 46vw;
+    height: auto;
   }
 </style>

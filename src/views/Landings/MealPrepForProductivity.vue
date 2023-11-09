@@ -12,7 +12,7 @@
       {{this.$locales('MealPrepForProductivity_text')}}
     </p>
     <Transition>
-      <a href="#menu">
+      <a href="#menu" v-if='!this.isPaid'>
         <div id='main-button' v-show='this.showButton' class="main-button">
           {{ this.$locales('individual_plan') }}
         </div>
@@ -62,11 +62,11 @@
             text: this.$locales('MealPrepForProductivity_list_item_1')
           },
           {
-            img: 2,
+            img: 6,
             text: this.$locales('MealPrepForProductivity_list_item_2')
           },
           {
-            img: 3,
+            img: 5,
             text: this.$locales('MealPrepForProductivity_list_item_3')
           },
           {
@@ -74,11 +74,11 @@
             text: this.$locales('MealPrepForProductivity_list_item_4')
           },
           {
-            img: 5,
+            img: 3,
             text: this.$locales('MealPrepForProductivity_list_item_5')
           },
           {
-            img: 6,
+            img: 2,
             text: this.$locales('MealPrepForProductivity_list_item_6')
           },
         ]
@@ -131,13 +131,13 @@
 
 
     <BlueTextBlock
-      :title='this.$locales("blue_text_block_home_title")'
-      :text='this.$locales("blue_text_block_home_text")'
-      :text-2='this.$locales("blue_text_block_home_text_2")'
-      :text-3='this.$locales("blue_text_block_home_text_3")'
+      :title='this.$locales("meal_text_block_home_title")'
+      :text='this.$locales("meal_text_block_home_text")'
+      :text-2='this.$locales("meal_text_block_home_text_2")'
+      :text-3='this.$locales("meal_text_block_home_text_3")'
     />
 
-    <div class="titlep_block">
+    <div class="titlep_block" id='menu'>
       <h3 class="block-title">
         {{ this.$locales('menu_title_home') }}
       </h3>
@@ -147,12 +147,10 @@
     </div>
 
     <TabsSlider />
-
-    <p class="text-Description">
-      {{ this.$locales('menu_text_before_home') }}
+    <p class="text-Description" v-html='this.$locales("menu_text_before_healthy123")'>
     </p>
 
-    <div class="quiz-button" style="" @click='this.$router.push("/quiz")'>Get your plan</div>
+    <div v-if='!this.isPaid' class="quiz-button" style="" @click='this.$router.push("/quiz")'>{{this.$locales('get_plan_button_prep')}}</div>
     <p> {{ this.$locales('before_button_text') }} </p>
 
     <div class="titlep_block" id='sustainability_approach'>
@@ -264,10 +262,12 @@ export default {
   data(){
     return {
       showButton: true,
+      isPaid: false,
       targetBlockId: "block",
     }
   },
   created: function() {
+    this.isPaid = localStorage.getItem('isPaid') == 'true';
   },
   methods: {
   }

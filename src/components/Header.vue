@@ -10,7 +10,6 @@
         </div>
       </div>
 
-
       <div class="menu-content" v-if='this.$store.state.landigsRoute.indexOf(this.$route.name) !== -1'>
         <a @click='this.mobile_menu_showed = false' href="#how_it_work" > {{ this.$locales('l1_how_works')  }} </a>
         <a @click='this.mobile_menu_showed = false' href="#why_calori" > {{ this.$locales('why_calori_block_title') }} </a>
@@ -19,6 +18,7 @@
         <a @click='this.mobile_menu_showed = false' href="#contact" > {{ this.$locales('contact_us') }} </a>
         <a @click='this.$router.push("faq")' > FAQ </a>
       </div>
+
       <a class="first-a" href="/login" >
         <div class="back-button personal">
           {{ this.$locales('sign_in') }}
@@ -34,7 +34,7 @@
       <img class="arrow-back" @click='this.$router.go(-1)' v-if='this.$route.name == "faq"' src="@/assets/img/icon/arrow-left.svg" alt="">
       <img v-else src="@/assets/img/icon/burger.svg" @click='switchMenu'>
     </div>
-    <div class="app-title d-flex flex-column justify-content-center" @click='this.$router.push("/")'>
+    <div class="app-title d-flex flex-column justify-content-center">
       <img src="@/assets/img/calori.svg" alt="">
     </div>
     <div class="language-item">
@@ -63,6 +63,8 @@ export default {
   },
   created(){
     window.addEventListener('scroll', this.handleScroll);
+    console.log(this.$route)
+    localStorage.setItem('main-page', this.$route.path)
   },
   methods: {
     handleScroll(){
@@ -100,8 +102,9 @@ export default {
     text-align: center !important;
     padding-top: 16px !important;
     padding-bottom: 16px !important;
-    margin-top: 32px !important;
-    font-size: 14px !important;
+    margin-top: 16px !important;
+    font-size: 16px !important;
+    color: var(--Black, #2C2D31);
   }
   .arrow-back{
     height: 32px;
@@ -161,21 +164,30 @@ export default {
   }
   .menu-content{
     margin-top: 30px;
+    margin-left: -16px;
+    margin-right: -16px;
   }
   .menu-content>a:first-child{
-    border-top: 2px solid #F0F5F8;
+    border-top: none;
   }
   .menu-content>a {
+    padding-left: 16px;
     color: #151515;
     font-family: Poppins;
-    font-size: 21px;
+    font-size: 16px;
     font-style: normal;
     font-weight: 400;
     line-height: 140%;
     text-decoration: none;
-    border-bottom: 2px solid #F0F5F8;
+    border-bottom: 1px solid #E4E9EF;
     padding-bottom: 16px;
     padding-top: 16px;
+    color: var(--Black, #2C2D31);
+    font-family: Inter;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 140%; /* 22.4px */
   }
   .menu-content{
     display: flex;

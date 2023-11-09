@@ -1,14 +1,14 @@
 <template>
   <div class="quiz_header">
     <div class="quiz_header_navigation">
-      <div class="quiz_header_img" @click='goBack()' v-if='this.step != 9'>
+      <div class="quiz_header_img" @click='goBack()'>
         <img src="@/assets/img/icon/return.svg" alt="">
       </div>
       <div class="quiz_header_text">
         {{ this.$locales('quiz2fraze') }}
       </div>
-      <div @click='this.$router.go(-1)'>
-        <img src="@/assets/img/icon/close.svg" alt="">
+      <div @click='goBackInHome()'>
+        <img src="@/assets/img/icon/close1.svg" alt="">
       </div>
     </div>
     <div class="quiz_header_step_counter" v-if='this.step != 9'>
@@ -28,6 +28,13 @@
 export default {
   name: "QuizHeader",
   props: ['goBack', 'step'],
+  methods:{
+    goBackInHome(){
+      let page = localStorage.getItem('main-page') ? localStorage.getItem('main-page') : "/";
+      console.log(page)
+      this.$router.push(page);
+    }
+  }
 }
 </script>
 

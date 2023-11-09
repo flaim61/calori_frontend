@@ -346,6 +346,7 @@ export default {
   created(){
     window.addEventListener('scroll', this.scrollButtonHandler)
     window.addEventListener('scroll', this.startSliderIfVisible)
+    window.scrollBy(0, 10);
   },
   methods: {
     startSliderIfVisible(){
@@ -385,9 +386,15 @@ export default {
       let isContactFormRectVisible = contactFormRect.top < window.innerHeight && contactFormRect.bottom >= 0;
 
       if (isVisible || isContactFormRectVisible) {
-          block1.style.opacity = 0;
+        block1.style.opacity = 0;
+        setTimeout(function(){
+          block1.style.display = 'none';
+        }, 1000)
       } else {
-          block1.style.opacity = 1;
+        block1.style.opacity = 1;
+        setTimeout(function(){
+          block1.style.display = 'block';
+        }, 1000)
       }
     },
     setActive(day){

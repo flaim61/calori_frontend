@@ -19,6 +19,34 @@
   </div>-->
   <div class="card card-profile mt-4">
     <h3>
+      State subscription
+    </h3>
+    <ul class="payments-list mb-0" v-if='this.personalPlan'>
+      <li class="mb-1" >
+        <div class="">
+          <span class="payments-list-title">
+            Period
+          </span><br>
+          <span class="d-none">
+            {{ startDate = new Date(this.personalPlan.startDate) }}
+            {{ finishDate = new Date(this.personalPlan.finishDate) }}
+          </span>
+          {{startDate.getDate()}}.{{startDate.getMonth()+1}}.{{startDate.getFullYear()}} -
+          {{finishDate.getDate()}}.{{finishDate.getMonth()+1}}.{{finishDate.getFullYear()}}
+        </div>
+        <div class="">
+          <span class="payments-list-title">
+            Status
+          </span><br>
+          <span class="green-text">
+            {{ this.$locales(`status_${this.personalPlan.status}`)}}
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div class="card card-profile mt-4">
+    <h3>
       Order list
     </h3>
     <ul class="payments-list mb-0">
@@ -46,11 +74,14 @@
 
 <script>
 import { getUserPayments } from "@/services/index.js"
+import { getApplication, getPesonalPlan } from '@/services/index.js';
+import moment from 'moment';
 
 export default {
   name: "subscription",
   data(){
     return {
+      personalPlan: null,
       userPayments: [],
       plans: [
         {
@@ -78,18 +109,26 @@ export default {
   },
   async created(){
     this.userPayments = await this.getUserPayments();
+    this.personalPlan = await this.getPesonalPlan();
   },
   methods: {
     async getUserPayments(){
       const response = await getUserPayments();
       return response.data;
-    }
+    },
+    async getPesonalPlan(){
+      const response = await getPesonalPlan();
+      return response.data
+    },
   }
 
 }
 </script>
 
 <style lang="css" scoped>
+  .green-text{
+    color: var(--Accent, #00B467);
+  }
   tr>th:last-child{
     text-align: right;
     padding-top: 4px;

@@ -6,7 +6,7 @@
       </h3>
       <div class="" v-if='!this.settings'>
         <img src="@/assets/img/icon/settings.svg" alt="" @click='this.settings = !this.settings'>
-        <img class='ml-3' src="@/assets/img/icon/logout.svg" alt="" @click='logout'>
+        <img class='ml-3' src="@/assets/img/icon/logout.svg" alt="" @click='this.$router.push("/")'>
       </div>
       <h2 class='d-flex justify-content-between' v-else @click='this.settings = !this.settings'>
         <div class="back-button">
@@ -87,6 +87,7 @@ export default {
     async getPesonalPlan(){
       const response = await getPesonalPlan();
       this.planPaid = response.data.isPaid;
+      localStorage.setItem('isPaid', this.planPaid);
     },
     logout(){
       var cookies = document.cookie.split(";");
@@ -111,6 +112,7 @@ export default {
     checkAfterPayment(){
       let params = (new URL(document.location)).searchParams;
       let payment_result = params.get("payment_result");
+      let referral = params.get("referral");
 
       if (payment_result == "success") {
         this.$swal({
@@ -118,14 +120,18 @@ export default {
           icon: 'success',
           title: 'Payment Received',
         })
+        const url = new URL(document.location);
+        const searchParams = url.searchParams;
+        searchParams.delete("payment_result"); // удалить параметр "test"
+        window.history.pushState({}, '', url.toString());
       }
-      if (payment_result == "fail"){
 
-        this.$swal({
-          position: 'center',
-          icon: 'error',
-          title: 'Payment Canceled',
-        })
+      if (referral) {
+        this.setActive('referral');
+        const url = new URL(document.location);
+        const searchParams = url.searchParams;
+        searchParams.delete("referral"); // удалить параметр "test"
+        window.history.pushState({}, '', url.toString());
       }
     }
   }

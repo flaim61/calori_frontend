@@ -1,7 +1,7 @@
 <template>
   <section class="main-block">
     <Header />
-    <iframe id="home-video" class="home-video" src="https://player.vimeo.com/video/882343793?background=1" frameborder="0" allow="autoplay; fullscreen" allowfullscreen=""></iframe>
+    <iframe id="home-video" class="home-video" src="https://player.vimeo.com/video/882749171?background=1" frameborder="0" allow="autoplay; fullscreen" allowfullscreen=""></iframe>
     <!--<video  autoplay muted loop preload playsinline controls="false" id="home-videl" class="home-video">
       <source src="@/assets/videos/Weight-loss.mp4" type="video/mp4">
     </video>-->
@@ -12,7 +12,7 @@
       {{ this.$locales('WeightLoss_text') }}
     </p>
     <Transition>
-      <a href="#menu">
+      <a href="#menu" v-if='!this.isPaid'>
         <div id='main-button' v-show='this.showButton' class="main-button">
           {{ this.$locales('individual_plan') }}
         </div>
@@ -109,13 +109,13 @@
     <ReviewSlider />
 
     <BlueTextBlock
-      :title='this.$locales("blue_text_block_home_title")'
-      :text='this.$locales("blue_text_block_home_text")'
-      :text-2='this.$locales("blue_text_block_home_text_2")'
-      :text-3='this.$locales("blue_text_block_home_text_3")'
+      :title='this.$locales("weight_blue_text_block_home_title")'
+      :text='this.$locales("weight_blue_text_block_home_text")'
+      :text-2='this.$locales("weight_blue_text_block_home_text_2")'
+      :text-3='this.$locales("weight_blue_text_block_home_text_3")'
     />
 
-    <div class="titlep_block" id='menu'>
+    <div class="titlep_block"   id='menu'>
       <h3 class="block-title">
         {{ this.$locales('menu_title_home')}}
       </h3>
@@ -130,8 +130,8 @@
       {{ this.$locales('menu_text_before_home') }}
     </p>
 
-    <div class="quiz-button" style="" @click='this.$router.push("/quiz")'>{{ this.$locales('get_plan_button') }} </div>
-    <p> {{this.$locales('before_button_text') }}</p>
+    <div v-if='!this.isPaid' class="quiz-button" style="" @click='this.$router.push("/quiz")'>{{ this.$locales('get_plan_button') }} </div>
+    <p> {{this.$locales('WeightLoss_before_button') }}</p>
 
     <div class="blue-block pt-5 mt-5 pb-3">
       <div class="titlep_block  mt-0">
@@ -148,19 +148,19 @@
         [
           {
             title: this.$locales('HealthyEating_plus_1_title'),
-            text: this.$locales('HealthyEating_plus_1_text'),
+            text: this.$locales('WeightLoss_plus_1_text'),
           },
           {
-            title: this.$locales('HealthyEating_plus_2_title'),
-            text: this.$locales('HealthyEating_plus_2_text'),
+            title: this.$locales('WeightLoss_plus_2_title'),
+            text: this.$locales('WeightLoss_plus_2_text'),
           },
           {
             title: this.$locales('HealthyEating_plus_3_title'),
-            text: this.$locales('HealthyEating_plus_3_text'),
+            text: this.$locales('WeightLoss_plus_3_text'),
           },
           {
-            title: this.$locales('HealthyEating_plus_4_title'),
-            text: this.$locales('HealthyEating_plus_4_text'),
+            title: this.$locales('WeightLoss_plus_4_title'),
+            text: this.$locales('WeightLoss_plus_4_text'),
           },
         ]
         "
@@ -219,6 +219,9 @@
       <h3 class="block-title">
         {{ this.$locales('contact_form_title') }}
       </h3>
+      <p>
+        {{ this.$locales('contact_form_text_weight') }}
+      </p>
     </div>
 
     <ContactForm id='contact'/>
@@ -258,10 +261,12 @@ export default {
   data(){
     return {
       showButton: true,
+      isPaid: false,
       targetBlockId: "block",
     }
   },
   created: function() {
+    this.isPaid = localStorage.getItem('isPaid') == 'true';
   },
   methods: {
   }

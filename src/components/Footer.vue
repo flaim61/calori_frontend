@@ -1,7 +1,8 @@
 <template lang="html">
   <footer class="mt-5">
     <div class="logo-box text-center">
-      <img src="@/assets/img/icon/footer-logo.svg" alt="">
+      <img class="logo-footer" src="@/assets/img/logo.svg" alt="">
+      <img class="logo-footer" src="@/assets/img/123.jpg" alt="">
     </div>
     <div class="footer_bottom">
       <div class="text-center">
@@ -32,6 +33,12 @@ export default {
 </script>
 
 <style lang="css" scoped>
+
+  .logo-footer{
+    height: 58px;
+    margin-left: 5px;
+    margin-right: 5px;
+  }
   .privacy-block>a{
     color: var(--Accent, #00B467);
     font-family: Inter;
