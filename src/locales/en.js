@@ -1,4 +1,9 @@
 export default {
+  weight_blue_text_block_home_title:"Wanna join along?",
+  weight_blue_text_block_home_text:"Our next journey starts in January 2024. ",
+  weight_blue_text_block_home_text_2:"The seats are limited - don’t miss out on yours. ",
+  weight_blue_text_block_home_text_3:"Join us just in time to make your new-year resolutions 🎆",
+
   WeightLoss_plus_2_title:"Over 10 days",
   WeightLoss_plus_4_title:"Open new doors",
   blue_text_block_healthy_title: "Wanna join along?",

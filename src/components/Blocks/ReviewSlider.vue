@@ -12,7 +12,7 @@
           <h3 class="mt-4">Daniela Kenton</h3>
           <p>@danielakenton</p>
 
-          <p class="review-text ml-3 mr-3 p-2">
+          <p class="review-text p-2">
             {{ this.$locales('review_daniela') }}
           </p>
         </div>
@@ -28,7 +28,7 @@
           <h3 class="mt-4">Nina Moritz</h3>
           <p>@ninamoritzz</p>
 
-          <p class="review-text ml-3 mr-3 p-2">
+          <p class="review-text p-2">
             {{ this.$locales('review_nina') }}
           </p>
         </div>
@@ -44,7 +44,7 @@
           <h3 class="mt-4">Eemil Kurhela</h3>
           <p>@eemilkurhela</p>
 
-          <p class="review-text ml-3 mr-3 p-2">
+          <p class="review-text p-2">
             {{ this.$locales('review_eemil') }}
           </p>
         </div>
@@ -59,7 +59,7 @@
         <div class="slide-top-right">
           <h3 class="mt-4">Salli Leppäkoski</h3>
           <p>@sallieerika</p>
-          <p class="review-text ml-3 mr-3 p-2">
+          <p class="review-text p-2">
             {{ this.$locales('review_salli') }}
           </p>
         </div>
@@ -74,7 +74,7 @@
         <div class="slide-top-right">
           <h3 class="mt-4">Albert Minthant</h3>
           <p>@albertminthant</p>
-          <p class="review-text ml-3 mr-3 p-2">
+          <p class="review-text p-2">
             {{ this.$locales('review_albert') }}
           </p>
         </div>
@@ -131,21 +131,7 @@ export default {
 </script>
 
 <style lang="css" scoped>
-  .review-text{
-    border-radius: 8px;
-    background: var(--Bg, #F0F5F8);
-    display: block;
-    z-index: 10;
-    margin: 0 !important;
-    color: var(--Black, #2C2D31) !important;
-    font-family: Inter !important;
-    font-size: 12px !important;
-    font-style: normal !important;
-    font-weight: 400 !important;
-    line-height: 140% !important;
-    margin-left: -108% !important;
-    margin-top: 51% !important;
-  }
+
   .slide-top-right{
     width: 45%;
   }
@@ -165,6 +151,21 @@ export default {
     font-weight: 400;
     line-height: 140%;
   }
+  .review-text{
+    border-radius: 8px;
+    background: var(--Bg, #F0F5F8);
+    display: block;
+    z-index: 10;
+    margin: 0 !important;
+    color: var(--Black, #2C2D31) !important;
+    font-family: Inter !important;
+    font-size: 12px !important;
+    font-style: normal ;
+    font-weight: 400 ;
+    line-height: 140% ;
+    margin-left: -108% !important;
+    margin-top: 51% !important;
+  }
   .review-slider{
     margin-bottom: 80px;
   }
@@ -180,5 +181,25 @@ export default {
     border-radius: 16px;
     width: 46vw;
     height: auto;
+  }
+
+  @media screen and (min-width: 700px){
+    .slide-top-left>img{
+      width: 283px !important;
+    }
+
+    .review-text{
+        font-size: 18px !important;
+    }
+
+
+
+    .slide-top-right>h3{
+        height: 22px;
+    }
+
+    .slide-top-right>p{
+        font-size: 15px;
+    }
   }
 </style>

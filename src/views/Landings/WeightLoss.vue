@@ -1,10 +1,10 @@
 <template>
   <section class="main-block">
     <Header />
-    <iframe id="home-video" class="home-video" src="https://player.vimeo.com/video/882749171?background=1" frameborder="0" allow="autoplay; fullscreen" allowfullscreen=""></iframe>
-    <!--<video  autoplay muted loop preload playsinline controls="false" id="home-videl" class="home-video">
+    <iframe v-if='this.windowWidth < 700' id="home-video" class="home-video" src="https://player.vimeo.com/video/882749171?background=1" frameborder="0" allow="autoplay; fullscreen" allowfullscreen=""></iframe>
+    <video v-if='this.windowWidth > 700' autoplay muted loop preload playsinline controls="false" id="home-videl" class="home-video">
       <source src="@/assets/videos/Weight-loss.mp4" type="video/mp4">
-    </video>-->
+    </video>
     <h1>
       {{ this.$locales('WeightLoss_title') }}
     </h1>
@@ -263,12 +263,18 @@ export default {
       showButton: true,
       isPaid: false,
       targetBlockId: "block",
+      windowWidth: window.innerWidth
     }
   },
   created: function() {
     this.isPaid = localStorage.getItem('isPaid') == 'true';
+    window.addEventListener('resize', this.onResize);
   },
   methods: {
+    onResize(){
+      console.log(window.innerWidth)
+      this.windowWidth = window.innerWidth
+    }
   }
 }
 </script>

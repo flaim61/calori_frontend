@@ -1,10 +1,12 @@
 <template>
   <section class="main-block">
     <Header />
-    <iframe id="home-video" class="home-video" src="https://player.vimeo.com/video/882212749?background=1" frameborder="0" allow="autoplay; fullscreen" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
-    <!--<video autoplay="true" muted="true" loop="true" preload="true" playsinline="true" controls="false" id="home-video" class="home-video">
+    
+    <iframe v-if='this.windowWidth < 700' id="home-video" class="home-video" src="https://player.vimeo.com/video/882212749?background=1" frameborder="0" allow="autoplay; fullscreen" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
+    <video v-if='this.windowWidth > 700' autoplay="true" muted="true" loop="true" preload="true" playsinline="true" controls="false" id="home-video" class="home-video">
       <source src="@/assets/videos/Healthy-eating.mp4" type="video/mp4">
-    </video>-->
+    </video>
+
     <h1 v-html="this.$locales('main_page_title')">
     </h1>
     <p>
@@ -249,12 +251,18 @@ export default {
       showButton: true,
       targetBlockId: "block",
       isPaid: false,
+      windowWidth: window.innerWidth
     }
   },
   created: function() {
     this.isPaid = localStorage.getItem('isPaid') == 'true';
+    window.addEventListener('resize', this.onResize);
   },
   methods: {
+    onResize(){
+      console.log(window.innerWidth)
+      this.windowWidth = window.innerWidth
+    }
   }
 }
 </script>

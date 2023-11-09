@@ -422,12 +422,16 @@ export default {
         });
 
         if (this.allergyError || this.bmiError) {
-            this.$router.push('/')
+            let page = localStorage.getItem('main-page') ? localStorage.getItem('main-page') : "/";
+            console.log(page)
+            this.$router.push(page);
             return;
         }
 
         if (!response.data.token) {
-            this.$router.push('/')
+            let page = localStorage.getItem('main-page') ? localStorage.getItem('main-page') : "/";
+            console.log(page)
+            this.$router.push(page);
             return;
         }
 
@@ -445,22 +449,23 @@ export default {
     goBack(){
       if (this.step == 7) {
         this.step = Math.ceil(this.step-1);
-        this.calculate_recomended_weight();
+        this.calculate_recomended_weight(true);
       }
 
       if (this.step === 1) {
         let page = localStorage.getItem('main-page') ? localStorage.getItem('main-page') : "/";
+        console.log(page)
         this.$router.push(page);
       }else{
         this.step = Math.ceil(this.step-1);
       }
     },
-    calculate_recomended_weight(){
+    calculate_recomended_weight(back){
       let heightM = this.application.height / 100;
       this.calculated_weight.maxWeight = Math.ceil(24.9 * heightM * heightM);
       this.calculated_weight.minWeight = Math.ceil((Math.ceil(18.5 * heightM * heightM) + Math.ceil(24.9 * heightM * heightM))/2);
 
-      if (this.bmiError) {
+      if (this.bmiError && !back) {
         this.application.goal = this.calculated_weight.minWeight + 1;
         this.step = 8;
         return;
@@ -522,8 +527,9 @@ export default {
         });
 
         if (response.data.application == null || this.calculated_weight.minWeight >= this.application.weight) {
-            this.$router.push('/');
-            return;
+          let page = localStorage.getItem('main-page') ? localStorage.getItem('main-page') : "/";
+          console.log(page)
+          this.$router.push(page);
         }
 
         this.$swal({
@@ -905,4 +911,7 @@ export default {
     position: fixed;
     width: calc(100% - 32px);
   }
+
+
+
 </style>

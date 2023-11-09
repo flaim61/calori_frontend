@@ -458,4 +458,10 @@ export default {
     display: none !important;
     background: transparent;
   }
+
+  @media screen and (min-width: 700px){
+    .slide>.slide-img-block>img{
+      height: 240px;
+    }
+  }
 </style>
