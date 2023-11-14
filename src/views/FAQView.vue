@@ -3,7 +3,7 @@
     <Header />
 
     <div class="main-page-content">
-      <h2>
+      <h2 class="faq-title">
         FAQ
       </h2>
       <div class="faq_content">

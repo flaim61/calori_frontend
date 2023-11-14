@@ -98,4 +98,11 @@ export default {
   .faq_button>div{
     color: #92979B !important;
   }
+
+  @media screen and (min-width: 1000px) {
+    .ContactForm{
+      width: 600px;
+      margin: 0 auto;
+    }
+  }
 </style>

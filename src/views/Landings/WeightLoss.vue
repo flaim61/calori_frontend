@@ -1,7 +1,7 @@
 <template>
   <section class="main-block">
     <Header />
-    <iframe v-if='this.windowWidth < 700' id="home-video" class="home-video" src="https://player.vimeo.com/video/882749171?background=1" frameborder="0" allow="autoplay; fullscreen" allowfullscreen=""></iframe>
+    <iframe v-if='this.windowWidth < 1000' id="home-video" class="home-video" src="https://player.vimeo.com/video/883048931?background=1" frameborder="0" allow="autoplay; fullscreen" allowfullscreen=""></iframe>
     <video v-if='this.windowWidth > 700' autoplay muted loop preload playsinline controls="false" id="home-videl" class="home-video">
       <source src="@/assets/videos/Weight-loss.mp4" type="video/mp4">
     </video>
@@ -111,8 +111,6 @@
     <BlueTextBlock
       :title='this.$locales("weight_blue_text_block_home_title")'
       :text='this.$locales("weight_blue_text_block_home_text")'
-      :text-2='this.$locales("weight_blue_text_block_home_text_2")'
-      :text-3='this.$locales("weight_blue_text_block_home_text_3")'
     />
 
     <div class="titlep_block"   id='menu'>

@@ -133,8 +133,6 @@
     <BlueTextBlock
       :title='this.$locales("meal_text_block_home_title")'
       :text='this.$locales("meal_text_block_home_text")'
-      :text-2='this.$locales("meal_text_block_home_text_2")'
-      :text-3='this.$locales("meal_text_block_home_text_3")'
     />
 
     <div class="titlep_block" id='menu'>
@@ -197,7 +195,7 @@
       </p>
     </div>
 
-    <CardWithSecretText :image='10' :text="this.$locales('our_story_main_text')" :secret_text="this.$locales('our_story_secret_text')"/>
+    <CardWithSecretText id='our-story' :image='10' :text="this.$locales('our_story_main_text')" :secret_text="this.$locales('our_story_secret_text')"/>
 
     <!--<div class="titlep_block">
       <h3 class="block-title">

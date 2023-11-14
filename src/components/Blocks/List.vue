@@ -1,30 +1,30 @@
 <template>
-  <div class="">
+  <div class="list-block">
     <div :class="'list-item ' + this.color" v-for='(li, index) in this.data' :key="index">
       <div class="list-image">
-        <span v-if='li.img == 1' style="font-size: 32px;">🥘</span>
-        <span v-if='li.img == 2' style="font-size: 32px;">💯</span>
-        <span v-if='li.img == 3' style="font-size: 32px;">🌱</span>
-        <span v-if='li.img == 4' style="font-size: 32px;">⚡</span>
-        <span v-if='li.img == 5' style="font-size: 32px;">🧬</span>
-        <span v-if='li.img == 6' style="font-size: 32px;">👨‍🍳</span>
-        <span v-if='li.img == 7' style="font-size: 32px;">🌿</span>
-        <span v-if='li.img == 8' style="font-size: 32px;">♻️</span>
-        <span v-if='li.img == 9' style="font-size: 32px;">🚚</span>
-        <span v-if='li.img == 10' style="font-size: 32px;">🗑️</span>
-        <span v-if='li.img == 11' style="font-size: 32px;">❌</span>
-        <span v-if='li.img == 12' style="font-size: 32px;">✅</span>
-        <span v-if='li.img == 13' style="font-size: 32px;">📱</span>
-        <span v-if='li.img == 14' style="font-size: 32px;">🙌</span>
-        <span v-if='li.img == 15' style="font-size: 32px;">⏯</span>
-        <span v-if='li.img == 16' style="font-size: 32px;">🌪️</span>
-        <span v-if='li.img == 17' style="font-size: 32px;">🏭</span>
-        <span v-if='li.img == 18' style="font-size: 32px;">🏭</span>
-        <span v-if='li.img == 19' style="font-size: 32px;">🧮</span>
-        <span v-if='li.img == 20' style="font-size: 32px;">😓</span>
-        <span v-if='li.img == 21' style="font-size: 32px;">💃</span>
-        <span v-if='li.img == 22' style="font-size: 32px;">🤩</span>
-        <img v-if='li.img == 70' src="@/assets/img/icon/battery.png" alt="">
+        <span v-if='li.img == 1' class='list-img'>🥘</span>
+        <span v-if='li.img == 2' class='list-img'>💯</span>
+        <span v-if='li.img == 3' class='list-img'>🌱</span>
+        <span v-if='li.img == 4' class='list-img'>⚡</span>
+        <span v-if='li.img == 5' class='list-img'>🧬</span>
+        <span v-if='li.img == 6' class='list-img'>👨‍🍳</span>
+        <span v-if='li.img == 7' class='list-img'>🌿</span>
+        <span v-if='li.img == 8' class='list-img'>♻️</span>
+        <span v-if='li.img == 9' class='list-img'>🚚</span>
+        <span v-if='li.img == 10' class='list-img'>🗑️</span>
+        <span v-if='li.img == 11' class='list-img'>❌</span>
+        <span v-if='li.img == 12' class='list-img'>✅</span>
+        <span v-if='li.img == 13' class='list-img'>📱</span>
+        <span v-if='li.img == 14' class='list-img'>🙌</span>
+        <span v-if='li.img == 15' class='list-img'>⏯</span>
+        <span v-if='li.img == 16' class='list-img'>🌪️</span>
+        <span v-if='li.img == 17' class='list-img'>🏭</span>
+        <span v-if='li.img == 18' class='list-img'>🏭</span>
+        <span v-if='li.img == 19' class='list-img'>🧮</span>
+        <span v-if='li.img == 20' class='list-img'>😓</span>
+        <span v-if='li.img == 21' class='list-img'>💃</span>
+        <span v-if='li.img == 22' class='list-img'>🤩</span>
+        <span v-if='li.img == 70' class='list-img'>❌</span>
       </div>
       <div class="list-text">
         {{ li.text }}

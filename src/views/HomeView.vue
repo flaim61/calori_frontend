@@ -1,7 +1,7 @@
 <template>
   <section class="main-block">
     <Header />
-    
+
     <iframe v-if='this.windowWidth < 700' id="home-video" class="home-video" src="https://player.vimeo.com/video/882212749?background=1" frameborder="0" allow="autoplay; fullscreen" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
     <video v-if='this.windowWidth > 700' autoplay="true" muted="true" loop="true" preload="true" playsinline="true" controls="false" id="home-video" class="home-video">
       <source src="@/assets/videos/Healthy-eating.mp4" type="video/mp4">
@@ -97,8 +97,6 @@
     <BlueTextBlock
       :title='this.$locales("blue_text_block_home_title")'
       :text='this.$locales("blue_text_block_home_text")'
-      :text-2='this.$locales("blue_text_block_home_text_2")'
-      :text-3='this.$locales("blue_text_block_home_text_3")'
     />
 
     <div class="titlep_block" id='menu'>
@@ -260,7 +258,6 @@ export default {
   },
   methods: {
     onResize(){
-      console.log(window.innerWidth)
       this.windowWidth = window.innerWidth
     }
   }

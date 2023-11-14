@@ -1,9 +1,9 @@
 <template>
   <Transition>
-    <div class="mobile-menu" v-show='this.mobile_menu_showed'>
+    <div class="mobile-menu" v-show='this.mobile_menu_showed || this.windowWidth > 1000'>
       <div class="mobile-menu-header">
         <div class="mobile-menu-title ">
-          Menu
+          Menu {{this.windowWidth}}
         </div>
         <div class="mobile-menu-icon" @click='this.mobile_menu_showed = !this.mobile_menu_showed'>
           <img src="@/assets/img/icon/close.svg" alt="">
@@ -17,6 +17,9 @@
         <a @click='this.mobile_menu_showed = false' href="#sustainability_approach" > {{ this.$locales('sustainability_approach_title') }} </a>
         <a @click='this.mobile_menu_showed = false' href="#contact" > {{ this.$locales('contact_us') }} </a>
         <a @click='this.$router.push("faq")' > FAQ </a>
+        <a class="back-button" href="/login" >
+            {{ this.$locales('sign_in') }}
+        </a>
       </div>
 
       <a class="first-a" href="/login" >
@@ -59,12 +62,14 @@ export default {
   data(){
     return {
       mobile_menu_showed: false,
+      windowWidth: window.innerWidth
     };
   },
   created(){
     window.addEventListener('scroll', this.handleScroll);
     console.log(this.$route)
     localStorage.setItem('main-page', this.$route.path)
+    window.addEventListener('resize', this.onResize);
   },
   methods: {
     handleScroll(){
@@ -74,6 +79,10 @@ export default {
       }else{
         document.getElementById('header').style.top = 0 + "px";
       }*/
+    },
+    onResize(){
+      console.log(window.innerWidth)
+      this.windowWidth = window.innerWidth
     },
     switchMenu(){
       this.mobile_menu_showed = !this.mobile_menu_showed
@@ -192,5 +201,82 @@ export default {
   .menu-content{
     display: flex;
     flex-direction: column;
+  }
+
+  .menu-content>.back-button{
+    display: none;
+  }
+
+  @media screen and (min-width: 1000px) {
+      .menu-item{
+        display: none;
+      }
+
+      .first-a{
+        display: none;
+      }
+
+      .mobile-menu{
+        position: static;
+        display: block;
+        width: auto;
+        height: auto;
+        padding: 0;
+        background: none;
+      }
+
+      .mobile-menu-header{
+        display: none;
+      }
+
+      .menu-content{
+        margin: 0;
+        display: flex;
+        position: fixed;
+        flex-direction: row;
+        z-index: 600;
+        background: none;
+        left: 250px;
+        justify-content: center;
+        top: 54px;
+      }
+
+      .menu-content>a{
+        border: none;
+        padding: 0;
+        color: var(--Black, #2C2D31);
+        font-family: Inter;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: 140%;
+        margin-right: 32px;
+      }
+
+      .menu-content>.back-button{
+        right: 80px;
+        position: fixed;
+        margin-top: -10px;
+        padding: 8px 16px;
+        display: block;
+        border-radius: 10px;
+        border: 1px solid var(--Black, #2C2D31);
+        background: var(--White, #FFF);
+      }
+
+      .green-label{
+        color: var(--White, #FFF);
+        font-family: Inter;
+        font-size: 18px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 140%;
+      }
+
+      header{
+        top: 32.2px;
+        padding-top: 16px;
+        padding-bottom: 16px;
+      }
   }
 </style>

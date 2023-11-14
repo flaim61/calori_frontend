@@ -20,14 +20,14 @@ export default {
   bmiErrorFrase: "Valitettavasti emme voi luvata tasapainoista ruokavaliota ja tuloksia. Jättäisitkö sähköpostiosoitteesi tai puhelinnumerosi, niin otamme sinuun yhteyttä henkilökohtaisesti 1-2 työpäivän kuluessa. Kiitos kärsivällisyydestäsi!",
   anotherAllergyErrorFrase: `Hei 👋 Ennen kuin voimme varmuudella laatia sinulle ateriasuunnitelman, kerro meille lisää ruoka-ainerajoituksistasi.`,
   /* MealPrepForProductivity */
-  MealPrepForProductivity_title: "Terveellinen syöminen - Personalisoitu. Automatistoitu.",
+  MealPrepForProductivity_title: "Terveellinen syöminen - Personalisoitu. Automatisoitu.",
   MealPrepForProductivity_text: "Suunnittelemme, valmistamme, ja kuljetamme kaikki ateriat jotka päivän aikana tarvitset. Meidän avullamme pysyt huippukunnossa ja ylläpidät vakaita energiatasoja",
   MealPrepForProductivity_how_title: "Miten Calori toimii?",
   MealPrepForProductivity_how_text: "Terveellinen syöminen ja painonhallinta ei ole ikinä ollut näin helppoa ja herkullista.",
   MealPrepForProductivity_how_works_1_title: "1. Hanki personoitu ruokavalio",
   MealPrepForProductivity_how_works_1_text: "Vastaa lyhyeen kyselyyn ja saat täsmälliset ohjeet terveenä ja energisenä pysymiseen suoraan ammattilaistiimiltämme.",
   MealPrepForProductivity_how_works_2_title: "2. Kuukausitilaa maukkaat ja terveelliset ateriat suoraan kotiisi ",
-  MealPrepForProductivity_how_works_2_text: "Oletko kyllästynyt kokkaamiseen tai jatkuvaan tilailuun? Anna meidän hoitaa kaikki ravintoaineiden laskemista ruoan valmistamiseen ja kuljettamiseen.",
+  MealPrepForProductivity_how_works_2_text: "Oletko kyllästynyt kokkaamiseen tai jatkuvaan tilailuun? Anna meidän hoitaa kaikki ravintoaineiden laskemisesta ruoan valmistamiseen ja kuljettamiseen.",
   MealPrepForProductivity_how_works_3_title: "3. Valmentajamme auttavat sinua saavuttamaan tavoitteesi",
   MealPrepForProductivity_how_works_3_text: "Sinun pitää vain nauttia matkasta. Jos tarvitset neuvoa tai motivaatiosi on hukassa, valmentajamme ovat aina valmiita auttamaan.",
   MealPrepForProductivity_list_item_1: "Laadukasta ravintolatason ruokaa minne tahansa",
@@ -45,7 +45,7 @@ export default {
   MealPrepForProductivity_pluses_title_3: "Jopa 2 kg",
   MealPrepForProductivity_pluses_text_3: "pudotettua painoa elämätyyliäsi uhraamatta.",
   MealPrepForProductivity_pluses_title_4: "Rajaton",
-  MealPrepForProductivity_pluses_text_4: "boosti energiaasi sekä hyvinvointiisi",
+  MealPrepForProductivity_pluses_text_4: "boosti energiaasi sekä hyvinvointiisi.",
   MealPrepForProductivity_menu_title_home: `Selvitä, miltä täydellinen ruokavalio näyttää sinulle!
   <br><br>
   Calorilla saat tasapainoisia aterioita henkilökohtaisen suunnitelmasi mukaan. Se tarkoittaa yli 140 uniikkia annosta kuukaudessa.`,
@@ -53,32 +53,36 @@ export default {
 
   /* WeightLoss */
   weight_blue_text_block_home_title: "Haluatko liittyä mukaan?",
-  weight_blue_text_block_home_text: "Ensimmäiset kuljetukset PK-seudulla alkaen 8.1.2024.",
-  weight_blue_text_block_home_text_2: "Paikkoja on rajattu määrä - älä missaa omaasi!",
-  weight_blue_text_block_home_text_3: "Uudenvuodenlupaus, joka pitää!🎆",
+  weight_blue_text_block_home_text: `Ensimmäiset kuljetukset PK-seudulla alkaen 8.1.2024.
+  <br><br>
+  Paikkoja on rajattu määrä - älä missaa omaasi!
+  <br><br>
+  Uudenvuodenlupaus, joka pitää!🎆`,
   meal_text_block_home_title: "Älä missaa!",
-  meal_text_block_home_text: "Seuraava matkamme alkaa 08.01.2024. ",
-  meal_text_block_home_text_2: "Paikkoja on rajattu määrä - älä missaa omaasi!",
-  meal_text_block_home_text_3: "Uudenvuodenlupaus, joka pitää!🎆",
-  WeightLoss_title: "Pudota painoa ilman ruoanlaittoa, kaloreiden laskemista ja jopa treenaamista!",
+  meal_text_block_home_text: `Seuraava matkamme alkaa 08.01.2024.
+  <br><br>
+  Paikkoja on rajattu määrä - älä missaa omaasi!
+  <br><br>
+  Uudenvuodenlupaus, joka pitää!🎆`,
+  WeightLoss_title: "Pudota painoa ilman ruoanlaittoa, kalorien laskemista ja jopa treenaamista!",
   WeightLoss_text: "Aloita kuukausitilaus ja saavuta tavoitteesi. Me hoidamme loput.",
   WeightLoss_card_1_title: "Näe milloin saavutat tavoitteesi",
   WeightLoss_card_1_text: "Vastaa vain muutamaan lyhyeen kysymykseen (alle 2 min.) ja saat arvion siitä, milloin saavutat tavoitepainosi.",
-  WeightLoss_card_2_title: "Anna meidän hoitaa kaikki raskaat työt",
+  WeightLoss_card_2_title: "Anna meidän hoitaa raskas työ",
   WeightLoss_card_2_text: "Tilaa palvelumme ja anna meidän huolehtia kaikesta stressistäsi liittyen ruokailuun, edistymiseen ja tavoitteidesi saavuttamiseen henkilökohtaisen suunnitelman avulla.",
   WeightLoss_card_3_title: "Herkkuruokaa ovellesi",
   WeightLoss_card_3_text: `Vastaanota valmiit ateriat ovellesi toimitettuna kahdesti viikossa. Annoksia on jokaiselle päivälle 4-5.
   <br><br>
   Ei ylimääräistä hässäkkää - vain laadukasta ravintolatason ruokaa.`,
   WeightLoss_card_4_title: "Pidä meidät ajan tasalla",
-  WeightLoss_card_4_text: "Lähetä meille kerran viikossa lyhyt raportti (5 min), jossa kerrot hyvinvointistasi ja uudesta painostasi. Seuraamme edistymistäsi ja varmistamme tulokset jokaisessa vaiheessa.",
+  WeightLoss_card_4_text: "Lähetä meille kerran viikossa lyhyt raportti (5 min.), jossa kerrot hyvinvointistasi ja uudesta painostasi. Seuraamme edistymistäsi ja varmistamme tulokset jokaisessa vaiheessa.",
   WeightLoss_card_5_title: "Syö, nauti, ja huomaa ero",
-  WeightLoss_card_5_text: "Rentoutu, nauti uudesta elämästäsi ja saavuta tavoitteesi. Sinun ei edes ole pakko treenata, niin helppoa se on!",
+  WeightLoss_card_5_text: "Rentoudu, nauti uudesta elämästäsi ja saavuta tavoitteesi. Sinun ei edes ole pakko treenata, niin helppoa se on!",
   WeightLoss_list_item_1: "Terveellinen painonpudotus: jopa 2kg/kk",
   WeightLoss_list_item_2: "Laadukasta ravintolatason ruokaa minne tahansa",
   WeightLoss_list_item_3: "Personoitu ravintotasapaino terveyden ja aineenvaihdunnan parantamiseksi",
   WeightLoss_list_item_4: "Tukea ja viikoittainen tilannepäivitys ammattivalmentajilta",
-  WeightLoss_list_item_5: "Treenaaminen? Vain jos niin haluat.",
+  WeightLoss_list_item_5: "Treenaaminen? Vain jos niin haluat",
   WeightLoss_list_item_6: "Tauota tai lopeta tilaus milloin tahansa",
   WeightLoss_list_item_7: "Suunniteltu tukemaan ravitsemustarpeitasi ja tavoitteitasi",
   WeightLoss_plus_1_title: "Jopa 10 kg",
@@ -89,7 +93,7 @@ export default {
   WeightLoss_plus_3_text: "energiaasi, terveyteesi ja hyvinvointiisi.",
   WeightLoss_plus_4_title: "Avaa uusia ovia",
   WeightLoss_plus_4_text: "ja aloita uusi luku elämässäsi!",
-  WeightLoss_before_button: "Matka uuteen sinuun: alkaen 188 €/viikko. Kaikki sisältyy hintaan: myös näkyvät tulokset!",
+  WeightLoss_before_button: "Hinnat alkaen 188 €/viikko. Kaikki sisältyy hintaan: myös näkyvät tulokset!",
   contact_form_text_weight: "Vastaamme mielellämme niihin!",
   /* WeightLoss */
 
@@ -98,20 +102,20 @@ export default {
   HealthyEating_title: "Terveellinen syöminen tehty helpoksi ja herkulliseksi ✨",
   HealthyEating_text: "Suunnittelemme henkilökohtaisen ruokavalion juuri sinua varten. Kokkaamme ja toimitamme kaikki päivän aikana tarvitsemasi ateriat.",
   HealthyEating_what_is_title: "Mikä on Calori?",
-  HealthyEating_what_is_text: "Calori on meal-prep -ja kuljetuspalvelu pienellä twistillä ✨",
+  HealthyEating_what_is_text: "Calori on meal prep -ja kuljetuspalvelu pienellä twistillä ✨",
   HealthyEating_what_is_1: `Tavoitteiden saavuttaminen ja motivoituneena pysyminen voi olla vaikeaa. <br><br>
   Suunnittelu, ostokset, ruoanlaitto ja siivoaminen vievät suurimman ajastasi ja energiastasi. <br><br>
   Ja kaiken tämän jälkeen et edelleenkään ole varma syötkö oikein...`,
   HealthyEating_what_is_2: "Terveellinen syöminen voi olla helppoa, hauskaa ja herkullista.  <br><br>Autamme sinua saavuttamaan täydellisen tasapainon ravintoaineissa, säästämään aikaa, ja pitämään sinut energisenä pitkinä ja kiireisinä päivinä.",
   HealthyEating_what_is_3: `Vastaa lyhyeen kyselyyn ja selvitä tarkalleen, mitä kehosi tarvitsee.
   <br><br>
-  Ammattilaistiimimme on viettänyt vuosia laatien ateriasuunnitelmia, jotka yhdistävät terveellisen ja maukkaan. Nyt olemme tuoneet sen saataville Calorin kautta.`,
+  Ammattilaistiimimme on viettänyt vuosia laatien ateriasuunnitelmia, jotka yhdistävät terveellisyyden ja maun. Nyt olemme tuoneet sen saataville Calorin kautta.`,
   HealthyEating_what_is_4: `Saat kaikki päivän aikana tarvitsemasi ateriat kotiovellesi toimitettuna.
   <br><br>
   Kokkimme muunsivat monimutkaiset suunnitelmat herkulliseksi ruoaksi - löysimme täydellisen tasapainon maukkaan ja terveellisen ruoan välillä. Pääset nauttimaan ravintolatason aamupalan, lounaan, päivällisen ja välipalan missä tahansa oletkin.`,
   HealthyEating_what_is_5: `Oikeilla jäljillä pysyminen ja motivaation löytäminen ei ole helppoa ilman apua.
   <br><br>
-  Sen takia meillä on kokeneiden valmentajien tiimi joka seuraa edistymistäsi, neuvoo sinua, ja vastaa kaikkiin kysymyksiisi.  `,
+  Sen takia meillä on kokeneiden valmentajien tiimi joka seuraa edistymistäsi, neuvoo sinua ja vastaa kaikkiin kysymyksiisi. `,
   HealthyEating_what_is_3_title: "1. Hanki henkilökohtainen ateriasuunnitelmasi 🥗",
   HealthyEating_what_is_4_title: "2. Tilaa ateriatoimitukset 🧑‍🍳",
   HealthyEating_what_is_5_title: "3. Valmentajamme auttavat sinua saavuttamaan tavoitteesi 🧘",
@@ -134,124 +138,251 @@ export default {
   HealthyEating_list_item_7: "Paikalliset tuotteet ja kestävät pakkaukset",
   HealthyEating_list_item_8: "Roppakaupalla energiaa ja produktiivisuutta",
   HealthyEating_list_item_9: "Aikaa jää asioille josta välität",
-  HealthyEating_list_item_10: "Itsevarmuutta terveyteen ja valintoihin",
+  HealthyEating_list_item_10: "Vähemmän ruokahävikkiä. Saat juuri sen verran ruokaa mitä kulutat",
   HealthyEating_But: "Mutta me huolehdimme sinusta 🙌",
   HealthyEating_five_months: "5 kuukautta Calorin kanssa",
   HealthyEating_plus_1_title: "Jopa 10 kg",
   HealthyEating_plus_1_text: "painonpudotusta tinkimättä elämäntavastasi.",
-  HealthyEating_plus_2_title: "+31 työpäivää säästetty",
-  HealthyEating_plus_2_text: "suunnittelussa, ostoksissa, ruoanlaitossa ja siivoamisessa.",
-  HealthyEating_plus_3_title: "Kokonaisvaltainen muutos",
+  HealthyEating_plus_2_title: "Yli 10 päivää",
+  HealthyEating_plus_2_text: "säästettyä aikaa suunnittelussa, kokkaamisessa, ja siivoamisessa (yli 240 tuntia).",
+  HealthyEating_plus_3_title: "Täydellinen muutos",
   HealthyEating_plus_3_text: "energiaasi, terveyteesi ja hyvinvointiisi.",
   HealthyEating_plus_4_title: "Avoimet uudet ovet",
   HealthyEating_plus_4_text: "ja aloita uusi luku elämässäsi!",
   healthy_contact_form_title: "Odotamme innolla viestiäsi!",
   blue_text_block_healthy_title: "Haluatko liittyä mukaan?",
-  blue_text_block_healthy_text: "Seuraava matkamme alkaa 08.01.2024. ",
-  blue_text_block_healthy_text_2: "Paikkoja on rajattu määrä - älä missaa omaasi!",
-  blue_text_block_healthy_text_3: "Uudenvuodenlupaus, joka pitää!🎆",
+  blue_text_block_healthy_text: `Seuraava matkamme alkaa 08.01.2024.
+  <br><br>
+  Paikkoja on rajattu määrä - älä missaa omaasi!
+  <br><br>
+  Uudenvuodenlupaus, joka pitää!🎆`,
   menu_text_healthy: "Tässä on tyypillinen viikko Calorilla. Lyhyesti sanottuna: terveellistä ja maittavaa!",
   /* HealthyEating */
 
   /* FAQ */
-  faq_1_title: "Ateriasuunnitelmat",
-  faq_1_item_1_title: "Kyllästynkö syömään vain Calorilla?",
-  faq_1_item_2_title: "Voinko syödä Calorin aterioita eri järjestyksessä päivän aikana?",
-  faq_1_item_3_title: "Onko 5 ateriaa päivässä liikaa?",
-  faq_1_item_4_title: "Voinko juoda kahvia, teetä ja muita juomia aterioideni kanssa?",
-  faq_1_item_5_title: "Onko makeisten ja jälkiruokien syöminen hyväksi edistymiselleni?",
-  faq_1_item_6_title: "Voinko syödä ylimääräisiä aterioita ja välipaloja ateriasuunnitelmani aikana?",
+  faq_1_title: "Ruoka",
+  faq_1_item_1_title: "Kyllästynkö syömään pelkästään Calorin ruokia?",
+  faq_1_item_2_title: "Voinko syödä Calorin aterioita missä tahansa järjestyksessä päivän aikana?",
+  faq_1_item_3_title: "Eikö 5 ateriaa päivässä ole liikaa?",
+  faq_1_item_4_title: "Voinko juoda kahvia, teetä ja muita juomia ateriasuunnitelmani aikana?",
+  faq_1_item_5_title: "Onko makeisten ja jälkiruokien syöminen haitaksi edistymiselleni?",
+  faq_1_item_6_title: "Voinko syödä ylimääräisiä aterioita ja välipaloja ruokavalioni aikana?",
 
-  faq_1_item_1_text: "Ei ollenkaan. Teimme Calorin parantaaksemme terveyttäsi yhtä paljon kuin tyydyttääksemme himosi. Valikoimassamme on 140 herkullista ateriaa, jotka eivät toistu kuukauden aikana.<br><br>Jokainen ateria Calorilla on ainutlaatuinen ja jännittävä kokemus - aivan kuin menisi hienoon ravintolaan.<br><br>Päivitämme jatkuvasti vanhoja reseptejä ja luomme uusia palautteesi ja muiden asiakkaiden palautteen perusteella 🤲",
+  faq_1_item_1_text: `Et suinkaan. Olemme kehittäneet Calorin sekä terveytesi parantamiseen että makunautintojesi tyydyttämiseen.
+  <br><br>
+  Meidän menumme sisältää 140 herkullista ateriaa, jotka eivät toistu kuukauden aikana. Jokainen ateria Calorilla on ainutlaatuinen ja jännittävä kokemus - aivan kuin kävisit hienossa ravintolassa.
+  <br><br>
+  Me tulemme jatkuvasti parantamaan vanhoja reseptejä ja luomaan uusia sinulta ja muilta asiakkailtamme saadun asiakaspalautteen perusteella  🤲
+  `,
 
-  faq_1_item_2_text: "Suosittelemme, että syöt ateriat suositellussa järjestyksessä. Ravitsemusasiantuntijoidemme tiimi loi jokaisen päivittäisen valikon perustuen energiantarpeeseesi päivän aikana.<br><br>Aamulla saat enemmän hiilihydraatteja, jotta sinulla on energiaa päiväsi käynnistämiseen.<br><br>Joka seuraavalla aterialla saat vähemmän hiilihydraatteja, jotta kehosi valmistautuu vähitellen hyvään yöuneen.<br><br>Noudattamalla suositeltua järjestystä tunnet positiivisen eron koko ateriasuunnitelmassasi sekä joka päivä ⛰️",
+  faq_1_item_2_text: `Suosittelemme, että nautit aterioita suositellussa järjestyksessä. Dietologimme ovat suunnitelleet jokaisen menun perustuen päivän aikana tarvitsemaasi energiamäärään.
+  <br><br>
+  Esimerkiksi: aamulla saat enemmän hiilihydraatteja, jotta sinulla on energiaa aloittaa päiväsi. Jokaisen seuraavan aterian myötä saat vähemmän hiilihydraatteja, jotta kehosi valmistautuu vähitellen hyvään yöuneen.
+  <br><br>
+  Noudattamalla suositeltua järjestystä huomaat positiiviset erot koko ateriasuunnitelmassasi sekä tunnet niiden vaikutukset päivittäin ⛰️
+  `,
 
-  faq_1_item_3_text: "Jopa 5 kertaa päivässä syöminen on tieteelliseen tutkimukseen perustuva strategia. Se auttaa sinua hallitsemaan ruokahaluasi, ylläpitämään vakaata verensokeritasoa ja parantamaan aineenvaihduntaasi.<br><br>Syömällä pienempiä annoksia useammin kehosi voi imeä ravintoaineet paljon tehokkaammin.<br><br>Tämä tukee sekä fyysistä että henkistä hyvinvointiasi, auttaen sinua pysymään valppaana ja aktiivisena ⚡",
-
-  faq_1_item_4_text: "Voit juoda kahvia ja teetä ja lisätä hieman sokeria makusi mukaan.<br><br>Voit myös juoda (sokeritonta) soodaa.<br><br>Suosittelemme juomaan päivittäin 2-3 litraa vettä 🌊<br><br>Ota yhteyttä yhteen valmentajistamme ja tarkista, miten juomasi voivat vaikuttaa ateriasuunnitelmaasi.",
-
-  faq_1_item_5_text: "Loimme kaikki ateriamme (mukaan lukien jälkiruoat) kokeneiden ravitsemusasiantuntijoiden avulla, jotta voimme tyydyttää makeanhimosi kompromisoimatta terveyttäsi ja edistymistäsi.<br><br>Kuten kaikki ateriamme, myös jälkiruoat osuvat oikeaan tasapainoon terveyden ja herkullisuuden välillä 😋",
-
-  faq_1_item_6_text: "Voit kyllä, mutta se voi hidastaa tai jopa pysäyttää edistymisesi. Jokainen ylimääräinen ateria tai välipala lisää kokonaiskalorimäärääsi, mikä voi tehdä suuren eron.<br><br>Suunnittelimme ateriasuunnitelmamme varmistaaksemme, että saat kaiken tarvitsemasi.<br><br>Meillä on yli 140 ainutlaatuista ateriaa, jotka eivät toistu kuukauden aikana.<br><br>Kaikki ateriamme osuvat oikeaan tasapainoon terveyden ja herkullisuuden välillä.<br><br>Terveellinen syöminen voi olla hauskaa myös silloin tällöin nautittuna pizzaa, hampurilaisten paloja tai makeisia 😉",
+  faq_1_item_3_text: `Viisi kertaa päivässä syöminen on toimiva strategia, jota tieteellinen tutkimus tukee. Se auttaa hallitsemaan ruokahalua, ylläpitämään vakaita verensokeritasoja ja parantamaan aineenvaihduntaa.
+  <br><br>
+  Syömällä pienempiä annoksia useammin kehosi pystyy omaksumaan ravinteet paljon tehokkaammin. Tämä tukee sekä fyysistä että henkistä hyvinvointiasi, auttaen sinua pysymään vireänä ja aktiivisena ⚡
+  `,
+  faq_1_item_4_text: `Voit juoda kahvia ja teetä, ja halutessasi lisätä niihin hieman sokeria. Voit myös juoda (sokerittomia) virvoitusjuomia. Suosittelemme myös, että juot 2-3 litraa vettä joka päivä 🌊
+  <br><br>
+  Jos olet epävarma - ota yhteyttä johonkin valmentajistamme ja tarkista, miten juomasi voivat vaikuttaa ateriasuunnitelmaasi ja edistymiseesi.
+  `,
+  faq_1_item_5_text: `Olemme suunnitelleet kaikki ateriamme (mukaan lukien jälkiruoat) asiantuntijoiden avulla, jotta voisimme tyydyttää makeanhimosi vaarantamatta terveyttäsi ja edistymistäsi.
+  <br><br>
+  Aivan kuten kaikki ateriamme, myös jälkiruokamme ovat löytäneet oikean tasapainon terveellisyyden ja herkullisuuden välillä 😋
+  `,
+  faq_1_item_6_text: `Voit syödä, mutta se saattaa hidastaa tai jopa pysäyttää edistymisesi. Jokainen ylimääräinen ateria tai välipala lisää kokonaiskalorien saantiasi, millä voi olla dramaattinen vaikutus edistykseesi.
+  <br><br>
+  Olemme suunnitelleet ruokavaliosuunnitelmat niin, että saat kaiken tarvitsemasi. Meillä on yli 140 ainutlaatuista ateriaa, jotka eivät toistu kuukauden aikana. Kaikki ateriamme ovat täydellisessä tasapainossa terveellisyyden ja herkullisuuden välillä.
+  <br><br>
+  Terveellinenkin ruokavalio voi sisältää sisältää pizzaa, hampurilaisia tai makeisia siellä täällä 😉
+  `,
 
   faq_2_title: "Palvelu",
-  faq_2_item_1_title: "Kuinka paljon aikaa säästän Calorin kanssa?",
-  faq_2_item_2_title: "Voinko syödä Calorin aterioita, jos minulla on ruokavaliorajoituksia?",
-  faq_2_item_3_title: "Voinko lämmittää Calorin aterioita mikroaaltouunissa?",
-  faq_2_item_4_title: "Voinko ottaa Calorin ateriat mukaani töihin tai yliopistoon?",
-  faq_2_item_5_title: "Voinko syödä ulkona ravintoloissa henkilökohtaisen suunnitelmani aikana?",
+  faq_2_item_1_title: "Kuinka paljon aikaa säästän käyttämällä Caloria?",
+  faq_2_item_2_title: "Voinko syödä Calori:n aterioita, jos minulla on allergioita tai muita ruoka-ainerajoitteita?",
+  faq_2_item_3_title: "Voinko lämmittää Calorin ateriat mikrossa?",
+  faq_2_item_4_title: "Voinko ottaa Calorin ateriat mukaan töihin tai kouluun?",
+  faq_2_item_5_title: "Voinko käydä ravintolassa henkilökohtaisen suunnitelmani aikana?",
 
-  faq_2_item_1_text: "Calorin avulla voit säästää jopa 50 tuntia joka kuukausi, mikä on vähän yli 2 täyttä päivää. Aika hienoa, eikö niin?<br><br>Muista kuinka paljon aikaa käytät aterioiden suunnitteluun, ostosten tekemiseen, kokkaamiseen ja siivoamiseen. Ja useimmiten et ole varma, syötkö oikein.<br><br>Calorin kanssa kaikki tämä kuuluu menneisyyteen. Voit olla varma, että saat oikeat ravintoaineet ja edistyt kohti terveellisempää elämää, samalla kun sinulla on enemmän aikaa ja energiaa asioille, joista nautit 💃",
+  faq_2_item_1_text: `Calorin avulla voit säästää jopa 50 tuntia kuukaudessa, mikä on yli kaksi kokonaista päivää.
+  Aika siistiä, eikö vain?
+  <br><br>
+  Ajattele, kuinka paljon aikaa käytät ateriasuunnitteluun, ostosten tekemiseen, ruoanlaittoon ja siivoamiseen. Ja useimmiten et silti ole varma, syötkö oikein.
+  <br><br>
+  Calorin kanssa kaikki tämä on menneisyyttä. Voit olla varma, että saat oikeat ravintoaineet ja etenet kohti terveellisempää elämää samalla kun sinulla on enemmän aikaa ja energiaa nauttia asioista, joista pidät 💃
+  `,
 
-  faq_2_item_2_text: "Olemme kuitenkin tehneet kovasti työtä tarjotaksemme erilaisia ateriasuunnitelmia. Jos sinulla on seuraavista ruokavaliorajoituksista, ota meihin yhteyttä, ja saat tietää ensimmäisenä, kun meillä on jotain sinulle 🙌<br><br>Gluteeni<br><br>Pähkinät<br><br>Kasvissyöjä<br><br>Vegaani",
+  faq_2_item_2_text: `Tällä hetkellä voimme valitettavasti vastata ainoastaan laktoosi-intolerantikkojen tarpeisiin.
+  <br><br>
+  Olemme kuitenkin tehneet kovasti töitä tarjotaksemme erilaisia ateriasuunnitelmia. Jos sinulla on jokin seuraavista ruoka-ainerajoitteista, lähetä meille viesti ja olet ensimmäisten joukossa kuulemassa, kun meillä on tarjota jotakin sinulle 🙌
+  <br><br>
 
-  faq_2_item_3_text: "Kyllä voit. Jokaisella aterialla on suositukset siitä, tulisiko se lämmittää. Tiukasti suljetut astiamme on suunniteltu mikroaaltouunilämmitykseen. Poista vain suojakalvo ja lämmitä ateriat 2-3 minuutin ajan ⏱️",
+  <ul class='list-in-text'>
+    <li>Gluteeni</li>
+    <li>Pähkinät</li>
+    <li>Kasvissyöjä</li>
+    <li>Vegaani</li>
+  </ul>
+  `,
+  faq_2_item_3_text: `Kyllä voit. Jokaisen aterian kohdalla on suositukset siitä, tulisiko se lämmittää. Kestävät rasiamme on suunniteltu mikroaaltouunin kestäviksi. Poista vain suojakalvo ja lämmitä 2-3 minuuttia ⏱️`,
 
-  faq_2_item_4_text: "Kyllä, ehdottomasti. Astiamme ovat todellisia kompaktin koon ja maun ihmeitä. Suljimme ne tiiviisti, jotta voit ottaa ne mukaasi minne tahansa. Mutta jos matkasi kestää yli 2-3 tuntia, suosittelemme pakkaamaan astiat kylmälaukkuun 🧊",
+  faq_2_item_4_text: `Kyllä, ehdottomasti voit. Pakkauksemme ovat todellisia kompaktiuden ja maun ihmeitä. Olemme tiivistäneet ne hyvin, jotta voit ottaa ne mukaasi minne tahansa. Jos matkasi kestää yli 2-3 tuntia, suosittelemme pakkaamaan ateriat kylmälaukkuun 🧊`,
 
-  faq_2_item_5_text: "Kyllä, voit syödä ulkona perheesi, ystäviesi tai kollegojesi kanssa. Mutta jos et halua peruuttaa edistystäsi, suosittelemme, ettet jätä Calorin aterioita väliin yli 1 kerran viikossa.<br><br>Kun suunnittelet lounasta tai illallista ulkona, muista ilmoittaa meille etukäteen. Näin voimme säätää tulevaa toimitustasi, jotta siinä on vähemmän aterioita ja alempi hinta myös 💸",
+  faq_2_item_5_text: `Kyllä, voit syödä ulkona perheesi, ystäviesi tai kollegojesi kanssa. Mutta jos et halua vesittää edistymistäsi, suosittelemme, että et jätä väliin enempää kuin 1 Calorin aterian viikossa.
+  <br><br>
+  Kun suunnittelet lounasta tai illallista ulkona, muista ilmoittaa meille etukäteen. Näin voimme säätää tulevan toimituksesi sisältämään vähemmän aterioita ja myös hinta on edullisempi 💸
+  `,
 
   faq_3_title: "Toimitus",
-  faq_3_item_1_title: "Mihin kaupunkeihin toimitatte?",
-  faq_3_item_2_title: "Mikä on toimituskustannus?",
+  faq_3_item_1_title: "Missä kaupungeissa Calori toimii tällä hetkellä?",
+  faq_3_item_2_title: "Mitkä ovat toimituskulut?",
   faq_3_item_3_title: "Milloin saan ensimmäisen toimitukseni?",
-  faq_3_item_4_title: "Miten ateriani toimitetaan?",
-  faq_3_item_5_title: "Entä jos en ole kotona toimituksen aikana?",
-  faq_3_item_6_title: "Mitä tarkoittaa 'ympäristöystävällinen toimitus'?",
+  faq_3_item_4_title: "Miten toimitatte ateriat?",
+  faq_3_item_5_title: "Mitä jos en ole kotona, kun ateriat toimitetaan?",
+  faq_3_item_6_title: "Mitä 'ympäristöystävällinen toimitus' tarkoittaa?",
 
 
-  faq_3_item_1_text: "Tällä hetkellä toimitamme vain Helsinkiin, Vantaalle, Espooseen ja Kauniaisiin.<br><br>Jos asut eri kaupungissa, kerro meille. Tulemme moniin muihin kaupunkeihin pian, ja kerromme sinulle, kun toimitamme alueellesi 🏙️",
+  faq_3_item_1_text: `Toimitamme tällä hetkellä vain Helsinkiin, Vantaalle, Espooseen ja Kauniaisiin.
+  <br><br>
+  Jos asut jossakin muussa kaupungissa, kerro meille. Laajennamme toimitusalueitamme moniin muihin kaupunkeihin lähitulevaisuudessa ja ilmoitamme, kun aloitamme toimitukset alueellesi. 🏙️
+  `,
+  faq_3_item_2_text: `Kaikki toimitukset ovat maksuttomia, kun tilaat Calorilta. 🙌 Saat nauttia kaikesta, mitä meillä on tarjota ilman piilokuluja.`,
+  faq_3_item_3_text: `Saat ensimmäisen toimituksesi 8.1.2024 🎉 Käynnistämme toimitukset seuraavalle asiakasryhmälle juuri ajoissa, jotta voit toteuttaa uudenvuodenlupauksesi.`,
+  faq_3_item_4_text: `Toimitamme ateriat kahdesti viikossa arkipäivisin kello 17:00 ja 21:00 välillä. Toimitus sisältää 4-5 päivittäistä ateriaa 3-4 päivän tarpeisiin. Se tarkoittaa 12:sta 20:een ateriaan per toimitus. Varmista, että säilytät ne jääkaapissa alle 5 asteen lämpötilassa.
+  <br><br>
+  Voit tarkistaa tarkat toimituspäiväsi henkilökohtaisesta profiilistasi ”Toimitus”-osiosta.
+  <br><br>
+  Päivää ennen toimitusta saat tekstiviestin, jossa on toimituksen arvioitu saapumisaika.
+  <br><br>
+  Toimituspäivänä saat toisen tekstiviestin, joka sisältää seurantakoodin reaaliaikaiseen kuriirin seuraamiseen 🔎
+  `,
 
-  faq_3_item_2_text: "Kaikki toimitukset ovat ilmaisia, kun tilaat Calorin 🙌<br><br>Pääset kokemaan kaiken tarjoamamme ilman piilokuluja.",
+  faq_3_item_5_text: `Ei huolta! Voimme silti toimittaa ateriat, vaikka et olisikaan kotona. Kuriirimme voivat jättää ateriat ovellesi (tai muuhun sovittuun paikkaan), kunhan noudat ne alle 2 tunnissa pilaantumisen välttämiseksi.
+  <br><br>
+  Mikäli tiedät ettet ole kotona toimitusaikaan, suosittelemme, että otat yhteyttä asiakastukeemme etukäteen ja valitset sopivamman toimitusajan. 🗓️
+  `,
 
-  faq_3_item_3_text: "Saat ensimmäisen toimituksesi 8.1.2024 🎉<br><br>Lanseeraamme seuraavan asiakasryhmän juuri sopivasti, jotta voit tehdä uudenvuoden lupauksesi.",
+  faq_3_item_6_text: `Teemme kaikkemme varmistaaksemme, että toimituksillamme on mahdollisimman pieni hiilijalanjälki. Luotettavat logistiikkakumppanimme käyttävät sähkö- ja biopolttoainekäyttöisiä ajoneuvoja 🌱`,
 
-  faq_3_item_4_text: "Toimitamme ateriat kahdesti viikossa arkipäivisin klo 17.00-21.00 välisenä aikana.<br><br>Toimitus sisältää 4-5 valmista ateriaa 3-4 päivän ajaksi. Se on 12-20 ateriaa toimitusta kohti.<br><br>Varmista säilyttäväsi ne jääkaapissa alle 5 asteen lämpötilassa.<br><br>Löydät tarkat toimituspäiväsi omasta profiilistasi kohdasta 'Toimitus'.<br><br>Toimitusta edeltävänä päivänä saat SMS-tekstiviestin, jossa on arvioitu toimituksen aika.<br><br>Toimituspäivänä saat toisen SMS-tekstiviestin kuriirin reaaliaikaisesta sijainnista 🔎",
+  faq_4_title: "Maksut ja kuukausitilaus",
+  faq_4_item_1_title: "Voinko tauottaa tilaukseni?",
+  faq_4_item_2_title: "Miten voin peruuttaa tilaukseni?",
+  faq_4_item_3_title: "Kuinka usein tilaukseni laskutetaan?",
+  faq_4_item_4_title: "Kuinka pitkä on koko tilausjakso?",
 
-  faq_3_item_5_text: "Ei huolta! Voimme silti toimittaa ateriasi, vaikka et olisi kotona.<br><br>Kuriirimme voivat jättää ateriat ovellesi (tai muuhun turvalliseen paikkaan), jossa ne voivat säilyä enintään 2 tuntia.<br><br>Suosittelemme, että otat yhteyttä asiakastukeemme etukäteen ja löydät sopivamman toimitusajan päivän aikana 🗓️",
+  faq_4_item_1_text: `Kyllä, voit tauottaa tilauksesi milloin tahansa 1- 4 viikon ajaksi, kun olet lähdössä esimerkiksi lomamatkalle 🛫 Kirjaudu vain henkilökohtaiseen profiiliisi ja paina ”Tauko” kohdassa ”Tilaus”.
+  <br><br>
+  Huomioithan, että jos tilauksesi on tauotettuna yli 4 viikon ajan, se keskeytyy automaattisesti. Meistä on ikävää että lähdet, mutta voit uusia tilauksen milloin tahansa.
+  `,
 
-  faq_3_item_6_text: "Teemme kaikkemme varmistaaksemme, että toimituksemme jättävät mahdollisimman pienen hiilijalanjäljen.<br><br>Yhteistyökumppanimme käyttävät sähköä ja biopolttoainetta kuljetuksissaan 🌱",
+  faq_4_item_2_text: `Voit peruuttaa tilauksesi henkilökohtaisesta profiilistasi painamalla "Peruuta tilaus" kohdassa "Tilaus". Vaihtoehtoisesti voit lähettää meille viestin nettisivullamme tai sosiaalisissa medioissa yksityisviestillä.
+  <br><br>
+  Suosittelemme, että peruutat tilauksesi vähintään 2 päivää ennen seuraavaa toimitustasi. Näin emme valmista seuraavia aterioitasi ja vältämme ruokahävikkiä ♻️
+  <br><br>
+  Tilaus on peruutettava viimeistään 2 päivää ennen seuraavaa toimitusta. Muutoin olemme jo ehtineet valmistaa ruokasi, ja joudumme laskuttamaan siitä. Tällöin peruutus astuu voimaan seuraavasta toimituksesta alkaen.
+  `,
 
-  faq_4_title: "Maksu ja Tilaus",
-  faq_4_item_1_title: "Voinko keskeyttää tilaukseni?",
-  faq_4_item_2_title: "Miten voin perua tilaukseni?",
-  faq_4_item_3_title: "Kuinka usein minua veloitetaan tilauksesta?",
-  faq_4_item_4_title: "Kuinka pitkä tilausjakso on voimassa?",
+  faq_4_item_3_text: `Sinua laskutetaan tilauksestasi sen mukaan, miten olet valinnut tilausta tehdessäsi. Mahdolliset laskutusvälit ovat:
+  <br><br>
 
-  faq_4_item_1_text: "Kyllä, voit keskeyttää tilauksesi milloin tahansa 1 - 4 viikon ajaksi, kun olet lomamatkalla 🛫<br><br>Kirjaudu vain henkilökohtaiselle profiilillesi ja paina 'Keskeytä' kohdassa 'Tilaus'.<br><br>Huomio: jos tilauksesi on keskeytetty yli 4 viikkoa, se lopetetaan automaattisesti.<br><br>Olemme pahoillamme nähdessämme sinun lähtevän, mutta voit uusia tilauksesi milloin tahansa.",
+  <ul class='list-in-text'>
+    <li>1 viikko</li>
+    <li>2 viikkoa</li>
+    <li>3 viikkoa</li>
+    <li>4 viikkoa</li>
+  </ul>
 
-  faq_4_item_2_text: "Voit peruuttaa tilauksesi henkilökohtaisessa profiilissasi painamalla 'Peruuta tilaus' kohdassa 'Tilaus'.<br><br>Tai voit ottaa meihin yhteyttä henkilökohtaisen profiilisi, verkkosivustomme tai sosiaalisen median kautta.<br><br>Suosittelemme peruuttamaan tilauksesi vähintään 2 päivää ennen seuraavaa toimitusta.<br><br>Tällä tavalla emme valmista seuraavia aterioitasi ja vältämme ruokahävikkiä ♻️<br><br>Jos et peru tilaustasi 2 päivää ennen seuraavaa toimitusta, ruoka on valmiina ja sinulta veloitetaan tästä toimituksesta.<br><br>Tästä syystä peruutus astuu voimaan seuraavasta toimituksesta lähtien.",
+  <br>
+  Voit vapaasti muuttaa laskutusväliäsi henkilökohtaisessa profiilissasi kohdassa "Tilaus".
+  `,
 
-  faq_4_item_3_text: "Sinua veloitetaan valintasi mukaan tilausta tehdessäsi.<br><br>Mahdolliset maksujaksot ovat:<br><br>1 viikko<br><br>2 viikkoa<br><br>3 viikkoa<br><br>4 viikkoa<br><br>Voit vapaasti muuttaa maksutiheyttä henkilökohtaisessa profiilissasi kohdassa 'Tilaus'.",
+  faq_4_item_4_text: `Tilauksemme uusiutuvat automaattisesti, mikä tarkoittaa, että sinun ei tarvitse murehtia uudelleentilaamisesta.
+  <br><br>
+  Säädämme suunnitelmaasi edistymisesi mukaan, tekemiesi viikkoraporttien mukaisesti.. Kun olet saavuttanut tavoitteesi, tilauksesi jatkuu niin kauan kuin haluat 🔁
+  `,
 
-  faq_4_item_4_text: "Tilauksemme uusiutuvat automaattisesti, joten sinun ei tarvitse huolehtia uudelleen tilaamisesta.<br><br>Säädämme suunnitelmasi perustuen edistymiseesi, kun teet viikoittaisia raportteja valmentajillemme.<br><br>Kun saavutat tavoitteesi, tilauksesi jatkuu toistaiseksi 🔁",
 
   faq_5_title: "Painonhallinta",
-  faq_5_item_1_title: "Kuinka nopeasti voin laihtua Calorin avulla?",
-  faq_5_item_2_title: "Onko totta, että nopea laihtuminen on haitallista?",
-  faq_5_item_3_title: "Mikä on vähittäisen laihtumisen hyöty?",
+  faq_5_item_1_title: "Kuinka nopeasti voin pudottaa painoa Calorin avulla?",
+  faq_5_item_2_title: "Onko totta, että nopea painonpudotus on haitallista terveydelle?",
+  faq_5_item_3_title: "Mitkä ovat hidastempoisen painonpudotuksen hyödyt?",
   faq_5_item_4_title: "Milloin voin nähdä ensimmäiset tulokset Calorin kanssa?",
-  faq_5_item_5_title: "Mitä teen, jos tunnen nälkää tai väsymystä henkilökohtaisen suunnitelmani aikana?",
-  faq_5_item_6_title: "Miksi tarvitsen viikoittaisia tarkistuksia?",
-  faq_5_item_7_title: "Kuinka nämä tarkistukset toimivat?",
-  faq_5_item_8_title: "Tarvitseeko minun liikkua edistyäkseni?",
+  faq_5_item_5_title: "Mitä minun pitäisi tehdä, jos tunnen nälkää tai väsymystä henkilökohtaisen suunnitelmani aikana?",
+  faq_5_item_6_title: "Miksi viikoittaiset tilannepäivitykset ovat tarpeellisia?",
+  faq_5_item_7_title: "Miten nämä tilannepäivitykset toimivat?",
+  faq_5_item_8_title: "Täytyykö minun urheilla pudottaakseni painoa?",
 
-  faq_5_item_1_text: "Keskimääräinen laihtumisnopeus on 2 kg kuukaudessa eli 0,5 kg viikossa.<br><br>Tämä on optimaalinen tahti, jotta tunnet olosi pirteäksi ja kehosi sopeutuu muutoksiin stressittä.<br><br>Tämä pitää yllä energisyyttäsi ilman, että menetät keskittymiskykyäsi ja saat jatkuvia mielitekoja.<br><br>Kyse ei ole pelkästään painon pudottamisesta.<br><br>Kyse on terveytesi edistämisestä ja stressittömästä siirtymisestä kohti terveellisempää elämää.",
+  faq_5_item_1_text: `
+  Keskimääräinen painonpudotus nopeus on 2 kg kuukaudessa, mikä on 0,5 kg viikossa. Tämä on optimaalinen vauhti, jotta voit tuntea olosi pirteäksi ja kehosi voi sopeutua muutoksiin ilman stressiä.
+  <br><br>
+  Näin pysyt energisenä ilman, että menetät keskittymiskykyä ja kärsit jatkuvista mieliteoista.
+  <br><br>
+  Kyse ei ole vain painonpudotuksesta. Kyse on terveytesi edistämisestä ja stressittömän siirtymisestä terveellisempään elämään.
+  `,
 
-  faq_5_item_2_text: "Kyllä, se pitää paikkansa!<br><br>Tässä muutamia syitä, miksi nopea laihtuminen on haitallista - emmekä keksi näitä syitä:<br><br>Energian menetys ja väsymys johtuvat äkillisestä ja radikaalista muutoksesta kalorisaannissasi.<br><br>Lisääntynyt stressi kehollesi ja mielellesi, mikä voi johtaa syömishäiriöihin.<br><br>Lisäksi terveysriskit vaihtelevat aineenvaihdunnan häiriöistä sydän- ja verisuoniriskeihin.<br><br>Pahinta on, että useimmat ihmiset saavat takaisin kaiken menettämänsä painon lyhyessä ajassa.<br><br>Tätä kutsutaan 'jo-jo-vaikutukseksi'.<br><br>Stressin alla kehomme pyrkii nopeasti palauttamaan menetetyn painon.<br><br>Ole itsellesi hyvä ja harkitse tarkasti, kun valitset ratkaisuja, jotka lupaavat merkittävää painonpudotusta lyhyessä ajassa (esim. 5-10 kg kuukaudessa).",
+  faq_5_item_2_text: `Kyllä, se pitää paikkansa! Tässä muutamia syitä, miksi nopea painonpudotus on haitallista:
+  <br><br>
 
-  faq_5_item_3_text: "Tässä muutamia syitä, miksi uskomme, että vähittäinen laihtuminen on sinulle paljon parempi vaihtoehto - vaikka voisimme puhua tästä tuntikausia:<br><br>Oikeiden tapojen luominen: Mielesi ja kehosi saavat aikaa sopeutua uusiin malleihin ja luoda tapoja.<br><br>Joten vaikka ateriaohjelmasi päättyy, et lipsu vanhoihin tapoihin.<br><br>Terveystilanteesi parantaminen: Toisin kuin nopeat dieetit, vähittäiset muutokset eivät rasita kehoasi eivätkä häiritse sen aineenvaihduntaprosesseja.<br><br>Kestävien tulosten saavuttaminen: Uusien tapojen avulla ja kehoasi häiritsemättä vältät 'jo-jo-vaikutuksen' ja säilytät ansaitut tuloksesi.<br><br>Prosessista nauttiminen: Väsyminen ja mieliteot eivät ole kivaa!<br><br>Mutta vähittäinen laihtuminen pitää kalorivajeesi juuri sopivana edistyksen tekemiseksi ilman haittavaikutuksia.<br><br>Muista, että kyse ei ole pelkästään painon pudottamisesta.<br><br>Calorin avulla voit siirtyä terveellisempään elämäntapaan, luoda oikeita tapoja, nauttia herkullisista aterioista ja säästää aikaa asioille, joista pidät 💚",
+  <ul class='list-in-text'>
+    <li><strong>Energianpuute ja väsymys</strong> äkillisen ja radikaalin kalorien saannin muutoksen seurauksena.</li>
+    <li><strong>Lisääntynyt stressi</strong> kehossa ja mielessä, mikä voi johtaa syömishäiriöihin.</li>
+    <li><strong>Muut terveysriskit</strong>, mm. aineenvaihdunnan häiriöt ja sydämen- ja verisuoniston häiriöt.</li>
+  </ul>
 
-  faq_5_item_4_text: "Voit alkaa nähdä ja tuntea eron jo ensimmäisten 4-6 viikon aikana.<br><br>Olemme kaikki erilaisia, ja jotkut saattavat nähdä tuloksia aikaisemmin ja toiset myöhemmin.<br><br>Terveystilasi ja elämäntapasi parantaminen on usein pitkä ja vaikea prosessi.<br><br>Olemme tehneet kaikkemme tehdäksemme siitä sinulle mahdollisimman yksinkertaista ja nautinnollista.<br><br>Tiedämme, että selviät tästä 💪<br><br>Jos tunnet itsesi alaspiristyneeksi, olemme täällä piristämässä sinua.<br><br>Olet oikealla tiellä kohti terveellisempää elämää!",
+  <br>
+  Pahinta on, että useimmat ihmiset saavat nopeasti pudotetun painon takaisin lyhyessä ajassa. Tätä kutsutaan "jojo-ilmiöksi". Stressaantuneena kehomme pyrkii nopeasti palauttamaan menetetyn painon.
+  <br><br>
+  Pidä huolta itsestäsi ja ole varuillasi valitessasi ratkaisuja, jotka lupaavat merkittävää painonpudotusta lyhyessä ajassa (esim. 5-10 kg kuukaudessa).
+  `,
 
-  faq_5_item_5_text: "Pieni nälkä tai energian menetys voi olla luonnollista, varsinkin tärkeän matkan alussa.<br><br>Ja se on ok!<br><br>Elimistösi tarvitsee aikaa sopeutua muutoksiin.<br><br>Mutta jos tunnet olevasi ylivoimainen nälästä tai energian menetyksestä,<br><br>ota yhteyttä yhteen valmentajistamme.<br><br>He säätävät suunnitelmaasi varmistaakseen, että edistyt terveellisellä ja kestävällä tavalla.",
+  faq_5_item_3_text: `Tästä riittäisi kerrottavaa tuntikausiksi, mutta alla on muutama syy miksi uskomme rauhallisen painonpudottamisen olevan huomattavasti parempi vaihtoehto:
+  <br><br>
+  <ul class='list-in-text'>
+    <li> <strong>Oikeiden tapojen luominen:</strong> Mielesi ja kehosi saavat aikaa sopeutua uusiin malleihin ja luoda uusia tapoja. Tällöin ateriasuunnitelmasi päättymisen jälkeen et lipsu takaisin vanhoihin tottumuksiin.</li>
+    <li> <strong>Terveytesi parantaminen:</strong> Toisin kuin nopeat dieetit, asteittaiset muutokset eivät aseta kehoasi stressitilaan eivätkä häiritse aineenvaihduntaprosesseja.</li>
+    <li> <strong>Kestävien tulosten saavuttaminen:</strong> Uusien tapojen ja kehon häiritsemättömyyden ansiosta voit välttää "jojo-ilmiön" ja säilyttää kovalla työllä saavutetut tulokset.</li>
+    <li> <strong>Prosessin nauttiminen:</strong> Väsymys ja mielitekojen vaivaaminen ei ole hauskaa. Rauhallisella painonpudotuksella kalorivaje on juuri sinulle sopiva, joten voit edistyä kokematta mitään haittapuolia.</li>
+  </ul>
 
-  faq_5_item_6_text: "Suosittelemme sinua tekemään viikoittaiset tarkistukset, jotta voimme varmistua, että olet oikealla tiellä.<br><br>Jos tunnet olevasi väsynyt tai painosi muuttuu liian nopeasti, säädämme suunnitelmaasi sen mukaisesti.",
+  <br>
+  Muista, että kyse ei ole pelkästään painonpudotuksesta. Calorin avulla voit siirtyä kohti terveellisempää elämää, luoda oikeita tapoja, nauttia herkullisista aterioista ja säästää aikaa asioihin joista pidät 💚
+  `,
 
-  faq_5_item_7_text: "Tarkistukset vievät vain alle 5 minuuttia aikaasi kerran viikossa.<br><br>Tässä on, miten ne toimivat 4 lyhyessä vaiheessa:<br><br>1. Saat muistutuksen päivää ennen tarkistusta tekstiviestinä tai sähköpostina.<br><br>2. Punnitse itsesi tarkistuksen aamuna.<br><br>3. Kirjaudu tilillesi ja syötä viimeisin painosi.<br><br>4. Vastaa muutamaan kysymykseen siitä, miten voit.<br><br>Ja siinä se on!<br><br>Sen jälkeen voit jatkaa päivääsi tietäen, että olet oikealla tiellä.",
+  faq_5_item_4_text: `Voit alkaa nähdä ja tuntea eron jo ensimmäisten 4-6 viikon aikana. Kaikki me olemme erilaisia ja jotkut saattavat huomata tuloksia aikaisemmin ja toiset myöhemmin.
+  <br><br>
+  Terveellisemmän elämäntavan ja terveyden parantaminen on usein pitkä ja vaikea prosessi. Olemme tehneet kaikkemme, jotta se olisi sinulle mahdollisimman yksinkertaista ja nautinnollista.
+  <br><br>
+  Tiedämme, että sinusta on siihen! 💪 Jos koskaan tunnet itsesi alakuloiseksi, valmentajamme ovat täällä kannustamassa sinua. Olet oikealla polulla kohti terveellisempää elämää!
+  `,
 
-  faq_5_item_8_text: "Se on sinusta kiinni!<br><br>Oikea määrä ruokaa optimaalisella ravintoaineiden tasapainolla tekee suurimman eron.<br><br>Liikunta on vain plussaa kehon muokkaamiseksi ja mielen saamiseksi ylimääräiseksi energiaboostiksi.",
+  faq_5_item_5_text: `Pientä nälän tunnetta tai energian puutetta voi esiintyä luonnollisesti painonpudotuksessa etenkin matkan alussa, koska kehosi tarvitsee aikaa tottuakseen uusiin muutoksiin.
+  <br><br>
+  Jos tunnet ylivoimaista nälkää tai energian puutetta, ota yhteyttä yhteen valmentajistamme henkilökohtaisessa tilissäsi osiossa “Valmentaja”. He säätävät suunnitelmaasi varmistaakseen, että edistyt tavalla joka on terveellinen ja kestävä hyvinvointisi kannalta.
+  `,
 
+  faq_5_item_6_text: `Suosittelemme viikoittaisia tarkistuksia, jotta voimme varmistaa, että olet oikealla tiellä. Jos tunnet olosi väsyneeksi tai painosi muuttuu liian nopeasti, säädämme suunnitelmaasi sen mukaisesti.`,
+
+  faq_5_item_7_text: `Päivitykset vievät alle 5 minuuttia kerran viikossa.
+  <br><br>
+  Tässä miten ne toimivat 4 lyhyessä vaiheessa:
+  <br><br>
+
+  <ul class='list-in-text-numeric list-in-text'>
+    <li> <strong>Saat muistutuksen</strong> päivää ennen tarkastusta tekstiviestinä tai sähköpostitse.</li>
+    <li> <strong>Punnitse itsesi</strong> aamulla tarkistuspäivänä.</li>
+    <li> <strong>Kirjaudu tilillesi</strong> ja syötä viimeisin painosi.</li>
+    <li> <strong>Vastaa pariin kysymykseen,</strong> jotka liittyvät siihen, millaiseksi tunnet olosi.</li>
+  </ul>
+
+  <br>
+  Siinä kaikki! Sen jälkeen voit jatkaa päivääsi tietäen, että olet oikeilla raiteilla.
+  `,
+
+  faq_5_item_8_text: `Se on sinun päätöksesi! Suurin tulos luodaan oikeanlaisella ravintoainetasapainolla. Liikunta on vain lisä, joka auttaa kehoasi kiinteytymään ja antaa ylimääräistä energiaboostia.`,
 
   /* FAQ */
 
@@ -293,9 +424,11 @@ export default {
   list_item_5_text_home: "Vähemmän jätettä, ympäristöystävälliset pakkaukset ja vihreä logistiikka",
   list_item_6_text_home: "Suunniteltu ravitsemuksen ja elämäntyylin tukemiseksi",
   blue_text_block_home_title: "Haluatko liittyä mukaan?",
-  blue_text_block_home_text: "Seuraava matkamme alkaa 08.01.2024. Paikkoja on rajattu määrä - älä missaa omaasi!",
-  blue_text_block_home_text_2: "Paikkoja on rajoitetusti - älä missaa omaasi.",
-  blue_text_block_home_text_3: "Uudenvuodenlupaus, joka pitää!🎆",
+  blue_text_block_home_text: `Seuraava matkamme alkaa 08.01.2024.
+  <br><br>
+  Paikkoja on rajattu määrä - älä missaa omaasi!
+  <br><br>
+  Uudenvuodenlupaus, joka pitää!🎆`,
   menu_title_home: "Hanki ateriasuunnitelma",
   menu_text_home: "Tässä on tyypillinen viikko Calorilla. ",
   menu_text_before_home: "Calorilla saat tasapainoisia aterioita henkilökohtaisen suunnitelmasi mukaan. Se tarkoittaa yli 140 uniikkia annosta kuukaudessa.",
@@ -312,20 +445,20 @@ export default {
   pluses_text_4_home: "boosti energiaasi sekä hyvinvointiisi",
   month_with_calori_title: "1 kuukausi Calorilla",
   month_with_calori_text: "Tässä näet muutoksen, minkä voit saada aikaan avullamme.",
-  our_story_title: "Meidän tarina",
+  our_story_title: "Meidän tarinamme",
   our_story_text_3: "Tiedämme mitä tarvitset, koska meillä on paljon yhteistä.",
   our_story_text: "Aloitimme matkamme perheyrityksenä, josta kasvoimme kansainväliseksi startupiksi arvostetuilla sijoittajilla ja kokeneilla advisoreilla.",
   our_story_text_2: "Tässä muutama sana Calorin tiimiltä",
   sustainability_approach_title: "Kestävä lähestymistapa",
-  sustainability_approach_text: "Hyväksi sinulle, hyväksi planeetalle",
+  sustainability_approach_text: "Hyväksi sinulle, hyväksi planeetalle.",
   sustainability_approach_item_1: "Ravintolatason ruokaa paikallisista tuotteista",
   sustainability_approach_item_2: "Ympäristöystävälliset pakkaukset",
   sustainability_approach_item_3: "Logistiikkamme kulkee sähkön ja biokaasun avulla",
-  sustainability_approach_item_4: "Vähemmän ruokahävikkiä. Saat juuri sen verran ruokaa mitä tarvitset.",
+  sustainability_approach_item_4: "Vähemmän ruokahävikkiä. Saat juuri sen verran ruokaa mitä kulutat",
   sustainability_approach_before_text: "Tiesitkö, että valmiit ruoat vähentävät hävikkiä 38% kotona valmistettuihin aterioihin verrattuna?",
   contact_form_title: "Jäikö kysymyksiä?",
   contact_form_text: "Odotamme innolla viestiäsi!",
-  green_label_text: "Ensimmäiset kuljetukset PK-seudulla alkaen 8.1.2024",
+  green_label_text: "Ensimmäiset kuljetukset PK-seudulla 8.1.2024 alkaen",
   back_profile: "Profiiliin",
   contact_us: "Ota yhteyttä",
   mon: "Ma",
@@ -475,7 +608,7 @@ export default {
   review_salli: "Tuotiin taas 3 päivän ruoat suoraan kotiovelle eikä tarvi ollenkaan kokkailla 🥰",
   review_albert: "En voi muutakuin sanoa, että ehdottomasti suosittelen!",
   /* REVIEWS */
-  l1_how_works: "Kuinka se toimii?",
+  l1_how_works: "Miten se toimii?",
 
 
   before_checkout_button_text: "Maksa nyt ensimmäisestä jaksosta.  Kuukausitilaus ja ensimmäiset toimitukset alkavat 8.1.2024.",
@@ -491,12 +624,14 @@ export default {
   check17frase: "Melkein valmista!",
   button_quiz_send: "Selvitä milloin saavutat tavoitteesi",
 
-  our_story_main_text: "Daniel, toimitusjohtajamme ja yhtiömme perustaja, on entinen nyrkkeilijä. Hän tuntee painonhallinnan haasteet pyrkiessään huippusuoritukseen. Lopulta hän kyllästyi pelkkään riisiin ja broilerin rintafileeseen...",
-  our_story_secret_text: `<br>Daniel perusti Calorin yhdessä veljensä Iljan kanssa, jolla on 10 vuoden kokemus kehonrakennus- ja ravintovalmennuksesta. Calorin lanseeraus oli menestys yli 70 tyytyväisen asiakkaan myötä.
+  our_story_main_text: "Daniel, toimitusjohtajamme ja yhtiömme perustaja, on entinen nyrkkeilijä. Painonhallinnan haasteet ovat tulleet hänelle huippusuorituksiin pyrkiessä tutuksi. Lopulta hän kuitenkin kyllästyi mauttomaan riisiin ja broilerin rintafileeseen...",
+  our_story_secret_text: `
+  <br>
+  Daniel perusti Calorin yhdessä veljensä Iljan kanssa, jolla on 10 vuoden kokemus kehonrakennus- ja ravintovalmennuksesta. Calorin lanseeraus oli menestys yli 70 tyytyväisen asiakkaan myötä.
   <br><br>
   Valmistuimme Kiuaksesta, Suomen parhaasta startup-kiihdyttämöstä. Seuraavaksi kasasimme kokeneen tiimin ja saimme rahoituskierroksen päätökseen.
   <br><br>
-  Hiomme jatkuvasti Caloria täydelliseksi, jotta voit nauttia terveellisestä syömisestä parhaalla mahdollisella tavalla. Liity mukaan seuraavalle Calorin matkalle, joka alkaa 8.1.2024.`,
+  Hiomme jatkuvasti Caloria täydellisemmäksi, jotta voisit nauttia terveellisestä syömisestä parhaalla mahdollisella tavalla. Liity mukaan Calorin seuraavalle matkalle, joka alkaa 8.1.2024.`,
 
   our_menu: "Meidän menu",
   bring_me_back: "Tuo minut takaisin",

@@ -360,14 +360,23 @@ export default {
       let isVisible = menuRect.top < window.innerHeight && menuRect.bottom >= 0;
       let alsoNowSlider = document.querySelector('.racion-slider').classList.contains('slick-slider');
       if (isVisible && !alsoNowSlider) {
-        setTimeout(function(){
-          $('.racion-slider').slick({
-            dots: true,
-            arrows: false,
-            autoplay: true,
-            autoplaySpeed: 3000,
-          });
-        }, 1)
+        $('.racion-slider').slick({
+          dots: true,
+          arrows: false,
+          autoplay: true,
+          autoplaySpeed: 3000,
+          slidesToShow: 3,
+          dots: false,
+          responsive: [
+            {
+              breakpoint: 1024,
+              settings: {
+                slidesToShow: 1,
+                dots: true,
+              }
+            },
+          ]
+        });
       }
     },
     scrollButtonHandler(){
@@ -406,6 +415,17 @@ export default {
           arrows: false,
           autoplay: true,
           autoplaySpeed: 3000,
+          slidesToShow: 3,
+          dots: false,
+          responsive: [
+            {
+              breakpoint: 1024,
+              settings: {
+                slidesToShow: 1,
+                dots: true,
+              }
+            },
+          ]
         });
       }, 1);
     }
@@ -459,9 +479,47 @@ export default {
     background: transparent;
   }
 
-  @media screen and (min-width: 700px){
+  @media screen and (min-width: 1000px){
     .slide>.slide-img-block>img{
-      height: 240px;
+      height: 261px;
+    }
+
+    .slide>h3{
+      color: var(--Black, #2C2D31);
+      font-family: Inter;
+      font-size: 36px;
+      font-style: normal;
+      font-weight: 700;
+      line-height: 140%;
+      text-align: center;
+    }
+
+    .slide>h3 + p{
+      color: var(--Black, #2C2D31);
+      font-family: Inter;
+      font-size: 20px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 140%;
+      text-align: center;
+    }
+
+    .tab_nav_item{
+      padding: 16px;
+      width: 160px;
+      text-align: center;
+      border-width: 4px;
+      border-radius: 16px;
+      margin-right: 24px;
+      font-family: Inter;
+      font-size: 24px;
+      font-style: normal;
+      font-weight: 600;
+      line-height: 140%; /* 33.6px */
+    }
+
+    .tab_nav{
+      margin-bottom: 40px;
     }
   }
 </style>

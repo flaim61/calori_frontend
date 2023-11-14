@@ -162,4 +162,13 @@ export default {
     white-space: nowrap;
     height: fit-content;
   }
+
+  @media screen and (min-width: 1000px) {
+    .login-section{
+      flex-direction: column !important;
+      left: calc(50% - 300px) !important;
+      width: 600px !important;
+      bottom: 40%;
+    }
+  }
 </style>

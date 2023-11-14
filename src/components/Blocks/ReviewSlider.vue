@@ -92,8 +92,17 @@ export default {
       $('.review-slider').slick({
         dots: true,
         arrows: false,
-        autoplay: true,
-        autoplaySpeed: 3000,
+        //autoplay: true,
+        //autoplaySpeed: 3000,
+        slidesToShow: 2,
+        responsive: [
+          {
+            breakpoint: 1024,
+            settings: {
+              slidesToShow: 1,
+            }
+          },
+        ]
       });
     }, 1)
     window.addEventListener('scroll', this.startSliderIfVisible)
@@ -122,6 +131,15 @@ export default {
             arrows: false,
             autoplay: true,
             autoplaySpeed: 3000,
+            slidesToShow: 2,
+            responsive: [
+              {
+                breakpoint: 1024,
+                settings: {
+                  slidesToShow: 1,
+                }
+              },
+            ]
           });
         }, 1)
       }
@@ -183,7 +201,7 @@ export default {
     height: auto;
   }
 
-  @media screen and (min-width: 700px){
+  @media screen and (min-width: 1000px){
     .slide-top-left>img{
       width: 283px !important;
     }
@@ -192,14 +210,54 @@ export default {
         font-size: 18px !important;
     }
 
+    .slide-top-right>p{
+        font-size: 15px;
+    }
 
+    .review-text{
+      margin: 0 !important;
+      background: none;
+    }
+
+    .slide-top-right, .slide-top-left{
+      width: auto;
+    }
 
     .slide-top-right>h3{
-        height: 22px;
+      color: var(--Black, #2C2D31);
+      font-family: Inter;
+      font-size: 36px;
+      font-style: normal;
+      font-weight: 500;
+      line-height: 140%;
+      margin-bottom: 16px;
     }
 
     .slide-top-right>p{
-        font-size: 15px;
+      color: var(--Accent, #00B467);
+      font-family: Inter;
+      font-size: 24px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 140%; /* 33.6px */
+    }
+
+    .slide-top-right>p + p{
+      color: var(--Black, #2C2D31);
+      font-family: Inter;
+      font-size: 24px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 140%; /* 33.6px */
+      padding-left: 0 !important;
+    }
+
+    .slide-top-right{
+      padding-left: 32px;
+    }
+
+    .slide-top-left>img{
+      height: 393px !important;
     }
   }
 </style>

@@ -1,24 +1,18 @@
 export default {
   weight_blue_text_block_home_title:"Wanna join along?",
-  weight_blue_text_block_home_text:"Our next journey starts in January 2024. ",
-  weight_blue_text_block_home_text_2:"The seats are limited - don’t miss out on yours. ",
-  weight_blue_text_block_home_text_3:"Join us just in time to make your new-year resolutions 🎆",
+  weight_blue_text_block_home_text:"Our next journey starts in January 2024.<br><br>  The seats are limited - don’t miss out on yours.<br><br> Join us just in time to make your new-year resolutions 🎆",
 
   WeightLoss_plus_2_title:"Over 10 days",
   WeightLoss_plus_4_title:"Open new doors",
   blue_text_block_healthy_title: "Wanna join along?",
-  blue_text_block_healthy_text: "Our next journey starts in January 2024.  ",
-  blue_text_block_healthy_text_2: "The seats are limited - don’t miss out on yours. ",
-  blue_text_block_healthy_text_3: "Join us just in time to make your new-year resolutions 🎆",
+  blue_text_block_healthy_text: "Our next journey starts in January 2024. <br><br>  The seats are limited - don’t miss out on yours. <br><br>  Join us just in time to make your new-year resolutions 🎆",
   menu_text_before_healthy123:`Find out what the perfect diet looks like for you!
   <br><br>
   With Calori, you will get balanced meals cooked and delivered according to your personalized plan.
   That’s 140+ unique meals in a month.`,
   get_plan_button_prep: "Get your plan",
   meal_text_block_home_title: "Don’t miss out!",
-  meal_text_block_home_text: "Our next journey starts in January 2024. ",
-  meal_text_block_home_text_2: "The seats are limited - don’t miss out on yours. ",
-  meal_text_block_home_text_3: "Join us just in time to make your new-year resolutions 🎆",
+  meal_text_block_home_text: "Our next journey starts in January 2024. <br><br>   The seats are limited - don’t miss out on yours. <br><br>   Join us just in time to make your new-year resolutions 🎆",
   your_phone: "Your phone",
   your_email: "Your Email",
   your_message: "Your Message",
@@ -285,9 +279,7 @@ Our team of professional nutritionists spent years crafting meal plans that comb
   list_item_5_text_home: "Less waste, eco-friendly packaging, and green logistics",
   list_item_6_text_home: "Personalized to support your lifestyle and nutritional needs",
   blue_text_block_home_title: "Wanna join along?",
-  blue_text_block_home_text: "Our next journey starts in January 2024.",
-  blue_text_block_home_text_2: "The seats are limited - don’t miss out on yours. ",
-  blue_text_block_home_text_3: "Join us just in time to make your new-year resolutions 🎆",
+  blue_text_block_home_text: `Our next journey starts in January 2024. <br><br>  The seats are limited - don’t miss out on yours. <br><br>  Join us just in time to make your new-year resolutions 🎆`,
   menu_title_home: "Get your meal plan",
   menu_text_home: "Here’s an average week with Calori. Quick recap: healthy and delicious!",
   menu_text_before_home: "With Calori, you’ll get balanced meals cooked and delivered according to your personalized plan. That’s 140+ unique meals in 1 month.",

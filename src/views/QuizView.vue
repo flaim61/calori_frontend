@@ -235,8 +235,8 @@
             </label>
           </div>
           <div class="list_item">
-            <label for="check_7" class='mb-0 label_item'>
-              <input id='check_7' type="checkbox" v-model='this.application.allergies' value='7'>
+            <label for="check_6" class='mb-0 label_item'>
+              <input id='check_6' type="checkbox" v-model='this.application.allergies' value='6'>
               <span class="checkmark"></span>
               <div class="">
                 {{ this.$locales('allergy_6') }}
@@ -244,8 +244,8 @@
             </label>
           </div>
           <div class="list_item">
-            <label for="check_8" class='mb-0 label_item'>
-              <input id='check_8' type="checkbox" v-model='this.application.allergies' value='8'>
+            <label for="check_7" class='mb-0 label_item'>
+              <input id='check_7' type="checkbox" v-model='this.application.allergies' value='7'>
               <span class="checkmark"></span>
               <div class="">
                 {{ this.$locales('allergy_7') }}
@@ -254,7 +254,7 @@
           </div>
           <div class="list_item">
             <label for="check_" class='mb-0 label_item'>
-              <input id='check_' type="checkbox" v-model='this.application.allergies' value='6'>
+              <input id='check_' type="checkbox" v-model='this.application.allergies' value=''>
               <span class="checkmark"></span>
               <div class="">
                 {{ this.$locales('allergy_8') }}
@@ -442,8 +442,13 @@ export default {
         location.reload()
         this.step = 9;
       } catch (e) {
-        console.log(e);
-        this.errors.email = true;
+        if (e.response.status == 409) {
+          this.errors.email = true;
+          return;
+        }else{
+          let page = localStorage.getItem('main-page') ? localStorage.getItem('main-page') : "/";
+          this.$router.push(page);
+        }
       }
     },
     goBack(){
@@ -543,8 +548,13 @@ export default {
         location.reload()
         this.step = 9;
       } catch (e) {
-        console.log(e)
-        this.errors.email = true;
+        if (e.response.status == 409) {
+          this.errors.email = true;
+          return;
+        }else{
+          let page = localStorage.getItem('main-page') ? localStorage.getItem('main-page') : "/";
+          this.$router.push(page);
+        }
       }
     }
   },
@@ -585,6 +595,7 @@ export default {
         }
         this.bmiError = value;
         this.allergyError = !this.application.allergies.filter(a => a != 1).length == 0
+        console.log(this.allergyError)
       },
       deep: true
     }

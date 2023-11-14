@@ -76,77 +76,83 @@
     />
 
 
-    <div class="titlep_block" id='why_calori'>
-      <h3 class="block-title">
-        {{ this.$locales('HealthyEating_before_calori_title') }}
-      </h3>
-      <p>
-        {{ this.$locales('HealthyEating_before_calori_text') }}
-      </p>
+    <div class="double-list-block">
+      <div class="">
+        <div class="titlep_block" id='why_calori'>
+          <h3 class="block-title">
+            {{ this.$locales('HealthyEating_before_calori_title') }}
+          </h3>
+          <p>
+            {{ this.$locales('HealthyEating_before_calori_text') }}
+          </p>
+        </div>
+
+        <List color="red" :data=
+          "
+            [
+              {
+                img: 16,
+                text: this.$locales('HealthyEating_list_item_1'),
+              },
+              {
+                img: 17,
+                text: this.$locales('HealthyEating_list_item_2'),
+              },
+              {
+                img: 70,
+                text: this.$locales('HealthyEating_list_item_3'),
+              },
+              {
+                img: 19,
+                text: this.$locales('HealthyEating_list_item_4'),
+              },
+              {
+                img: 20,
+                text: this.$locales('HealthyEating_list_item_5'),
+              },
+            ]
+          "
+        />
+      </div>
+
+      <div class="">
+        <div class="titlep_block">
+          <h3 class="block-title">
+            {{ this.$locales('HealthyEating_after_calori_title') }}
+          </h3>
+          <p>
+            {{ this.$locales('HealthyEating_after_calori_text') }}
+          </p>
+        </div>
+
+        <List color="green" :data=
+          "
+            [
+              {
+                img: 1,
+                text: this.$locales('HealthyEating_list_item_6'),
+              },
+              {
+                img: 3,
+                text: this.$locales('HealthyEating_list_item_7'),
+              },
+              {
+                img: 4,
+                text: this.$locales('HealthyEating_list_item_8'),
+              },
+              {
+                img: 21,
+                text: this.$locales('HealthyEating_list_item_9'),
+              },
+              {
+                img: 22,
+                text: this.$locales('HealthyEating_list_item_10'),
+              },
+            ]
+          "
+        />
+      </div>
     </div>
-
-    <List color="red" :data=
-      "
-        [
-          {
-            img: 16,
-            text: this.$locales('HealthyEating_list_item_1'),
-          },
-          {
-            img: 17,
-            text: this.$locales('HealthyEating_list_item_2'),
-          },
-          {
-            img: 70,
-            text: this.$locales('HealthyEating_list_item_3'),
-          },
-          {
-            img: 19,
-            text: this.$locales('HealthyEating_list_item_4'),
-          },
-          {
-            img: 20,
-            text: this.$locales('HealthyEating_list_item_5'),
-          },
-        ]
-      "
-    />
-
-    <div class="titlep_block">
-      <h3 class="block-title">
-        {{ this.$locales('HealthyEating_after_calori_title') }}
-      </h3>
-      <p>
-        {{ this.$locales('HealthyEating_after_calori_text') }}
-      </p>
-    </div>
-
-    <List color="green" :data=
-      "
-        [
-          {
-            img: 1,
-            text: this.$locales('HealthyEating_list_item_6'),
-          },
-          {
-            img: 3,
-            text: this.$locales('HealthyEating_list_item_7'),
-          },
-          {
-            img: 4,
-            text: this.$locales('HealthyEating_list_item_8'),
-          },
-          {
-            img: 21,
-            text: this.$locales('HealthyEating_list_item_9'),
-          },
-          {
-            img: 22,
-            text: this.$locales('HealthyEating_list_item_10'),
-          },
-        ]
-      "
-    />
 
 
 
@@ -164,8 +170,6 @@
     <BlueTextBlock
       :title='this.$locales("blue_text_block_healthy_title")'
       :text='this.$locales("blue_text_block_healthy_text")'
-      :text-2='this.$locales("blue_text_block_healthy_text_2")'
-      :text-3='this.$locales("blue_text_block_healthy_text_3")'
     />
 
     <div class="titlep_block"   id='menu'>

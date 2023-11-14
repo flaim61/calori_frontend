@@ -12,12 +12,37 @@
     <img v-if='this.image == 7' src="@/assets/img/howitwork/7.jpeg" alt="">
     <img v-if='this.image == 8' src="@/assets/img/howitwork/8.jpeg" alt="">
     <img v-if='this.image == 9' src="@/assets/img/howitwork/9.jpeg" alt="">
-    <iframe v-if='this.video == 1' src="https://player.vimeo.com/video/882344250?background=1" frameborder="0" allow="autoplay; fullscreen" allowfullscreen=""></iframe>
-    <iframe v-if='this.video == 2' src="https://player.vimeo.com/video/882344258?background=1" frameborder="0" allow="autoplay; fullscreen" allowfullscreen=""></iframe>
-    <iframe v-if='this.video == 3'  src="https://player.vimeo.com/video/882344169?background=1" frameborder="0" allow="autoplay; fullscreen" allowfullscreen=""></iframe>
-    <iframe v-if='this.video == 4'  src="https://player.vimeo.com/video/882344998?background=1" frameborder="0" allow="autoplay; fullscreen" allowfullscreen=""></iframe>
-    <iframe v-if='this.video == 5'  src="https://player.vimeo.com/video/882345011?background=1" frameborder="0" allow="autoplay; fullscreen" allowfullscreen=""></iframe>
-    <p v-html='this.text'>
+    <iframe v-if='this.video == 1 && this.windowWidth < 700' src="https://player.vimeo.com/video/882344250?background=1" frameborder="0" allow="autoplay; fullscreen" allowfullscreen=""></iframe>
+    <iframe v-if='this.video == 2 && this.windowWidth < 700' src="https://player.vimeo.com/video/882344258?background=1" frameborder="0" allow="autoplay; fullscreen" allowfullscreen=""></iframe>
+    <iframe v-if='this.video == 3 && this.windowWidth < 700'  src="https://player.vimeo.com/video/882344169?background=1" frameborder="0" allow="autoplay; fullscreen" allowfullscreen=""></iframe>
+    <iframe v-if='this.video == 4 && this.windowWidth < 700'  src="https://player.vimeo.com/video/882344998?background=1" frameborder="0" allow="autoplay; fullscreen" allowfullscreen=""></iframe>
+    <iframe v-if='this.video == 5 && this.windowWidth < 700'  src="https://player.vimeo.com/video/882345011?background=1" frameborder="0" allow="autoplay; fullscreen" allowfullscreen=""></iframe>
+
+    <video v-if='this.video == 1 && this.windowWidth > 1000' autoplay="true" muted="true" loop="true" preload="true" playsinline="true" controls="false">
+      <source src="@/assets/videos/1.mp4" type="video/mp4">
+    </video>
+
+    <video v-if='this.video == 2 && this.windowWidth > 1000' autoplay="true" muted="true" loop="true" preload="true" playsinline="true" controls="false">
+      <source src="@/assets/videos/2.mp4" type="video/mp4">
+    </video>
+
+    <video v-if='this.video == 3 && this.windowWidth > 1000' autoplay="true" muted="true" loop="true" preload="true" playsinline="true" controls="false">
+      <source src="@/assets/videos/3.mp4" type="video/mp4">
+    </video>
+
+    <video v-if='this.video == 4 && this.windowWidth > 1000' autoplay="true" muted="true" loop="true" preload="true" playsinline="true" controls="false">
+      <source src="@/assets/videos/4.mp4" type="video/mp4">
+    </video>
+
+    <video v-if='this.video == 5 && this.windowWidth > 1000' autoplay="true" muted="true" loop="true" preload="true" playsinline="true" controls="false">
+      <source src="@/assets/videos/5.mp4" type="video/mp4">
+    </video>
+
+    <p>
+      <h3>
+        {{this.title}}
+      </h3>
+      <span v-html='this.text'></span>
     </p>
   </div>
 </template>
@@ -31,10 +56,16 @@ export default {
   props: ['green', 'title', 'image', 'text', 'video'],
   data(){
     return {
-
+      windowWidth: window.innerWidth
     }
   },
+  created: function() {
+    window.addEventListener('resize', this.onResize);
+  },
   methods: {
+    onResize(){
+      this.windowWidth = window.innerWidth
+    }
   }
 }
 </script>
@@ -57,5 +88,11 @@ export default {
     font-style: normal;
     font-weight: 400;
     line-height: 140%;
+  }
+
+  @media screen and (min-width: 1000px){
+    video {
+      border-radius: 16px;
+    }
   }
 </style>

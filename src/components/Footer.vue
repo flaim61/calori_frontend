@@ -6,9 +6,12 @@
     </div>
     <div class="footer_bottom">
       <div class="text-center">
-        <a href="#"><img src="@/assets/img/icon/social-1.svg"></a>
-        <a href="#" class="ml-3 mr-3"><img src="@/assets/img/icon/social-2.svg"></a>
-        <a href="#"><img src="@/assets/img/icon/social-3.svg"></a>
+        <a href="https://www.linkedin.com/company/calori-fi/" target="_blank"><img src="@/assets/img/icon/social-1.svg"></a>
+        <a href="https://www.instagram.com/calori.fi/" class="ml-3 mr-3"  target="_blank"><img src="@/assets/img/icon/social-2.svg"></a>
+        <a href="https://www.facebook.com/calori.fi" target="_blank"><img src="@/assets/img/icon/social-3.svg"></a>
+      </div>
+      <div class="text-center privacy-block mt-2">
+        <a href="mailto:info@calori.fi">info@calori.fi</a>
       </div>
       <p class="mt-3 text-center mb-4">
         2023 Lagom food Oy. All rights reserved.
