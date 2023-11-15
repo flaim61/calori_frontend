@@ -268,6 +268,7 @@ export default {
   created: function() {
     this.isPaid = localStorage.getItem('isPaid') == 'true';
     window.addEventListener('resize', this.onResize);
+    localStorage.setItem('main-page', this.$route.path)
   },
   methods: {
     onResize(){

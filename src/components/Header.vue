@@ -37,7 +37,7 @@
       <img class="arrow-back" @click='this.$router.go(-1)' v-if='this.$route.name == "faq"' src="@/assets/img/icon/arrow-left.svg" alt="">
       <img v-else src="@/assets/img/icon/burger.svg" @click='switchMenu'>
     </div>
-    <div class="app-title d-flex flex-column justify-content-center">
+    <div class="app-title d-flex flex-column justify-content-center" @click='goHome'>
       <img src="@/assets/img/calori.svg" alt="">
     </div>
     <div class="language-item">
@@ -67,8 +67,6 @@ export default {
   },
   created(){
     window.addEventListener('scroll', this.handleScroll);
-    console.log(this.$route)
-    localStorage.setItem('main-page', this.$route.path)
     window.addEventListener('resize', this.onResize);
   },
   methods: {
@@ -79,6 +77,11 @@ export default {
       }else{
         document.getElementById('header').style.top = 0 + "px";
       }*/
+    },
+    goHome(){
+      let page = localStorage.getItem('main-page') ? localStorage.getItem('main-page') : "/";
+      console.log(page)
+      this.$router.push(page);
     },
     onResize(){
       console.log(window.innerWidth)
