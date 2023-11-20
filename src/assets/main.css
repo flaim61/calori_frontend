@@ -527,8 +527,9 @@ input.p-inputtext.p-component.p-password-input {
       font-style: normal !important;
       font-weight: 500 !important;
       line-height: 120% !important;
-      width: 70%;
+      width: 60%;
       padding-top: 35vh !important;
+      padding-left: 18px;
     }
     .main-block>p{
       color: var(--White, #FFF) !important;
@@ -538,6 +539,7 @@ input.p-inputtext.p-component.p-password-input {
       font-weight: 400  !important;
       line-height: 120%  !important; /* 28.8px */
       width: 50%;
+      padding-left: 18px;
     }
 
     iframe#home-video {
@@ -598,7 +600,7 @@ input.p-inputtext.p-component.p-password-input {
     .checkBlock{
       max-width: 580px;
       width: 580px;
-      position: fixed;
+      position: absolute;
       left: 50%;
       margin-left: -285px;
     }
@@ -629,6 +631,7 @@ input.p-inputtext.p-component.p-password-input {
 
     .main-page-content>.card{
       margin-bottom: 64px;
+      padding: 32px;
       justify-content: space-between;
     }
 
@@ -674,6 +677,8 @@ input.p-inputtext.p-component.p-password-input {
 
     .main-page-content>.card:nth-child(2n + 1){
       flex-direction: row-reverse;
+      border-radius: 32px;
+      background: var(--Bg, #F0F5F8);
     }
 
     .list-block{
@@ -845,4 +850,32 @@ input.p-inputtext.p-component.p-password-input {
     .plan_block{
       max-width: 100%;
     }
+
+    header, .green-label, .menu-content, .menu-content>.back-button{
+      position: absolute !important;
+    }
+
+    .card-profile{
+      width: 600px;
+      margin: 0 auto;
+      flex-direction: column !important;
+      padding: 23px;
+      border-radius: 16px;
+      margin-bottom: 16px;
+      margin-top: 16px;
+    }
+
+    .profile_tabs{
+      margin-bottom: 16px;
+    }
+
+    /*.card-grid{
+      display: grid !important;
+      grid-template-columns: 1fr 1fr  !important;
+      gap: 16px !important;;
+    }*/
+
+    /*.card-grid>.card{
+      width: 100%;
+    }*/
 }

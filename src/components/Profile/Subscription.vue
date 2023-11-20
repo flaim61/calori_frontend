@@ -1,6 +1,6 @@
 <template lang="html">
   <a href="https://billing.stripe.com/p/login/dR69Cfe5CdDZenScMM">
-    <div class="button bg-dark text-white justify-content-center">
+    <div class="w-600 button bg-dark text-white justify-content-center">
       Edit payment information
     </div>
   </a>
@@ -180,5 +180,15 @@ export default {
     font-style: normal;
     font-weight: 400;
     line-height: 140%; /* 16.8px */
+  }
+
+  @media screen and (min-width: 1000px){
+    .w-600{
+      width: 600px !important;
+      margin: 0 auto !important;
+      margin-top: 16px !important;
+    }
+
+    
   }
 </style>

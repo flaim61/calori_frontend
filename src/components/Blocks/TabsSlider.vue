@@ -347,6 +347,7 @@ export default {
     window.addEventListener('scroll', this.scrollButtonHandler)
     window.addEventListener('scroll', this.startSliderIfVisible)
     window.scrollBy(0, 10);
+    window.scrollBy(0, -10);
   },
   methods: {
     startSliderIfVisible(){
@@ -491,7 +492,7 @@ export default {
       font-style: normal;
       font-weight: 700;
       line-height: 140%;
-      text-align: center;
+      text-align: left;
     }
 
     .slide>h3 + p{
@@ -501,11 +502,11 @@ export default {
       font-style: normal;
       font-weight: 400;
       line-height: 140%;
-      text-align: center;
+      text-align: left;
     }
 
     .tab_nav_item{
-      padding: 16px;
+      padding: 12px 16px;
       width: 160px;
       text-align: center;
       border-width: 4px;

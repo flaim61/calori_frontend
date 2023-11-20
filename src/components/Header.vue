@@ -17,9 +17,6 @@
         <a @click='this.mobile_menu_showed = false' href="#sustainability_approach" > {{ this.$locales('sustainability_approach_title') }} </a>
         <a @click='this.mobile_menu_showed = false' href="#contact" > {{ this.$locales('contact_us') }} </a>
         <a @click='this.$router.push("faq")' > FAQ </a>
-        <a class="back-button" href="/login" >
-            {{ this.$locales('sign_in') }}
-        </a>
       </div>
 
       <a class="first-a" href="/login" >
@@ -42,6 +39,9 @@
     </div>
     <div class="language-item">
       <div class="d-flex">
+        <a class="back-button back-button-personal" href="/login" >
+            {{ this.$locales('sign_in') }}
+        </a>
         <div class="mr-2" v-if='this.getLocales() == "fi" || !this.getLocales()'>
           <a href="#" class="text-dark" @click="setLocales('en')">EN</a>
         </div>
@@ -109,6 +109,9 @@ export default {
 </script>
 
 <style>
+  .back-button-personal{
+    display: none;
+  }
   .personal{
     width: 100% !important;
     text-align: center !important;
@@ -211,6 +214,11 @@ export default {
   }
 
   @media screen and (min-width: 1000px) {
+
+      .back-button-personal{
+        display: block;
+        margin-right: 30px;
+      }
       .menu-item{
         display: none;
       }

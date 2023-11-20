@@ -1,5 +1,6 @@
 <template lang="html">
-  <div class="card-profile card"  v-if='this.personalPlan && this.application && this.personalPlan.isPaid'>
+<div class="card-grid ">
+  <div class="card-profile  card"  v-if='this.personalPlan && this.application && this.personalPlan.isPaid'>
     <div class="card-top d-flex">
       <h2> {{ this.$locales('information') }}</h2>
     </div>
@@ -119,6 +120,9 @@
     {{ this.$locales('plan_auto') }}
   </p>
   {{console.log(this.application)}}
+</div>
+
+
   <CheckBlock v-if='this.personalPlan && !this.personalPlan.isPaid && this.application' :createdApplication='this.application'/>
 </template>
 

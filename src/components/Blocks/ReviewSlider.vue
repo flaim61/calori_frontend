@@ -107,6 +107,7 @@ export default {
     }, 1)
     window.addEventListener('scroll', this.startSliderIfVisible)
     window.scrollBy(0, 10);
+    window.scrollBy(0, -10);
   },
   data() {
     return {
