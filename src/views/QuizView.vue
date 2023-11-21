@@ -382,11 +382,25 @@ export default {
   async created(){
     if (this.$cookies.get("auth_token")) {
       this.step = 9;
-      const application = await this.getApplication();
-      application.allergies = application.applicationAllergies;
-      application.another_allergy = application.anotherAllergy
-      this.application = application;
-      this.createdApplication = application;
+      try {
+        const application = await this.getApplication();
+        application.allergies = application.applicationAllergies;
+        application.another_allergy = application.anotherAllergy
+        this.application = application;
+        this.createdApplication = application;
+      } catch (e) {
+        const cookies = document.cookie.split(";");
+
+        for (let i = 0; i < cookies.length; i++) {
+            const cookie = cookies[i];
+            const eqPos = cookie.indexOf("=");
+            const name = eqPos > -1 ? cookie.substr(0, eqPos) : cookie;
+            document.cookie = name + "=;expires=Thu, 01 Jan 1970 00:00:00 GMT";
+        }
+
+        localStorage.clear();
+        location.reload()
+      }
     }
   },
   methods:{

@@ -4,7 +4,26 @@
       <h3>
         {{ this.$locales('personal_profile') }}
       </h3>
-      <div class="" v-if='!this.settings'>
+      <div class="profile_tabs-mobile profile_tabs d-flex" v-if='!this.settings' :class="{'pb-custom':!this.planPaid}">
+        <div class="profile_tabs_item" :class="{'active' : this.tabs.plan}" @click='this.setActive("plan")'>
+          {{ this.$locales('my_plan') }}
+        </div>
+        <a v-if='this.planPaid' target="_blank" href="https://info.spacent.com/meetings/spacent/book-a-demo?_ga=2.31120575.1439210232.1697105517-791289949.1697105517">
+          <div class="profile_tabs_item">
+            {{ this.$locales('coach') }}
+          </div>
+        </a>
+        <div class="profile_tabs_item" :class="{'active' : this.tabs.referral}" @click='this.setActive("referral")'>
+          Referral
+        </div>
+        <div class="profile_tabs_item" :class="{'active' : this.tabs.delivery}" @click='this.setActive("delivery")' v-if='this.planPaid'>
+          {{ this.$locales('delivery') }}
+        </div>
+        <div class="profile_tabs_item" :class="{'active' : this.tabs.subscription}" @click='this.setActive("subscription")' v-if='this.planPaid'>
+          {{ this.$locales('subscription') }}
+        </div>
+      </div>
+      <div class="settings-button" v-if='!this.settings'>
         <img src="@/assets/img/icon/settings.svg" alt="" @click='this.settings = !this.settings'>
         <img class='ml-3' src="@/assets/img/icon/logout.svg" alt="" @click='this.$router.push("/")'>
       </div>

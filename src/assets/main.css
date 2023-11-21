@@ -500,6 +500,10 @@ input.p-inputtext.p-component.p-password-input {
     line-height: 140%;
 }
 
+.profile_tabs-mobile{
+  display: none !important;
+}
+
 .player .vp-video-wrapper object, .player .vp-video-wrapper video{
   width: 100vw;
   height: auto;
@@ -513,10 +517,12 @@ input.p-inputtext.p-component.p-password-input {
   display: none;
 }
 
-
-
 .list-img{
   font-size: 32px;
+}
+
+.w-600{
+  margin-top: 16px;
 }
 
 @media screen and (min-width: 1000px) {
@@ -824,6 +830,15 @@ input.p-inputtext.p-component.p-password-input {
     }
 
 
+    .profile_tabs{
+      display: none !important;
+    }
+
+    .profile_tabs-mobile{
+      display: flex !important;
+      margin-bottom: 0 !important;
+    }
+
 
     .double-list-block>div>.titlep_block>h3{
       text-align: left !important;
@@ -865,8 +880,25 @@ input.p-inputtext.p-component.p-password-input {
       margin-top: 16px;
     }
 
-    .profile_tabs{
-      margin-bottom: 16px;
+    .profile_tabs-mobile{
+      margin-left: -80px;
+    }
+
+    .profile-header>.d-flex>h3{
+      margin-bottom: 0 !important;
+      margin-right: 32px;
+    }
+
+    .profile-header>h3{
+      margin-bottom: 0 !important;
+    }
+
+    .settings-button{
+      margin-top: 8px !important;
+    }
+
+    .profile_content>h2{
+      text-align: center;
     }
 
     /*.card-grid{
